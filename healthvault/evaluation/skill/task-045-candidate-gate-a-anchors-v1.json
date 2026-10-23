@@ -1,0 +1,37 @@
+{
+  "schema_version": "healthvault-task-045-candidate-gate-a-anchor-table-v1",
+  "anchor_table_version": "task-045-candidate-gate-a-anchors-v1",
+  "active_skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+  "anchors": [
+    {
+      "target_anchor_id": "steps.identify_outcome",
+      "target_section": "Steps",
+      "target_paragraph": "1. Identify the requested HealthVault outcome before selecting a tool.",
+      "allowed_operations": ["add"]
+    },
+    {
+      "target_anchor_id": "steps.run_read_only_tools",
+      "target_section": "Steps",
+      "target_paragraph": "2. Run only approved read-only domain tools and preserve returned citations.",
+      "allowed_operations": ["add"]
+    },
+    {
+      "target_anchor_id": "steps.return_tool_status",
+      "target_section": "Steps",
+      "target_paragraph": "3. Return the tool status accurately; never present a rejection as success.",
+      "allowed_operations": ["add"]
+    },
+    {
+      "target_anchor_id": "failure.report_without_guessing",
+      "target_section": "Failure Handling",
+      "target_paragraph": "If evidence is insufficient or a tool rejects input, report that result without guessing.",
+      "allowed_operations": ["add"]
+    },
+    {
+      "target_anchor_id": "verification.check_final_response",
+      "target_section": "Verification",
+      "target_paragraph": "Check the final status, requested fields, and every citation before answering.",
+      "allowed_operations": ["add"]
+    }
+  ]
+}

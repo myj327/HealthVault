@@ -1,0 +1,45 @@
+{
+  "corpus_version": "r2-2026-09-10-v1",
+  "language": "en",
+  "publisher": "MedlinePlus",
+  "retrieved_on": "2026-09-10",
+  "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A ferritin blood test measures the level of ferritin in blood. Ferritin is a protein inside cells that stores iron."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ferritin releases iron when the body needs it. A ferritin test can show how much iron is stored in the body."
+        },
+        {
+          "kind": "paragraph",
+          "text": "A provider may order a ferritin test as part of a group of iron tests."
+        }
+      ],
+      "title_path": [
+        "Ferritin Blood Test",
+        "What is a ferritin blood test?"
+      ],
+      "topic_tags": [
+        "iron_tests",
+        "lab_interpretation"
+      ]
+    }
+  ],
+  "source_id": "medlineplus-ferritin-blood-test",
+  "source_sha256": "2d854e685d97434f2138cd396e2fda0760958d35e42bf84a0803bd9754c9e918",
+  "title": "Ferritin Blood Test",
+  "title_path_whitelist": [
+    [
+      "Ferritin Blood Test",
+      "What is a ferritin blood test?"
+    ]
+  ],
+  "url": "https://medlineplus.gov/lab-tests/ferritin-blood-test/",
+  "version": "reviewed-2025"
+}

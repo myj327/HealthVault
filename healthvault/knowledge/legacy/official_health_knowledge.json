@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "corpus_version": "2026-08-24",
+  "documents": [
+    {
+      "citation_id": "HVK-GLUCOSE-001",
+      "topic": "fasting_glucose",
+      "title": "空腹血糖检查的一般说明",
+      "summary": "空腹血糖检查在禁食一段时间后测量血液中的葡萄糖，常用于了解血糖状况。结果需要由专业人员结合检查条件、病史和其他信息解释，单个数值不能独立用于诊断。",
+      "search_terms": [
+        "fasting glucose",
+        "fasting plasma glucose",
+        "fpg",
+        "空腹血糖"
+      ],
+      "source": {
+        "publisher": "NIDDK",
+        "title": "Diabetes Tests & Diagnosis",
+        "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis",
+        "retrieved_on": "2026-08-24"
+      }
+    },
+    {
+      "citation_id": "HVK-A1C-001",
+      "topic": "hba1c",
+      "title": "A1C 检查的一般说明",
+      "summary": "A1C（糖化血红蛋白）检查反映一段时间内的平均血糖相关信息。结果会受到个体情况和部分健康因素影响，应由专业人员结合其他检查和临床背景解释。",
+      "search_terms": [
+        "a1c",
+        "hba1c",
+        "hemoglobin a1c",
+        "糖化血红蛋白"
+      ],
+      "source": {
+        "publisher": "NIDDK",
+        "title": "The A1C Test & Diabetes",
+        "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+        "retrieved_on": "2026-08-24"
+      }
+    },
+    {
+      "citation_id": "HVK-LDL-001",
+      "topic": "ldl_cholesterol",
+      "title": "LDL 胆固醇的一般说明",
+      "summary": "LDL 胆固醇是血脂检查中的一项，用来提供胆固醇运输相关信息。其意义需由专业人员结合完整血脂结果、病史和其他因素解释，不能仅凭这一项作出健康结论。",
+      "search_terms": [
+        "ldl",
+        "ldl cholesterol",
+        "low-density lipoprotein",
+        "低密度脂蛋白",
+        "胆固醇"
+      ],
+      "source": {
+        "publisher": "NHLBI",
+        "title": "Blood Cholesterol - Diagnosis",
+        "url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+        "retrieved_on": "2026-08-24"
+      }
+    },
+    {
+      "citation_id": "HVK-VISIT-001",
+      "topic": "visit_preparation",
+      "title": "就诊沟通准备的一般流程",
+      "summary": "就诊前整理正在使用的药物、过敏情况、既往资料和希望咨询的问题，可以帮助与医务人员沟通。记录症状和疑问并在就诊时如实说明，是一般性的准备流程。",
+      "search_terms": [
+        "doctor visit",
+        "visit preparation",
+        "appointment questions",
+        "就诊准备",
+        "看医生"
+      ],
+      "source": {
+        "publisher": "MedlinePlus",
+        "title": "Talking With Your Doctor",
+        "url": "https://medlineplus.gov/talkingwithyourdoctor.html",
+        "retrieved_on": "2026-08-24"
+      }
+    }
+  ]
+}

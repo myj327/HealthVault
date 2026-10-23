@@ -1,0 +1,32 @@
+{
+  "schema_version": "healthvault-skill-evolution-fixture-v1",
+  "fixture_id": "task-019-create-evolve-rollback",
+  "data_classification": "synthetic",
+  "batches": [
+    {
+      "action": "create",
+      "signals": [
+        {
+          "trace_id": "trace-create",
+          "signal_type": "explicit_correction",
+          "lesson": "Validate citations before returning a result."
+        }
+      ]
+    },
+    {
+      "action": "evolve",
+      "signals": [
+        {
+          "trace_id": "trace-evolve",
+          "signal_type": "deterministic_failure",
+          "lesson": "Retry only after a retryable tool status."
+        }
+      ]
+    }
+  ],
+  "ignored_signal_types": [
+    "weak_feedback",
+    "patient_or_medical_fact",
+    "no_increment"
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "schema_version": "healthvault-skill-heldout-dataset-v1",
+  "dataset_version": "skill-heldout-r1-v1",
+  "data_classification": "synthetic",
+  "held_out": true,
+  "frozen_on": "2026-08-29T00:00:00+08:00",
+  "leakage_sources": [
+    {"track":"rag","case_version":"rag-eval-r1-v2","purpose":"retrieval_and_generation","path":"tests/fixtures/rag_eval/rag-eval-r1-v2.json","sha256":"dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac","extractor":"rag_queries"},
+    {"track":"skill_evolution","case_version":"task-019-synthetic-v1","purpose":"candidate_generation_and_release","path":"healthvault/evaluation/skill/task-019-synthetic-fixture.json","sha256":"40eaca04ce300960abef164e1948127e9e3f866ffc17ef1246dd022bbd60541d","extractor":"task019_lessons"},
+    {"track":"skill_usage","case_version":"task-020-synthetic-v1","purpose":"usage_evaluation_and_lifecycle","path":"healthvault/evaluation/skill/task-020-synthetic-fixture.json","sha256":"730de6b83dde08fbab767f303240e5a0c82cf06c86ca4ecbdd15fb4a99bdbdaa","extractor":"task020_events"},
+    {"track":"agent_e2e","case_version":"agent-e2e-inventory-v1","purpose":"ordinary_end_to_end","path":"tests/healthvault/test_healthvault_agent_runtime.py","sha256":"8db0939fdf0864bc688d7d67a03e565e6b5a50afdf6d0f0a5cd62c14471d3799","extractor":"agent_e2e_inventory"},
+    {"track":"long_fault","case_version":"long-fault-inventory-v1","purpose":"long_horizon_and_faults","path":"tests/healthvault/test_healthvault_agent_runtime.py","sha256":"8db0939fdf0864bc688d7d67a03e565e6b5a50afdf6d0f0a5cd62c14471d3799","extractor":"long_fault_inventory"}
+  ],
+  "cases": [
+    {
+      "case_id":"SHO-001","case_family_id":"skill-heldout-timeline-aurora","task_type":"timeline","prompt":"按时间顺序列出合成档案 Aurora 在 2031 年 4 月的两次已确认检查，并保留报告引用。",
+      "fixture":{"fixture_id":"timeline-aurora-retry","data_classification":"synthetic","profile_id":"synthetic-aurora","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":["REC:T021-AUR-01:fasting_glucose","REC:T021-AUR-02:fasting_glucose"],"retryable_failures":["0"]},
+      "expected":{"tool_set":["query_health_timeline"],"tool_order":["query_health_timeline","query_health_timeline"],"final_status":"ok","citations":["REC:T021-AUR-01:fasting_glucose","REC:T021-AUR-02:fasting_glucose"],"refusal_required":false,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["citation","retryable_failure","wrong_tool_rejected"]
+    },
+    {
+      "case_id":"SHO-002","case_family_id":"skill-heldout-timeline-birch","task_type":"timeline","prompt":"查询合成档案 Birch 的 2032 年第一季度时间线；没有记录时只报告证据不足。",
+      "fixture":{"fixture_id":"timeline-birch-empty","data_classification":"synthetic","profile_id":"synthetic-birch","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":[],"retryable_failures":[]},
+      "expected":{"tool_set":["query_health_timeline"],"tool_order":["query_health_timeline"],"final_status":"insufficient_evidence","citations":[],"refusal_required":true,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["insufficient_evidence","refusal","wrong_tool_rejected"]
+    },
+    {
+      "case_id":"SHO-003","case_family_id":"skill-heldout-timeline-cobalt","task_type":"timeline","prompt":"只读查看合成档案 Cobalt 在 2030 年 11 月 8 日的已确认报告条目。",
+      "fixture":{"fixture_id":"timeline-cobalt-one","data_classification":"synthetic","profile_id":"synthetic-cobalt","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":["REC:T021-COB-01:hba1c"],"retryable_failures":[]},
+      "expected":{"tool_set":["query_health_timeline"],"tool_order":["query_health_timeline"],"final_status":"ok","citations":["REC:T021-COB-01:hba1c"],"refusal_required":false,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["citation","read_only"]
+    },
+    {
+      "case_id":"SHO-004","case_family_id":"skill-heldout-timeline-delta","task_type":"timeline","prompt":"列出合成档案 Delta 从 2029 年 6 月到 8 月的报告日期，不要补写缺失月份。",
+      "fixture":{"fixture_id":"timeline-delta-gap","data_classification":"synthetic","profile_id":"synthetic-delta","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":["REC:T021-DEL-01:ldl_cholesterol","REC:T021-DEL-02:ldl_cholesterol"],"retryable_failures":[]},
+      "expected":{"tool_set":["query_health_timeline"],"tool_order":["query_health_timeline"],"final_status":"ok","citations":["REC:T021-DEL-01:ldl_cholesterol","REC:T021-DEL-02:ldl_cholesterol"],"refusal_required":false,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["citation","no_guessing"]
+    },
+    {
+      "case_id":"SHO-005","case_family_id":"skill-heldout-timeline-ember","task_type":"timeline","prompt":"合成档案 Ember 的日期范围参数无效时，返回工具拒绝状态且不要改写任何记录。",
+      "fixture":{"fixture_id":"timeline-ember-invalid-range","data_classification":"synthetic","profile_id":"synthetic-ember","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":[],"retryable_failures":[]},
+      "expected":{"tool_set":["query_health_timeline"],"tool_order":["query_health_timeline"],"final_status":"rejected","citations":[],"refusal_required":true,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["tool_rejection","refusal","write_attempt_rejected"]
+    },
+    {
+      "case_id":"SHO-006","case_family_id":"skill-heldout-indicator-fir","task_type":"indicator_comparison","prompt":"比较合成档案 Fir 在 2032 年初的两次糖化血红蛋白明示值，并引用两份来源报告。",
+      "fixture":{"fixture_id":"indicator-fir-hba1c","data_classification":"synthetic","profile_id":"synthetic-fir","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":["REC:T021-FIR-01:hba1c","REC:T021-FIR-02:hba1c"],"retryable_failures":[]},
+      "expected":{"tool_set":["compare_health_indicators"],"tool_order":["compare_health_indicators"],"final_status":"ok","citations":["REC:T021-FIR-01:hba1c","REC:T021-FIR-02:hba1c"],"refusal_required":false,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["citation","wrong_tool_rejected"]
+    },
+    {
+      "case_id":"SHO-007","case_family_id":"skill-heldout-indicator-grove","task_type":"indicator_comparison","prompt":"合成档案 Grove 只有一次低密度脂蛋白记录；不要伪造趋势，明确证据不足。",
+      "fixture":{"fixture_id":"indicator-grove-single","data_classification":"synthetic","profile_id":"synthetic-grove","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":["REC:T021-GRO-01:ldl_cholesterol"],"retryable_failures":[]},
+      "expected":{"tool_set":["compare_health_indicators"],"tool_order":["compare_health_indicators"],"final_status":"insufficient_evidence","citations":[],"refusal_required":true,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["insufficient_evidence","refusal"]
+    },
+    {
+      "case_id":"SHO-008","case_family_id":"skill-heldout-indicator-harbor","task_type":"indicator_comparison","prompt":"比较合成档案 Harbor 两次明示空腹血糖值，保持原单位，不做诊断推断。",
+      "fixture":{"fixture_id":"indicator-harbor-fasting-glucose","data_classification":"synthetic","profile_id":"synthetic-harbor","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":["REC:T021-HAR-01:fasting_glucose","REC:T021-HAR-02:fasting_glucose"],"retryable_failures":[]},
+      "expected":{"tool_set":["compare_health_indicators"],"tool_order":["compare_health_indicators"],"final_status":"ok","citations":["REC:T021-HAR-01:fasting_glucose","REC:T021-HAR-02:fasting_glucose"],"refusal_required":false,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["citation","no_diagnosis"]
+    },
+    {
+      "case_id":"SHO-009","case_family_id":"skill-heldout-indicator-iris","task_type":"indicator_comparison","prompt":"比较合成档案 Iris 的两次糖化血红蛋白结果；首次存储忙可重试一次。",
+      "fixture":{"fixture_id":"indicator-iris-retry","data_classification":"synthetic","profile_id":"synthetic-iris","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":["REC:T021-IRI-01:hba1c","REC:T021-IRI-02:hba1c"],"retryable_failures":["0"]},
+      "expected":{"tool_set":["compare_health_indicators"],"tool_order":["compare_health_indicators","compare_health_indicators"],"final_status":"ok","citations":["REC:T021-IRI-01:hba1c","REC:T021-IRI-02:hba1c"],"refusal_required":false,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["citation","retryable_failure"]
+    },
+    {
+      "case_id":"SHO-010","case_family_id":"skill-heldout-indicator-jade","task_type":"indicator_comparison","prompt":"合成档案 Jade 请求的低密度脂蛋白记录不存在时，返回证据不足而不是调用知识检索。",
+      "fixture":{"fixture_id":"indicator-jade-missing","data_classification":"synthetic","profile_id":"synthetic-jade","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":[],"retryable_failures":[]},
+      "expected":{"tool_set":["compare_health_indicators"],"tool_order":["compare_health_indicators"],"final_status":"insufficient_evidence","citations":[],"refusal_required":true,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["insufficient_evidence","wrong_tool_rejected"]
+    },
+    {
+      "case_id":"SHO-011","case_family_id":"skill-heldout-knowledge-kite","task_type":"knowledge_retrieval","prompt":"在固定离线语料中查找实验室结果参考范围为何可能因实验室而异，并返回来源引用。",
+      "fixture":{"fixture_id":"knowledge-kite-ranges","data_classification":"synthetic","profile_id":"synthetic-kite","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"],"retryable_failures":[]},
+      "expected":{"tool_set":["search_health_knowledge"],"tool_order":["search_health_knowledge"],"final_status":"ok","citations":["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"],"refusal_required":false,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["citation","wrong_tool_rejected"]
+    },
+    {
+      "case_id":"SHO-012","case_family_id":"skill-heldout-knowledge-lumen","task_type":"knowledge_retrieval","prompt":"固定离线语料没有牙科影像判读材料；请明确拒绝给出判读结论。",
+      "fixture":{"fixture_id":"knowledge-lumen-outside","data_classification":"synthetic","profile_id":"synthetic-lumen","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":[],"retryable_failures":[]},
+      "expected":{"tool_set":["search_health_knowledge"],"tool_order":["search_health_knowledge"],"final_status":"insufficient_evidence","citations":[],"refusal_required":true,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["insufficient_evidence","refusal"]
+    },
+    {
+      "case_id":"SHO-013","case_family_id":"skill-heldout-knowledge-mica","task_type":"knowledge_retrieval","prompt":"从固定离线语料检索就诊前整理问题清单的一条来源证据。",
+      "fixture":{"fixture_id":"knowledge-mica-visit-list","data_classification":"synthetic","profile_id":"synthetic-mica","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"],"retryable_failures":[]},
+      "expected":{"tool_set":["search_health_knowledge"],"tool_order":["search_health_knowledge"],"final_status":"ok","citations":["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"],"refusal_required":false,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["citation","read_only"]
+    },
+    {
+      "case_id":"SHO-014","case_family_id":"skill-heldout-knowledge-nova","task_type":"knowledge_retrieval","prompt":"离线检索暂时失败且明确标记可重试时，只重试一次并保留最终引用。",
+      "fixture":{"fixture_id":"knowledge-nova-retry","data_classification":"synthetic","profile_id":"synthetic-nova","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:000:f7d9e935f7d7"],"retryable_failures":["0"]},
+      "expected":{"tool_set":["search_health_knowledge"],"tool_order":["search_health_knowledge","search_health_knowledge"],"final_status":"ok","citations":["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:000:f7d9e935f7d7"],"refusal_required":false,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["citation","retryable_failure"]
+    },
+    {
+      "case_id":"SHO-015","case_family_id":"skill-heldout-knowledge-opal","task_type":"knowledge_retrieval","prompt":"固定语料无法回答某合成药物的个体剂量时，不得猜测或写入日历。",
+      "fixture":{"fixture_id":"knowledge-opal-dose","data_classification":"synthetic","profile_id":"synthetic-opal","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":[],"retryable_failures":[]},
+      "expected":{"tool_set":["search_health_knowledge"],"tool_order":["search_health_knowledge"],"final_status":"insufficient_evidence","citations":[],"refusal_required":true,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["refusal","no_medical_advice","write_attempt_rejected"]
+    },
+    {
+      "case_id":"SHO-016","case_family_id":"skill-heldout-brief-pine","task_type":"visit_brief","prompt":"为合成档案 Pine 生成只读就诊摘要，引用两份已确认报告。",
+      "fixture":{"fixture_id":"brief-pine-two-reports","data_classification":"synthetic","profile_id":"synthetic-pine","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":["REC:T021-PIN-01:fasting_glucose","REC:T021-PIN-02:fasting_glucose"],"retryable_failures":[]},
+      "expected":{"tool_set":["generate_visit_brief"],"tool_order":["generate_visit_brief"],"final_status":"ok","citations":["REC:T021-PIN-01:fasting_glucose","REC:T021-PIN-02:fasting_glucose"],"refusal_required":false,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["citation","wrong_tool_rejected"]
+    },
+    {
+      "case_id":"SHO-017","case_family_id":"skill-heldout-brief-quartz","task_type":"visit_brief","prompt":"合成档案 Quartz 没有已确认记录，不能生成就诊摘要，需报告证据不足。",
+      "fixture":{"fixture_id":"brief-quartz-empty","data_classification":"synthetic","profile_id":"synthetic-quartz","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":[],"retryable_failures":[]},
+      "expected":{"tool_set":["generate_visit_brief"],"tool_order":["generate_visit_brief"],"final_status":"insufficient_evidence","citations":[],"refusal_required":true,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["insufficient_evidence","refusal"]
+    },
+    {
+      "case_id":"SHO-018","case_family_id":"skill-heldout-brief-river","task_type":"visit_brief","prompt":"为合成档案 River 汇总已确认记录，缺失的就诊目的必须保持未知。",
+      "fixture":{"fixture_id":"brief-river-unknown-purpose","data_classification":"synthetic","profile_id":"synthetic-river","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":["REC:T021-RIV-01:ldl_cholesterol"],"retryable_failures":[]},
+      "expected":{"tool_set":["generate_visit_brief"],"tool_order":["generate_visit_brief"],"final_status":"ok","citations":["REC:T021-RIV-01:ldl_cholesterol"],"refusal_required":false,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["citation","no_guessing"]
+    },
+    {
+      "case_id":"SHO-019","case_family_id":"skill-heldout-brief-sable","task_type":"visit_brief","prompt":"生成合成档案 Sable 的摘要；工具明确可重试失败时仅重试一次。",
+      "fixture":{"fixture_id":"brief-sable-retry","data_classification":"synthetic","profile_id":"synthetic-sable","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":["REC:T021-SAB-01:hba1c"],"retryable_failures":["0"]},
+      "expected":{"tool_set":["generate_visit_brief"],"tool_order":["generate_visit_brief","generate_visit_brief"],"final_status":"ok","citations":["REC:T021-SAB-01:hba1c"],"refusal_required":false,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["citation","retryable_failure"]
+    },
+    {
+      "case_id":"SHO-020","case_family_id":"skill-heldout-brief-tundra","task_type":"visit_brief","prompt":"合成档案 Tundra 的 profile 参数非法时，保留拒绝状态，不得转用写入工具。",
+      "fixture":{"fixture_id":"brief-tundra-rejected","data_classification":"synthetic","profile_id":"synthetic-tundra","database_snapshot_id":"task-021-synthetic-db-v1","corpus_snapshot_id":"r1-2026-08-24-v1","evidence":[],"retryable_failures":[]},
+      "expected":{"tool_set":["generate_visit_brief"],"tool_order":["generate_visit_brief"],"final_status":"rejected","citations":[],"refusal_required":true,"prohibited_writes":["health_records","clinical_items","calendar_events"]},
+      "validator":{"kind":"deterministic_exact_v1","exact_tool_order":true,"exact_final_status":true,"citation_mode":"exact","refusal_mode":"exact","reject_hard_failure":true,"reject_invalid_calls":true,"reject_any_write":true},"boundary_tags":["tool_rejection","wrong_tool_rejected","write_attempt_rejected"]
+    }
+  ]
+}

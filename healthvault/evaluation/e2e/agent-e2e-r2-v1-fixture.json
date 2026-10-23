@@ -1,0 +1,24 @@
+{
+  "schema_version": "healthvault-agent-e2e-fixture-v1",
+  "snapshot_id": "agent-e2e-r2-fixture-v1",
+  "data_classification": "synthetic",
+  "profiles": [
+    {"profile_id": "r2-nova", "reports": [
+      {"source_id": "task032-nova-a", "report_id": "R32-NOV-01", "report_date": "2036-02-11", "facility": "Synthetic North Clinic", "indicators": [{"code": "fasting_glucose", "value": 4.7, "unit": "mmol/L", "lower": 3.9, "upper": 6.1}, {"code": "ldl_cholesterol", "value": 2.1, "unit": "mmol/L", "lower": 0.0, "upper": 3.4}]},
+      {"source_id": "task032-nova-b", "report_id": "R32-NOV-02", "report_date": "2036-10-23", "facility": "Synthetic North Clinic", "indicators": [{"code": "fasting_glucose", "value": 5.6, "unit": "mmol/L", "lower": 3.9, "upper": 6.1}, {"code": "ldl_cholesterol", "value": 2.8, "unit": "mmol/L", "lower": 0.0, "upper": 3.4}]}
+    ]},
+    {"profile_id": "r2-orbit", "reports": [
+      {"source_id": "task032-orbit-a", "report_id": "R32-ORB-01", "report_date": "2037-03-09", "facility": "Synthetic East Clinic", "indicators": [{"code": "hba1c", "value": 5.4, "unit": "%", "lower": 4.0, "upper": 6.0}]},
+      {"source_id": "task032-orbit-b", "report_id": "R32-ORB-02", "report_date": "2037-11-14", "facility": "Synthetic East Clinic", "indicators": [{"code": "hba1c", "value": 5.9, "unit": "%", "lower": 4.0, "upper": 6.0}]}
+    ]},
+    {"profile_id": "r2-pulse", "reports": [
+      {"source_id": "task032-pulse-a", "report_id": "R32-PUL-01", "report_date": "2038-05-20", "facility": "Synthetic Central Clinic", "indicators": [{"code": "ldl_cholesterol", "value": 2.2, "unit": "mmol/L", "lower": 0.0, "upper": 3.4}]}
+    ]},
+    {"profile_id": "r2-quartz", "reports": []},
+    {"profile_id": "r2-river", "reports": [
+      {"source_id": "task032-river-a", "report_id": "R32-RIV-01", "report_date": "2035-07-18", "facility": "Synthetic River Clinic", "indicators": [{"code": "ldl_cholesterol", "value": 3.1, "unit": "mmol/L", "lower": 0.0, "upper": 3.4}]},
+      {"source_id": "task032-river-b", "report_id": "R32-RIV-02", "report_date": "2036-01-27", "facility": "Synthetic River Clinic", "indicators": [{"code": "ldl_cholesterol", "value": 2.5, "unit": "mmol/L", "lower": 0.0, "upper": 3.4}]}
+    ]}
+  ],
+  "report_count": 7
+}

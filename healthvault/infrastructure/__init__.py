@@ -1,0 +1,1 @@
+"""HealthVault infrastructure adapters."""

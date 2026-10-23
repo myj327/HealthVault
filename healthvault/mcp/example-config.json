@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "healthvault": {
+      "command": ".\\.venv-hybrid\\Scripts\\python.exe",
+      "args": [
+        "-B",
+        "-m",
+        "healthvault.mcp.server",
+        "--profile-id",
+        "synthetic-demo",
+        "--database",
+        ".task_outputs/healthvault-ui/healthvault.sqlite3"
+      ],
+      "env": {}
+    }
+  }
+}

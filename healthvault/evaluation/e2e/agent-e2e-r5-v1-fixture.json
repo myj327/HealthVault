@@ -1,0 +1,41 @@
+{
+  "schema_version": "healthvault-agent-e2e-fixture-v2",
+  "snapshot_id": "agent-e2e-r5-fixture-v1",
+  "data_classification": "synthetic",
+  "profiles": [
+    {
+      "patient_id": "r5-patient-orchid",
+      "profile_id": "r5-orchid",
+      "reports": [
+        {"source_id":"task043-orchid-a","report_id":"R43-ORC-01","report_date":"2047-02-14","facility":"Synthetic Orchid Clinic","indicators":[{"code":"fasting_glucose","value":4.7,"unit":"mmol/L","lower":3.9,"upper":6.1},{"code":"hba1c","value":5.1,"unit":"%","lower":4.0,"upper":6.0}]},
+        {"source_id":"task043-orchid-b","report_id":"R43-ORC-02","report_date":"2048-05-21","facility":"Synthetic Orchid Clinic","indicators":[{"code":"fasting_glucose","value":5.2,"unit":"mmol/L","lower":3.9,"upper":6.1},{"code":"hba1c","value":5.4,"unit":"%","lower":4.0,"upper":6.0}]}
+      ]
+    },
+    {
+      "patient_id": "r5-patient-slate",
+      "profile_id": "r5-slate",
+      "reports": [
+        {"source_id":"task043-slate-a","report_id":"R43-SLT-01","report_date":"2047-08-03","facility":"Synthetic Slate Clinic","indicators":[{"code":"ldl_cholesterol","value":2.4,"unit":"mmol/L","lower":0.0,"upper":3.4},{"code":"hba1c","value":5.7,"unit":"%","lower":4.0,"upper":6.0}]},
+        {"source_id":"task043-slate-b","report_id":"R43-SLT-02","report_date":"2048-10-12","facility":"Synthetic Slate Clinic","indicators":[{"code":"ldl_cholesterol","value":2.1,"unit":"mmol/L","lower":0.0,"upper":3.4},{"code":"hba1c","value":5.5,"unit":"%","lower":4.0,"upper":6.0}]}
+      ]
+    },
+    {
+      "patient_id": "r5-patient-ember",
+      "profile_id": "r5-ember",
+      "reports": [
+        {"source_id":"task043-ember-a","report_id":"R43-EMB-01","report_date":"2047-04-09","facility":"Synthetic Ember Clinic","indicators":[{"code":"fasting_glucose","value":5.8,"unit":"mmol/L","lower":3.9,"upper":6.1},{"code":"ldl_cholesterol","value":3.0,"unit":"mmol/L","lower":0.0,"upper":3.4}]},
+        {"source_id":"task043-ember-b","report_id":"R43-EMB-02","report_date":"2049-01-16","facility":"Synthetic Ember Clinic","indicators":[{"code":"fasting_glucose","value":5.5,"unit":"mmol/L","lower":3.9,"upper":6.1},{"code":"ldl_cholesterol","value":2.7,"unit":"mmol/L","lower":0.0,"upper":3.4}]}
+      ]
+    },
+    {
+      "patient_id": "r5-patient-mixed",
+      "profile_id": "r5-mixed",
+      "reports": [
+        {"source_id":"task043-mixed-a","report_id":"R43-MIX-01","report_date":"2048-03-30","facility":"Synthetic Mixed Clinic","indicators":[{"code":"hba1c","value":5.3,"unit":"%","lower":4.0,"upper":6.0}]},
+        {"source_id":"task043-mixed-b","report_id":"R43-MIX-02","report_date":"2049-07-11","facility":"Synthetic Mixed Clinic","indicators":[{"code":"fasting_glucose","value":5.0,"unit":"mmol/L","lower":3.9,"upper":6.1}]}
+      ]
+    },
+    {"patient_id":"r5-patient-empty","profile_id":"r5-empty","reports":[]}
+  ],
+  "report_count": 8
+}

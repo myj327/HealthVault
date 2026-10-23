@@ -1,0 +1,172 @@
+{
+  "provenance": "Unmodified public TASK-078 raw generation and verification responses; no new model calls.",
+  "original_bindings": [
+    {
+      "path": ".task_outputs/task-078-rag-real-v1/MQ-001.json",
+      "sha256": "0bb692753404dae42e2777e46a94fc94208a9e9ad30cef84afb5842491b80718"
+    },
+    {
+      "path": ".task_outputs/task-078-rag-real-v1/responses/0009.json",
+      "sha256": "e1aa89d8587d12ebd8badcb1da433ebb5ba4e80b49f48766127dedda411e8630"
+    },
+    {
+      "path": ".task_outputs/task-078-rag-real-v1/responses/0010.json",
+      "sha256": "acff2fa835540084a1c4c41cb5ce18001d59dfdfc24beca5b66f42923ed3a7a1"
+    },
+    {
+      "path": ".task_outputs/task-078-rag-real-v1/RAG-027.json",
+      "sha256": "78b3281ee99e351a79214cf8ec9e35bf8169a8e37a39f4a0d25513af5b1d0820"
+    },
+    {
+      "path": ".task_outputs/task-078-rag-real-v1/responses/0026.json",
+      "sha256": "2ab6b57428348c3dd879e9411dad79c34ebf0dec5b877502af069584a467f227"
+    },
+    {
+      "path": ".task_outputs/task-078-rag-real-v1/responses/0027.json",
+      "sha256": "3bcedba519aeae78353dd30f3da9faaa948ec1f0f7f7a5a17e7b240afa5dc3de"
+    },
+    {
+      "path": ".task_outputs/task-078-rag-real-v1/RAG-027.json",
+      "sha256": "78b3281ee99e351a79214cf8ec9e35bf8169a8e37a39f4a0d25513af5b1d0820"
+    },
+    {
+      "path": ".task_outputs/task-078-rag-real-v1/responses/0028.json",
+      "sha256": "02bff832d07a0da5a5e65f119f92f9a5329688c0ee0ec2e007072c518c60f7cc"
+    },
+    {
+      "path": ".task_outputs/task-078-rag-real-v1/responses/0029.json",
+      "sha256": "e92139375c8c97968f1164ea24a789638d703446b44b2c9033ad3cc131c49c7b"
+    },
+    {
+      "path": ".task_outputs/task-078-rag-real-v1/RAG-042.json",
+      "sha256": "1d375df890867abc7495e90c848333a103e2736d4fc852408e1b62d591afa655"
+    },
+    {
+      "path": ".task_outputs/task-078-rag-real-v1/responses/0053.json",
+      "sha256": "0f2581a9f808415dbfc5b0497aeb445fa087e3c623976a7d4513b8e4076c4498"
+    },
+    {
+      "path": ".task_outputs/task-078-rag-real-v1/responses/0054.json",
+      "sha256": "a657cbefdaf616c68a67648527001b70f66200513519c32ba836b03f61fce800"
+    }
+  ],
+  "cases": [
+    {
+      "query_id": "MQ-001",
+      "arm": "hybrid",
+      "question": "What is (are) Diagnosis of Diabetes and Prediabetes ?",
+      "answer": "糖尿病和糖尿病前期的诊断需通过血液检测完成，医生会根据有无症状或是否怀孕推荐不同的检测方法。 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:002:46658a772415]\n\n常用检测包括A1C、空腹血浆血糖（FPG）、口服葡萄糖耐量试验（OGTT）和随机血浆血糖试验。 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646]\n\nA1C结果：低于5.7%为正常，5.7%至6.4%为糖尿病前期，6.5%及以上为糖尿病。 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646]\n\n空腹血浆血糖：99 mg/dL及以下为正常，100至125 mg/dL为糖尿病前期，126 mg/dL及以上为糖尿病。 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646]\n\n口服葡萄糖耐量试验：139 mg/dL及以下为正常，140至199 mg/dL为糖尿病前期，200 mg/dL及以上为糖尿病。 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646]\n\n随机血浆血糖200 mg/dL及以上提示糖尿病，该试验不用于判断糖尿病前期。 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646]\n\n2型糖尿病的确诊需要同一份或两份不同样本中出现两项异常检测结果；通常医生会用第二次检测确认糖尿病诊断。 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5]\n\n若两项检测结果不一致，应重复超出诊断阈值的检测，并以确认的结果作为诊断依据。 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5]\n\nA1C检测无需空腹，可在一天中任何时间采血。 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db]",
+      "sources": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5",
+          "detail": "Diagnosis of type 2 diabetes is definitively made by blood tests. Diagnosis requires two abnormal test results from the same sample or from two different samples. Repeat the test using one of the following methods\n\n- Repeat the same test or run a different test.1 The second test should be done immediately.1\n\n- If two test results indicate diabetes, consider the diagnosis confirmed.1\n\n- If the two different tests conflict, repeat the test that is above the diagnostic threshold. Diagnosis is made based on the confirmed test.1\n\nIf the patient’s diabetes test results are close to—but not within—the diagnostic range of the test, the patient may have prediabetes. Health care professionals may wish to observe patients with prediabetes whose condition is likely to progress, recommend lifestyle modifications, and retest in 3 to 6 months.1",
+          "kind": "knowledge",
+          "title": "Confirming diagnosis of type 2 diabetes and prediabetes",
+          "url": "https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/diabetes-prediabetes"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646",
+          "detail": "Diagnosis | A1C | Fasting Plasma Glucose | Oral Glucose Tolerance Test* | Random Plasma Glucose Test‡\nNormal | below 5.7% | 99 mg/dL or below | 139 mg/dL or below | N/A\nPrediabetes | 5.7% to 6.4% | 100 to 125 mg/dL | 140 to 199 mg/dL | N/A\nDiabetes | 6.5% or above | 126 mg/dL or above | 200 mg/dL or above | 200 mg/dL or above",
+          "kind": "knowledge",
+          "title": "Test results for diagnosis of prediabetes and diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:002:46658a772415",
+          "detail": "Doctors use a variety of tests to diagnose diabetes and prediabetes. Your doctor may recommend different tests depending on whether you have symptoms or not, or whether you are pregnant.",
+          "kind": "knowledge",
+          "title": "What tests are used to diagnose diabetes?",
+          "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db",
+          "detail": "The A1C test is sometimes called the hemoglobin A1C, HbA1c, glycated hemoglobin, or glycohemoglobin test.\n\nUses\n\n- Screening and diagnosis of prediabetes1 5.7–6.4%1\n\n- 5.7–6.4%1\n\n- Screening and diagnosis of type 2 diabetes1 6.5% or higher1repeat for confirmation of diagnosis\n\n- 6.5% or higher1\n\n- repeat for confirmation of diagnosis\n\n- Monitoring of diabetes\n\nTechnical features\n\n- Sample at any time of day, no fasting required3\n\n- Sample: anticoagulated whole blood\n\n- Sample stability: superior5\n\n- Sensitivity: less than the FPG test and the OGTT1\n\n- Coefficient of variation: for between laboratory assay variability, see College of American Pathologists (CAP) survey data",
+          "kind": "knowledge",
+          "title": "A1C test",
+          "url": "https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/diabetes-prediabetes"
+        }
+      ],
+      "raw_generation": "{\"status\":\"answered\",\"claims\":[{\"text\":\"糖尿病和糖尿病前期的诊断需通过血液检测完成，医生会根据有无症状或是否怀孕推荐不同的检测方法。\",\"citation_id\":\"HVK:r1-2026-08-24-v1:niddk-diabetes-tests:002:46658a772415\"},{\"text\":\"常用检测包括A1C、空腹血浆血糖（FPG）、口服葡萄糖耐量试验（OGTT）和随机血浆血糖试验。\",\"citation_id\":\"HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646\"},{\"text\":\"A1C结果：低于5.7%为正常，5.7%至6.4%为糖尿病前期，6.5%及以上为糖尿病。\",\"citation_id\":\"HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646\"},{\"text\":\"空腹血浆血糖：99 mg/dL及以下为正常，100至125 mg/dL为糖尿病前期，126 mg/dL及以上为糖尿病。\",\"citation_id\":\"HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646\"},{\"text\":\"口服葡萄糖耐量试验：139 mg/dL及以下为正常，140至199 mg/dL为糖尿病前期，200 mg/dL及以上为糖尿病。\",\"citation_id\":\"HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646\"},{\"text\":\"随机血浆血糖200 mg/dL及以上提示糖尿病，该试验不用于判断糖尿病前期。\",\"citation_id\":\"HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646\"},{\"text\":\"2型糖尿病的确诊需要同一份或两份不同样本中出现两项异常检测结果；通常医生会用第二次检测确认糖尿病诊断。\",\"citation_id\":\"HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5\"},{\"text\":\"若两项检测结果不一致，应重复超出诊断阈值的检测，并以确认的结果作为诊断依据。\",\"citation_id\":\"HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5\"},{\"text\":\"A1C检测无需空腹，可在一天中任何时间采血。\",\"citation_id\":\"HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db\"}]}",
+      "raw_verification": "{\"protocol\":\"fact_span_v1\",\"answer_supported\":true,\"answers_question\":true,\"claims\":[{\"claim_id\":\"F1\",\"evidence_ids\":[\"S3-detail-1\"],\"supported\":true},{\"claim_id\":\"F2\",\"evidence_ids\":[\"S2-detail-1\"],\"supported\":true},{\"claim_id\":\"F3\",\"evidence_ids\":[\"S2-detail-2\",\"S2-detail-3\",\"S2-detail-4\"],\"supported\":true},{\"claim_id\":\"F4\",\"evidence_ids\":[\"S2-detail-2\",\"S2-detail-3\",\"S2-detail-4\"],\"supported\":true},{\"claim_id\":\"F5\",\"evidence_ids\":[\"S2-detail-2\",\"S2-detail-3\",\"S2-detail-4\"],\"supported\":true},{\"claim_id\":\"F6\",\"evidence_ids\":[\"S2-detail-2\",\"S2-detail-3\",\"S2-detail-4\"],\"supported\":true},{\"claim_id\":\"F7\",\"evidence_ids\":[\"S1-detail-1\",\"S1-detail-3\"],\"supported\":true},{\"claim_id\":\"F8\",\"evidence_ids\":[\"S1-detail-4\"],\"supported\":true},{\"claim_id\":\"F9\",\"evidence_ids\":[\"S4-detail-10\"],\"supported\":true}]}"
+    },
+    {
+      "query_id": "RAG-027",
+      "arm": "lexical",
+      "question": "Must I fast before an HbA1c blood draw?",
+      "answer": "做 A1C（HbA1c）检测前不需要空腹，抽血可在一天中任意时间进行。 [HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009]\n\nA1C 检测前可以正常进食和饮水。 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:004:92788bfbf3e5]",
+      "sources": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009",
+          "detail": "Health care professionals can use the A1C test alone or in combination with other diabetes tests to diagnose type 2 diabetes and prediabetes. You don’t have to fast before having your blood drawn for an A1C test, which means that blood can be drawn for the test at any time of the day.\n\nIf you don’t have symptoms but the A1C test shows you have diabetes or prediabetes, you should have a repeat test on a different day using the A1C test or one of the other diabetes tests to confirm the diagnosis.2",
+          "kind": "knowledge",
+          "title": "How is the A1C test used to diagnose type 2 diabetes and prediabetes?",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:004:92788bfbf3e5",
+          "detail": "The A1C test is a blood test that provides your average levels of blood glucose over the last 3 months. Other names for the A1C test are hemoglobin A1C, HbA1C, glycated hemoglobin, and glycosylated hemoglobin test. You can eat and drink before this test. Before using the A1C test to diagnose diabetes, your doctor will consider factors, such as whether you are in your second or third trimester of pregnancy or whether you have certain types of anemia or another problem with your blood.1 The A1C test might not be accurate in those cases.\n\nCertain types of hemoglobin, called hemoglobin variants, can interfere with measuring A1C levels. Most A1C tests used in the United States are not affected by the most common variants. If your A1C test results and blood glucose levels do not match, your doctor should consider that the A1C test may not be a reliable test for you.\n\nYour doctor will report your A1C test result as a percentage, such as an A1C of 7%. The higher the percentage is, the higher your average blood glucose levels are.",
+          "kind": "knowledge",
+          "title": "A1C test",
+          "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis"
+        }
+      ],
+      "raw_generation": "{\"status\":\"answered\",\"claims\":[{\"text\":\"做 A1C（HbA1c）检测前不需要空腹，抽血可在一天中任意时间进行。\",\"citation_id\":\"HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009\"},{\"text\":\"A1C 检测前可以正常进食和饮水。\",\"citation_id\":\"HVK:r1-2026-08-24-v1:niddk-diabetes-tests:004:92788bfbf3e5\"}]}",
+      "raw_verification": "{\"protocol\":\"fact_span_v1\",\"answer_supported\":true,\"answers_question\":true,\"claims\":[{\"claim_id\":\"F1\",\"evidence_ids\":[\"S1-detail-1\"],\"supported\":true},{\"claim_id\":\"F2\",\"evidence_ids\":[\"S2-detail-1\"],\"supported\":true}]}"
+    },
+    {
+      "query_id": "RAG-027",
+      "arm": "hybrid",
+      "question": "Must I fast before an HbA1c blood draw?",
+      "answer": "进行 A1C（HbA1c）检测前不需要空腹，一天中任何时间都可以抽血。 [HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009]\n\nA1C 检测前可以正常进食和饮水。 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:004:92788bfbf3e5]\n\n如果医生明确要求空腹，则应遵医嘱，不要自行决定是否空腹。 [HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:007:c23bf18ec180]",
+      "sources": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009",
+          "detail": "Health care professionals can use the A1C test alone or in combination with other diabetes tests to diagnose type 2 diabetes and prediabetes. You don’t have to fast before having your blood drawn for an A1C test, which means that blood can be drawn for the test at any time of the day.\n\nIf you don’t have symptoms but the A1C test shows you have diabetes or prediabetes, you should have a repeat test on a different day using the A1C test or one of the other diabetes tests to confirm the diagnosis.2",
+          "kind": "knowledge",
+          "title": "How is the A1C test used to diagnose type 2 diabetes and prediabetes?",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:004:92788bfbf3e5",
+          "detail": "The A1C test is a blood test that provides your average levels of blood glucose over the last 3 months. Other names for the A1C test are hemoglobin A1C, HbA1C, glycated hemoglobin, and glycosylated hemoglobin test. You can eat and drink before this test. Before using the A1C test to diagnose diabetes, your doctor will consider factors, such as whether you are in your second or third trimester of pregnancy or whether you have certain types of anemia or another problem with your blood.1 The A1C test might not be accurate in those cases.\n\nCertain types of hemoglobin, called hemoglobin variants, can interfere with measuring A1C levels. Most A1C tests used in the United States are not affected by the most common variants. If your A1C test results and blood glucose levels do not match, your doctor should consider that the A1C test may not be a reliable test for you.\n\nYour doctor will report your A1C test result as a percentage, such as an A1C of 7%. The higher the percentage is, the higher your average blood glucose levels are.",
+          "kind": "knowledge",
+          "title": "A1C test",
+          "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:007:c23bf18ec180",
+          "detail": "You should not fast if your provider doesn't tell you to do so. Fasting for some blood tests may also affect your results and give your provider an inaccurate understanding of your health. If you aren't sure if you should fast for a coming blood test, ask your provider as soon as possible. Taking the right steps before a blood test helps make sure your results will be accurate.",
+          "kind": "knowledge",
+          "title": "Is there anything else I need to know about fasting before a blood test?",
+          "url": "https://medlineplus.gov/lab-tests/fasting-for-a-blood-test/"
+        }
+      ],
+      "raw_generation": "{\"status\":\"answered\",\"claims\":[{\"text\":\"进行 A1C（HbA1c）检测前不需要空腹，一天中任何时间都可以抽血。\",\"citation_id\":\"HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009\"},{\"text\":\"A1C 检测前可以正常进食和饮水。\",\"citation_id\":\"HVK:r1-2026-08-24-v1:niddk-diabetes-tests:004:92788bfbf3e5\"},{\"text\":\"如果医生明确要求空腹，则应遵医嘱，不要自行决定是否空腹。\",\"citation_id\":\"HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:007:c23bf18ec180\"}]}",
+      "raw_verification": "{\"protocol\":\"fact_span_v1\",\"answer_supported\":true,\"answers_question\":true,\"claims\":[{\"claim_id\":\"F1\",\"evidence_ids\":[\"S1-detail-1\"],\"supported\":true},{\"claim_id\":\"F2\",\"evidence_ids\":[\"S2-detail-1\"],\"supported\":true},{\"claim_id\":\"F3\",\"evidence_ids\":[\"S3-detail-1\"],\"supported\":true}]}"
+    },
+    {
+      "query_id": "RAG-042",
+      "arm": "hybrid",
+      "question": "就诊时可以请家人陪同吗？",
+      "answer": "可以请家人或朋友陪同就诊，帮助记录笔记。 [HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:002:1d99f24acf83]\n\n建议邀请信任的家人或朋友一起参加就诊。 [HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a]",
+      "sources": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:002:1d99f24acf83",
+          "detail": "Take your list of questions and personal health record with you to the appointment. You may also want to ask a family member or friend to go with you to help take notes.\n\nBe sure to talk about any changes since your last visit, like:\n\n- New herbs, home remedies, and vitamins you're taking\n\n- Recent illnesses or surgeries\n\n- Important changes in your life, like losing your job or a death in the family\n\n- Health concerns or issues\n\nYou can also ask your doctor questions about health information you’ve found online or heard from others.",
+          "kind": "knowledge",
+          "title": "Make the most of doctor visits.",
+          "url": "https://odphp.health.gov/myhealthfinder/doctor-visits/talking-doctor/take-charge-your-health-care"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a",
+          "detail": "How well you and your doctor or provider communicate with each other is one of the most important parts of getting good health care. Being prepared can help you make the most of your visit, whether it is in person or through telehealth. Here are some things you can do to make the most of your appointment:\n\n- Make a list of the questions and concerns you want to talk about.\n\n- If you are having any health problems, write down a description of your symptoms. Include information such as when they started, what makes them better, and what makes them worse.\n\n- Ask a trusted friend or family member to come to the appointment with you.\n\n- If your doctor or provider doesn't speak your language, call their office ahead of time and ask them to provide an interpreter.\n\n- During your appointment, take notes about what your doctor or health care provider tells you. Or you could ask your friend or family member to take notes for you.\n\n- If you don't understand something your doctor or provider says, ask questions until you do understand.\n\n- Ask for written instructions if you need them.\n\n- Ask for your doctor's or provider's contact information and find out the best way to communicate with them.\n\n- Find out what to do if you need more information later.",
+          "kind": "knowledge",
+          "title": "Summary",
+          "url": "https://medlineplus.gov/talkingwithyourdoctor.html"
+        }
+      ],
+      "raw_generation": "{\"status\":\"answered\",\"claims\":[{\"text\":\"可以请家人或朋友陪同就诊，帮助记录笔记。\",\"citation_id\":\"HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:002:1d99f24acf83\"},{\"text\":\"建议邀请信任的家人或朋友一起参加就诊。\",\"citation_id\":\"HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a\"}]}",
+      "raw_verification": "{\"protocol\":\"fact_span_v1\",\"answer_supported\":true,\"answers_question\":true,\"claims\":[{\"claim_id\":\"F1\",\"evidence_ids\":[\"S1-detail-1\"],\"supported\":true},{\"claim_id\":\"F2\",\"evidence_ids\":[\"S2-detail-4\"],\"supported\":true}]}"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "dataset_version": "task-023-dev-traces-v1",
+  "schema_version": "healthvault-workflow-traces-v1",
+  "traces": [
+    {
+      "contains_patient_or_medical_fact": false,
+      "hard_failure": false,
+      "reusable_lesson": "Use the same verified read-only tool sequence and preserve each returned status.",
+      "signal_type": "successful_workflow",
+      "task_id": "DEV-WORKFLOW-01",
+      "task_status": "succeeded",
+      "task_type": "synthetic_health_summary",
+      "tool_calls": [
+        {"name": "query_health_timeline", "status": "ok"},
+        {"name": "compare_health_indicators", "status": "ok"},
+        {"name": "generate_visit_brief", "status": "ok"}
+      ],
+      "trace_id": "TRACE-DEV-001",
+      "validator_status": "passed"
+    },
+    {
+      "contains_patient_or_medical_fact": false,
+      "hard_failure": false,
+      "reusable_lesson": "Use the same verified read-only tool sequence and preserve each returned status.",
+      "signal_type": "successful_workflow",
+      "task_id": "DEV-WORKFLOW-02",
+      "task_status": "succeeded",
+      "task_type": "synthetic_health_summary",
+      "tool_calls": [
+        {"name": "query_health_timeline", "status": "ok"},
+        {"name": "compare_health_indicators", "status": "ok"},
+        {"name": "generate_visit_brief", "status": "ok"}
+      ],
+      "trace_id": "TRACE-DEV-002",
+      "validator_status": "passed"
+    },
+    {
+      "contains_patient_or_medical_fact": false,
+      "hard_failure": false,
+      "reusable_lesson": "Use the same verified read-only tool sequence and preserve each returned status.",
+      "signal_type": "successful_workflow",
+      "task_id": "DEV-WORKFLOW-03",
+      "task_status": "succeeded",
+      "task_type": "synthetic_health_summary",
+      "tool_calls": [
+        {"name": "query_health_timeline", "status": "ok"},
+        {"name": "compare_health_indicators", "status": "ok"},
+        {"name": "generate_visit_brief", "status": "ok"}
+      ],
+      "trace_id": "TRACE-DEV-003",
+      "validator_status": "passed"
+    },
+    {
+      "contains_patient_or_medical_fact": false,
+      "hard_failure": false,
+      "reusable_lesson": "Record a single verified workflow without treating it as repeated evidence.",
+      "signal_type": "successful_workflow",
+      "task_id": "DEV-ONE-OFF-01",
+      "task_status": "succeeded",
+      "task_type": "synthetic_knowledge_lookup",
+      "tool_calls": [
+        {"name": "search_health_knowledge", "status": "ok"}
+      ],
+      "trace_id": "TRACE-DEV-004",
+      "validator_status": "passed"
+    },
+    {
+      "contains_patient_or_medical_fact": false,
+      "hard_failure": false,
+      "reusable_lesson": "After an explicit correction, keep the requested read-only scope and validate the final citations.",
+      "signal_type": "explicit_correction",
+      "task_id": "DEV-CORRECTION-01",
+      "task_status": "succeeded",
+      "task_type": "synthetic_correction",
+      "tool_calls": [
+        {"name": "search_health_knowledge", "status": "rejected"},
+        {"name": "search_health_knowledge", "status": "ok"}
+      ],
+      "trace_id": "TRACE-DEV-005",
+      "validator_status": "passed"
+    },
+    {
+      "contains_patient_or_medical_fact": false,
+      "hard_failure": false,
+      "reusable_lesson": "Retry a deterministic tool failure only when its status explicitly permits retry.",
+      "signal_type": "deterministic_failure",
+      "task_id": "DEV-RECOVERY-01",
+      "task_status": "succeeded",
+      "task_type": "synthetic_failure_recovery",
+      "tool_calls": [
+        {"name": "query_health_timeline", "status": "retryable_failure"},
+        {"name": "query_health_timeline", "status": "ok"}
+      ],
+      "trace_id": "TRACE-DEV-006",
+      "validator_status": "passed"
+    },
+    {
+      "contains_patient_or_medical_fact": false,
+      "hard_failure": false,
+      "reusable_lesson": "Use the same verified read-only tool sequence and preserve each returned status.",
+      "signal_type": "successful_workflow",
+      "task_id": "DEV-WORKFLOW-01",
+      "task_status": "succeeded",
+      "task_type": "synthetic_health_summary",
+      "tool_calls": [
+        {"name": "query_health_timeline", "status": "ok"},
+        {"name": "compare_health_indicators", "status": "ok"},
+        {"name": "generate_visit_brief", "status": "ok"}
+      ],
+      "trace_id": "TRACE-DEV-007",
+      "validator_status": "passed"
+    },
+    {
+      "contains_patient_or_medical_fact": true,
+      "hard_failure": false,
+      "reusable_lesson": "This redacted item is marked as patient-specific and must be excluded.",
+      "signal_type": "patient_fact_noise",
+      "task_id": "DEV-NOISE-01",
+      "task_status": "succeeded",
+      "task_type": "synthetic_health_summary",
+      "tool_calls": [
+        {"name": "query_health_timeline", "status": "ok"},
+        {"name": "compare_health_indicators", "status": "ok"},
+        {"name": "generate_visit_brief", "status": "ok"}
+      ],
+      "trace_id": "TRACE-DEV-008",
+      "validator_status": "passed"
+    },
+    {
+      "contains_patient_or_medical_fact": false,
+      "hard_failure": true,
+      "reusable_lesson": "A hard failure must not count toward a reusable successful workflow.",
+      "signal_type": "successful_workflow",
+      "task_id": "DEV-HARD-FAIL-01",
+      "task_status": "failed",
+      "task_type": "synthetic_health_summary",
+      "tool_calls": [
+        {"name": "query_health_timeline", "status": "ok"},
+        {"name": "compare_health_indicators", "status": "ok"},
+        {"name": "generate_visit_brief", "status": "rejected"}
+      ],
+      "trace_id": "TRACE-DEV-009",
+      "validator_status": "failed"
+    },
+    {
+      "contains_patient_or_medical_fact": false,
+      "hard_failure": false,
+      "reusable_lesson": "A validator failure must not count toward a reusable successful workflow.",
+      "signal_type": "successful_workflow",
+      "task_id": "DEV-VALIDATOR-FAIL-01",
+      "task_status": "succeeded",
+      "task_type": "synthetic_health_summary",
+      "tool_calls": [
+        {"name": "query_health_timeline", "status": "ok"},
+        {"name": "compare_health_indicators", "status": "ok"},
+        {"name": "generate_visit_brief", "status": "ok"}
+      ],
+      "trace_id": "TRACE-DEV-010",
+      "validator_status": "failed"
+    }
+  ]
+}

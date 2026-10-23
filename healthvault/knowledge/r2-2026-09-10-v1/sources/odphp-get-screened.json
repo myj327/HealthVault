@@ -1,0 +1,102 @@
+{
+  "corpus_version": "r2-2026-09-10-v1",
+  "language": "en",
+  "publisher": "ODPHP",
+  "retrieved_on": "2026-08-24",
+  "reuse_basis": "U.S. federal government website text; public domain under 17 U.S.C. 105 unless otherwise marked. No images, logos, references, or third-party material are included.",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "When you visit the doctor, it helps to write down your questions ahead of time."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Check out these questions for the doctor about screenings for:"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Find questions for the doctor about additional health topics. You can also use this tool to build your own list of questions for the doctor."
+        }
+      ],
+      "title_path": [
+        "Get Screened",
+        "Take Action",
+        "Get Ready",
+        "Make a list of questions to ask your doctor."
+      ],
+      "topic_tags": [
+        "visit_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Having a conversation with your doctor or nurse can help you understand which screenings you need — and how often to get them. You may need to get some tests once a year. You may need other tests more or less often."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tell your doctor or nurse about diseases that run in your family, and share any concerns you have about your health. This will help you decide together which screenings are right for you."
+        },
+        {
+          "kind": "paragraph",
+          "text": "If you don’t have a doctor or nurse, check out these tips for choosing a doctor you can trust."
+        }
+      ],
+      "title_path": [
+        "Get Screened",
+        "Take Action",
+        "See Your Doctor",
+        "Talk with your doctor about getting screened."
+      ],
+      "topic_tags": [
+        "visit_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Ask how long it will take to get your test results. If the doctor doesn’t contact you with the results, call the office to ask for them. And if you don’t understand what the results mean, ask the doctor or nurse to explain them to you."
+        }
+      ],
+      "title_path": [
+        "Get Screened",
+        "Take Action",
+        "See Your Doctor",
+        "Make sure you get the results from every screening."
+      ],
+      "topic_tags": [
+        "result_communication"
+      ]
+    }
+  ],
+  "source_id": "odphp-get-screened",
+  "source_sha256": "0487428c26636f3971f1b16848dd2310ae9719fa1571d234f3347849a4e52170",
+  "title": "Get Screened",
+  "title_path_whitelist": [
+    [
+      "Get Screened",
+      "Take Action",
+      "Get Ready",
+      "Make a list of questions to ask your doctor."
+    ],
+    [
+      "Get Screened",
+      "Take Action",
+      "See Your Doctor",
+      "Talk with your doctor about getting screened."
+    ],
+    [
+      "Get Screened",
+      "Take Action",
+      "See Your Doctor",
+      "Make sure you get the results from every screening."
+    ]
+  ],
+  "url": "https://odphp.health.gov/myhealthfinder/doctor-visits/screening-tests/get-screened",
+  "version": "updated-2026-03-31"
+}

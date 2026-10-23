@@ -1,0 +1,9 @@
+# Synthetic test data only; no real person
+report_id: HV-SYN-CLINICAL-ZH-001
+report_date: 2026-06-18
+facility: Synthetic Community Clinic
+result|fasting_glucose|6.8|mmol/L|3.9|6.1
+诊断：2型糖尿病（E11.9）
+医生建议: 控制饮食并规律运动
+就诊类型：复诊
+复诊计划：2026年7月2日复查

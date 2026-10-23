@@ -1,0 +1,11 @@
+{
+  "schema_version": "healthvault-patient-profile-splits-v1",
+  "purpose": "agent-e2e-r5-formal-test",
+  "entries": [
+    {"patient_id":"r5-patient-orchid","profile_id":"r5-orchid","split":"test"},
+    {"patient_id":"r5-patient-slate","profile_id":"r5-slate","split":"test"},
+    {"patient_id":"r5-patient-ember","profile_id":"r5-ember","split":"test"},
+    {"patient_id":"r5-patient-mixed","profile_id":"r5-mixed","split":"test"},
+    {"patient_id":"r5-patient-empty","profile_id":"r5-empty","split":"test"}
+  ]
+}

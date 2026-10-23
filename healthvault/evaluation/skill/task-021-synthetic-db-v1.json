@@ -1,0 +1,54 @@
+{
+  "schema_version": "healthvault-skill-database-fixture-v1",
+  "snapshot_id": "task-021-synthetic-db-v1",
+  "data_classification": "synthetic",
+  "report_count": 16,
+  "profiles": [
+    {"profile_id":"synthetic-aurora","reports":[
+      {"source_id":"task021-aurora-01","report_id":"T021-AUR-01","report_date":"2031-04-03","facility":"Synthetic Benchmark Clinic","indicators":[{"code":"fasting_glucose","value":5.1,"unit":"mmol/L","lower":3.9,"upper":6.1}]},
+      {"source_id":"task021-aurora-02","report_id":"T021-AUR-02","report_date":"2031-04-21","facility":"Synthetic Benchmark Clinic","indicators":[{"code":"fasting_glucose","value":5.3,"unit":"mmol/L","lower":3.9,"upper":6.1}]}
+    ]},
+    {"profile_id":"synthetic-birch","reports":[]},
+    {"profile_id":"synthetic-cobalt","reports":[
+      {"source_id":"task021-cobalt-01","report_id":"T021-COB-01","report_date":"2030-11-08","facility":"Synthetic Benchmark Clinic","indicators":[{"code":"hba1c","value":5.4,"unit":"%","lower":4.0,"upper":6.0}]}
+    ]},
+    {"profile_id":"synthetic-delta","reports":[
+      {"source_id":"task021-delta-01","report_id":"T021-DEL-01","report_date":"2029-06-12","facility":"Synthetic Benchmark Clinic","indicators":[{"code":"ldl_cholesterol","value":2.9,"unit":"mmol/L","lower":0.0,"upper":3.4}]},
+      {"source_id":"task021-delta-02","report_id":"T021-DEL-02","report_date":"2029-08-30","facility":"Synthetic Benchmark Clinic","indicators":[{"code":"ldl_cholesterol","value":2.7,"unit":"mmol/L","lower":0.0,"upper":3.4}]}
+    ]},
+    {"profile_id":"synthetic-ember","reports":[]},
+    {"profile_id":"synthetic-fir","reports":[
+      {"source_id":"task021-fir-01","report_id":"T021-FIR-01","report_date":"2032-01-01","facility":"Synthetic Benchmark Clinic","indicators":[{"code":"hba1c","value":5.2,"unit":"%","lower":4.0,"upper":6.0}]},
+      {"source_id":"task021-fir-02","report_id":"T021-FIR-02","report_date":"2032-02-01","facility":"Synthetic Benchmark Clinic","indicators":[{"code":"hba1c","value":5.5,"unit":"%","lower":4.0,"upper":6.0}]}
+    ]},
+    {"profile_id":"synthetic-grove","reports":[
+      {"source_id":"task021-grove-01","report_id":"T021-GRO-01","report_date":"2030-03-14","facility":"Synthetic Benchmark Clinic","indicators":[{"code":"ldl_cholesterol","value":2.6,"unit":"mmol/L","lower":0.0,"upper":3.4}]}
+    ]},
+    {"profile_id":"synthetic-harbor","reports":[
+      {"source_id":"task021-harbor-01","report_id":"T021-HAR-01","report_date":"2029-12-09","facility":"Synthetic Benchmark Clinic","indicators":[{"code":"fasting_glucose","value":5.0,"unit":"mmol/L","lower":3.9,"upper":6.1}]},
+      {"source_id":"task021-harbor-02","report_id":"T021-HAR-02","report_date":"2030-01-09","facility":"Synthetic Benchmark Clinic","indicators":[{"code":"fasting_glucose","value":5.4,"unit":"mmol/L","lower":3.9,"upper":6.1}]}
+    ]},
+    {"profile_id":"synthetic-iris","reports":[
+      {"source_id":"task021-iris-01","report_id":"T021-IRI-01","report_date":"2031-05-05","facility":"Synthetic Benchmark Clinic","indicators":[{"code":"hba1c","value":5.1,"unit":"%","lower":4.0,"upper":6.0}]},
+      {"source_id":"task021-iris-02","report_id":"T021-IRI-02","report_date":"2031-06-05","facility":"Synthetic Benchmark Clinic","indicators":[{"code":"hba1c","value":5.3,"unit":"%","lower":4.0,"upper":6.0}]}
+    ]},
+    {"profile_id":"synthetic-jade","reports":[]},
+    {"profile_id":"synthetic-kite","reports":[]},
+    {"profile_id":"synthetic-lumen","reports":[]},
+    {"profile_id":"synthetic-mica","reports":[]},
+    {"profile_id":"synthetic-nova","reports":[]},
+    {"profile_id":"synthetic-opal","reports":[]},
+    {"profile_id":"synthetic-pine","reports":[
+      {"source_id":"task021-pine-01","report_id":"T021-PIN-01","report_date":"2031-07-10","facility":"Synthetic Benchmark Clinic","indicators":[{"code":"fasting_glucose","value":5.2,"unit":"mmol/L","lower":3.9,"upper":6.1}]},
+      {"source_id":"task021-pine-02","report_id":"T021-PIN-02","report_date":"2031-08-10","facility":"Synthetic Benchmark Clinic","indicators":[{"code":"fasting_glucose","value":5.6,"unit":"mmol/L","lower":3.9,"upper":6.1}]}
+    ]},
+    {"profile_id":"synthetic-quartz","reports":[]},
+    {"profile_id":"synthetic-river","reports":[
+      {"source_id":"task021-river-01","report_id":"T021-RIV-01","report_date":"2030-09-18","facility":"Synthetic Benchmark Clinic","indicators":[{"code":"ldl_cholesterol","value":2.8,"unit":"mmol/L","lower":0.0,"upper":3.4}]}
+    ]},
+    {"profile_id":"synthetic-sable","reports":[
+      {"source_id":"task021-sable-01","report_id":"T021-SAB-01","report_date":"2032-05-17","facility":"Synthetic Benchmark Clinic","indicators":[{"code":"hba1c","value":5.7,"unit":"%","lower":4.0,"upper":6.0}]}
+    ]},
+    {"profile_id":"synthetic-tundra","reports":[]}
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "origin": "TASK-083 MQ-001 hybrid saved public answer and verifier, unchanged",
+  "origin_case_sha256": "e9aa8be260abb137b9f8a2bc21ec1722169172fc4467e4e083c4fca1954906a2",
+  "origin_response_sha256": "4fdd3f5738e026da59a90019122f498e4befcb8657d97c03e86553881e9b3ac9",
+  "question": "What is (are) Diagnosis of Diabetes and Prediabetes ?",
+  "answer": "糖尿病和糖尿病前期由医生通过多种血液检测来诊断 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:002:46658a772415]\n\n诊断 2 型糖尿病依靠血液检测 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5]\n\n诊断需要同一份样本或两份不同样本出现两项异常检测结果 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5]\n\n确认诊断时可重复同一项检测或改用另一种检测方法 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5]\n\n如两项检测结果提示糖尿病，则可考虑诊断确立 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5]\n\n如两项不同检测的结果相互矛盾，应重复高于诊断阈值的检测并以其确认结果为准 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5]\n\n可用的检测包括 A1C、空腹血浆血糖、口服葡萄糖耐量试验和随机血浆血糖试验 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646]\n\nA1C 低于 5.7% 为正常，5.7% 至 6.4% 为糖尿病前期，6.5% 或以上为糖尿病 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646]\n\n空腹血浆血糖 99 mg/dL 及以下为正常，100 至 125 mg/dL 为糖尿病前期，126 mg/dL 或以上为糖尿病 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646]\n\n口服葡萄糖耐量试验 139 mg/dL 及以下为正常，140 至 199 mg/dL 为糖尿病前期，200 mg/dL 或以上为糖尿病 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646]\n\n随机血浆血糖 200 mg/dL 或以上提示糖尿病 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646]\n\n上述结果切点适用于非妊娠人群，妊娠时部分检测使用不同切点 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:005:c98ca28d852a]\n\nA1C 检测可在一天中任何时间采样，无需空腹 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db]\n\nA1C 达 6.5% 或更高提示 2 型糖尿病时需重复检测以确认诊断 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db]\n\n对可能进展的糖尿病前期患者，医护人员可观察、建议生活方式改变并在 3 至 6 个月后复查 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5]",
+  "sources": [
+    {
+      "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5",
+      "detail": "Diagnosis of type 2 diabetes is definitively made by blood tests. Diagnosis requires two abnormal test results from the same sample or from two different samples. Repeat the test using one of the following methods\n\n- Repeat the same test or run a different test.1 The second test should be done immediately.1\n\n- If two test results indicate diabetes, consider the diagnosis confirmed.1\n\n- If the two different tests conflict, repeat the test that is above the diagnostic threshold. Diagnosis is made based on the confirmed test.1\n\nIf the patient’s diabetes test results are close to—but not within—the diagnostic range of the test, the patient may have prediabetes. Health care professionals may wish to observe patients with prediabetes whose condition is likely to progress, recommend lifestyle modifications, and retest in 3 to 6 months.1",
+      "kind": "knowledge",
+      "title": "Confirming diagnosis of type 2 diabetes and prediabetes",
+      "url": "https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/diabetes-prediabetes"
+    },
+    {
+      "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646",
+      "detail": "Diagnosis | A1C | Fasting Plasma Glucose | Oral Glucose Tolerance Test* | Random Plasma Glucose Test‡\nNormal | below 5.7% | 99 mg/dL or below | 139 mg/dL or below | N/A\nPrediabetes | 5.7% to 6.4% | 100 to 125 mg/dL | 140 to 199 mg/dL | N/A\nDiabetes | 6.5% or above | 126 mg/dL or above | 200 mg/dL or above | 200 mg/dL or above",
+      "kind": "knowledge",
+      "title": "Test results for diagnosis of prediabetes and diabetes",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis"
+    },
+    {
+      "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:002:46658a772415",
+      "detail": "Doctors use a variety of tests to diagnose diabetes and prediabetes. Your doctor may recommend different tests depending on whether you have symptoms or not, or whether you are pregnant.",
+      "kind": "knowledge",
+      "title": "What tests are used to diagnose diabetes?",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis"
+    },
+    {
+      "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:005:c98ca28d852a",
+      "detail": "Each test to detect diabetes and prediabetes uses a different measurement. Usually, your doctor will use a second test to confirm you have diabetes.\n\nThe table below helps you understand what your test results mean if you are not pregnant.1 If you are pregnant, some tests use different cutoffs. Ask your doctor what your test results mean.",
+      "kind": "knowledge",
+      "title": "What test results tell me if I have diabetes or prediabetes?",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis"
+    },
+    {
+      "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db",
+      "detail": "The A1C test is sometimes called the hemoglobin A1C, HbA1c, glycated hemoglobin, or glycohemoglobin test.\n\nUses\n\n- Screening and diagnosis of prediabetes1 5.7–6.4%1\n\n- 5.7–6.4%1\n\n- Screening and diagnosis of type 2 diabetes1 6.5% or higher1repeat for confirmation of diagnosis\n\n- 6.5% or higher1\n\n- repeat for confirmation of diagnosis\n\n- Monitoring of diabetes\n\nTechnical features\n\n- Sample at any time of day, no fasting required3\n\n- Sample: anticoagulated whole blood\n\n- Sample stability: superior5\n\n- Sensitivity: less than the FPG test and the OGTT1\n\n- Coefficient of variation: for between laboratory assay variability, see College of American Pathologists (CAP) survey data",
+      "kind": "knowledge",
+      "title": "A1C test",
+      "url": "https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/diabetes-prediabetes"
+    }
+  ],
+  "verifier_raw": "{\"protocol\":\"fact_span_v1\",\"answer_supported\":true,\"answers_question\":true,\"claims\":[{\"claim_id\":\"F1\",\"evidence_ids\":[\"S3-detail-1\"],\"supported\":true},{\"claim_id\":\"F2\",\"evidence_ids\":[\"S1-detail-1\"],\"supported\":true},{\"claim_id\":\"F3\",\"evidence_ids\":[\"S1-detail-1\"],\"supported\":true},{\"claim_id\":\"F4\",\"evidence_ids\":[\"S1-detail-2\"],\"supported\":true},{\"claim_id\":\"F5.1\",\"evidence_ids\":[\"S1-detail-3\"],\"supported\":true},{\"claim_id\":\"F5.2\",\"evidence_ids\":[\"S1-detail-3\"],\"supported\":true},{\"claim_id\":\"F6.1\",\"evidence_ids\":[\"S1-detail-4\"],\"supported\":true},{\"claim_id\":\"F6.2\",\"evidence_ids\":[\"S1-detail-4\"],\"supported\":true},{\"claim_id\":\"F7\",\"evidence_ids\":[\"S2-detail-1\"],\"supported\":true},{\"claim_id\":\"F8.1\",\"evidence_ids\":[\"S2-detail-2\"],\"supported\":true},{\"claim_id\":\"F8.2\",\"evidence_ids\":[\"S2-detail-3\"],\"supported\":true},{\"claim_id\":\"F8.3\",\"evidence_ids\":[\"S2-detail-4\"],\"supported\":true},{\"claim_id\":\"F9.1\",\"evidence_ids\":[\"S2-detail-2\"],\"supported\":true},{\"claim_id\":\"F9.2\",\"evidence_ids\":[\"S2-detail-3\"],\"supported\":true},{\"claim_id\":\"F9.3\",\"evidence_ids\":[\"S2-detail-4\"],\"supported\":true},{\"claim_id\":\"F10.1\",\"evidence_ids\":[\"S2-detail-2\"],\"supported\":true},{\"claim_id\":\"F10.2\",\"evidence_ids\":[\"S2-detail-3\"],\"supported\":true},{\"claim_id\":\"F10.3\",\"evidence_ids\":[\"S2-detail-4\"],\"supported\":true},{\"claim_id\":\"F11\",\"evidence_ids\":[\"S2-detail-4\"],\"supported\":true},{\"claim_id\":\"F12.1\",\"evidence_ids\":[\"S4-detail-2\"],\"supported\":true},{\"claim_id\":\"F12.2\",\"evidence_ids\":[\"S4-detail-2\"],\"supported\":true},{\"claim_id\":\"F13.1\",\"evidence_ids\":[\"S5-detail-10\"],\"supported\":true},{\"claim_id\":\"F13.2\",\"evidence_ids\":[\"S5-detail-10\"],\"supported\":true},{\"claim_id\":\"F14\",\"evidence_ids\":[\"S5-detail-5\",\"S5-detail-7\"],\"supported\":true},{\"claim_id\":\"F15.1\",\"evidence_ids\":[\"S1-detail-5\"],\"supported\":true},{\"claim_id\":\"F15.2\",\"evidence_ids\":[\"S1-detail-5\"],\"supported\":true}]}"
+}

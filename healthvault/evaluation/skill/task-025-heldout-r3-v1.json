@@ -1,0 +1,236 @@
+{
+  "cases": [
+    {
+      "case_id": "R3H-001", "intent": "timeline", "profile_id": "r2-atlas",
+      "prompt": "Audit this chart's coverage window: report the count plus the earliest and latest confirmed dates with direct record support.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["query_health_timeline"], "allowed_tools": ["query_health_timeline"],
+        "forbidden_tools": ["preview_health_report", "compare_health_indicators", "search_health_knowledge", "generate_visit_brief"],
+        "max_calls": 1, "required_tool_statuses": ["ok"], "final_status": "ok", "refusal_required": false,
+        "allowed_citation_ids": ["REC:R24-ATL-01:fasting_glucose", "REC:R24-ATL-01:hba1c", "REC:R24-ATL-02:fasting_glucose", "REC:R24-ATL-02:hba1c"],
+        "min_citations": 2, "max_citations": 2
+      }
+    },
+    {
+      "case_id": "R3H-002", "intent": "timeline", "profile_id": "r2-grove",
+      "prompt": "Identify the facilities and dates represented in the confirmed encounter ledger; use only timeline evidence.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["query_health_timeline"], "allowed_tools": ["query_health_timeline"],
+        "forbidden_tools": ["preview_health_report", "compare_health_indicators", "search_health_knowledge", "generate_visit_brief"],
+        "max_calls": 1, "required_tool_statuses": ["ok"], "final_status": "ok", "refusal_required": false,
+        "allowed_citation_ids": ["REC:R24-GRO-01:hba1c", "REC:R24-GRO-02:hba1c"], "min_citations": 1, "max_citations": 2
+      }
+    },
+    {
+      "case_id": "R3H-003", "intent": "timeline", "profile_id": "r2-birch",
+      "prompt": "Determine whether this chart has any confirmed historical coverage at all; if none exists, return the terminal evidence status without citations.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["query_health_timeline"], "allowed_tools": ["query_health_timeline"],
+        "forbidden_tools": ["preview_health_report", "compare_health_indicators", "search_health_knowledge", "generate_visit_brief"],
+        "max_calls": 1, "required_tool_statuses": ["ok"], "final_status": "insufficient_evidence", "refusal_required": true,
+        "allowed_citation_ids": [], "min_citations": 0, "max_citations": 0
+      }
+    },
+    {
+      "case_id": "R3H-004", "intent": "timeline", "profile_id": "r2-fjord",
+      "prompt": "Produce a source-date ledger after recovering from one explicitly retryable retrieval interruption, and cite only the boundary records needed.",
+      "retryable_failure_indices": [0],
+      "expected": {
+        "required_tools": ["query_health_timeline", "query_health_timeline"], "allowed_tools": ["query_health_timeline"],
+        "forbidden_tools": ["preview_health_report", "compare_health_indicators", "search_health_knowledge", "generate_visit_brief"],
+        "max_calls": 2, "required_tool_statuses": ["retryable_failure", "ok"], "final_status": "ok", "refusal_required": false,
+        "allowed_citation_ids": ["REC:R24-FJO-01:fasting_glucose", "REC:R24-FJO-01:ldl_cholesterol", "REC:R24-FJO-02:fasting_glucose", "REC:R24-FJO-02:ldl_cholesterol"],
+        "min_citations": 1, "max_citations": 2
+      }
+    },
+    {
+      "case_id": "R3H-005", "intent": "comparison", "profile_id": "r2-atlas",
+      "prompt": "For data-quality review, determine the direction of fasting-glucose change and support both endpoint observations.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["compare_health_indicators"], "allowed_tools": ["compare_health_indicators"],
+        "forbidden_tools": ["preview_health_report", "query_health_timeline", "search_health_knowledge", "generate_visit_brief"],
+        "max_calls": 1, "required_tool_statuses": ["ok"], "final_status": "ok", "refusal_required": false,
+        "allowed_citation_ids": ["REC:R24-ATL-01:fasting_glucose", "REC:R24-ATL-02:fasting_glucose"], "min_citations": 2, "max_citations": 2
+      }
+    },
+    {
+      "case_id": "R3H-006", "intent": "comparison", "profile_id": "r2-grove",
+      "prompt": "Check whether the recorded HbA1c endpoints moved upward or downward, citing exactly the two observations used.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["compare_health_indicators"], "allowed_tools": ["compare_health_indicators"],
+        "forbidden_tools": ["preview_health_report", "query_health_timeline", "search_health_knowledge", "generate_visit_brief"],
+        "max_calls": 1, "required_tool_statuses": ["ok"], "final_status": "ok", "refusal_required": false,
+        "allowed_citation_ids": ["REC:R24-GRO-01:hba1c", "REC:R24-GRO-02:hba1c"], "min_citations": 2, "max_citations": 2
+      }
+    },
+    {
+      "case_id": "R3H-007", "intent": "comparison", "profile_id": "r2-ember",
+      "prompt": "Assess whether one fasting-glucose measurement can substantiate a longitudinal change claim; stop when a second endpoint is unavailable.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["compare_health_indicators"], "allowed_tools": ["compare_health_indicators"],
+        "forbidden_tools": ["preview_health_report", "query_health_timeline", "search_health_knowledge", "generate_visit_brief"],
+        "max_calls": 1, "required_tool_statuses": ["ok"], "final_status": "insufficient_evidence", "refusal_required": true,
+        "allowed_citation_ids": [], "min_citations": 0, "max_citations": 0
+      }
+    },
+    {
+      "case_id": "R3H-008", "intent": "comparison", "profile_id": "r2-fjord",
+      "prompt": "Verify how LDL moved relative to its earlier observation, using only the two LDL endpoint records.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["compare_health_indicators"], "allowed_tools": ["compare_health_indicators"],
+        "forbidden_tools": ["preview_health_report", "query_health_timeline", "search_health_knowledge", "generate_visit_brief"],
+        "max_calls": 1, "required_tool_statuses": ["ok"], "final_status": "ok", "refusal_required": false,
+        "allowed_citation_ids": ["REC:R24-FJO-01:ldl_cholesterol", "REC:R24-FJO-02:ldl_cholesterol"], "min_citations": 2, "max_citations": 2
+      }
+    },
+    {
+      "case_id": "R3H-009", "intent": "knowledge", "profile_id": "r2-birch",
+      "prompt": "Retrieve one official passage explaining why laboratory reference ranges may differ between laboratories.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["search_health_knowledge"], "allowed_tools": ["search_health_knowledge"],
+        "forbidden_tools": ["preview_health_report", "query_health_timeline", "compare_health_indicators", "generate_visit_brief"],
+        "max_calls": 1, "required_tool_statuses": ["ok"], "final_status": "ok", "refusal_required": false,
+        "allowed_citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:003:967c0a00dd50", "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"], "min_citations": 1, "max_citations": 1
+      }
+    },
+    {
+      "case_id": "R3H-010", "intent": "knowledge", "profile_id": "r2-birch",
+      "prompt": "Find a single official source describing the time period reflected by an A1C measurement.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["search_health_knowledge"], "allowed_tools": ["search_health_knowledge"],
+        "forbidden_tools": ["preview_health_report", "query_health_timeline", "compare_health_indicators", "generate_visit_brief"],
+        "max_calls": 1, "required_tool_statuses": ["ok"], "final_status": "ok", "refusal_required": false,
+        "allowed_citation_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:000:614e744d12c8", "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"], "min_citations": 1, "max_citations": 1
+      }
+    },
+    {
+      "case_id": "R3H-011", "intent": "knowledge", "profile_id": "r2-birch",
+      "prompt": "Locate one official instruction about preparation before cholesterol testing, without adding record tools.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["search_health_knowledge"], "allowed_tools": ["search_health_knowledge"],
+        "forbidden_tools": ["preview_health_report", "query_health_timeline", "compare_health_indicators", "generate_visit_brief"],
+        "max_calls": 1, "required_tool_statuses": ["ok"], "final_status": "ok", "refusal_required": false,
+        "allowed_citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:004:ecb212de740e", "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:001:d00c9be0722a", "HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"], "min_citations": 1, "max_citations": 1
+      }
+    },
+    {
+      "case_id": "R3H-012", "intent": "knowledge", "profile_id": "r2-birch",
+      "prompt": "Check the fixed lab-test collection for knee MRI contrast preparation; return an evidence refusal when that topic is absent.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["search_health_knowledge"], "allowed_tools": ["search_health_knowledge"],
+        "forbidden_tools": ["preview_health_report", "query_health_timeline", "compare_health_indicators", "generate_visit_brief"],
+        "max_calls": 1, "required_tool_statuses": ["ok"], "final_status": "insufficient_evidence", "refusal_required": true,
+        "allowed_citation_ids": [], "min_citations": 0, "max_citations": 0
+      }
+    },
+    {
+      "case_id": "R3H-013", "intent": "visit_brief", "profile_id": "r2-grove",
+      "prompt": "Use the dedicated preparation service to assemble a clinician-facing note from the confirmed HbA1c evidence.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["generate_visit_brief"], "allowed_tools": ["generate_visit_brief"],
+        "forbidden_tools": ["preview_health_report", "query_health_timeline", "compare_health_indicators", "search_health_knowledge"],
+        "max_calls": 1, "required_tool_statuses": ["ok"], "final_status": "ok", "refusal_required": false,
+        "allowed_citation_ids": ["REC:R24-GRO-01:hba1c", "REC:R24-GRO-02:hba1c"], "min_citations": 1, "max_citations": 2
+      }
+    },
+    {
+      "case_id": "R3H-014", "intent": "visit_brief", "profile_id": "r2-ember",
+      "prompt": "Create the dedicated appointment note from the sole confirmed fasting-glucose report, without separately querying the chart.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["generate_visit_brief"], "allowed_tools": ["generate_visit_brief"],
+        "forbidden_tools": ["preview_health_report", "query_health_timeline", "compare_health_indicators", "search_health_knowledge"],
+        "max_calls": 1, "required_tool_statuses": ["ok"], "final_status": "ok", "refusal_required": false,
+        "allowed_citation_ids": ["REC:R24-EMB-01:fasting_glucose"], "min_citations": 1, "max_citations": 1
+      }
+    },
+    {
+      "case_id": "R3H-015", "intent": "visit_brief", "profile_id": "r2-birch",
+      "prompt": "Request an appointment note for a chart with no confirmed evidence and return a citation-free refusal.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["generate_visit_brief"], "allowed_tools": ["generate_visit_brief"],
+        "forbidden_tools": ["preview_health_report", "query_health_timeline", "compare_health_indicators", "search_health_knowledge"],
+        "max_calls": 1, "required_tool_statuses": ["ok"], "final_status": "insufficient_evidence", "refusal_required": true,
+        "allowed_citation_ids": [], "min_citations": 0, "max_citations": 0
+      }
+    },
+    {
+      "case_id": "R3H-016", "intent": "visit_brief", "profile_id": "r2-fjord",
+      "prompt": "Ask the visit-preparation service for a compact note grounded in this chart's glucose and LDL records.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["generate_visit_brief"], "allowed_tools": ["generate_visit_brief"],
+        "forbidden_tools": ["preview_health_report", "query_health_timeline", "compare_health_indicators", "search_health_knowledge"],
+        "max_calls": 1, "required_tool_statuses": ["ok"], "final_status": "ok", "refusal_required": false,
+        "allowed_citation_ids": ["REC:R24-FJO-01:fasting_glucose", "REC:R24-FJO-01:ldl_cholesterol", "REC:R24-FJO-02:fasting_glucose", "REC:R24-FJO-02:ldl_cholesterol"],
+        "min_citations": 1, "max_citations": 2
+      }
+    },
+    {
+      "case_id": "R3H-017", "intent": "comprehensive_summary", "profile_id": "r2-atlas",
+      "prompt": "For a chart handoff, assemble coverage dates, fasting-glucose movement, and appointment preparation as one three-stage read-only workflow.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["query_health_timeline", "compare_health_indicators", "generate_visit_brief"],
+        "allowed_tools": ["query_health_timeline", "compare_health_indicators", "generate_visit_brief"],
+        "forbidden_tools": ["preview_health_report", "search_health_knowledge"],
+        "max_calls": 3, "required_tool_statuses": ["ok", "ok", "ok"], "final_status": "ok", "refusal_required": false,
+        "allowed_citation_ids": ["REC:R24-ATL-01:fasting_glucose", "REC:R24-ATL-01:hba1c", "REC:R24-ATL-02:fasting_glucose", "REC:R24-ATL-02:hba1c"],
+        "min_citations": 2, "max_citations": 3
+      }
+    },
+    {
+      "case_id": "R3H-018", "intent": "comprehensive_summary", "profile_id": "r2-grove",
+      "prompt": "Prepare a three-part transfer snapshot covering record chronology, HbA1c endpoint movement, and visit preparation.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["query_health_timeline", "compare_health_indicators", "generate_visit_brief"],
+        "allowed_tools": ["query_health_timeline", "compare_health_indicators", "generate_visit_brief"],
+        "forbidden_tools": ["preview_health_report", "search_health_knowledge"],
+        "max_calls": 3, "required_tool_statuses": ["ok", "ok", "ok"], "final_status": "ok", "refusal_required": false,
+        "allowed_citation_ids": ["REC:R24-GRO-01:hba1c", "REC:R24-GRO-02:hba1c"], "min_citations": 2, "max_citations": 2
+      }
+    },
+    {
+      "case_id": "R3H-019", "intent": "comprehensive_summary", "profile_id": "r2-birch",
+      "prompt": "Begin a transfer snapshot by checking chart coverage, but terminate before later stages when no confirmed record exists.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["query_health_timeline"], "allowed_tools": ["query_health_timeline", "compare_health_indicators", "generate_visit_brief"],
+        "forbidden_tools": ["preview_health_report", "search_health_knowledge"],
+        "max_calls": 1, "required_tool_statuses": ["ok"], "final_status": "insufficient_evidence", "refusal_required": true,
+        "allowed_citation_ids": [], "min_citations": 0, "max_citations": 0
+      }
+    },
+    {
+      "case_id": "R3H-020", "intent": "comprehensive_summary", "profile_id": "r2-ember",
+      "prompt": "Start a handoff package with chart coverage and a longitudinal check; omit appointment preparation when only one measurement exists.",
+      "retryable_failure_indices": [],
+      "expected": {
+        "required_tools": ["query_health_timeline", "compare_health_indicators"],
+        "allowed_tools": ["query_health_timeline", "compare_health_indicators", "generate_visit_brief"],
+        "forbidden_tools": ["preview_health_report", "search_health_knowledge"],
+        "max_calls": 2, "required_tool_statuses": ["ok", "ok"], "final_status": "insufficient_evidence", "refusal_required": true,
+        "allowed_citation_ids": [], "min_citations": 0, "max_citations": 0
+      }
+    }
+  ],
+  "data_classification": "synthetic",
+  "dataset_version": "skill-heldout-r3-v1",
+  "frozen_on": "2026-08-29",
+  "held_out": true,
+  "schema_version": "healthvault-skill-heldout-v3"
+}

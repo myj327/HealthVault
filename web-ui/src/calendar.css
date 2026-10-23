@@ -1,0 +1,25 @@
+.calendar-layout { display: grid; gap: 20px; max-width: 1120px; }
+.calendar-layout p { font-size: 14px; line-height: 1.7; }
+.calendar-intro .panel-heading > button { flex-shrink: 0; min-width: 64px; white-space: nowrap; }
+.calendar-section > h2 { margin: 0 0 18px; font-size: 20px; }
+.calendar-count { margin-left: 8px; color: #54665f; font-size: 14px; }
+.calendar-card { padding: 20px 0; border-top: 1px solid #dce5df; overflow-wrap: anywhere; }
+.calendar-card-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.calendar-card h3 { margin: 0; font-size: 16px; line-height: 1.6; }
+.calendar-badge { padding: 5px 10px; background: #eff5f0; color: #355a47; border-radius: 8px; font-size: 13px; white-space: nowrap; }
+.calendar-badge[data-state="overdue"] { color: #8d381f; background: #fff0e8; }
+.calendar-badge[data-state="due"] { color: #755019; background: #fff5d8; }
+.calendar-source { color: #52665b; margin: 14px 0; }
+.calendar-source p { margin: 0 0 8px; }
+.calendar-source blockquote { margin: 0 0 8px; padding: 10px 14px; border-left: 3px solid #a4bdaa; background: #f5f8f5; color: #324639; font-size: 14px; white-space: pre-wrap; }
+.calendar-day { display: block; margin-bottom: 4px; color: #315e44; font-weight: 600; }
+.calendar-date-form { display: flex; gap: 14px; align-items: end; flex-wrap: wrap; margin: 16px 0; }
+.calendar-date-form label { flex: 1 1 165px; }
+.calendar-layout input { box-sizing: border-box; width: 100%; min-height: 44px; padding: 10px; border: 1px solid #9dae9f; border-radius: 8px; background: #fff; color: #213a2a; font: inherit; }
+.calendar-layout button { min-height: 44px; }
+.calendar-layout summary { cursor: pointer; min-height: 44px; line-height: 44px; }
+.calendar-layout input:focus-visible, .calendar-layout button:focus-visible, .calendar-layout summary:focus-visible { outline: 3px solid #547a60; outline-offset: 3px; }
+.calendar-empty { color: #54665f; }
+.calendar-manual-form { display: grid; grid-template-columns: 2fr 1.2fr 1fr auto; align-items: end; gap: 14px; }
+@media (max-width: 900px) { .calendar-manual-form { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .calendar-manual-form { grid-template-columns: 1fr; } .calendar-card-heading { flex-wrap: wrap; } .calendar-date-form { display: grid; } .calendar-layout .panel { padding: 18px; } }

@@ -1,0 +1,8 @@
+# Preserve byte-bound source and regression fixtures across platforms.
+* -text
+# Frozen RAG artifacts use byte-exact SHA-256 checks and must remain LF on Windows.
+healthvault/knowledge/r1-2026-08-24-v1/manifest.json text eol=lf
+healthvault/knowledge/r1-2026-08-24-v1/aliases/aliases.json text eol=lf
+healthvault/knowledge/r1-2026-08-24-v1/chunks/natural_section.json text eol=lf
+healthvault/knowledge/r1-2026-08-24-v1/chunks/hybrid_v1.json text eol=lf
+.bear/skills/HealthVault-Task-Execution/SKILL.md text eol=lf

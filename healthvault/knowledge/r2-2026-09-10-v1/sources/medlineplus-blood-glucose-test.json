@@ -1,0 +1,400 @@
+{
+  "corpus_version": "r2-2026-09-10-v1",
+  "language": "en",
+  "publisher": "MedlinePlus",
+  "retrieved_on": "2026-08-24",
+  "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A blood glucose test measures the glucose levels in your blood. Glucose is a type of sugar. It is your body's main source of energy. It comes from the food you eat. A hormone called insulin helps move glucose from your bloodstream into your cells for use as energy. If you have too much or too little glucose in your blood, it may be a sign of a serious medical condition."
+        },
+        {
+          "kind": "paragraph",
+          "text": "High blood glucose levels (hyperglycemia) may be a sign of prediabetes or diabetes. Prediabetes is a condition in which your blood glucose levels are higher than what is healthy for you, but not high enough to be considered diabetes. If you have diabetes, your body can't make insulin or can't use it as well as it should, or both. Too much glucose stays in your blood and doesn't reach your cells. This can cause glucose levels to get too high. If blood glucose isn't controlled, it can lead to serious, long-term health conditions, such as heart disease and nerve problems."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Several types of blood tests check blood glucose levels. Your health care provider will choose the test that's right for you."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Other names: blood sugar, self-monitoring of blood glucose (SMBG), fasting plasma glucose (FPG), fasting blood sugar (FBS), fasting blood glucose (FBG), random blood sugar, glucose challenge test, oral glucose tolerance test (OGTT)"
+        }
+      ],
+      "title_path": [
+        "Blood Glucose Test",
+        "What is a blood glucose test?"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "fasting_glucose"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A blood glucose test may be used:"
+        },
+        {
+          "kind": "list",
+          "text": "As part of a routine checkup to screen for prediabetes and diabetes"
+        },
+        {
+          "kind": "list",
+          "text": "To help diagnose the cause of symptoms that may mean your blood glucose is too high or too low"
+        }
+      ],
+      "title_path": [
+        "Blood Glucose Test",
+        "What is it used for?"
+      ],
+      "topic_tags": [
+        "blood_glucose"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Your provider may order a blood glucose test as part of your routine checkup. Routine blood tests that include a glucose test include a basic metabolic panel (BMP) and a comprehensive metabolic panel (CMP)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "The most common reasons for a blood glucose test are to screen for and monitor prediabetes and diabetes. Your provider may order a blood glucose test if:"
+        },
+        {
+          "kind": "list",
+          "text": "You have a high risk for developing type 2 diabetes. Your risk may be high if you: Are over 35 years old. The American Diabetes Association recommends diabetes screening for prediabetes and diabetes beginning at age 35 years and older.Have prediabetes.Are overweight or have obesity.Have a family history of diabetes.Have high blood pressure or heart disease.Have ever had gestational diabetes (diabetes that develops during pregnancy) or given birth to a baby who weighed over 9 pounds.Exercise less than three times a week.Have metabolic dysfunction-associated steatotic liver disease (MASLD).Are an African American, Hispanic or Latino, American Indian, or an Alaska Native.Some Pacific Islander people and Asian American people also have a higher risk for developing type 2 diabetes."
+        },
+        {
+          "kind": "list",
+          "text": "Are over 35 years old. The American Diabetes Association recommends diabetes screening for prediabetes and diabetes beginning at age 35 years and older."
+        },
+        {
+          "kind": "list",
+          "text": "Have prediabetes."
+        },
+        {
+          "kind": "list",
+          "text": "Are overweight or have obesity."
+        },
+        {
+          "kind": "list",
+          "text": "Have a family history of diabetes."
+        },
+        {
+          "kind": "list",
+          "text": "Have high blood pressure or heart disease."
+        },
+        {
+          "kind": "list",
+          "text": "Have ever had gestational diabetes (diabetes that develops during pregnancy) or given birth to a baby who weighed over 9 pounds."
+        },
+        {
+          "kind": "list",
+          "text": "Exercise less than three times a week."
+        },
+        {
+          "kind": "list",
+          "text": "Have metabolic dysfunction-associated steatotic liver disease (MASLD)."
+        },
+        {
+          "kind": "list",
+          "text": "Are an African American, Hispanic or Latino, American Indian, or an Alaska Native."
+        },
+        {
+          "kind": "list",
+          "text": "You have symptoms of high or low glucose levels, which could mean you have diabetes or another condition that affects blood glucose levels. Symptoms of high blood glucose levels include:Increased thirstFrequent urination (peeing)Blurred visionFatigueSores that are slow to healLosing weight without tryingNumbness or tingling in your feet or handsSymptoms of low blood glucose levels include:Feeling shaky or jitteryHungerFatigueFeeling dizzy, confused, or irritableHeadacheA fast heartbeat or arrhythmia (a problem with the rate or rhythm of your heartbeat)Having trouble seeing or speaking clearlyFainting or seizures"
+        },
+        {
+          "kind": "list",
+          "text": "Increased thirst"
+        },
+        {
+          "kind": "list",
+          "text": "Frequent urination (peeing)"
+        },
+        {
+          "kind": "list",
+          "text": "Blurred vision"
+        },
+        {
+          "kind": "list",
+          "text": "Fatigue"
+        },
+        {
+          "kind": "list",
+          "text": "Sores that are slow to heal"
+        },
+        {
+          "kind": "list",
+          "text": "Losing weight without trying"
+        },
+        {
+          "kind": "list",
+          "text": "Numbness or tingling in your feet or hands"
+        },
+        {
+          "kind": "list",
+          "text": "Feeling shaky or jittery"
+        },
+        {
+          "kind": "list",
+          "text": "Hunger"
+        },
+        {
+          "kind": "list",
+          "text": "Fatigue"
+        },
+        {
+          "kind": "list",
+          "text": "Feeling dizzy, confused, or irritable"
+        },
+        {
+          "kind": "list",
+          "text": "Headache"
+        },
+        {
+          "kind": "list",
+          "text": "A fast heartbeat or arrhythmia (a problem with the rate or rhythm of your heartbeat)"
+        },
+        {
+          "kind": "list",
+          "text": "Having trouble seeing or speaking clearly"
+        },
+        {
+          "kind": "list",
+          "text": "Fainting or seizures"
+        },
+        {
+          "kind": "list",
+          "text": "You have prediabetes or diabetes. Your provider may schedule blood glucose tests to monitor your condition. You may also monitor your blood glucose at home."
+        },
+        {
+          "kind": "list",
+          "text": "You are pregnant. You will likely have a blood glucose test between the 24th and 28th week of your pregnancy to check for gestational diabetes. If you have a high risk for gestational diabetes, your provider may test you earlier."
+        },
+        {
+          "kind": "list",
+          "text": "ACE inhibitors"
+        },
+        {
+          "kind": "list",
+          "text": "Antibiotics called quinolones"
+        }
+      ],
+      "title_path": [
+        "Blood Glucose Test",
+        "Why do I need a blood glucose test?"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "visit_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A health care professional will take a blood sample from a vein in your arm, using a small needle. After the needle is inserted, a small amount of blood will be collected into a test tube or vial. You may feel a little sting when the needle goes in or out."
+        },
+        {
+          "kind": "paragraph",
+          "text": "There are several types of blood glucose tests:"
+        },
+        {
+          "kind": "list",
+          "text": "Screen for or monitor prediabetes or diabetes"
+        },
+        {
+          "kind": "list",
+          "text": "Help diagnose or monitor other conditions that affect blood glucose"
+        },
+        {
+          "kind": "list",
+          "text": "A random blood glucose test can be done at any time, even after eating. If you have symptoms of diabetes, your provider may use this test first. That's because it can be done right away."
+        },
+        {
+          "kind": "list",
+          "text": "A glucose challenge test may be used to screen for gestational diabetes if you are pregnant. You don't need to fast for this test. You will drink a sugary drink that contains glucose. A blood sample is taken one hour later. If your blood glucose is too high, you will usually need an oral glucose tolerance test to confirm or rule out gestational diabetes."
+        },
+        {
+          "kind": "list",
+          "text": "An oral glucose tolerance test (OGTT) is used to diagnose gestational diabetes. If you aren't pregnant, it's sometimes used to confirm a diagnosis of prediabetes or type 2 diabetes. You will need to fast for this test. A blood sample will be taken before you have a sugary drink. After you have the drink, more blood samples will be taken, usually about every hour for the next 2 or 3 hours."
+        },
+        {
+          "kind": "list",
+          "text": "A hemoglobin A1C (HbA1c) test provides information about your average blood glucose levels over the past 3 months. You don't need to fast for this test. It uses one blood sample. An A1C test can diagnose prediabetes and diabetes. Most people with diabetes have an A1C test at least twice a year to check how well they are managing their blood glucose levels."
+        }
+      ],
+      "title_path": [
+        "Blood Glucose Test",
+        "What happens during a blood glucose test?"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "If your provider orders a fasting blood glucose test or an oral glucose tolerance test, you will need to fast for at least eight hours before the test. If your glucose test is part of a BMP or CMP test, you may need to fast. Other blood glucose tests don't require any special preparations. Ask your provider whether you need to fast before your glucose test."
+        }
+      ],
+      "title_path": [
+        "Blood Glucose Test",
+        "Will I need to do anything to prepare for the test?"
+      ],
+      "topic_tags": [
+        "fasting_glucose",
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "The meaning of your test results will depend on which test you had, the results of other tests, and your medical history. Ask your provider what your test results say about your health."
+        },
+        {
+          "kind": "paragraph",
+          "text": "In general:"
+        },
+        {
+          "kind": "paragraph",
+          "text": "If your results show higher than normal glucose levels, it may mean you have or are at risk for getting diabetes. Prediabetes and diabetes are the most common causes of high glucose levels, but other possible causes include:"
+        },
+        {
+          "kind": "list",
+          "text": "An overactive thyroid gland (hyperthyroidism)"
+        },
+        {
+          "kind": "list",
+          "text": "A problem with your pancreas, including pancreatitis"
+        },
+        {
+          "kind": "list",
+          "text": "Stress from surgery, very serious illness, or trauma"
+        },
+        {
+          "kind": "list",
+          "text": "A problem with your adrenal glands, including Cushing's syndrome and pheochromocytoma"
+        },
+        {
+          "kind": "paragraph",
+          "text": "If you have diabetes, glucose levels that are lower than normal for you may be caused by:"
+        },
+        {
+          "kind": "list",
+          "text": "Being more physically active than usual"
+        },
+        {
+          "kind": "paragraph",
+          "text": "If you don't have diabetes, low blood glucose levels aren't common. If they happen, they may be caused by:"
+        },
+        {
+          "kind": "list",
+          "text": "Liver or kidney disease"
+        },
+        {
+          "kind": "list",
+          "text": "Underactive adrenal glands, for example, Addison disease"
+        },
+        {
+          "kind": "list",
+          "text": "Certain pituitary disorders"
+        },
+        {
+          "kind": "list",
+          "text": "An underactive thyroid gland (hypothyroidism)"
+        },
+        {
+          "kind": "list",
+          "text": "Malnutrition"
+        },
+        {
+          "kind": "list",
+          "text": "Alcohol use disorder (AUD)"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Learn more about laboratory tests, reference ranges, and understanding results."
+        }
+      ],
+      "title_path": [
+        "Blood Glucose Test",
+        "What do the results mean?"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "result_communication"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "If you have diabetes, you may need to do blood glucose testing at home to help manage your blood glucose levels. Your provider will let you know how often you should test. There are two ways to check your blood glucose. Your provider can help you decide which one is best for you:"
+        },
+        {
+          "kind": "list",
+          "text": "Blood glucose meters require you to prick your finger with a small device called a lancet. Then, you apply a drop of blood to a test strip and insert it into a small electronic glucose meter, which measures the glucose in your blood."
+        },
+        {
+          "kind": "list",
+          "text": "Continuous glucose monitors (CGM) usually use a tiny sensor placed under the skin of your arm or belly. Depending on the type of CGM you use, the sensor stays in place from a week to several months. It automatically estimates your glucose level every few minutes and tracks it so you can see what your blood glucose level is at any time."
+        }
+      ],
+      "title_path": [
+        "Blood Glucose Test",
+        "Is there anything else I should know about a blood glucose test?"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "result_communication"
+      ]
+    }
+  ],
+  "source_id": "medlineplus-blood-glucose-test",
+  "source_sha256": "696b853558cfe308ac5aece61c63486f4c92175777e77306cc6bb16221e2dcf2",
+  "title": "Blood Glucose Test",
+  "title_path_whitelist": [
+    [
+      "Blood Glucose Test",
+      "What is a blood glucose test?"
+    ],
+    [
+      "Blood Glucose Test",
+      "What is it used for?"
+    ],
+    [
+      "Blood Glucose Test",
+      "Why do I need a blood glucose test?"
+    ],
+    [
+      "Blood Glucose Test",
+      "What happens during a blood glucose test?"
+    ],
+    [
+      "Blood Glucose Test",
+      "Will I need to do anything to prepare for the test?"
+    ],
+    [
+      "Blood Glucose Test",
+      "What do the results mean?"
+    ],
+    [
+      "Blood Glucose Test",
+      "Is there anything else I should know about a blood glucose test?"
+    ]
+  ],
+  "url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+  "version": "reviewed-2024"
+}

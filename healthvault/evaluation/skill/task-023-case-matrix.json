@@ -1,0 +1,2625 @@
+{
+  "cases": [
+    {
+      "api_calls": 3,
+      "arm_id": "no_skill",
+      "case_id": "SHO-001",
+      "citations": [
+        "task021-aurora-01",
+        "task021-aurora-02"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": true,
+      "input_tokens": 2708,
+      "invalid_calls": 0,
+      "latency_ms": 14561.258999980055,
+      "output_tokens": 51,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 3,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "retryable_failure"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2759,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "no_skill",
+      "case_id": "SHO-002",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 1461,
+      "invalid_calls": 0,
+      "latency_ms": 9192.865499993786,
+      "output_tokens": 33,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 1494,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": false,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "no_skill",
+      "case_id": "SHO-003",
+      "citations": [
+        "task021-cobalt-01"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": true,
+      "input_tokens": 1693,
+      "invalid_calls": 0,
+      "latency_ms": 9345.686300017405,
+      "output_tokens": 32,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 1725,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "no_skill",
+      "case_id": "SHO-004",
+      "citations": [
+        "task021-delta-01",
+        "task021-delta-02"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": true,
+      "input_tokens": 1955,
+      "invalid_calls": 0,
+      "latency_ms": 9357.145100017078,
+      "output_tokens": 42,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 1997,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "no_skill",
+      "case_id": "SHO-005",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 1635,
+      "invalid_calls": 0,
+      "latency_ms": 12250.688200001605,
+      "output_tokens": 118,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 1753,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": false,
+        "status_correct": false,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "no_skill",
+      "case_id": "SHO-006",
+      "citations": [
+        "task021-fir-01",
+        "task021-fir-02"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": true,
+      "input_tokens": 2951,
+      "invalid_calls": 0,
+      "latency_ms": 9766.51619997574,
+      "output_tokens": 56,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 3007,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "no_skill",
+      "case_id": "SHO-007",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "invalid_model_output",
+      "hard_failure": true,
+      "input_tokens": 2070,
+      "invalid_calls": 0,
+      "latency_ms": 10500.663699989673,
+      "output_tokens": 71,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2141,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": false,
+        "status_correct": false,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "no_skill",
+      "case_id": "SHO-008",
+      "citations": [
+        "task021-harbor-01",
+        "task021-harbor-02"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": true,
+      "input_tokens": 2974,
+      "invalid_calls": 0,
+      "latency_ms": 9993.967799993698,
+      "output_tokens": 60,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 3034,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 3,
+      "arm_id": "no_skill",
+      "case_id": "SHO-009",
+      "citations": [
+        "task021-iris-01",
+        "task021-iris-02"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": true,
+      "input_tokens": 2682,
+      "invalid_calls": 0,
+      "latency_ms": 14397.580499993637,
+      "output_tokens": 66,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 3,
+      "tool_calls": [
+        {
+          "name": "compare_health_indicators",
+          "status": "retryable_failure"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2748,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "no_skill",
+      "case_id": "SHO-010",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 1590,
+      "invalid_calls": 0,
+      "latency_ms": 10541.44889995223,
+      "output_tokens": 59,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 1649,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": false,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 3,
+      "arm_id": "no_skill",
+      "case_id": "SHO-011",
+      "citations": [
+        "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:003:967c0a00dd50",
+        "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37",
+        "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:004:0dea5b59d283"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": false,
+      "input_tokens": 8093,
+      "invalid_calls": 0,
+      "latency_ms": 17601.15240002051,
+      "output_tokens": 190,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 3,
+      "tool_calls": [
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 8283,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "no_skill",
+      "case_id": "SHO-012",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "rejected",
+      "hard_failure": false,
+      "input_tokens": 1636,
+      "invalid_calls": 0,
+      "latency_ms": 11673.715300043114,
+      "output_tokens": 84,
+      "refusal": true,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 1720,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": true,
+        "status_correct": false,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 3,
+      "arm_id": "no_skill",
+      "case_id": "SHO-013",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 2393,
+      "invalid_calls": 0,
+      "latency_ms": 15954.256999946665,
+      "output_tokens": 125,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 3,
+      "tool_calls": [
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2518,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": false,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 3,
+      "arm_id": "no_skill",
+      "case_id": "SHO-014",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 2338,
+      "invalid_calls": 0,
+      "latency_ms": 15913.773400010541,
+      "output_tokens": 103,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 3,
+      "tool_calls": [
+        {
+          "name": "search_health_knowledge",
+          "status": "retryable_failure"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2441,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": false,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "no_skill",
+      "case_id": "SHO-015",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 2060,
+      "invalid_calls": 0,
+      "latency_ms": 7973.8119000103325,
+      "output_tokens": 115,
+      "refusal": true,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2175,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "no_skill",
+      "case_id": "SHO-016",
+      "citations": [
+        "REC:T021-PIN-01:fasting_glucose",
+        "REC:T021-PIN-02:fasting_glucose",
+        "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc",
+        "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": false,
+      "input_tokens": 4225,
+      "invalid_calls": 0,
+      "latency_ms": 6832.193000009283,
+      "output_tokens": 119,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 4344,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "no_skill",
+      "case_id": "SHO-017",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 1516,
+      "invalid_calls": 0,
+      "latency_ms": 10526.281300000846,
+      "output_tokens": 52,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 1568,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": false,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "no_skill",
+      "case_id": "SHO-018",
+      "citations": [
+        "REC:T021-RIV-01:ldl_cholesterol",
+        "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:000:d2c24a28ea75",
+        "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": false,
+      "input_tokens": 4892,
+      "invalid_calls": 0,
+      "latency_ms": 11171.154499985278,
+      "output_tokens": 146,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 5038,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 4,
+      "arm_id": "no_skill",
+      "case_id": "SHO-019",
+      "citations": [
+        "REC:T021-SAB-01:hba1c",
+        "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:003:f4259319a649",
+        "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": false,
+      "input_tokens": 7033,
+      "invalid_calls": 0,
+      "latency_ms": 19372.23899998935,
+      "output_tokens": 126,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 4,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "retryable_failure"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 7159,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "no_skill",
+      "case_id": "SHO-020",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 1585,
+      "invalid_calls": 0,
+      "latency_ms": 10255.032900022343,
+      "output_tokens": 72,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 1657,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": false,
+        "status_correct": false,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 3,
+      "arm_id": "active_v1",
+      "case_id": "SHO-001",
+      "citations": [
+        "task021-aurora-01",
+        "task021-aurora-02"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": true,
+      "input_tokens": 3287,
+      "invalid_calls": 0,
+      "latency_ms": 19038.96239999449,
+      "output_tokens": 51,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 3,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "retryable_failure"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 3338,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "active_v1",
+      "case_id": "SHO-002",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 1847,
+      "invalid_calls": 0,
+      "latency_ms": 9728.466599946842,
+      "output_tokens": 33,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 1880,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": false,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "active_v1",
+      "case_id": "SHO-003",
+      "citations": [
+        "task021-cobalt-01",
+        "T021-COB-01"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": true,
+      "input_tokens": 2094,
+      "invalid_calls": 0,
+      "latency_ms": 10552.247900050133,
+      "output_tokens": 55,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2149,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "active_v1",
+      "case_id": "SHO-004",
+      "citations": [
+        "task021-delta-01",
+        "task021-delta-02"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": true,
+      "input_tokens": 2338,
+      "invalid_calls": 0,
+      "latency_ms": 9234.529700013809,
+      "output_tokens": 39,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2377,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "active_v1",
+      "case_id": "SHO-005",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 1961,
+      "invalid_calls": 0,
+      "latency_ms": 10283.53190002963,
+      "output_tokens": 63,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2024,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": false,
+        "status_correct": false,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "active_v1",
+      "case_id": "SHO-006",
+      "citations": [
+        "task021-fir-01",
+        "task021-fir-02"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": true,
+      "input_tokens": 3306,
+      "invalid_calls": 0,
+      "latency_ms": 10052.429499977734,
+      "output_tokens": 61,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 3367,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "active_v1",
+      "case_id": "SHO-007",
+      "citations": [
+        "task021-grove-01"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": true,
+      "input_tokens": 2456,
+      "invalid_calls": 0,
+      "latency_ms": 10081.670199986547,
+      "output_tokens": 40,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2496,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": false,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "active_v1",
+      "case_id": "SHO-008",
+      "citations": [
+        "task021-harbor-01",
+        "task021-harbor-02"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": true,
+      "input_tokens": 2292,
+      "invalid_calls": 0,
+      "latency_ms": 14511.886599997524,
+      "output_tokens": 50,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2342,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 3,
+      "arm_id": "active_v1",
+      "case_id": "SHO-009",
+      "citations": [
+        "task021-iris-01",
+        "task021-iris-02"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": true,
+      "input_tokens": 3259,
+      "invalid_calls": 0,
+      "latency_ms": 14458.352599991485,
+      "output_tokens": 65,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 3,
+      "tool_calls": [
+        {
+          "name": "compare_health_indicators",
+          "status": "retryable_failure"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 3324,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 3,
+      "arm_id": "active_v1",
+      "case_id": "SHO-010",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 2852,
+      "invalid_calls": 0,
+      "latency_ms": 15690.098899998702,
+      "output_tokens": 51,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 3,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2903,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": false,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "active_v1",
+      "case_id": "SHO-011",
+      "citations": [
+        "HVK:r1-2026-08-24-v1:niddk-a1c-test:006:92bc5c9dbe88",
+        "HVK:r1-2026-08-24-v1:odphp-get-screened:002:0ae130909e58",
+        "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:006:6e600c813cb0"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": false,
+      "input_tokens": 3219,
+      "invalid_calls": 0,
+      "latency_ms": 7809.155700029805,
+      "output_tokens": 136,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 3355,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 3,
+      "arm_id": "active_v1",
+      "case_id": "SHO-012",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 2983,
+      "invalid_calls": 0,
+      "latency_ms": 16054.832900001202,
+      "output_tokens": 97,
+      "refusal": true,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 3,
+      "tool_calls": [
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 3080,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "active_v1",
+      "case_id": "SHO-013",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 1862,
+      "invalid_calls": 0,
+      "latency_ms": 10783.036999986507,
+      "output_tokens": 98,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 1960,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": false,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 3,
+      "arm_id": "active_v1",
+      "case_id": "SHO-014",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 3120,
+      "invalid_calls": 0,
+      "latency_ms": 17468.844200018793,
+      "output_tokens": 88,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 3,
+      "tool_calls": [
+        {
+          "name": "search_health_knowledge",
+          "status": "retryable_failure"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 3208,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": false,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "active_v1",
+      "case_id": "SHO-015",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 2403,
+      "invalid_calls": 0,
+      "latency_ms": 10159.391699999105,
+      "output_tokens": 76,
+      "refusal": true,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2479,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "active_v1",
+      "case_id": "SHO-016",
+      "citations": [
+        "REC:T021-PIN-01:fasting_glucose",
+        "REC:T021-PIN-02:fasting_glucose",
+        "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc",
+        "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": false,
+      "input_tokens": 4605,
+      "invalid_calls": 0,
+      "latency_ms": 11181.813600007445,
+      "output_tokens": 113,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 4718,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "active_v1",
+      "case_id": "SHO-017",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 2161,
+      "invalid_calls": 0,
+      "latency_ms": 6725.190499972086,
+      "output_tokens": 54,
+      "refusal": true,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2215,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 4,
+      "arm_id": "active_v1",
+      "case_id": "SHO-018",
+      "citations": [
+        "REC:T021-RIV-01:ldl_cholesterol",
+        "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:000:d2c24a28ea75",
+        "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": false,
+      "input_tokens": 7059,
+      "invalid_calls": 0,
+      "latency_ms": 20752.997900010087,
+      "output_tokens": 119,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 4,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 7178,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 3,
+      "arm_id": "active_v1",
+      "case_id": "SHO-019",
+      "citations": [
+        "REC:T021-SAB-01:hba1c",
+        "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:003:f4259319a649",
+        "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": false,
+      "input_tokens": 9438,
+      "invalid_calls": 0,
+      "latency_ms": 14676.808300020639,
+      "output_tokens": 148,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 3,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "retryable_failure"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 9586,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "active_v1",
+      "case_id": "SHO-020",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 1969,
+      "invalid_calls": 0,
+      "latency_ms": 10592.399900022428,
+      "output_tokens": 52,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2021,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": false,
+        "status_correct": false,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 3,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-001",
+      "citations": [
+        "task021-aurora-01",
+        "task021-aurora-02"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": true,
+      "input_tokens": 3641,
+      "invalid_calls": 0,
+      "latency_ms": 14224.539899965748,
+      "output_tokens": 54,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 3,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "retryable_failure"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 3695,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-002",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 2085,
+      "invalid_calls": 0,
+      "latency_ms": 12099.18399999151,
+      "output_tokens": 40,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2125,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": false,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-003",
+      "citations": [
+        "REC:T021-COB-01:hba1c",
+        "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:003:f4259319a649",
+        "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": false,
+      "input_tokens": 5515,
+      "invalid_calls": 0,
+      "latency_ms": 12243.936800048687,
+      "output_tokens": 119,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 5634,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-004",
+      "citations": [
+        "REC:T021-DEL-01:ldl_cholesterol",
+        "REC:T021-DEL-02:ldl_cholesterol",
+        "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:000:d2c24a28ea75",
+        "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": false,
+      "input_tokens": 7518,
+      "invalid_calls": 0,
+      "latency_ms": 8412.018200033344,
+      "output_tokens": 143,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 7661,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-005",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 2391,
+      "invalid_calls": 0,
+      "latency_ms": 11170.974200009368,
+      "output_tokens": 52,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2443,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": false,
+        "status_correct": false,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-006",
+      "citations": [
+        "task021-fir-01",
+        "task021-fir-02"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": true,
+      "input_tokens": 3572,
+      "invalid_calls": 0,
+      "latency_ms": 9819.65110002784,
+      "output_tokens": 57,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 3629,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-007",
+      "citations": [
+        "REC:T021-GRO-01:ldl_cholesterol",
+        "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:000:d2c24a28ea75",
+        "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 5473,
+      "invalid_calls": 0,
+      "latency_ms": 15962.499999965075,
+      "output_tokens": 127,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 5600,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": false,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-008",
+      "citations": [
+        "task021-harbor-01",
+        "task021-harbor-02"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": true,
+      "input_tokens": 3593,
+      "invalid_calls": 0,
+      "latency_ms": 9739.888899959624,
+      "output_tokens": 59,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 3652,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 4,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-009",
+      "citations": [
+        "REC:T021-IRI-01:hba1c",
+        "REC:T021-IRI-02:hba1c",
+        "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:003:f4259319a649",
+        "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": false,
+      "input_tokens": 11047,
+      "invalid_calls": 0,
+      "latency_ms": 27542.88040002575,
+      "output_tokens": 155,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 4,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "retryable_failure"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 11202,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-010",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 2389,
+      "invalid_calls": 0,
+      "latency_ms": 11682.279900007416,
+      "output_tokens": 52,
+      "refusal": true,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2441,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 3,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-011",
+      "citations": [
+        "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37",
+        "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:006:6e600c813cb0",
+        "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:004:0dea5b59d283",
+        "HVK:r1-2026-08-24-v1:niddk-a1c-test:006:92bc5c9dbe88",
+        "HVK:r1-2026-08-24-v1:niddk-a1c-test:012:9c814dc79c93",
+        "HVK:r1-2026-08-24-v1:odphp-get-screened:002:0ae130909e58"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": false,
+      "input_tokens": 7938,
+      "invalid_calls": 0,
+      "latency_ms": 17680.529900011607,
+      "output_tokens": 282,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 3,
+      "tool_calls": [
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 8220,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-012",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 2662,
+      "invalid_calls": 0,
+      "latency_ms": 10819.069199962541,
+      "output_tokens": 93,
+      "refusal": true,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2755,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-013",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 2101,
+      "invalid_calls": 0,
+      "latency_ms": 10986.040499992669,
+      "output_tokens": 105,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "search_health_knowledge",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2206,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": false,
+        "task_success": false,
+        "tool_call_correct": true
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 3,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-014",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 3824,
+      "invalid_calls": 0,
+      "latency_ms": 15802.259999967646,
+      "output_tokens": 94,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 3,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "retryable_failure"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 3918,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": false,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-015",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 2389,
+      "invalid_calls": 0,
+      "latency_ms": 10302.265200007241,
+      "output_tokens": 52,
+      "refusal": true,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2441,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 3,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-016",
+      "citations": [
+        "REC:T021-PIN-01:fasting_glucose",
+        "REC:T021-PIN-02:fasting_glucose",
+        "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc",
+        "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": false,
+      "input_tokens": 8990,
+      "invalid_calls": 0,
+      "latency_ms": 16518.21710000513,
+      "output_tokens": 159,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 3,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 9149,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-017",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 2198,
+      "invalid_calls": 0,
+      "latency_ms": 6054.330000013579,
+      "output_tokens": 43,
+      "refusal": true,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2241,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-018",
+      "citations": [
+        "REC:T021-RIV-01:ldl_cholesterol",
+        "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:000:d2c24a28ea75",
+        "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025"
+      ],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "ok",
+      "hard_failure": false,
+      "input_tokens": 5540,
+      "invalid_calls": 0,
+      "latency_ms": 9543.778999999631,
+      "output_tokens": 174,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 5714,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": true,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 4,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-019",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "invalid_model_output",
+      "hard_failure": true,
+      "input_tokens": 4828,
+      "invalid_calls": 0,
+      "latency_ms": 18805.980300006922,
+      "output_tokens": 42,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 4,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "retryable_failure"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 4870,
+      "validation": {
+        "citation_correct": false,
+        "refusal_correct": true,
+        "status_correct": false,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    },
+    {
+      "api_calls": 2,
+      "arm_id": "generated_candidate",
+      "case_id": "SHO-020",
+      "citations": [],
+      "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+      "final_status": "insufficient_evidence",
+      "hard_failure": false,
+      "input_tokens": 2388,
+      "invalid_calls": 0,
+      "latency_ms": 10481.03149997769,
+      "output_tokens": 51,
+      "refusal": false,
+      "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+      "skill_sha256": "4c0aadb0c91d93204258535ee2c7bdac896a94f8449c5e20a91f4773cde0461e",
+      "steps": 2,
+      "tool_calls": [
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "query_health_timeline",
+          "status": "ok"
+        },
+        {
+          "name": "compare_health_indicators",
+          "status": "ok"
+        },
+        {
+          "name": "generate_visit_brief",
+          "status": "ok"
+        }
+      ],
+      "total_tokens": 2439,
+      "validation": {
+        "citation_correct": true,
+        "refusal_correct": false,
+        "status_correct": false,
+        "task_success": false,
+        "tool_call_correct": false
+      },
+      "write_attempts": []
+    }
+  ],
+  "model": "glm-5.3-flash",
+  "run_config_sha256": "9a99002026678fced5d52d50c77dd2724c9ce358a8b03b0d10df8e9527ed8b20",
+  "schema_version": "healthvault-task-023-case-matrix-v1"
+}

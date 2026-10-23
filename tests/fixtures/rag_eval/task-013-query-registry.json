@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "registry_version": "task-013-queries-v1",
+  "sources": [
+    "tests/healthvault/test_sqlite_fts_health_knowledge.py",
+    "tests/healthvault/test_local_health_knowledge.py",
+    "tests/healthvault/test_search_health_knowledge.py",
+    "tests/healthvault/test_search_health_knowledge_tool.py",
+    "codex-team/tasks/TASK-013.md"
+  ],
+  "queries": [
+    "HbA1c",
+    "糖化血红蛋白",
+    "ＦＰＧ",
+    "空腹血糖",
+    "LDL",
+    "LDL cholesterol",
+    "低密度脂蛋白",
+    "血糖 A1C结果沟通",
+    "就诊准备",
+    "blood glucose A1C fasting",
+    "LDL cholesterol and fasting glucose and A1C",
+    "unrelated synthetic query",
+    "unrelated synthetic astronomy query",
+    "migraine aura",
+    "治療方案",
+    "blood clotting tests",
+    "complete blood count",
+    "autoantibody test",
+    "Book traversal links Previous Next",
+    "\" OR *",
+    "a1c' UNION SELECT * FROM knowledge_chunks --",
+    "() NEAR / { } : ^",
+    "\" OR 1=1 --"
+  ]
+}

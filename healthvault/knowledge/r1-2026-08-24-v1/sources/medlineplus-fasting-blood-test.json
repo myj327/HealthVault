@@ -1,0 +1,227 @@
+{
+  "corpus_version": "r1-2026-08-24-v1",
+  "language": "en",
+  "publisher": "MedlinePlus",
+  "retrieved_on": "2026-08-24",
+  "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "If your health care provider has told you to fast before a blood test, it means you should not eat or drink anything, except plain water, for several hours before your test. While you're fasting for a blood test, you should also not:"
+        },
+        {
+          "kind": "list",
+          "text": "Chew gum"
+        },
+        {
+          "kind": "list",
+          "text": "Smoke"
+        },
+        {
+          "kind": "list",
+          "text": "Exercise"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Your provider will give you a copy of instructions to follow if they ask you to fast for a test. If you have any questions not covered in those instructions, ask your provider at least a full day before the test so that you'll have time to properly prepare."
+        }
+      ],
+      "title_path": [
+        "Fasting for a Blood Test",
+        "What is fasting for a blood test?"
+      ],
+      "topic_tags": [
+        "fasting_glucose",
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "You usually need to fast for 8 to 12 hours before a test. Your provider will tell you exactly how long to fast, depending on what test they've ordered. For certain tests, there may also be additional instructions. For example, you may be asked not to drink alcohol for a longer period of time."
+        },
+        {
+          "kind": "paragraph",
+          "text": "If your blood test requires fasting, you can usually schedule the test early in the morning. That way, most of your fasting time will be while you are sleeping."
+        }
+      ],
+      "title_path": [
+        "Fasting for a Blood Test",
+        "How long do I have to fast before the test?"
+      ],
+      "topic_tags": [
+        "fasting_glucose",
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "When you eat and drink, your bloodstream absorbs sugar, fat, protein, and other nutrients in those foods and beverages. These nutrients can then change the levels of various substances in your blood and therefore affect the accuracy of your test results. Inaccurate results give your provider an inaccurate view of your health and may lead to a wrong diagnosis."
+        }
+      ],
+      "title_path": [
+        "Fasting for a Blood Test",
+        "Why do I need to fast before my blood test?"
+      ],
+      "topic_tags": [
+        "fasting_glucose",
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Some examples of common blood tests that usually require fasting are:"
+        },
+        {
+          "kind": "list",
+          "text": "Blood glucose, also called blood sugar, tests. These tests measure the level of blood glucose in a sample of your blood. They are used to help diagnose and monitor diabetes, prediabetes, and gestational diabetes (diabetes that starts during pregnancy). Not all blood glucose tests require fasting, so ask your provider if you need to fast for your test."
+        },
+        {
+          "kind": "list",
+          "text": "Cholesterol levels tests (lipid panel). These tests measure the level of fats, called lipids, in your bloodstream, including cholesterol and triglycerides. The test results help show your risk of getting heart disease and can be used to monitor your health after a cardiac event like a heart attack or stroke."
+        },
+        {
+          "kind": "list",
+          "text": "Basic metabolic panel (BMP). This is a group of tests that measures several natural chemicals in your blood. The results give your provider information about how well your organs are working, including your heart, kidneys, and liver."
+        },
+        {
+          "kind": "paragraph",
+          "text": "In some cases, you may also be asked to fast for:"
+        },
+        {
+          "kind": "list",
+          "text": "Liver function tests. This group of tests measures several proteins and other substances related to your liver function. Test results can give your provider information on your liver's health."
+        },
+        {
+          "kind": "list",
+          "text": "Renal function panel. This is a group of tests that measure several waste products and substances related to your kidney function. The results are often used to monitor your kidney function if your provider suspects kidney disease or if you have diabetes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Whether or not your provider asks you to fast for these tests depends on several factors. For example, some liver function tests only require fasting if they're ordered as part of a comprehensive metabolic panel."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Other types of tests not listed here may require fasting. Therefore, you should always ask your provider if you aren't sure whether you should fast before your test."
+        }
+      ],
+      "title_path": [
+        "Fasting for a Blood Test",
+        "What types of blood tests require fasting?"
+      ],
+      "topic_tags": [
+        "fasting_glucose",
+        "ldl_cholesterol",
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "No. Juice, coffee, soda, and other beverages can get in your bloodstream and affect your results. But you can drink plain water. Avoid lemon-flavored or flavored carbonated water, which may contain sugars or artificial sweeteners. Staying well hydrated can actually make the testing process a little easier. This is because water helps to keep more fluid in your veins, which can make it easier to get a sample of your blood."
+        }
+      ],
+      "title_path": [
+        "Fasting for a Blood Test",
+        "Can I drink anything besides water during a fast?"
+      ],
+      "topic_tags": [
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Tell your provider if you eat or drink before your test. You may need to reschedule the test for another time when you can fast to make sure you get accurate results."
+        }
+      ],
+      "title_path": [
+        "Fasting for a Blood Test",
+        "What if I make a mistake and have something to eat or drink besides water during my fast?"
+      ],
+      "topic_tags": [
+        "lab_preparation",
+        "result_communication"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "You'll be able to eat as soon as your test is over. It is common to feel light-headed after a blood test that requires fasting. So, you may want to bring a snack that you can eat right away."
+        }
+      ],
+      "title_path": [
+        "Fasting for a Blood Test",
+        "When can I eat and drink normally again?"
+      ],
+      "topic_tags": [
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "You should not fast if your provider doesn't tell you to do so. Fasting for some blood tests may also affect your results and give your provider an inaccurate understanding of your health. If you aren't sure if you should fast for a coming blood test, ask your provider as soon as possible. Taking the right steps before a blood test helps make sure your results will be accurate."
+        }
+      ],
+      "title_path": [
+        "Fasting for a Blood Test",
+        "Is there anything else I need to know about fasting before a blood test?"
+      ],
+      "topic_tags": [
+        "lab_preparation"
+      ]
+    }
+  ],
+  "source_id": "medlineplus-fasting-blood-test",
+  "source_sha256": "97064d865bbb2b62b238e495210c6414bfa0c42a13350fdff81807b555c85a95",
+  "title": "Fasting for a Blood Test",
+  "title_path_whitelist": [
+    [
+      "Fasting for a Blood Test",
+      "What is fasting for a blood test?"
+    ],
+    [
+      "Fasting for a Blood Test",
+      "How long do I have to fast before the test?"
+    ],
+    [
+      "Fasting for a Blood Test",
+      "Why do I need to fast before my blood test?"
+    ],
+    [
+      "Fasting for a Blood Test",
+      "What types of blood tests require fasting?"
+    ],
+    [
+      "Fasting for a Blood Test",
+      "Can I drink anything besides water during a fast?"
+    ],
+    [
+      "Fasting for a Blood Test",
+      "What if I make a mistake and have something to eat or drink besides water during my fast?"
+    ],
+    [
+      "Fasting for a Blood Test",
+      "When can I eat and drink normally again?"
+    ],
+    [
+      "Fasting for a Blood Test",
+      "Is there anything else I need to know about fasting before a blood test?"
+    ]
+  ],
+  "url": "https://medlineplus.gov/lab-tests/fasting-for-a-blood-test/",
+  "version": "reviewed-2025"
+}

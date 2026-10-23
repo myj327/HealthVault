@@ -1,0 +1,261 @@
+{
+  "protocol": "semantic-challenge-v1",
+  "label_author": "assistant",
+  "human_confirmation": "pending",
+  "purpose": "Focused diagnostic challenge; not new human Gold or general accuracy benchmark.",
+  "cases": [
+    {
+      "case_id": "MQ-001",
+      "origin_file": ".task_outputs\\task-083-rag-real-v1\\MQ-001.json",
+      "origin_sha256": "e9aa8be260abb137b9f8a2bc21ec1722169172fc4467e4e083c4fca1954906a2",
+      "question": "What is (are) Diagnosis of Diabetes and Prediabetes ?",
+      "answer": "糖尿病和糖尿病前期由医生通过多种血液检测来诊断 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:002:46658a772415]\n\n诊断 2 型糖尿病依靠血液检测 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5]\n\n诊断需要同一份样本或两份不同样本出现两项异常检测结果 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5]\n\n确认诊断时可重复同一项检测或改用另一种检测方法 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5]\n\n如两项检测结果提示糖尿病，则可考虑诊断确立 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5]\n\n如两项不同检测的结果相互矛盾，应重复高于诊断阈值的检测并以其确认结果为准 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5]\n\n可用的检测包括 A1C、空腹血浆血糖、口服葡萄糖耐量试验和随机血浆血糖试验 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646]\n\nA1C 低于 5.7% 为正常，5.7% 至 6.4% 为糖尿病前期，6.5% 或以上为糖尿病 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646]\n\n空腹血浆血糖 99 mg/dL 及以下为正常，100 至 125 mg/dL 为糖尿病前期，126 mg/dL 或以上为糖尿病 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646]\n\n口服葡萄糖耐量试验 139 mg/dL 及以下为正常，140 至 199 mg/dL 为糖尿病前期，200 mg/dL 或以上为糖尿病 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646]\n\n随机血浆血糖 200 mg/dL 或以上提示糖尿病 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646]\n\n上述结果切点适用于非妊娠人群，妊娠时部分检测使用不同切点 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:005:c98ca28d852a]\n\nA1C 检测可在一天中任何时间采样，无需空腹 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db]\n\nA1C 达 6.5% 或更高提示 2 型糖尿病时需重复检测以确认诊断 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db]\n\n对可能进展的糖尿病前期患者，医护人员可观察、建议生活方式改变并在 3 至 6 个月后复查 [HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5]",
+      "sources": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5",
+          "detail": "Diagnosis of type 2 diabetes is definitively made by blood tests. Diagnosis requires two abnormal test results from the same sample or from two different samples. Repeat the test using one of the following methods\n\n- Repeat the same test or run a different test.1 The second test should be done immediately.1\n\n- If two test results indicate diabetes, consider the diagnosis confirmed.1\n\n- If the two different tests conflict, repeat the test that is above the diagnostic threshold. Diagnosis is made based on the confirmed test.1\n\nIf the patient’s diabetes test results are close to—but not within—the diagnostic range of the test, the patient may have prediabetes. Health care professionals may wish to observe patients with prediabetes whose condition is likely to progress, recommend lifestyle modifications, and retest in 3 to 6 months.1",
+          "kind": "knowledge",
+          "title": "Confirming diagnosis of type 2 diabetes and prediabetes",
+          "url": "https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/diabetes-prediabetes"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646",
+          "detail": "Diagnosis | A1C | Fasting Plasma Glucose | Oral Glucose Tolerance Test* | Random Plasma Glucose Test‡\nNormal | below 5.7% | 99 mg/dL or below | 139 mg/dL or below | N/A\nPrediabetes | 5.7% to 6.4% | 100 to 125 mg/dL | 140 to 199 mg/dL | N/A\nDiabetes | 6.5% or above | 126 mg/dL or above | 200 mg/dL or above | 200 mg/dL or above",
+          "kind": "knowledge",
+          "title": "Test results for diagnosis of prediabetes and diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:002:46658a772415",
+          "detail": "Doctors use a variety of tests to diagnose diabetes and prediabetes. Your doctor may recommend different tests depending on whether you have symptoms or not, or whether you are pregnant.",
+          "kind": "knowledge",
+          "title": "What tests are used to diagnose diabetes?",
+          "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:005:c98ca28d852a",
+          "detail": "Each test to detect diabetes and prediabetes uses a different measurement. Usually, your doctor will use a second test to confirm you have diabetes.\n\nThe table below helps you understand what your test results mean if you are not pregnant.1 If you are pregnant, some tests use different cutoffs. Ask your doctor what your test results mean.",
+          "kind": "knowledge",
+          "title": "What test results tell me if I have diabetes or prediabetes?",
+          "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db",
+          "detail": "The A1C test is sometimes called the hemoglobin A1C, HbA1c, glycated hemoglobin, or glycohemoglobin test.\n\nUses\n\n- Screening and diagnosis of prediabetes1 5.7–6.4%1\n\n- 5.7–6.4%1\n\n- Screening and diagnosis of type 2 diabetes1 6.5% or higher1repeat for confirmation of diagnosis\n\n- 6.5% or higher1\n\n- repeat for confirmation of diagnosis\n\n- Monitoring of diabetes\n\nTechnical features\n\n- Sample at any time of day, no fasting required3\n\n- Sample: anticoagulated whole blood\n\n- Sample stability: superior5\n\n- Sensitivity: less than the FPG test and the OGTT1\n\n- Coefficient of variation: for between laboratory assay variability, see College of American Pathologists (CAP) survey data",
+          "kind": "knowledge",
+          "title": "A1C test",
+          "url": "https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/diabetes-prediabetes"
+        }
+      ],
+      "expected_support": false,
+      "expected_complete": null
+    },
+    {
+      "case_id": "MQ-011",
+      "origin_file": ".task_outputs\\task-083-rag-real-v1\\MQ-011.json",
+      "origin_sha256": "74ce95a95bea6c4116ea2b26f9c337ed8d5f5ca78baa9f1154eb85218fae69cf",
+      "question": "What is (are) Monitor Your Diabetes ?",
+      "answer": "糖尿病患者可能需要在家进行血糖检测，以帮助管理血糖水平。 [HVK:r1-2026-08-24-v1:medlineplus-blood-glucose-test:007:a56f60d31322]\n\n检测频率应由医疗服务提供者告知。 [HVK:r1-2026-08-24-v1:medlineplus-blood-glucose-test:007:a56f60d31322]\n\n监测血糖有两种方式，提供者可帮助选择最适合的一种。 [HVK:r1-2026-08-24-v1:medlineplus-blood-glucose-test:007:a56f60d31322]\n\n血糖仪需要用采血针刺破手指，将一滴血涂在试纸上并插入电子血糖仪测量血糖。 [HVK:r1-2026-08-24-v1:medlineplus-blood-glucose-test:007:a56f60d31322]\n\n持续葡萄糖监测仪（CGM）通常使用置于手臂或腹部皮肤下的微小传感器，可自动每隔几分钟估算并跟踪血糖水平。 [HVK:r1-2026-08-24-v1:medlineplus-blood-glucose-test:007:a56f60d31322]",
+      "sources": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-blood-glucose-test:007:a56f60d31322",
+          "detail": "If you have diabetes, you may need to do blood glucose testing at home to help manage your blood glucose levels. Your provider will let you know how often you should test. There are two ways to check your blood glucose. Your provider can help you decide which one is best for you:\n\n- Blood glucose meters require you to prick your finger with a small device called a lancet. Then, you apply a drop of blood to a test strip and insert it into a small electronic glucose meter, which measures the glucose in your blood.\n\n- Continuous glucose monitors (CGM) usually use a tiny sensor placed under the skin of your arm or belly. Depending on the type of CGM you use, the sensor stays in place from a week to several months. It automatically estimates your glucose level every few minutes and tracks it so you can see what your blood glucose level is at any time.",
+          "kind": "knowledge",
+          "title": "Is there anything else I should know about a blood glucose test?",
+          "url": "https://medlineplus.gov/lab-tests/blood-glucose-test/"
+        }
+      ],
+      "expected_support": true,
+      "expected_complete": false
+    },
+    {
+      "case_id": "MQ-016",
+      "origin_file": ".task_outputs\\task-083-rag-real-v1\\MQ-016.json",
+      "origin_sha256": "1c66d09eb37da1d2c28d59421ba1c535fc5e89fc146c45099d71fcabde75e46d",
+      "question": "What is (are) High Blood Cholesterol ?",
+      "answer": "高血胆固醇指血液中胆固醇含量过高，而胆固醇是存在于血液和身体每个细胞中的一种蜡状、类似脂肪的物质。 [HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:000:2843363a035b]\n\n当血液中胆固醇过多时，肝脏无法将其全部清除。 [HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:000:2843363a035b]\n\n血液中过多的低密度脂蛋白（LDL，坏胆固醇）会增加患冠心病和其他心脏疾病的风险。 [HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:000:2843363a035b]\n\n高胆固醇可能导致心脏病，而心脏病是美国的第一大死因。 [HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:006:59dd511c4e58]\n\n高水平的甘油三酯也可能增加患心脏病的风险。 [HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:001:f9b42b425a00]",
+      "sources": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:000:2843363a035b",
+          "detail": "A cholesterol test is a blood test that measures the amount of cholesterol and triglycerides (a type of fat) in your blood. Cholesterol is a waxy, fat-like substance that's found in your blood and every cell of your body. Your body needs some cholesterol to make hormones, vitamin D, and substances that help you digest foods.\n\nYour liver makes all the cholesterol your body needs and removes excess amounts. Cholesterol is also found in foods from animal sources, such as meat, egg yolks, poultry, and dairy products. Foods high in dietary fat can increase the cholesterol in your blood. If there's too much cholesterol in your blood, your liver can't remove it all.\n\nThere are two main types of cholesterol: LDL (low-density lipoprotein), or \"bad\" cholesterol, and HDL (high-density lipoprotein), or \"good\" cholesterol.\n\nToo much LDL cholesterol in your blood increases your risk for coronary artery disease and other heart diseases. High LDL levels can cause the buildup of a sticky substance called plaque in your arteries. This buildup of plaque is known as atherosclerosis. Over time, plaque can narrow your arteries or fully block them. When this happens, parts of your body may not get enough blood:\n\n- If the blood flow to your heart is blocked, it can cause a heart attack.\n\n- If the blood flow to your brain is blocked, it can cause a stroke.\n\n- If the blood flow to your arms or legs is blocked, it can cause peripheral artery disease.\n\nOther names for a cholesterol test: Lipid profile, Lipid panel",
+          "kind": "knowledge",
+          "title": "What is a cholesterol test?",
+          "url": "https://medlineplus.gov/lab-tests/cholesterol-levels/"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:001:f9b42b425a00",
+          "detail": "A cholesterol test gives you and your health care provider important information about your risk of developing heart disease. If your test shows you have high cholesterol, you can take steps to lower it. This may decrease your risk of developing heart problems in the future.\n\nA cholesterol test measures your:\n\n- LDL level. LDL (\"bad\") cholesterol is the main source of blockages in the arteries.\n\n- HDL level. HDL (\"good') cholesterol helps get rid of \"bad\" LDL cholesterol. A higher HDL level may help reduce your risk of heart attack or stroke.\n\n- Total cholesterol. This is a measure of the total amount of cholesterol in your blood. It includes HDL and LDL cholesterol.\n\n- Triglyceride level. Triglycerides are a type of fat found in your blood. High levels of triglycerides may increase the risk of heart disease, especially in women.\n\nThere is another type of cholesterol called VLDL (very low-density lipoprotein). Some people also call VLDL a \"bad\" cholesterol because it contributes to the buildup of plaque in your arteries. But VLDL and LDL are different; VLDL mainly carries triglycerides, and LDL mainly carries cholesterol. VLDL isn't usually included in routine cholesterol tests because it's difficult to measure. Because VLDL contains a certain percentage of triglycerides, a lab can use your triglycerides level to estimate your VLDL level.",
+          "kind": "knowledge",
+          "title": "What is it used for?",
+          "url": "https://medlineplus.gov/lab-tests/cholesterol-levels/"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:006:59dd511c4e58",
+          "detail": "High cholesterol can lead to heart disease, the number one cause of death in the United States. You can't change some risk factors for high cholesterol, such as age and your genes. But there are actions you can take to lower your LDL levels and reduce your risk, including:\n\n- Eat a healthy diet. Reduce or avoid foods high in saturated fat and cholesterol to help lower the cholesterol levels in your blood.\n\n- Manage your weight. Being overweight can increase your cholesterol and risk for heart disease.\n\n- Stay active. Regular physical activity may help lower your LDL (bad) cholesterol levels and raise your HDL (good) cholesterol levels. It may also help you lose weight.\n\n- Quit smoking. Smoking lowers your HDL (good) cholesterol, especially in women. Smoking also raises your LDL (bad) cholesterol.\n\n- Reduce stress. Stress may raise levels of certain hormones such as corticosteroids. These can cause your body to make more cholesterol.\n\n- Avoid drinking too much alcohol. Alcohol can raise your total cholesterol level.\n\nTalk to your provider before making any major change in your diet or exercise routine.",
+          "kind": "knowledge",
+          "title": "Is there anything else I need to know about my cholesterol levels?",
+          "url": "https://medlineplus.gov/lab-tests/cholesterol-levels/"
+        }
+      ],
+      "expected_support": true,
+      "expected_complete": false
+    },
+    {
+      "case_id": "RAG-027",
+      "origin_file": ".task_outputs\\task-083-rag-real-v1\\RAG-027.json",
+      "origin_sha256": "76d339b5c6fe99a561b3288f19779cc73d1d6fb1f152303e1682deab120d778b",
+      "question": "Must I fast before an HbA1c blood draw?",
+      "answer": "做 HbA1c（A1C）检测前不需要空腹。 [HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009]\n\nA1C 检测的抽血可以在一天中的任何时间进行。 [HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009]\n\n做 A1C 检测前可以正常进食和饮水。 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:004:92788bfbf3e5]\n\n只有当医生明确要求空腹时才需要空腹，未被要求时不应自行空腹。 [HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:007:c23bf18ec180]",
+      "sources": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009",
+          "detail": "Health care professionals can use the A1C test alone or in combination with other diabetes tests to diagnose type 2 diabetes and prediabetes. You don’t have to fast before having your blood drawn for an A1C test, which means that blood can be drawn for the test at any time of the day.\n\nIf you don’t have symptoms but the A1C test shows you have diabetes or prediabetes, you should have a repeat test on a different day using the A1C test or one of the other diabetes tests to confirm the diagnosis.2",
+          "kind": "knowledge",
+          "title": "How is the A1C test used to diagnose type 2 diabetes and prediabetes?",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:004:92788bfbf3e5",
+          "detail": "The A1C test is a blood test that provides your average levels of blood glucose over the last 3 months. Other names for the A1C test are hemoglobin A1C, HbA1C, glycated hemoglobin, and glycosylated hemoglobin test. You can eat and drink before this test. Before using the A1C test to diagnose diabetes, your doctor will consider factors, such as whether you are in your second or third trimester of pregnancy or whether you have certain types of anemia or another problem with your blood.1 The A1C test might not be accurate in those cases.\n\nCertain types of hemoglobin, called hemoglobin variants, can interfere with measuring A1C levels. Most A1C tests used in the United States are not affected by the most common variants. If your A1C test results and blood glucose levels do not match, your doctor should consider that the A1C test may not be a reliable test for you.\n\nYour doctor will report your A1C test result as a percentage, such as an A1C of 7%. The higher the percentage is, the higher your average blood glucose levels are.",
+          "kind": "knowledge",
+          "title": "A1C test",
+          "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:007:c23bf18ec180",
+          "detail": "You should not fast if your provider doesn't tell you to do so. Fasting for some blood tests may also affect your results and give your provider an inaccurate understanding of your health. If you aren't sure if you should fast for a coming blood test, ask your provider as soon as possible. Taking the right steps before a blood test helps make sure your results will be accurate.",
+          "kind": "knowledge",
+          "title": "Is there anything else I need to know about fasting before a blood test?",
+          "url": "https://medlineplus.gov/lab-tests/fasting-for-a-blood-test/"
+        }
+      ],
+      "expected_support": true,
+      "expected_complete": true
+    },
+    {
+      "case_id": "RAG-042",
+      "origin_file": ".task_outputs\\task-083-rag-real-v1\\RAG-042.json",
+      "origin_sha256": "eac34047cd22a5ce15c69a26f319697ec346e53c796850c347e1707fb1231e83",
+      "question": "就诊时可以请家人陪同吗？",
+      "answer": "可以请家人或朋友陪同就诊 [HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:002:1d99f24acf83]\n\n陪同的家人或朋友可以帮助记录医生的说明 [HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:002:1d99f24acf83]\n\n可以请信任的家人或朋友陪同前往预约就诊 [HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a]",
+      "sources": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:002:1d99f24acf83",
+          "detail": "Take your list of questions and personal health record with you to the appointment. You may also want to ask a family member or friend to go with you to help take notes.\n\nBe sure to talk about any changes since your last visit, like:\n\n- New herbs, home remedies, and vitamins you're taking\n\n- Recent illnesses or surgeries\n\n- Important changes in your life, like losing your job or a death in the family\n\n- Health concerns or issues\n\nYou can also ask your doctor questions about health information you’ve found online or heard from others.",
+          "kind": "knowledge",
+          "title": "Make the most of doctor visits.",
+          "url": "https://odphp.health.gov/myhealthfinder/doctor-visits/talking-doctor/take-charge-your-health-care"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a",
+          "detail": "How well you and your doctor or provider communicate with each other is one of the most important parts of getting good health care. Being prepared can help you make the most of your visit, whether it is in person or through telehealth. Here are some things you can do to make the most of your appointment:\n\n- Make a list of the questions and concerns you want to talk about.\n\n- If you are having any health problems, write down a description of your symptoms. Include information such as when they started, what makes them better, and what makes them worse.\n\n- Ask a trusted friend or family member to come to the appointment with you.\n\n- If your doctor or provider doesn't speak your language, call their office ahead of time and ask them to provide an interpreter.\n\n- During your appointment, take notes about what your doctor or health care provider tells you. Or you could ask your friend or family member to take notes for you.\n\n- If you don't understand something your doctor or provider says, ask questions until you do understand.\n\n- Ask for written instructions if you need them.\n\n- Ask for your doctor's or provider's contact information and find out the best way to communicate with them.\n\n- Find out what to do if you need more information later.",
+          "kind": "knowledge",
+          "title": "Summary",
+          "url": "https://medlineplus.gov/talkingwithyourdoctor.html"
+        }
+      ],
+      "expected_support": true,
+      "expected_complete": true
+    },
+    {
+      "case_id": "MQ-001-legal-limited",
+      "question": "谁会用多种检测诊断糖尿病和糖尿病前期？",
+      "answer": "医生使用多种检测诊断糖尿病和糖尿病前期。 [HVK:r1-2026-08-24-v1:niddk-diabetes-tests:002:46658a772415]",
+      "sources": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:002:46658a772415",
+          "detail": "Doctors use a variety of tests to diagnose diabetes and prediabetes. Your doctor may recommend different tests depending on whether you have symptoms or not, or whether you are pregnant.",
+          "kind": "knowledge",
+          "title": "What tests are used to diagnose diabetes?",
+          "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis"
+        }
+      ],
+      "expected_support": true,
+      "expected_complete": true
+    },
+    {
+      "case_id": "polarity-bad",
+      "question": "A1C检查前要空腹吗？",
+      "answer": "A1C检查前需要空腹。 [HVK:semantic-challenge:polarity-bad]",
+      "sources": [
+        {
+          "citation_id": "HVK:semantic-challenge:polarity-bad",
+          "title": "Synthetic language-binding example",
+          "detail": "You do not need to fast before an A1C test."
+        }
+      ],
+      "expected_support": false,
+      "expected_complete": null
+    },
+    {
+      "case_id": "polarity-legal",
+      "question": "A1C检查前要空腹吗？",
+      "answer": "A1C检查前不需要空腹。 [HVK:semantic-challenge:polarity-legal]",
+      "sources": [
+        {
+          "citation_id": "HVK:semantic-challenge:polarity-legal",
+          "title": "Synthetic language-binding example",
+          "detail": "You do not need to fast before an A1C test."
+        }
+      ],
+      "expected_support": true,
+      "expected_complete": true
+    },
+    {
+      "case_id": "condition-bad",
+      "question": "什么情况下需要核对记录？",
+      "answer": "所有记录都必须重新核对。 [HVK:semantic-challenge:condition-bad]",
+      "sources": [
+        {
+          "citation_id": "HVK:semantic-challenge:condition-bad",
+          "title": "Synthetic language-binding example",
+          "detail": "If two results conflict, the records need to be checked again."
+        }
+      ],
+      "expected_support": false,
+      "expected_complete": null
+    },
+    {
+      "case_id": "condition-legal",
+      "question": "什么情况下需要核对记录？",
+      "answer": "如果两项结果冲突，需要重新核对记录。 [HVK:semantic-challenge:condition-legal]",
+      "sources": [
+        {
+          "citation_id": "HVK:semantic-challenge:condition-legal",
+          "title": "Synthetic language-binding example",
+          "detail": "If two results conflict, the records need to be checked again."
+        }
+      ],
+      "expected_support": true,
+      "expected_complete": true
+    },
+    {
+      "case_id": "relation-bad",
+      "question": "这里说明X与Y是什么关系？",
+      "answer": "X导致Y。 [HVK:semantic-challenge:relation-bad]",
+      "sources": [
+        {
+          "citation_id": "HVK:semantic-challenge:relation-bad",
+          "title": "Synthetic language-binding example",
+          "detail": "X is associated with Y. This association does not establish causation."
+        }
+      ],
+      "expected_support": false,
+      "expected_complete": null
+    },
+    {
+      "case_id": "relation-legal",
+      "question": "这里说明X与Y是什么关系？",
+      "answer": "X与Y有关，但这种关联并不能确立因果关系。 [HVK:semantic-challenge:relation-legal]",
+      "sources": [
+        {
+          "citation_id": "HVK:semantic-challenge:relation-legal",
+          "title": "Synthetic language-binding example",
+          "detail": "X is associated with Y. This association does not establish causation."
+        }
+      ],
+      "expected_support": true,
+      "expected_complete": true
+    }
+  ]
+}

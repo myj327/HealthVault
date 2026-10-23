@@ -1,0 +1,231 @@
+{
+  "corpus_version": "r2-2026-09-10-v1",
+  "language": "en",
+  "publisher": "NIDDK",
+  "retrieved_on": "2026-08-24",
+  "reuse_basis": "NIH website text; most NIH information is public domain and reusable unless otherwise marked. No images, logos, references, or third-party material are included. Policy: https://www.nih.gov/about-nih/frequently-asked-questions",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Anyone who has symptoms of diabetes should be tested for the disease. Some people will not have any symptoms but may have risk factors for type 2 diabetes and need to be tested. Most pregnant women should also be tested for gestational diabetes. Testing helps doctors find diabetes sooner, so they can work with their patients to manage the disease and prevent health problems."
+        },
+        {
+          "kind": "paragraph",
+          "text": "If you have Medicare, it may cover the cost of tests if you have certain risk factors for diabetes. If you have different insurance, ask your insurance company if it covers diabetes tests."
+        }
+      ],
+      "title_path": [
+        "Diabetes Tests & Diagnosis",
+        "Who should be tested for diabetes?"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "visit_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Experts recommend routine testing for type 2 diabetes if you have certain risk factors. You may have a higher risk of developing type 2 diabetes if you are"
+        },
+        {
+          "kind": "list",
+          "text": "age 35 or older"
+        },
+        {
+          "kind": "list",
+          "text": "American Indian, Black or African American, Asian American, Hispanic/Latino, or Pacific Islander"
+        },
+        {
+          "kind": "list",
+          "text": "overweight or have obesity and have at least one other risk factor"
+        },
+        {
+          "kind": "list",
+          "text": "a woman who had gestational diabetes"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Take the American Diabetes Association Diabetes Risk Test to see if you are at risk for type 2 diabetes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Children can also develop type 2 diabetes. Experts recommend testing children and teens between the ages of 10 and 18 who are overweight or have obesity and have at least one more risk factor, such as a low birth weight, a parent who had diabetes while pregnant, or another factor.1"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Adults and children with normal diabetes test results should be retested every 3 years.1"
+        },
+        {
+          "kind": "paragraph",
+          "text": "If your blood glucose levels are higher than the target range, but not high enough to be diagnosed with diabetes, doctors will diagnose you with prediabetes. Having prediabetes is serious because it raises the chance of developing type 2 diabetes. But developing type 2 diabetes can be prevented. Adults and children diagnosed with prediabetes should be tested for type 2 diabetes every year."
+        }
+      ],
+      "title_path": [
+        "Diabetes Tests & Diagnosis",
+        "Who should be tested for diabetes?",
+        "Type 2 diabetes"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "visit_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Doctors use a variety of tests to diagnose diabetes and prediabetes. Your doctor may recommend different tests depending on whether you have symptoms or not, or whether you are pregnant."
+        }
+      ],
+      "title_path": [
+        "Diabetes Tests & Diagnosis",
+        "What tests are used to diagnose diabetes?"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "fasting_glucose",
+        "hba1c",
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "The fasting plasma glucose (FPG) test measures your blood glucose level at a single point in time. For the most reliable results, your doctor will give you the test in the morning after you have fasted for at least 8 hours. Fasting means having nothing to eat or drink except sips of water."
+        }
+      ],
+      "title_path": [
+        "Diabetes Tests & Diagnosis",
+        "What tests are used to diagnose diabetes?",
+        "Fasting plasma glucose test"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "fasting_glucose",
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "The A1C test is a blood test that provides your average levels of blood glucose over the last 3 months. Other names for the A1C test are hemoglobin A1C, HbA1C, glycated hemoglobin, and glycosylated hemoglobin test. You can eat and drink before this test. Before using the A1C test to diagnose diabetes, your doctor will consider factors, such as whether you are in your second or third trimester of pregnancy or whether you have certain types of anemia or another problem with your blood.1 The A1C test might not be accurate in those cases."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Certain types of hemoglobin, called hemoglobin variants, can interfere with measuring A1C levels. Most A1C tests used in the United States are not affected by the most common variants. If your A1C test results and blood glucose levels do not match, your doctor should consider that the A1C test may not be a reliable test for you."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Your doctor will report your A1C test result as a percentage, such as an A1C of 7%. The higher the percentage is, the higher your average blood glucose levels are."
+        }
+      ],
+      "title_path": [
+        "Diabetes Tests & Diagnosis",
+        "What tests are used to diagnose diabetes?",
+        "A1C test"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "hba1c",
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Each test to detect diabetes and prediabetes uses a different measurement. Usually, your doctor will use a second test to confirm you have diabetes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "The table below helps you understand what your test results mean if you are not pregnant.1 If you are pregnant, some tests use different cutoffs. Ask your doctor what your test results mean."
+        }
+      ],
+      "title_path": [
+        "Diabetes Tests & Diagnosis",
+        "What test results tell me if I have diabetes or prediabetes?"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "hba1c",
+        "result_communication"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "table",
+          "table_header": "Diagnosis | A1C | Fasting Plasma Glucose | Oral Glucose Tolerance Test* | Random Plasma Glucose Test‡",
+          "text": "Normal | below 5.7% | 99 mg/dL or below | 139 mg/dL or below | N/A"
+        },
+        {
+          "kind": "table",
+          "table_header": "Diagnosis | A1C | Fasting Plasma Glucose | Oral Glucose Tolerance Test* | Random Plasma Glucose Test‡",
+          "text": "Prediabetes | 5.7% to 6.4% | 100 to 125 mg/dL | 140 to 199 mg/dL | N/A"
+        },
+        {
+          "kind": "table",
+          "table_header": "Diagnosis | A1C | Fasting Plasma Glucose | Oral Glucose Tolerance Test* | Random Plasma Glucose Test‡",
+          "text": "Diabetes | 6.5% or above | 126 mg/dL or above | 200 mg/dL or above | 200 mg/dL or above"
+        }
+      ],
+      "title_path": [
+        "Diabetes Tests & Diagnosis",
+        "What test results tell me if I have diabetes or prediabetes?",
+        "Test results for diagnosis of prediabetes and diabetes"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "fasting_glucose",
+        "hba1c",
+        "result_communication"
+      ]
+    }
+  ],
+  "source_id": "niddk-diabetes-tests",
+  "source_sha256": "1df92cfef66dc8718872b4dda1021cb8ac11a4e32ef4a8fa8fcfc6c819051352",
+  "title": "Diabetes Tests & Diagnosis",
+  "title_path_whitelist": [
+    [
+      "Diabetes Tests & Diagnosis",
+      "Who should be tested for diabetes?"
+    ],
+    [
+      "Diabetes Tests & Diagnosis",
+      "Who should be tested for diabetes?",
+      "Type 2 diabetes"
+    ],
+    [
+      "Diabetes Tests & Diagnosis",
+      "What tests are used to diagnose diabetes?"
+    ],
+    [
+      "Diabetes Tests & Diagnosis",
+      "What tests are used to diagnose diabetes?",
+      "Fasting plasma glucose test"
+    ],
+    [
+      "Diabetes Tests & Diagnosis",
+      "What tests are used to diagnose diabetes?",
+      "A1C test"
+    ],
+    [
+      "Diabetes Tests & Diagnosis",
+      "What test results tell me if I have diabetes or prediabetes?"
+    ],
+    [
+      "Diabetes Tests & Diagnosis",
+      "What test results tell me if I have diabetes or prediabetes?",
+      "Test results for diagnosis of prediabetes and diabetes"
+    ]
+  ],
+  "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis",
+  "version": "retrieved-2026-08-24"
+}

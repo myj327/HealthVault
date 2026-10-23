@@ -1,0 +1,18 @@
+{
+  "protocol": "natural-report-coverage-v1",
+  "source": "Hand-authored synthetic fixtures; not clinical Gold or model accuracy",
+  "cases": [
+    {"id":"template-a-lab-row","template":"合成机构甲","text":"报告日期: 2026-10-01\n空腹血糖 5.6 mmol/L 参考 3.9-6.1","date":"2026-10-01","indicators":[["fasting_glucose",5.6]],"findings":[],"can_confirm":true},
+    {"id":"template-b-cross-line","template":"合成机构乙","text":"检查日期：2026年9月2日\n糖化血红蛋白\n6.0 % 参考 4.0–6.0","date":"2026-09-02","indicators":[["hba1c",6.0]],"findings":[],"can_confirm":true},
+    {"id":"template-c-table-bars","template":"合成机构丙","text":"report_date: 2026-09-03\n| 空腹血糖 | 5.8 | mmol/L | 3.9~6.1 |","date":"2026-09-03","indicators":[["fasting_glucose",5.8]],"findings":[],"can_confirm":true},
+    {"id":"template-a-two-labs","template":"合成机构甲","text":"报告日期: 2026-09-04\n空腹血糖 5.5 mmol/L 3.9-6.1\n血红蛋白 132 g/L 115-150","date":"2026-09-04","indicators":[["fasting_glucose",5.5],["hemoglobin",132.0]],"findings":[],"can_confirm":true},
+    {"id":"template-b-fibroid-cm","template":"合成机构乙","text":"报告日期: 2026-09-05\n子宫前壁肌瘤 1.2×0.8 cm","date":"2026-09-05","indicators":[],"findings":[["fibroid","子宫","unspecified",[12.0,8.0],"cm"]],"can_confirm":true},
+    {"id":"template-c-equal-sizes-distinct-sides","template":"合成机构丙","text":"报告日期: 2026-09-06\n甲状腺左叶结节 6×4 mm，右叶结节 6×4 mm","date":"2026-09-06","indicators":[],"findings":[["nodule","甲状腺","left",[6.0,4.0],"mm"],["nodule","甲状腺","right",[6.0,4.0],"mm"]],"can_confirm":true},
+    {"id":"template-a-site-header","template":"合成机构甲","text":"报告日期: 2026-09-07\n甲状腺检查\n左叶结节 4x3 mm","date":"2026-09-07","indicators":[],"findings":[["nodule","甲状腺","left",[4.0,3.0],"mm"]],"can_confirm":true},
+    {"id":"template-b-chinese-unit","template":"合成机构乙","text":"检查日期: 2026-09-08\n乳腺右侧结节 9*6 毫米","date":"2026-09-08","indicators":[],"findings":[["nodule","乳腺","right",[9.0,6.0],"毫米"]],"can_confirm":true},
+    {"id":"template-c-invalid-date","template":"合成机构丙","text":"报告日期: 2026-02-30\n空腹血糖 5.6 mmol/L 3.9-6.1","date":null,"indicators":[["fasting_glucose",5.6]],"findings":[],"can_confirm":false},
+    {"id":"template-a-unsupported-unit","template":"合成机构甲","text":"报告日期: 2026-09-10\n空腹血糖 5.6 mg/dL 3.9-6.1\n未映射观察内容仍须保留。","date":"2026-09-10","indicators":[],"findings":[],"can_confirm":false},
+    {"id":"template-b-no-range","template":"合成机构乙","text":"报告日期: 2026-09-11\n空腹血糖 5.6 mmol/L","date":"2026-09-11","indicators":[],"findings":[],"can_confirm":false},
+    {"id":"template-c-ambiguous-glucose","template":"合成机构丙","text":"报告日期: 2026-09-12\n血糖 5.6 mmol/L 3.9-6.1","date":"2026-09-12","indicators":[],"findings":[],"can_confirm":false}
+  ]
+}

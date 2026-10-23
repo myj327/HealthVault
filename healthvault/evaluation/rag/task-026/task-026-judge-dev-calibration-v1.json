@@ -1,0 +1,209 @@
+{
+  "api_calls": 0,
+  "calibration_version": "task-026-judge-dev-calibration-v1",
+  "input_tokens": 0,
+  "judgments": [
+    {
+      "answer_a": "Plain water may be consumed [DEV-CAL-001:E1].",
+      "answer_b": "Coffee with milk is allowed during the fast.",
+      "dimension": "faithfulness",
+      "expected_winner": "A",
+      "fake_output": {
+        "dimension": "faithfulness",
+        "evidence_citation_ids": [
+          "DEV-CAL-001:E1"
+        ],
+        "reason": "The preferred answer follows all supplied evidence and the other does not.",
+        "winner": "A"
+      },
+      "pair_id": "DEV-CAL-001",
+      "passed": true
+    },
+    {
+      "answer_a": "Coffee with milk is allowed during the fast.",
+      "answer_b": "Plain water may be consumed [DEV-CAL-001:E1].",
+      "dimension": "completeness",
+      "expected_winner": "B",
+      "fake_output": {
+        "dimension": "completeness",
+        "evidence_citation_ids": [
+          "DEV-CAL-001:E1"
+        ],
+        "reason": "The preferred answer follows all supplied evidence and the other does not.",
+        "winner": "B"
+      },
+      "pair_id": "DEV-CAL-001",
+      "passed": true
+    },
+    {
+      "answer_a": "It shows only the most recent day.",
+      "answer_b": "It summarizes average blood glucose over about three months [DEV-CAL-002:E1].",
+      "dimension": "faithfulness",
+      "expected_winner": "B",
+      "fake_output": {
+        "dimension": "faithfulness",
+        "evidence_citation_ids": [
+          "DEV-CAL-002:E1"
+        ],
+        "reason": "The preferred answer follows all supplied evidence and the other does not.",
+        "winner": "B"
+      },
+      "pair_id": "DEV-CAL-002",
+      "passed": true
+    },
+    {
+      "answer_a": "It summarizes average blood glucose over about three months [DEV-CAL-002:E1].",
+      "answer_b": "It shows only the most recent day.",
+      "dimension": "completeness",
+      "expected_winner": "A",
+      "fake_output": {
+        "dimension": "completeness",
+        "evidence_citation_ids": [
+          "DEV-CAL-002:E1"
+        ],
+        "reason": "The preferred answer follows all supplied evidence and the other does not.",
+        "winner": "A"
+      },
+      "pair_id": "DEV-CAL-002",
+      "passed": true
+    },
+    {
+      "answer_a": "Bring questions and an up-to-date medicine list [DEV-CAL-003:E1].",
+      "answer_b": "Bring only a payment receipt.",
+      "dimension": "faithfulness",
+      "expected_winner": "A",
+      "fake_output": {
+        "dimension": "faithfulness",
+        "evidence_citation_ids": [
+          "DEV-CAL-003:E1"
+        ],
+        "reason": "The preferred answer follows all supplied evidence and the other does not.",
+        "winner": "A"
+      },
+      "pair_id": "DEV-CAL-003",
+      "passed": true
+    },
+    {
+      "answer_a": "Bring only a payment receipt.",
+      "answer_b": "Bring questions and an up-to-date medicine list [DEV-CAL-003:E1].",
+      "dimension": "completeness",
+      "expected_winner": "B",
+      "fake_output": {
+        "dimension": "completeness",
+        "evidence_citation_ids": [
+          "DEV-CAL-003:E1"
+        ],
+        "reason": "The preferred answer follows all supplied evidence and the other does not.",
+        "winner": "B"
+      },
+      "pair_id": "DEV-CAL-003",
+      "passed": true
+    },
+    {
+      "answer_a": "The normal range is exactly 1 to 2 units.",
+      "answer_b": "The supplied evidence is insufficient, so I cannot provide a range.",
+      "dimension": "faithfulness",
+      "expected_winner": "B",
+      "fake_output": {
+        "dimension": "faithfulness",
+        "evidence_citation_ids": [],
+        "reason": "The preferred answer follows all supplied evidence and the other does not.",
+        "winner": "B"
+      },
+      "pair_id": "DEV-CAL-004",
+      "passed": true
+    },
+    {
+      "answer_a": "The supplied evidence is insufficient, so I cannot provide a range.",
+      "answer_b": "The normal range is exactly 1 to 2 units.",
+      "dimension": "completeness",
+      "expected_winner": "A",
+      "fake_output": {
+        "dimension": "completeness",
+        "evidence_citation_ids": [],
+        "reason": "The preferred answer follows all supplied evidence and the other does not.",
+        "winner": "A"
+      },
+      "pair_id": "DEV-CAL-004",
+      "passed": true
+    }
+  ],
+  "logical_judge_requests": 8,
+  "output_tokens": 0,
+  "pair_count": 4,
+  "pairs": [
+    {
+      "better": "Plain water may be consumed [DEV-CAL-001:E1].",
+      "evidence": [
+        {
+          "citation_id": "DEV-CAL-001:E1",
+          "evidence_text": "During the fast, plain water is allowed; coffee and other drinks are not."
+        }
+      ],
+      "pair_id": "DEV-CAL-001",
+      "query": "What may be consumed during a required blood-test fast?",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "Plain water is allowed during the required fast; other drinks are not."
+        }
+      ],
+      "refusal_target": null,
+      "worse": "Coffee with milk is allowed during the fast."
+    },
+    {
+      "better": "It summarizes average blood glucose over about three months [DEV-CAL-002:E1].",
+      "evidence": [
+        {
+          "citation_id": "DEV-CAL-002:E1",
+          "evidence_text": "A1C reflects average blood glucose over about the past three months."
+        }
+      ],
+      "pair_id": "DEV-CAL-002",
+      "query": "What period does an A1C result summarize?",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "A1C reflects average blood glucose over about the past three months."
+        }
+      ],
+      "refusal_target": null,
+      "worse": "It shows only the most recent day."
+    },
+    {
+      "better": "Bring questions and an up-to-date medicine list [DEV-CAL-003:E1].",
+      "evidence": [
+        {
+          "citation_id": "DEV-CAL-003:E1",
+          "evidence_text": "Bring a list of questions and an up-to-date medicine list."
+        }
+      ],
+      "pair_id": "DEV-CAL-003",
+      "query": "What should a patient bring to a doctor visit?",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "Bring a list of questions."
+        },
+        {
+          "claim_id": "RC2",
+          "text": "Bring an up-to-date medicine list."
+        }
+      ],
+      "refusal_target": null,
+      "worse": "Bring only a payment receipt."
+    },
+    {
+      "better": "The supplied evidence is insufficient, so I cannot provide a range.",
+      "evidence": [],
+      "pair_id": "DEV-CAL-004",
+      "query": "What thyroid-ultrasound reference range applies?",
+      "reference_claims": [],
+      "refusal_target": "Refuse because no thyroid-ultrasound evidence is supplied.",
+      "worse": "The normal range is exactly 1 to 2 units."
+    }
+  ],
+  "schema_version": 1,
+  "status": "passed_fake_protocol_calibration",
+  "transport_calls": 0
+}

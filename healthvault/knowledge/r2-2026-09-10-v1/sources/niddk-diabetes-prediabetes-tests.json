@@ -1,0 +1,274 @@
+{
+  "corpus_version": "r2-2026-09-10-v1",
+  "language": "en",
+  "publisher": "NIDDK",
+  "retrieved_on": "2026-08-24",
+  "reuse_basis": "NIH website text; most NIH information is public domain and reusable unless otherwise marked. No images, logos, references, or third-party material are included. Policy: https://www.nih.gov/about-nih/frequently-asked-questions",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Diagnosis of type 2 diabetes is definitively made by blood tests. Diagnosis requires two abnormal test results from the same sample or from two different samples. Repeat the test using one of the following methods"
+        },
+        {
+          "kind": "list",
+          "text": "Repeat the same test or run a different test.1 The second test should be done immediately.1"
+        },
+        {
+          "kind": "list",
+          "text": "If two test results indicate diabetes, consider the diagnosis confirmed.1"
+        },
+        {
+          "kind": "list",
+          "text": "If the two different tests conflict, repeat the test that is above the diagnostic threshold. Diagnosis is made based on the confirmed test.1"
+        },
+        {
+          "kind": "paragraph",
+          "text": "If the patient’s diabetes test results are close to—but not within—the diagnostic range of the test, the patient may have prediabetes. Health care professionals may wish to observe patients with prediabetes whose condition is likely to progress, recommend lifestyle modifications, and retest in 3 to 6 months.1"
+        }
+      ],
+      "title_path": [
+        "Diabetes & Prediabetes Tests",
+        "Confirming diagnosis of type 2 diabetes and prediabetes"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "hba1c",
+        "result_communication"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "When interpreting laboratory results, health care professionals should"
+        },
+        {
+          "kind": "list",
+          "text": "consider that all laboratory test results represent a range, rather than an exact number2"
+        },
+        {
+          "kind": "list",
+          "text": "know the A1C assay methods used by their laboratory1"
+        },
+        {
+          "kind": "list",
+          "text": "send blood samples to be tested by a laboratory that uses an A1C analysis method certified by the NGSP to ensure the results are standardized to the Diabetes Control and Complications Trial (DCCT) assay1"
+        },
+        {
+          "kind": "list",
+          "text": "consider the possibility of interference in the A1C test when a result is below 4%, above 15%, or is at odds with other diabetes test results1"
+        }
+      ],
+      "title_path": [
+        "Diabetes & Prediabetes Tests",
+        "Interpreting laboratory results"
+      ],
+      "topic_tags": [
+        "result_communication"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Uses"
+        },
+        {
+          "kind": "list",
+          "text": "Screening and diagnosis of prediabetes1 or impaired fasting glucose (IFG) 100–125 mg/dL3"
+        },
+        {
+          "kind": "list",
+          "text": "100–125 mg/dL3"
+        },
+        {
+          "kind": "list",
+          "text": "Screening and diagnosis of diabetes1 126 mg/dL or higher1repeat for confirmation of diagnosis"
+        },
+        {
+          "kind": "list",
+          "text": "126 mg/dL or higher1"
+        },
+        {
+          "kind": "list",
+          "text": "repeat for confirmation of diagnosis"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Technical features2"
+        },
+        {
+          "kind": "list",
+          "text": "Diagnosis requires a lab test; meter results are not suitable"
+        },
+        {
+          "kind": "list",
+          "text": "Sample in morning, after 8-hour fast1"
+        },
+        {
+          "kind": "list",
+          "text": "Sample: sodium fluoride plasma preferred"
+        },
+        {
+          "kind": "list",
+          "text": "Sample stability: low—requires processing within 30 minutes"
+        },
+        {
+          "kind": "list",
+          "text": "Sensitivity: greater than the A1C test, less than the OGTT"
+        },
+        {
+          "kind": "list",
+          "text": "Coefficient of variation: assay variability"
+        },
+        {
+          "kind": "list",
+          "text": "Biological variability"
+        },
+        {
+          "kind": "paragraph",
+          "text": "With a coefficient of variation of 5.7% (typical biological variation within the same person), an FPG test result of 126 mg/dL could indicate a true FPG of anywhere from approximately 110 to 142 mg/dL.2 Image courtesy of David Aron, M.D., Louis Stokes Department of Veterans Affairs Medical Center."
+        }
+      ],
+      "title_path": [
+        "Diabetes & Prediabetes Tests",
+        "Comparing diabetes blood tests",
+        "Fasting plasma glucose (FPG) test"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "fasting_glucose",
+        "lab_preparation",
+        "result_communication"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "The A1C test is sometimes called the hemoglobin A1C, HbA1c, glycated hemoglobin, or glycohemoglobin test."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Uses"
+        },
+        {
+          "kind": "list",
+          "text": "Screening and diagnosis of prediabetes1 5.7–6.4%1"
+        },
+        {
+          "kind": "list",
+          "text": "5.7–6.4%1"
+        },
+        {
+          "kind": "list",
+          "text": "Screening and diagnosis of type 2 diabetes1 6.5% or higher1repeat for confirmation of diagnosis"
+        },
+        {
+          "kind": "list",
+          "text": "6.5% or higher1"
+        },
+        {
+          "kind": "list",
+          "text": "repeat for confirmation of diagnosis"
+        },
+        {
+          "kind": "list",
+          "text": "Monitoring of diabetes"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Technical features"
+        },
+        {
+          "kind": "list",
+          "text": "Sample at any time of day, no fasting required3"
+        },
+        {
+          "kind": "list",
+          "text": "Sample: anticoagulated whole blood"
+        },
+        {
+          "kind": "list",
+          "text": "Sample stability: superior5"
+        },
+        {
+          "kind": "list",
+          "text": "Sensitivity: less than the FPG test and the OGTT1"
+        },
+        {
+          "kind": "list",
+          "text": "Coefficient of variation: for between laboratory assay variability, see College of American Pathologists (CAP) survey data"
+        }
+      ],
+      "title_path": [
+        "Diabetes & Prediabetes Tests",
+        "Comparing diabetes blood tests",
+        "A1C test"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "hba1c",
+        "result_communication"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "In some people, a blood glucose test may indicate a diagnosis of diabetes even though an A1C test does not.1"
+        },
+        {
+          "kind": "paragraph",
+          "text": "The reverse can also occur—an A1C test may indicate a diagnosis of diabetes even though a blood glucose test does not.1"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Because of these variations in test results, health care professionals should repeat tests before making a diagnosis. People with differing test results may be in an early stage of the disease, where blood glucose levels have not risen high enough to show on every test."
+        }
+      ],
+      "title_path": [
+        "Diabetes & Prediabetes Tests",
+        "Comparing diagnoses"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "fasting_glucose",
+        "hba1c",
+        "result_communication"
+      ]
+    }
+  ],
+  "source_id": "niddk-diabetes-prediabetes-tests",
+  "source_sha256": "2598578773dfc8e1090e34a045a346fa64380fa7fe7a913c19be0664a6b25f69",
+  "title": "Diabetes & Prediabetes Tests",
+  "title_path_whitelist": [
+    [
+      "Diabetes & Prediabetes Tests",
+      "Confirming diagnosis of type 2 diabetes and prediabetes"
+    ],
+    [
+      "Diabetes & Prediabetes Tests",
+      "Interpreting laboratory results"
+    ],
+    [
+      "Diabetes & Prediabetes Tests",
+      "Comparing diabetes blood tests",
+      "Fasting plasma glucose (FPG) test"
+    ],
+    [
+      "Diabetes & Prediabetes Tests",
+      "Comparing diabetes blood tests",
+      "A1C test"
+    ],
+    [
+      "Diabetes & Prediabetes Tests",
+      "Comparing diagnoses"
+    ]
+  ],
+  "url": "https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/diabetes-prediabetes",
+  "version": "retrieved-2026-08-24"
+}

@@ -1,0 +1,72 @@
+{
+  "arms": [
+    {
+      "arm_id": "no_skill",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "skill_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "skill_source": "none"
+    },
+    {
+      "arm_id": "active_v1",
+      "content_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57",
+      "skill_source": ".bear/skills/HealthVault-Task-Execution/SKILL.md"
+    },
+    {
+      "arm_id": "candidate_v2",
+      "content_sha256": "8100169d292e3f92a59d8063d34050e0f6bf9a8ceaacc17bd34aaf4896893095",
+      "skill_sha256": "8100169d292e3f92a59d8063d34050e0f6bf9a8ceaacc17bd34aaf4896893095",
+      "skill_source": "healthvault.evolution.synthetic_demo.SKILL_V2"
+    }
+  ],
+  "benchmark_version": "skill-benchmark-r1-v1",
+  "claim_status": "not_claimable",
+  "dataset_sha256": "cd74f44c1eee941548b0ad47c3c9f166a8f052acc0b1fc3c3d51497bbaac63f4",
+  "dataset_version": "skill-heldout-r1-v1",
+  "run_config_sha256": "7e0d7d2285d08cf4be1ba96423ee9a994a3d012cce877d29ff629d36b7933b65",
+  "run_kind": "mock_smoke",
+  "schema_version": "healthvault-skill-benchmark-manifest-v1",
+  "shared_config": {
+    "case_order": [
+      "SHO-001",
+      "SHO-002",
+      "SHO-003",
+      "SHO-004",
+      "SHO-005",
+      "SHO-006",
+      "SHO-007",
+      "SHO-008",
+      "SHO-009",
+      "SHO-010",
+      "SHO-011",
+      "SHO-012",
+      "SHO-013",
+      "SHO-014",
+      "SHO-015",
+      "SHO-016",
+      "SHO-017",
+      "SHO-018",
+      "SHO-019",
+      "SHO-020"
+    ],
+    "corpus_artifact_sha256": "e833996362be5e42d37b78a916bcd8e5b262485068b4042727cc5fe840da95c9",
+    "corpus_snapshot_id": "r1-2026-08-24-v1",
+    "database_fixture_sha256": "bdba5e6f4a7df00752a8fb87305c3aa6d689de68690fa804a5c6aecac49a2768",
+    "database_snapshot_id": "task-021-synthetic-db-v1",
+    "model": "fake-deterministic-no-model",
+    "prompt_template_sha256": "256871361a91e8347337154f161c17a38c97773ed04db12923a6d5d73ebbef83",
+    "run_parameters": {
+      "max_attempts_per_arm_case": 1,
+      "parallelism": 1,
+      "seed": 21
+    },
+    "temperature": 0.0,
+    "tools": [
+      "query_health_timeline",
+      "compare_health_indicators",
+      "search_health_knowledge",
+      "generate_visit_brief"
+    ],
+    "validator_sha256": "499cb1df778e690fecb2738b1883efee694169e3695f534828950f53c3a066ba"
+  }
+}

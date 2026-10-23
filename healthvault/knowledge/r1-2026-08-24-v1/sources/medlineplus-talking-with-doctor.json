@@ -1,0 +1,73 @@
+{
+  "corpus_version": "r1-2026-08-24-v1",
+  "language": "en",
+  "publisher": "MedlinePlus",
+  "retrieved_on": "2026-08-24",
+  "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "How well you and your doctor or provider communicate with each other is one of the most important parts of getting good health care. Being prepared can help you make the most of your visit, whether it is in person or through telehealth. Here are some things you can do to make the most of your appointment:"
+        },
+        {
+          "kind": "list",
+          "text": "Make a list of the questions and concerns you want to talk about."
+        },
+        {
+          "kind": "list",
+          "text": "If you are having any health problems, write down a description of your symptoms. Include information such as when they started, what makes them better, and what makes them worse."
+        },
+        {
+          "kind": "list",
+          "text": "Ask a trusted friend or family member to come to the appointment with you."
+        },
+        {
+          "kind": "list",
+          "text": "If your doctor or provider doesn't speak your language, call their office ahead of time and ask them to provide an interpreter."
+        },
+        {
+          "kind": "list",
+          "text": "During your appointment, take notes about what your doctor or health care provider tells you. Or you could ask your friend or family member to take notes for you."
+        },
+        {
+          "kind": "list",
+          "text": "If you don't understand something your doctor or provider says, ask questions until you do understand."
+        },
+        {
+          "kind": "list",
+          "text": "Ask for written instructions if you need them."
+        },
+        {
+          "kind": "list",
+          "text": "Ask for your doctor's or provider's contact information and find out the best way to communicate with them."
+        },
+        {
+          "kind": "list",
+          "text": "Find out what to do if you need more information later."
+        }
+      ],
+      "title_path": [
+        "Talking With Your Doctor",
+        "Summary"
+      ],
+      "topic_tags": [
+        "visit_preparation",
+        "result_communication"
+      ]
+    }
+  ],
+  "source_id": "medlineplus-talking-with-doctor",
+  "source_sha256": "9add270c1f9253b695987d6621e6eabf6ecda71736aac3458cf1e8d9f8de6050",
+  "title": "Talking With Your Doctor",
+  "title_path_whitelist": [
+    [
+      "Talking With Your Doctor",
+      "Summary"
+    ]
+  ],
+  "url": "https://medlineplus.gov/talkingwithyourdoctor.html",
+  "version": "reviewed-2024"
+}

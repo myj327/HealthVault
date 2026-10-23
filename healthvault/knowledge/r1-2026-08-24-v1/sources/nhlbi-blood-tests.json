@@ -1,0 +1,91 @@
+{
+  "corpus_version": "r1-2026-08-24-v1",
+  "language": "en",
+  "publisher": "NHLBI",
+  "retrieved_on": "2026-08-24",
+  "reuse_basis": "NIH website text; most NIH information is public domain and reusable unless otherwise marked. No images, logos, references, or third-party material are included. Policy: https://www.nih.gov/about-nih/frequently-asked-questions",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "The basic metabolic panel (BMP) is a group of tests that measures different naturally occurring chemicals in the blood. These tests usually are done on the fluid (plasma) part of blood. The tests can give providers information about your organs, such as the heart, kidneys, and liver."
+        },
+        {
+          "kind": "paragraph",
+          "text": "The BMP includes blood glucose, calcium, and electrolyte tests, as well as blood tests that measure kidney function. Some of these tests require you to fast (not eat any food) before the test, and others don't. Your provider will tell you how to prepare for the test(s) you're having."
+        }
+      ],
+      "title_path": [
+        "Blood Tests",
+        "Types of blood tests",
+        "Blood chemistry tests/basic metabolic panel"
+      ],
+      "topic_tags": [
+        "blood_glucose",
+        "fasting_glucose",
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A lipoprotein panel, also called a lipid panel or lipid profile, measures the levels of LDL and HDL cholesterol and triglycerides in your blood. Cholesterol and triglyceride levels that are higher or lower than normal may be signs of higher risk of coronary heart disease."
+        },
+        {
+          "kind": "paragraph",
+          "text": "A lipoprotein panel gives information about your:"
+        },
+        {
+          "kind": "list",
+          "text": "Total cholesterol"
+        },
+        {
+          "kind": "list",
+          "text": "LDL (\"bad\") cholesterol, which is the main source of cholesterol buildup and blockages in the arteries"
+        },
+        {
+          "kind": "list",
+          "text": "HDL (\"good\") cholesterol, which helps decrease cholesterol blockages in the arteries"
+        },
+        {
+          "kind": "list",
+          "text": "Triglycerides, which are a type of fat in your blood"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Most people will need to fast for 9 to 12 hours before a lipoprotein panel."
+        }
+      ],
+      "title_path": [
+        "Blood Tests",
+        "Types of blood tests",
+        "Lipoprotein panel"
+      ],
+      "topic_tags": [
+        "ldl_cholesterol",
+        "lab_preparation",
+        "result_communication"
+      ]
+    }
+  ],
+  "source_id": "nhlbi-blood-tests",
+  "source_sha256": "f4d03a21369bd39cdab780c6674cfee69e9d2c9fa102be2fcaaa38092016d4fa",
+  "title": "Blood Tests",
+  "title_path_whitelist": [
+    [
+      "Blood Tests",
+      "Types of blood tests",
+      "Blood chemistry tests/basic metabolic panel"
+    ],
+    [
+      "Blood Tests",
+      "Types of blood tests",
+      "Lipoprotein panel"
+    ]
+  ],
+  "url": "https://www.nhlbi.nih.gov/health/blood-tests",
+  "version": "updated-2022-03-24"
+}

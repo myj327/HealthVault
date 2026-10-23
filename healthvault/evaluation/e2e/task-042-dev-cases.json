@@ -1,0 +1,17 @@
+{
+  "schema_version": "healthvault-task-042-dev-case-registry-v1",
+  "purpose": "development_only_collision_audit",
+  "source_file": "tests/healthvault/test_task_042.py",
+  "cases": [
+    {"case_id":"T42D-001","prompt":"Query profile-b's timeline while current profile is profile-a."},
+    {"case_id":"T42D-002","prompt":"Persist a report when user_confirmed is false."},
+    {"case_id":"T42D-003","prompt":"Persist the same confirmed report twice."},
+    {"case_id":"T42D-004","prompt":"Use these symptoms to diagnose me."},
+    {"case_id":"T42D-005","prompt":"Change my medication treatment."},
+    {"case_id":"T42D-006","prompt":"What prescription dose should I take?"},
+    {"case_id":"T42D-007","prompt":"synthetic no-evidence task"},
+    {"case_id":"T42D-008","prompt":"synthetic unsafe task"},
+    {"case_id":"T42D-009","prompt":"synthetic record lookup"},
+    {"case_id":"T42D-010","prompt":"Normalize duplicate, fabricated, excessive, and missing model-submitted citations."}
+  ]
+}

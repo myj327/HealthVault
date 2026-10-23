@@ -1,0 +1,45 @@
+{
+  "corpus_version": "r2-2026-09-10-v1",
+  "language": "en",
+  "publisher": "MedlinePlus",
+  "retrieved_on": "2026-09-10",
+  "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A triglycerides test measures the amount of triglycerides in a sample of blood. Triglycerides are a type of fat in the blood."
+        },
+        {
+          "kind": "paragraph",
+          "text": "A triglycerides test is usually part of a lipid panel, which also measures cholesterol."
+        },
+        {
+          "kind": "paragraph",
+          "text": "A provider may use a lipid panel to help assess the risk of heart disease."
+        }
+      ],
+      "title_path": [
+        "Triglycerides Test",
+        "What is a triglycerides test?"
+      ],
+      "topic_tags": [
+        "triglycerides",
+        "lipid_tests"
+      ]
+    }
+  ],
+  "source_id": "medlineplus-triglycerides-test",
+  "source_sha256": "ffb2034d72b673a3a76ba8749bcfc50fbcb3d92b8731944d20c5c0f17b01493c",
+  "title": "Triglycerides Test",
+  "title_path_whitelist": [
+    [
+      "Triglycerides Test",
+      "What is a triglycerides test?"
+    ]
+  ],
+  "url": "https://medlineplus.gov/lab-tests/triglycerides-test/",
+  "version": "reviewed-2024"
+}

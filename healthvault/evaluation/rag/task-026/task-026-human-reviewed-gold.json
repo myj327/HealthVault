@@ -1,0 +1,1461 @@
+{
+  "corpus": {
+    "aliases_sha256": "0de19fae2cede0e93215745359a5563028e9592bb38f5968504d69e16e7ccd1a",
+    "artifact_sha256": "e833996362be5e42d37b78a916bcd8e5b262485068b4042727cc5fe840da95c9",
+    "corpus_sha256": "3311de358d466531bf235bab5d13f8c8c86a3a9ccad0bb76b32fa3b611c07a36",
+    "corpus_version": "r1-2026-08-24-v1",
+    "strategy": "hybrid_v1",
+    "top_k": 5
+  },
+  "eval_version": "rag-eval-r1-v3-human",
+  "gold_status": "signed",
+  "human_confirmation": {
+    "confirmation_text": "确认以 task-026-blind-review-cn-final.xlsx 作为 human-reviewed Gold，并开始 TASK-026 离线检索评测。",
+    "signed_by": "user",
+    "signed_on": "2026-09-01",
+    "source_workbook": "outputs/task-026-cn/task-026-blind-review-cn-final.xlsx",
+    "source_workbook_sha256": "61f63647ec0672165b80968959d608c123c17ba8670f5c61f360a488745c079a"
+  },
+  "queries": [
+    {
+      "answerable": true,
+      "case_family_id": "medquad:0000035-1",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db",
+          "pool_item_id": "14d37583f88eb5b2",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5",
+          "pool_item_id": "1d507cb8cae2e14e",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:003:22e481a4f661",
+          "pool_item_id": "5e606f56159462e1",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646",
+          "pool_item_id": "7cb7bef75101a5b7",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:002:e11fed19e980",
+          "pool_item_id": "9578058c3f270eb6",
+          "relevance": "relevant"
+        }
+      ],
+      "human_action": "correct",
+      "human_notes": "provisional里的证据相关性和原子主张感觉不正确，blind没检出的证据[\"HVK:r1-2026-08-24-v1:niddk-diabetes-tests:002:46658a772415\"]感觉实际上无关，应该删除",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "MedQuAD",
+        "dataset_version": "git-577bd37b96c02d1833b2c9eed2de9f96964e96cb",
+        "kind": "public_question",
+        "license": "CC BY 4.0",
+        "license_url": "https://github.com/abachaa/MedQuAD/blob/master/LICENSE.txt",
+        "original_id": "0000035-1",
+        "question_sha256": "02cbec2ea54699f6a06e3328dd9d1cc84e867ee1e483da2d2dc671002dc276cd",
+        "source_file_sha256": "b3021851b302c91d521e13fb6e7a80ed09229710f9c7d906a78e4ef92d2c642c",
+        "upstream_url": "https://github.com/abachaa/MedQuAD/blob/577bd37b96c02d1833b2c9eed2de9f96964e96cb/5_NIDDK_QA/0000035.xml"
+      },
+      "qrels": [
+        "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db",
+        "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5",
+        "HVK:r1-2026-08-24-v1:niddk-a1c-test:003:22e481a4f661",
+        "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646",
+        "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:002:e11fed19e980"
+      ],
+      "query": "What is (are) Diagnosis of Diabetes and Prediabetes ?",
+      "query_id": "MQ-001",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "Screening and diagnosis of prediabetes1 5.7–6.4%1\n\n- Screening and diagnosis of type 2 diabetes1 6.5% or higher1repeat for confirmation of diagnosis\n\n- 6.5% or higher1"
+        },
+        {
+          "claim_id": "RC2",
+          "text": "Sample at any time of day, no fasting required3"
+        },
+        {
+          "claim_id": "RC3",
+          "text": "Diagnosis of type 2 diabetes is definitively made by blood tests. Diagnosis requires two abnormal test results from the same sample or from two different samples. Repeat the test using one of the following methods\n\n- Repeat the same test or run a different test.1 The second test should be done immediately.1\n\n- If two test results indicate diabetes, consider the diagnosis confirmed.1\n\n- If the two different tests conflict, repeat the test that is above the diagnostic threshold. Diagnosis is made based on the confirmed test.1\n\nIf the patient’s diabetes test results are close to—but not within—the diagnostic range of the test, the patient may have prediabetes. Health care professionals may wish to observe patients with prediabetes whose condition is likely to progress, recommend lifestyle modifications, and retest in 3 to 6 months.1"
+        }
+      ],
+      "refusal_target": null,
+      "supplemental_qrels": [],
+      "topic": "fasting_glucose_hba1c"
+    },
+    {
+      "answerable": false,
+      "case_family_id": "medquad:0000044-1",
+      "evidence_judgments": [
+        {
+          "citation_id": "",
+          "pool_item_id": "f12871fd103de6a2",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "MedQuAD",
+        "dataset_version": "git-577bd37b96c02d1833b2c9eed2de9f96964e96cb",
+        "kind": "public_question",
+        "license": "CC BY 4.0",
+        "license_url": "https://github.com/abachaa/MedQuAD/blob/master/LICENSE.txt",
+        "original_id": "0000044-1",
+        "question_sha256": "9c341b8c6580b908bfddfa56e430dbb3e172cee4667bf52d87cfcd931c82cf50",
+        "source_file_sha256": "bc4daa0953536c0e9ea86f3fdbd90aa796a59b44cc2f75e6d03f70de27bd3fec",
+        "upstream_url": "https://github.com/abachaa/MedQuAD/blob/577bd37b96c02d1833b2c9eed2de9f96964e96cb/5_NIDDK_QA/0000044.xml"
+      },
+      "qrels": [],
+      "query": "What is (are) Insulin Resistance and Prediabetes ?",
+      "query_id": "MQ-006",
+      "reference_claims": [],
+      "refusal_target": "没有检索到相关证据",
+      "supplemental_qrels": [],
+      "topic": "fasting_glucose_hba1c"
+    },
+    {
+      "answerable": true,
+      "case_family_id": "medquad:0000048-2",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:001:289e17176497",
+          "pool_item_id": "1a073dab001114de",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-blood-glucose-test:003:cd9700d8dc4b",
+          "pool_item_id": "67cd224e08a4ef55",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:003:829b092cdbf7",
+          "pool_item_id": "6d08c98bdad4624d",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-blood-glucose-test:004:4da9f9f2b202",
+          "pool_item_id": "90751c7c9067e385",
+          "relevance": "uncertain"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:012:9c814dc79c93",
+          "pool_item_id": "fcb6e6367611def6",
+          "relevance": "uncertain"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "补充引用 HVK:r1-2026-08-24-v1:niddk-a1c-test:000:614e744d12c8与引用  [\"HVK:r1-2026-08-24-v1:niddk-a1c-test:000:614e744d12c8\"]支持同一主张，属于等价证据，不新增原子主张。",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "MedQuAD",
+        "dataset_version": "git-577bd37b96c02d1833b2c9eed2de9f96964e96cb",
+        "kind": "public_question",
+        "license": "CC BY 4.0",
+        "license_url": "https://github.com/abachaa/MedQuAD/blob/master/LICENSE.txt",
+        "original_id": "0000048-2",
+        "question_sha256": "393de22b019d149ccfb802adca53da7c241c357d7c4fc048b853ce1d9061ce76",
+        "source_file_sha256": "276bcca74a5fd3a6a8cab9d8b25e44baf262a990bcd5d291e94f8ed43c773e7f",
+        "upstream_url": "https://github.com/abachaa/MedQuAD/blob/577bd37b96c02d1833b2c9eed2de9f96964e96cb/5_NIDDK_QA/0000048.xml"
+      },
+      "qrels": [
+        "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:001:289e17176497",
+        "HVK:r1-2026-08-24-v1:niddk-a1c-test:000:614e744d12c8"
+      ],
+      "query": "What is (are) Monitor Your Diabetes ?",
+      "query_id": "MQ-011",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "Your blood glucose level changes all the time. If you're checking it at home, you are measuring what your blood glucose level is at that time. An A1C test gives you an average level of your blood glucose level over the past two to three months."
+        },
+        {
+          "claim_id": "RC2",
+          "text": "If you have diabetes or prediabetes, an A1C test can help monitor your condition and check how well you've been able to control your blood glucose levels.\n\nThe A1C test isn't used to diagnose type 1 diabetes but may be used for monitoring your blood glucose levels."
+        }
+      ],
+      "refusal_target": null,
+      "supplemental_qrels": [
+        "HVK:r1-2026-08-24-v1:niddk-a1c-test:000:614e744d12c8"
+      ],
+      "topic": "result_communication"
+    },
+    {
+      "answerable": false,
+      "case_family_id": "medquad:0000070-1",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:001:f9b42b425a00",
+          "pool_item_id": "4a031349f5ca3a4b",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:004:5899fbdbaaa1",
+          "pool_item_id": "8b76d2eff2dd865c",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00",
+          "pool_item_id": "a78e083bbdba92c6",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:002:e8f82b0a61dc",
+          "pool_item_id": "cec5f323b7e00348",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:001:d00c9be0722a",
+          "pool_item_id": "eb978184a6b6c162",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "correct",
+      "human_notes": "provisional里的引用[\"HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:000:2843363a035b\"]不能回答该问题，原子主张也不对，可回答性也不对",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "MedQuAD",
+        "dataset_version": "git-577bd37b96c02d1833b2c9eed2de9f96964e96cb",
+        "kind": "public_question",
+        "license": "CC BY 4.0",
+        "license_url": "https://github.com/abachaa/MedQuAD/blob/master/LICENSE.txt",
+        "original_id": "0000070-1",
+        "question_sha256": "b710a23729fd576b62b5a62a5954107ad0196f6906db250f5187852882aca3df",
+        "source_file_sha256": "a77e236553d684cf954caf22373a38f7ab782dd1427a6dc4286794c4aa782229",
+        "upstream_url": "https://github.com/abachaa/MedQuAD/blob/577bd37b96c02d1833b2c9eed2de9f96964e96cb/8_NHLBI_QA_XML/0000070.xml"
+      },
+      "qrels": [],
+      "query": "What is (are) High Blood Cholesterol ?",
+      "query_id": "MQ-016",
+      "reference_claims": [],
+      "refusal_target": "没有相关证据可回答该问题",
+      "supplemental_qrels": [],
+      "topic": "lipids"
+    },
+    {
+      "answerable": true,
+      "case_family_id": "medquad:0000070-5",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00",
+          "pool_item_id": "0c833b99c8c509f1",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:001:4661c4caf369",
+          "pool_item_id": "163975108db9f041",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:004:5899fbdbaaa1",
+          "pool_item_id": "49455bcc67f9d636",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:001:d00c9be0722a",
+          "pool_item_id": "5ec4dd1f4b8679ba",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:002:e8f82b0a61dc",
+          "pool_item_id": "8b14ddc3befb5f97",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:001:f9b42b425a00",
+          "pool_item_id": "b91af8bfb0ad0e35",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "MedQuAD",
+        "dataset_version": "git-577bd37b96c02d1833b2c9eed2de9f96964e96cb",
+        "kind": "public_question",
+        "license": "CC BY 4.0",
+        "license_url": "https://github.com/abachaa/MedQuAD/blob/master/LICENSE.txt",
+        "original_id": "0000070-5",
+        "question_sha256": "8dd67e6f7df57474776482c26004571fb70a6fd3373324f7b8d6e719c7cc17e1",
+        "source_file_sha256": "a77e236553d684cf954caf22373a38f7ab782dd1427a6dc4286794c4aa782229",
+        "upstream_url": "https://github.com/abachaa/MedQuAD/blob/577bd37b96c02d1833b2c9eed2de9f96964e96cb/8_NHLBI_QA_XML/0000070.xml"
+      },
+      "qrels": [
+        "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:001:d00c9be0722a"
+      ],
+      "query": "How to diagnose High Blood Cholesterol ?",
+      "query_id": "MQ-019",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "Your healthcare provider may order a blood test called a panel to screen for unhealthy cholesterol levels.\n\nYour healthcare provider may ask you to fast for 8 to 12 hours before a panel"
+        }
+      ],
+      "refusal_target": null,
+      "supplemental_qrels": [],
+      "topic": "lipids_lab_preparation"
+    },
+    {
+      "answerable": false,
+      "case_family_id": "medquad:0000070-6",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:004:5899fbdbaaa1",
+          "pool_item_id": "b084283352d89b5d",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:001:f9b42b425a00",
+          "pool_item_id": "ceb7fcfacbda4ea7",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:002:e8f82b0a61dc",
+          "pool_item_id": "d2dd845d0e62da72",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:001:d00c9be0722a",
+          "pool_item_id": "e1174a6228b9cc03",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00",
+          "pool_item_id": "fabe908766d2a63c",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "MedQuAD",
+        "dataset_version": "git-577bd37b96c02d1833b2c9eed2de9f96964e96cb",
+        "kind": "public_question",
+        "license": "CC BY 4.0",
+        "license_url": "https://github.com/abachaa/MedQuAD/blob/master/LICENSE.txt",
+        "original_id": "0000070-6",
+        "question_sha256": "4353cf141164ab6f7c88beff818a919ed4823486ed446919d8a23ffb5a0b4443",
+        "source_file_sha256": "a77e236553d684cf954caf22373a38f7ab782dd1427a6dc4286794c4aa782229",
+        "upstream_url": "https://github.com/abachaa/MedQuAD/blob/577bd37b96c02d1833b2c9eed2de9f96964e96cb/8_NHLBI_QA_XML/0000070.xml"
+      },
+      "qrels": [],
+      "query": "What are the treatments for High Blood Cholesterol ?",
+      "query_id": "MQ-020",
+      "reference_claims": [],
+      "refusal_target": "没有相关证据可回答该问题",
+      "supplemental_qrels": [],
+      "topic": "lipids"
+    },
+    {
+      "answerable": true,
+      "case_family_id": "rag-eval-r1-v2:RAG-021",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:004:ecb212de740e",
+          "pool_item_id": "0c8e5a185dd199c8",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:001:d00c9be0722a",
+          "pool_item_id": "151915fc0eafb004",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0",
+          "pool_item_id": "b2770e26bc958bc9",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:000:ee35a2417bdc",
+          "pool_item_id": "cd60502a15378a15",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-blood-glucose-test:005:4d0c1d43fe5d",
+          "pool_item_id": "e45159c6b363fe2c",
+          "relevance": "relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "补充引用[\"HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:001:123cc8fea845\", \"HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc\", \"HVK:r1-2026-08-24-v1:medlineplus-blood-glucose-test:005:4d0c1d43fe5d\"]与引用 [\"HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:001:123cc8fea845\", \"HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc\", \"HVK:r1-2026-08-24-v1:medlineplus-blood-glucose-test:005:4d0c1d43fe5d\"]和引用[\"HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:001:123cc8fea845\", \"HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc\", \"HVK:r1-2026-08-24-v1:medlineplus-blood-glucose-test:005:4d0c1d43fe5d\"]支持同一主张，属于等价证据，不新增原子主张。",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-021",
+        "question_sha256": "32ebd238b6020b46b8562455dbe8d686bca25fce580dd4ace42117da69bef6db",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [
+        "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:004:ecb212de740e",
+        "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:001:d00c9be0722a",
+        "HVK:r1-2026-08-24-v1:medlineplus-blood-glucose-test:005:4d0c1d43fe5d",
+        "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:001:123cc8fea845",
+        "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"
+      ],
+      "query": "How many hours should I fast before a fasting blood test?",
+      "query_id": "RAG-021",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "You may need to fast (not eat or drink) for 9 to 12 hours before your blood cholesterol test."
+        },
+        {
+          "claim_id": "RC2",
+          "text": "If your provider orders a fasting blood glucose test or an oral glucose tolerance test, you will need to fast for at least eight hours before the test."
+        }
+      ],
+      "refusal_target": null,
+      "supplemental_qrels": [
+        "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:001:123cc8fea845",
+        "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"
+      ],
+      "topic": "fasting_glucose"
+    },
+    {
+      "answerable": true,
+      "case_family_id": "rag-eval-r1-v2:RAG-022",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:003:72bfe9a38897",
+          "pool_item_id": "2109187ac76c2e04",
+          "relevance": "uncertain"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:004:ecb212de740e",
+          "pool_item_id": "ac6ecd849b16a901",
+          "relevance": "uncertain"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:001:d00c9be0722a",
+          "pool_item_id": "e7b4bd2b5742763f",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:005:268ec0083cce",
+          "pool_item_id": "f1c2f3982e817f58",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:006:06ea733571a0",
+          "pool_item_id": "f997ecebbd07e8c3",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "补充引用与问题直接相关，应纳入 Gold，但两组 RAG Top-5 均未检出。",
+      "language": "zh",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-022",
+        "question_sha256": "8294fb646e964870682742c10dfc9532c74715db18c28e94413dd7258126b160",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [
+        "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:005:268ec0083cce",
+        "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:000:ee35a2417bdc",
+        "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:004:7d4efe5fcffc",
+        "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"
+      ],
+      "query": "空腹抽血时能喝白水吗？",
+      "query_id": "RAG-022",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "Tell your provider if you eat or drink before your test. You may need to reschedule the test for another time when you can fast to make sure you get accurate results."
+        }
+      ],
+      "refusal_target": null,
+      "supplemental_qrels": [
+        "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:000:ee35a2417bdc",
+        "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:004:7d4efe5fcffc",
+        "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"
+      ],
+      "topic": "fasting_glucose"
+    },
+    {
+      "answerable": true,
+      "case_family_id": "rag-eval-r1-v2:RAG-023",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:003:72bfe9a38897",
+          "pool_item_id": "3047b9d5e9f71beb",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:007:c23bf18ec180",
+          "pool_item_id": "987ab16cea9fd362",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:005:268ec0083cce",
+          "pool_item_id": "ad697077febaa487",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:004:7d4efe5fcffc",
+          "pool_item_id": "bc5c3b9144ae5245",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:003:f4259319a649",
+          "pool_item_id": "eb1ec1fd226b9f2e",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-023",
+        "question_sha256": "1e9e7aa1e1117c9a6cf7b98573ff9dc8f1ada43b289e7bfde8c08c962856ba75",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [
+        "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:005:268ec0083cce"
+      ],
+      "query": "What should I do if I ate during my blood-test fast?",
+      "query_id": "RAG-023",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "Tell your provider if you eat or drink before your test. You may need to reschedule the test for another time when you can fast to make sure you get accurate results."
+        }
+      ],
+      "refusal_target": null,
+      "supplemental_qrels": [],
+      "topic": "fasting_glucose"
+    },
+    {
+      "answerable": true,
+      "case_family_id": "rag-eval-r1-v2:RAG-027",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:004:c48b5b6ebc7c",
+          "pool_item_id": "1ded5263bf125300",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:004:92788bfbf3e5",
+          "pool_item_id": "23c943d834879c70",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009",
+          "pool_item_id": "69dda84b9fb7f1cd",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:003:f4259319a649",
+          "pool_item_id": "aac61ec2c40da858",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:004:a3832ff6173b",
+          "pool_item_id": "cfa6f0ed15e84d99",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "引用[\"HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009\", \"HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db\"]和引用[\"HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009\", \"HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db\"]支持同一主张，属于等价证据，不新增原子主张。",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-027",
+        "question_sha256": "cc2b09eace4daa16e443c603d6fa3dbcd26b732a13c6c417e931831bf0a94bcd",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [
+        "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:004:92788bfbf3e5",
+        "HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009",
+        "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db"
+      ],
+      "query": "Must I fast before an HbA1c blood draw?",
+      "query_id": "RAG-027",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "The A1C test is a blood test that provides your average levels of blood glucose over the last 3 months. Other names for the A1C test are hemoglobin A1C, HbA1C, glycated hemoglobin, and glycosylated hemoglobin test. You can eat and drink before this test."
+        }
+      ],
+      "refusal_target": null,
+      "supplemental_qrels": [
+        "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db"
+      ],
+      "topic": "hba1c"
+    },
+    {
+      "answerable": true,
+      "case_family_id": "rag-eval-r1-v2:RAG-028",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:005:3f1533a2f86e",
+          "pool_item_id": "4c1e751376681105",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:001:31596e9a43ac",
+          "pool_item_id": "5f5e9aec7a925fa7",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8",
+          "pool_item_id": "98728519cdc50465",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db",
+          "pool_item_id": "9a1a055ccfa67ae4",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:006:92bc5c9dbe88",
+          "pool_item_id": "a01e6d6a1c1013b9",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:003:f4259319a649",
+          "pool_item_id": "cb1064e8ff95e232",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "引用[\"HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009\", \"HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db\"]和引用[\"HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009\", \"HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db\"]支持同一主张，属于等价证据，不新增原子主张。",
+      "language": "zh",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-028",
+        "question_sha256": "fd79a6066eb36b35b0e5040bd962867719fbd43c60dcd93867962c60070a1463",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [
+        "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db",
+        "HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"
+      ],
+      "query": "A1C 可以在一天中的任何时间抽血吗？",
+      "query_id": "RAG-028",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "- Sample at any time of day, no fasting required3"
+        }
+      ],
+      "refusal_target": null,
+      "supplemental_qrels": [
+        "HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"
+      ],
+      "topic": "hba1c"
+    },
+    {
+      "answerable": true,
+      "case_family_id": "rag-eval-r1-v2:RAG-029",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:001:f9b42b425a00",
+          "pool_item_id": "0a75220790375f0d",
+          "relevance": "uncertain"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:000:2843363a035b",
+          "pool_item_id": "2e67cd73da0b5c53",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:004:5899fbdbaaa1",
+          "pool_item_id": "3a89a54344f49223",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00",
+          "pool_item_id": "7a75211b09379036",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:002:e8f82b0a61dc",
+          "pool_item_id": "ffa60fc2e3cd061c",
+          "relevance": "relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-029",
+        "question_sha256": "25c5cc0e0086e32607c4aa40209965053208d9c44983d667cf1117fba4c20528",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [
+        "HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00",
+        "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:002:e8f82b0a61dc"
+      ],
+      "query": "Which measurements are included in a lipid profile?",
+      "query_id": "RAG-029",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "A lipoprotein panel gives information about your:\n\n- Total cholesterol\n\n- LDL (\"bad\") cholesterol, which is the main source of cholesterol buildup and blockages in the arteries\n\n- HDL (\"good\") cholesterol, which helps decrease cholesterol blockages in the arteries\n\n- Triglycerides, which are a type of fat in your blood"
+        }
+      ],
+      "refusal_target": null,
+      "supplemental_qrels": [],
+      "topic": "ldl_cholesterol"
+    },
+    {
+      "answerable": true,
+      "case_family_id": "rag-eval-r1-v2:RAG-031",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:000:2843363a035b",
+          "pool_item_id": "578df5b94cf94529",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00",
+          "pool_item_id": "64afc96070632bbe",
+          "relevance": "uncertain"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:000:d2c24a28ea75",
+          "pool_item_id": "6f7af2a3fcd80782",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:001:f9b42b425a00",
+          "pool_item_id": "f8030d35decbcad8",
+          "relevance": "uncertain"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:006:59dd511c4e58",
+          "pool_item_id": "f9a94225b7840c04",
+          "relevance": "uncertain"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-031",
+        "question_sha256": "9d76915f8dfcb3ddf97475a3252492d26ea3dfd6c459b4fcb81aa140b843bf4c",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [
+        "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:000:2843363a035b"
+      ],
+      "query": "Is LDL described as good or bad cholesterol?",
+      "query_id": "RAG-031",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "There are two main types of cholesterol: LDL (low-density lipoprotein), or \"bad\" cholesterol, and HDL (high-density lipoprotein), or \"good\" cholesterol."
+        }
+      ],
+      "refusal_target": null,
+      "supplemental_qrels": [],
+      "topic": "ldl_cholesterol"
+    },
+    {
+      "answerable": true,
+      "case_family_id": "rag-eval-r1-v2:RAG-033",
+      "evidence_judgments": [
+        {
+          "citation_id": "",
+          "pool_item_id": "7d95720f5c89d31e",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "补充引用[\"HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0\"]，与问题直接相关，应纳入 Gold，但两组 RAG Top-5 均未检出。",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-033",
+        "question_sha256": "edbfd3e2f8f5e992c822cd0465e1104aace07613a5c99eada9251664c97a62cb",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [
+        "HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"
+      ],
+      "query": "Do many laboratory tests require no special preparation?",
+      "query_id": "RAG-033",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "For many lab tests, you don't need to do anything other than answer questions from your provider and/or lab professional."
+        }
+      ],
+      "refusal_target": null,
+      "supplemental_qrels": [
+        "HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"
+      ],
+      "topic": "lab_preparation"
+    },
+    {
+      "answerable": true,
+      "case_family_id": "rag-eval-r1-v2:RAG-034",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:005:268ec0083cce",
+          "pool_item_id": "2033c98406c9eebc",
+          "relevance": "uncertain"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:006:06ea733571a0",
+          "pool_item_id": "873cd8693f2b1a1b",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:003:72bfe9a38897",
+          "pool_item_id": "8fa63caa3e78792f",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:004:ecb212de740e",
+          "pool_item_id": "c128dcd8bbb2e419",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:001:d00c9be0722a",
+          "pool_item_id": "c26da37f41cfead9",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "补充引用[\"HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0\", \"HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:000:ee35a2417bdc\"]和[\"HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0\", \"HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:000:ee35a2417bdc\"]，与问题直接相关，应纳入 Gold，但两组 RAG Top-5 均未检出。",
+      "language": "zh",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-034",
+        "question_sha256": "a4a8bc7f1b2b1419dd2c58adb031e69787e89147a768f0eab5d5d955f65cd08b",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [
+        "HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0",
+        "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:000:ee35a2417bdc"
+      ],
+      "query": "化验前空腹的含义是什么？",
+      "query_id": "RAG-034",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "Fasting before a blood test means not eating or drinking anything except plain water for several hours before the test."
+        },
+        {
+          "claim_id": "RC2",
+          "text": "While fasting, you should not chew gum, smoke, or exercise."
+        },
+        {
+          "claim_id": "RC3",
+          "text": "The required fasting duration varies, so patients should ask their provider how long to fast."
+        }
+      ],
+      "refusal_target": null,
+      "supplemental_qrels": [
+        "HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0",
+        "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:000:ee35a2417bdc"
+      ],
+      "topic": "lab_preparation"
+    },
+    {
+      "answerable": true,
+      "case_family_id": "rag-eval-r1-v2:RAG-037",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:005:5d03f8b045cf",
+          "pool_item_id": "02e4840b440bccbb",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:001:80202cc093b8",
+          "pool_item_id": "1984482cd47d4b01",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:005:e9cb0c683109",
+          "pool_item_id": "4f250ba059a419fa",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:004:0dea5b59d283",
+          "pool_item_id": "684fc47ab686b112",
+          "relevance": "uncertain"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37",
+          "pool_item_id": "a769af64345082be",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:003:358a3519eeb4",
+          "pool_item_id": "a81d645f11964e57",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:003:8e89f997915d",
+          "pool_item_id": "ec191023aa6fbbf1",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-037",
+        "question_sha256": "fd2f7c8da1b6c285b19e1b10690178a0b9cb1fab7b645b92b925968275900763",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [
+        "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:001:80202cc093b8",
+        "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"
+      ],
+      "query": "Can a healthy person have a result outside a reference range?",
+      "query_id": "RAG-037",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "Reference ranges show the average results in a healthy test group. So:\n\n- A test result that is higher or lower than the range that applies to you may or may not be a sign of a health problem. It's common for healthy people to sometimes have results outside the reference range."
+        },
+        {
+          "claim_id": "RC2",
+          "text": "First, because labs often use different testing methods, they often use different reference ranges to describe normal results."
+        }
+      ],
+      "refusal_target": null,
+      "supplemental_qrels": [],
+      "topic": "result_communication"
+    },
+    {
+      "answerable": true,
+      "case_family_id": "rag-eval-r1-v2:RAG-039",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:004:10266a0d1d57",
+          "pool_item_id": "15a0dc23e9f612e9",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:007:1545b3e8bc15",
+          "pool_item_id": "263df0aaa69e7091",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:001:80202cc093b8",
+          "pool_item_id": "32a90bbc003e5faf",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:003:967c0a00dd50",
+          "pool_item_id": "86a39ead22b600f6",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:008:1dd2f52ebf7e",
+          "pool_item_id": "9a99475ddd4d6b67",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:011:62dd64b727c8",
+          "pool_item_id": "fb36a6025b06c5eb",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-039",
+        "question_sha256": "5fafe2161f4c1ea05050bbc0cbf74ca13a02ed3e8bfc9089ca5a6aeabebae080",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [
+        "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:003:967c0a00dd50"
+      ],
+      "query": "Why should I check the reference range on my own lab report?",
+      "query_id": "RAG-039",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "When looking at your lab test results, it's helpful to consider two important facts. First, because labs often use different testing methods, they often use different reference ranges to describe normal results."
+        }
+      ],
+      "refusal_target": null,
+      "supplemental_qrels": [],
+      "topic": "result_communication"
+    },
+    {
+      "answerable": true,
+      "case_family_id": "rag-eval-r1-v2:RAG-041",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:001:31596e9a43ac",
+          "pool_item_id": "10fee9726c14dde2",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:001:2c148f4aeb63",
+          "pool_item_id": "152d80a5596ef295",
+          "relevance": "uncertain"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025",
+          "pool_item_id": "4272aacd4a5a9136",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:003:358a3519eeb4",
+          "pool_item_id": "5e8ebcf9235e4a95",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a",
+          "pool_item_id": "836b207d7c60872d",
+          "relevance": "relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-041",
+        "question_sha256": "abd8b6b6e1b98d07d4b7146564822e481d5e2dd6691e73df351022bf3064e689",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [
+        "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025",
+        "HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"
+      ],
+      "query": "Should I write down questions before seeing my doctor?",
+      "query_id": "RAG-041",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "When you visit the doctor, it helps to write down your questions ahead of time."
+        }
+      ],
+      "refusal_target": null,
+      "supplemental_qrels": [],
+      "topic": "visit_preparation"
+    },
+    {
+      "answerable": true,
+      "case_family_id": "rag-eval-r1-v2:RAG-042",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:002:1d99f24acf83",
+          "pool_item_id": "1ddd6f61dd06aab6",
+          "relevance": "relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025",
+          "pool_item_id": "44c1feecaecd6966",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:001:31596e9a43ac",
+          "pool_item_id": "6af683e5d9fb8674",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:003:358a3519eeb4",
+          "pool_item_id": "85ba9a109d9aeca3",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:000:d2c24a28ea75",
+          "pool_item_id": "b3591449eb84c514",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "补充引用[\"HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a\", \"HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:002:1d99f24acf83\"]也是相关证据",
+      "language": "zh",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-042",
+        "question_sha256": "5c55da39746abf0a16f773e9149e83d59b99b82f61763c051b79567eb85e316c",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [
+        "HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:002:1d99f24acf83",
+        "HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"
+      ],
+      "query": "就诊时可以请家人陪同吗？",
+      "query_id": "RAG-042",
+      "reference_claims": [
+        {
+          "claim_id": "RC1",
+          "text": "You may also want to ask a family member or friend to go with you to help take notes."
+        }
+      ],
+      "refusal_target": null,
+      "supplemental_qrels": [
+        "HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"
+      ],
+      "topic": "visit_preparation"
+    },
+    {
+      "answerable": false,
+      "case_family_id": "rag-eval-r1-v2:RAG-054",
+      "evidence_judgments": [
+        {
+          "citation_id": "",
+          "pool_item_id": "5ba0d0661bdaf6a7",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-054",
+        "question_sha256": "93f65129877416e759dccba2bbc12aa069c8a8544a73be4b31746c712233e617",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [],
+      "query": "How should a white blood cell differential be interpreted?",
+      "query_id": "RAG-054",
+      "reference_claims": [],
+      "refusal_target": "没有相关证据可回答该问题",
+      "supplemental_qrels": [],
+      "topic": "out_of_scope"
+    },
+    {
+      "answerable": false,
+      "case_family_id": "rag-eval-r1-v2:RAG-056",
+      "evidence_judgments": [
+        {
+          "citation_id": "",
+          "pool_item_id": "5dc64698a0b922c7",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-056",
+        "question_sha256": "56cd7ba032badbc1127bf20fba3955f072a7785691ba14ff9768b08d3376d722",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [],
+      "query": "Can this knowledge base explain a pathology biopsy report?",
+      "query_id": "RAG-056",
+      "reference_claims": [],
+      "refusal_target": "没有相关证据可回答该问题",
+      "supplemental_qrels": [],
+      "topic": "out_of_scope"
+    },
+    {
+      "answerable": false,
+      "case_family_id": "rag-eval-r1-v2:RAG-057",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:004:5899fbdbaaa1",
+          "pool_item_id": "3ba1c6e3d190ff3c",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:001:d00c9be0722a",
+          "pool_item_id": "4508ab8b2303edce",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:000:d2c24a28ea75",
+          "pool_item_id": "933489ab2a8c9841",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00",
+          "pool_item_id": "b0f6479aea377977",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:004:ecb212de740e",
+          "pool_item_id": "dcdbdaa2c776391a",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "",
+      "language": "zh",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-057",
+        "question_sha256": "5e5d564bf717e0ee6a5abf68fa1cbe69fcc92ce39e474d8f3c60a60d98081af6",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [],
+      "query": "我的 LDL 上个月是多少？",
+      "query_id": "RAG-057",
+      "reference_claims": [],
+      "refusal_target": "固定公共语料无法得知用户上个月的个人 LDL 结果",
+      "supplemental_qrels": [],
+      "topic": "patient_fact"
+    },
+    {
+      "answerable": false,
+      "case_family_id": "rag-eval-r1-v2:RAG-059",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db",
+          "pool_item_id": "2905ec4e6db2c81e",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:003:f4259319a649",
+          "pool_item_id": "3afed4256d2d621b",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:005:3f1533a2f86e",
+          "pool_item_id": "6fb6f5cb9c48c85c",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:006:92bc5c9dbe88",
+          "pool_item_id": "93f5fc6ea98042d9",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:001:31596e9a43ac",
+          "pool_item_id": "b4d63cdf78829dd2",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8",
+          "pool_item_id": "d5875c09263ad9e4",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "",
+      "language": "mixed",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-059",
+        "question_sha256": "ea1637e214584b7b588d5787330bef22775934fd34835eda6c434d02eb81d032",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [],
+      "query": "根据我的症状和 HbA1c 判断我得了哪种病",
+      "query_id": "RAG-059",
+      "reference_claims": [],
+      "refusal_target": "不下医学诊断",
+      "supplemental_qrels": [],
+      "topic": "diagnosis"
+    },
+    {
+      "answerable": false,
+      "case_family_id": "rag-eval-r1-v2:RAG-060",
+      "evidence_judgments": [
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:000:614e744d12c8",
+          "pool_item_id": "1bcf3770cb356213",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8",
+          "pool_item_id": "513fed0b7325779e",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:006:92bc5c9dbe88",
+          "pool_item_id": "570e53e509324732",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:003:f4259319a649",
+          "pool_item_id": "7775a6afaa29ba82",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:013:d94bf3c0e467",
+          "pool_item_id": "8b35745ec96987c4",
+          "relevance": "not_relevant"
+        },
+        {
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:004:92788bfbf3e5",
+          "pool_item_id": "abe7ebcd968e1219",
+          "relevance": "not_relevant"
+        }
+      ],
+      "human_action": "approve",
+      "human_notes": "",
+      "language": "en",
+      "public_provenance": {
+        "dataset": "rag-eval-r1-v2",
+        "dataset_version": "rag-eval-r1-v2",
+        "kind": "existing_rag_candidate",
+        "license": "synthetic evaluation query",
+        "license_url": null,
+        "original_id": "RAG-060",
+        "question_sha256": "e9e9f023be5e39c2a94bfc1920cab0bfe6020159b6aacb59de69e4284174aa27",
+        "source_file_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac",
+        "upstream_url": null
+      },
+      "qrels": [],
+      "query": "Can an A1C result predict exactly what my glucose will be tomorrow?",
+      "query_id": "RAG-060",
+      "reference_claims": [],
+      "refusal_target": "不能根据 A1C 准确预测用户明天某一时点的血糖",
+      "supplemental_qrels": [],
+      "topic": "hba1c"
+    }
+  ],
+  "rewrite_development": {
+    "gold_query_ids_used": [],
+    "query_ids": [
+      "RAG-001",
+      "RAG-002",
+      "RAG-003",
+      "RAG-004",
+      "RAG-005",
+      "RAG-006",
+      "RAG-007",
+      "RAG-008",
+      "RAG-009",
+      "RAG-010",
+      "RAG-011",
+      "RAG-012",
+      "RAG-013",
+      "RAG-015",
+      "RAG-016",
+      "RAG-019",
+      "RAG-020",
+      "RAG-047",
+      "RAG-048",
+      "RAG-053"
+    ],
+    "rules_sha256": "b62c1a1c049604a403d7fb9d31553dffb8139e2819e2d8021ac9ac6dec72ef1e",
+    "source_eval_version": "rag-eval-r1-v2"
+  },
+  "schema_version": 1,
+  "source_hashes": {
+    "candidate_pool_sha256": "693d35b104e69b163acddaa58650b8eca15c0c8a00f67269c2389fc6a21819d0",
+    "rag_eval_v2_sha256": "dfb75da65ef228a9e16cc2e479d51c97850d858dfa99880f08a9de4b3d1a21ac"
+  },
+  "status": "human_reviewed_gold",
+  "summary": {
+    "actions": {
+      "approve": 22,
+      "correct": 2,
+      "exclude": 0
+    },
+    "answerable_count": 16,
+    "evidence_judgments": {
+      "not_relevant": 76,
+      "relevant": 24,
+      "uncertain": 11
+    },
+    "query_count": 24,
+    "unanswerable_count": 8
+  },
+  "task_version": "task-026-offline-v1",
+  "used_case_check": {
+    "collisions": [],
+    "compared_against": [
+      "task-024-heldout-r2-v1",
+      "task-025-heldout-r3-v1"
+    ],
+    "method": "nfkc exact plus used_cases near-synonym detector"
+  }
+}

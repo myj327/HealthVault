@@ -1,0 +1,45 @@
+{
+  "corpus_version": "r2-2026-09-10-v1",
+  "language": "en",
+  "publisher": "MedlinePlus",
+  "retrieved_on": "2026-09-10",
+  "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A comprehensive metabolic panel (CMP) is a routine blood test that measures 14 different substances in a sample of your blood. It provides information about metabolism and the balance of certain chemicals in the body."
+        },
+        {
+          "kind": "list",
+          "text": "A CMP includes measurements of glucose, calcium, electrolytes, albumin, total protein, liver enzymes, bilirubin, BUN, and creatinine."
+        },
+        {
+          "kind": "paragraph",
+          "text": "BUN and creatinine are waste products that the kidneys filter from the blood and remove through urine."
+        }
+      ],
+      "title_path": [
+        "Comprehensive Metabolic Panel (CMP)",
+        "What is a comprehensive metabolic panel (CMP)?"
+      ],
+      "topic_tags": [
+        "metabolic_panel",
+        "lab_interpretation"
+      ]
+    }
+  ],
+  "source_id": "medlineplus-comprehensive-metabolic-panel-cmp",
+  "source_sha256": "005baa3b9b5d45d19227ae62beeeae0f350f3363c546e261b1363fcf967874c7",
+  "title": "Comprehensive Metabolic Panel (CMP)",
+  "title_path_whitelist": [
+    [
+      "Comprehensive Metabolic Panel (CMP)",
+      "What is a comprehensive metabolic panel (CMP)?"
+    ]
+  ],
+  "url": "https://medlineplus.gov/lab-tests/comprehensive-metabolic-panel-cmp/",
+  "version": "reviewed-2023"
+}

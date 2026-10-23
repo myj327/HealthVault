@@ -1,0 +1,7 @@
+.unsaved-dialog { box-sizing: border-box; max-width: 480px; width: calc(100% - 32px); padding: 28px; border: 1px solid #9dae9f; border-radius: 16px; background: #fff; color: #213a2a; }
+.unsaved-dialog::backdrop { background: rgb(20 40 30 / 45%); }
+.unsaved-dialog h2 { margin: 0 0 16px; font-size: 20px; }
+.unsaved-dialog p { margin: 0 0 24px; font-size: 14px; line-height: 1.7; }
+.unsaved-dialog button { min-height: 44px; }
+.unsaved-dialog button:focus-visible { outline: 3px solid #547a60; outline-offset: 3px; }
+@media (max-width: 600px) { .unsaved-dialog { padding: 20px; } .unsaved-dialog .review-actions { display: grid; } }

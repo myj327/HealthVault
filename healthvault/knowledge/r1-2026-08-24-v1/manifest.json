@@ -1,0 +1,569 @@
+{
+  "aliases_sha256": "0de19fae2cede0e93215745359a5563028e9592bb38f5968504d69e16e7ccd1a",
+  "chunking": {
+    "configured_overlap_estimated_tokens": 60,
+    "maximum_estimated_tokens": 600,
+    "minimum_estimated_tokens": 80,
+    "overlap_estimated_tokens": [
+      40,
+      80
+    ],
+    "target_estimated_tokens": [
+      250,
+      450
+    ],
+    "token_estimator": "char4-cjk-v1"
+  },
+  "corpus_sha256": "3311de358d466531bf235bab5d13f8c8c86a3a9ccad0bb76b32fa3b611c07a36",
+  "corpus_version": "r1-2026-08-24-v1",
+  "default_strategy": "hybrid_v1",
+  "schema_version": 1,
+  "source_count": 14,
+  "sources": [
+    {
+      "language": "en",
+      "publisher": "MedlinePlus",
+      "retrieved_on": "2026-08-24",
+      "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+      "source_id": "medlineplus-blood-glucose-test",
+      "source_sha256": "696b853558cfe308ac5aece61c63486f4c92175777e77306cc6bb16221e2dcf2",
+      "title": "Blood Glucose Test",
+      "title_path_whitelist": [
+        [
+          "Blood Glucose Test",
+          "What is a blood glucose test?"
+        ],
+        [
+          "Blood Glucose Test",
+          "What is it used for?"
+        ],
+        [
+          "Blood Glucose Test",
+          "Why do I need a blood glucose test?"
+        ],
+        [
+          "Blood Glucose Test",
+          "What happens during a blood glucose test?"
+        ],
+        [
+          "Blood Glucose Test",
+          "Will I need to do anything to prepare for the test?"
+        ],
+        [
+          "Blood Glucose Test",
+          "What do the results mean?"
+        ],
+        [
+          "Blood Glucose Test",
+          "Is there anything else I should know about a blood glucose test?"
+        ]
+      ],
+      "url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+      "version": "reviewed-2024"
+    },
+    {
+      "language": "en",
+      "publisher": "MedlinePlus",
+      "retrieved_on": "2026-08-24",
+      "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+      "source_id": "medlineplus-cholesterol-levels",
+      "source_sha256": "ae5890e63da59a095089e86f215c05a78b4ec677090cdb53f8a0f30a1c9188be",
+      "title": "Cholesterol Levels",
+      "title_path_whitelist": [
+        [
+          "Cholesterol Levels",
+          "What is a cholesterol test?"
+        ],
+        [
+          "Cholesterol Levels",
+          "What is it used for?"
+        ],
+        [
+          "Cholesterol Levels",
+          "Why do I need a cholesterol test?"
+        ],
+        [
+          "Cholesterol Levels",
+          "What happens during a cholesterol test?"
+        ],
+        [
+          "Cholesterol Levels",
+          "Will I need to do anything to prepare for the test?"
+        ],
+        [
+          "Cholesterol Levels",
+          "What do the results mean?"
+        ],
+        [
+          "Cholesterol Levels",
+          "Is there anything else I need to know about my cholesterol levels?"
+        ]
+      ],
+      "url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+      "version": "reviewed-2024"
+    },
+    {
+      "language": "en",
+      "publisher": "MedlinePlus",
+      "retrieved_on": "2026-08-24",
+      "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+      "source_id": "medlineplus-fasting-blood-test",
+      "source_sha256": "97064d865bbb2b62b238e495210c6414bfa0c42a13350fdff81807b555c85a95",
+      "title": "Fasting for a Blood Test",
+      "title_path_whitelist": [
+        [
+          "Fasting for a Blood Test",
+          "What is fasting for a blood test?"
+        ],
+        [
+          "Fasting for a Blood Test",
+          "How long do I have to fast before the test?"
+        ],
+        [
+          "Fasting for a Blood Test",
+          "Why do I need to fast before my blood test?"
+        ],
+        [
+          "Fasting for a Blood Test",
+          "What types of blood tests require fasting?"
+        ],
+        [
+          "Fasting for a Blood Test",
+          "Can I drink anything besides water during a fast?"
+        ],
+        [
+          "Fasting for a Blood Test",
+          "What if I make a mistake and have something to eat or drink besides water during my fast?"
+        ],
+        [
+          "Fasting for a Blood Test",
+          "When can I eat and drink normally again?"
+        ],
+        [
+          "Fasting for a Blood Test",
+          "Is there anything else I need to know about fasting before a blood test?"
+        ]
+      ],
+      "url": "https://medlineplus.gov/lab-tests/fasting-for-a-blood-test/",
+      "version": "reviewed-2025"
+    },
+    {
+      "language": "en",
+      "publisher": "MedlinePlus",
+      "retrieved_on": "2026-08-24",
+      "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+      "source_id": "medlineplus-hba1c-test",
+      "source_sha256": "815f9a909f97f29f0bf5d0434b0ae03575f000d5eb66811f7a44387b4c27e70b",
+      "title": "Hemoglobin A1C (HbA1c) Test",
+      "title_path_whitelist": [
+        [
+          "Hemoglobin A1C (HbA1c) Test",
+          "What is a hemoglobin A1C (HbA1C) test?"
+        ],
+        [
+          "Hemoglobin A1C (HbA1c) Test",
+          "What is it used for?"
+        ],
+        [
+          "Hemoglobin A1C (HbA1c) Test",
+          "Why do I need an A1C test?"
+        ],
+        [
+          "Hemoglobin A1C (HbA1c) Test",
+          "What happens during an A1C test?"
+        ],
+        [
+          "Hemoglobin A1C (HbA1c) Test",
+          "What do the results mean?"
+        ],
+        [
+          "Hemoglobin A1C (HbA1c) Test",
+          "Is there anything else I need to know about an A1C test?"
+        ]
+      ],
+      "url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+      "version": "reviewed-2025"
+    },
+    {
+      "language": "en",
+      "publisher": "MedlinePlus",
+      "retrieved_on": "2026-08-24",
+      "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+      "source_id": "medlineplus-lab-preparation",
+      "source_sha256": "bdaf9f050ea3edec51bb2455e603bd0e9955c36ba8c0b5d67c130a9a73c34314",
+      "title": "How to Prepare for a Lab Test",
+      "title_path_whitelist": [
+        [
+          "How to Prepare for a Lab Test",
+          "How do I prepare for a lab test?"
+        ],
+        [
+          "How to Prepare for a Lab Test",
+          "Will I need to take other steps to prepare for my lab test?"
+        ],
+        [
+          "How to Prepare for a Lab Test",
+          "What types of lab tests require special preparation?"
+        ],
+        [
+          "How to Prepare for a Lab Test",
+          "Is there anything else I should know about preparing for a lab test?"
+        ]
+      ],
+      "url": "https://medlineplus.gov/lab-tests/how-to-prepare-for-a-lab-test/",
+      "version": "reviewed-2024"
+    },
+    {
+      "language": "en",
+      "publisher": "MedlinePlus",
+      "retrieved_on": "2026-08-24",
+      "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+      "source_id": "medlineplus-talking-with-doctor",
+      "source_sha256": "9add270c1f9253b695987d6621e6eabf6ecda71736aac3458cf1e8d9f8de6050",
+      "title": "Talking With Your Doctor",
+      "title_path_whitelist": [
+        [
+          "Talking With Your Doctor",
+          "Summary"
+        ]
+      ],
+      "url": "https://medlineplus.gov/talkingwithyourdoctor.html",
+      "version": "reviewed-2024"
+    },
+    {
+      "language": "en",
+      "publisher": "MedlinePlus",
+      "retrieved_on": "2026-08-24",
+      "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+      "source_id": "medlineplus-understand-lab-results",
+      "source_sha256": "e8e7d1aed29e229e3355faa14225723ef0115ace336f4906209f46c2c303954e",
+      "title": "How to Understand Your Lab Results",
+      "title_path_whitelist": [
+        [
+          "How to Understand Your Lab Results",
+          "What is a laboratory test?"
+        ],
+        [
+          "How to Understand Your Lab Results",
+          "Why do I need a lab test?"
+        ],
+        [
+          "How to Understand Your Lab Results",
+          "What is a reference range?"
+        ],
+        [
+          "How to Understand Your Lab Results",
+          "What do negative, positive, and inconclusive results mean?"
+        ],
+        [
+          "How to Understand Your Lab Results",
+          "What are false positive and false negative results?"
+        ],
+        [
+          "How to Understand Your Lab Results",
+          "What can affect my results?"
+        ],
+        [
+          "How to Understand Your Lab Results",
+          "What if I do a home test?"
+        ]
+      ],
+      "url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+      "version": "reviewed-2025"
+    },
+    {
+      "language": "en",
+      "publisher": "NHLBI",
+      "retrieved_on": "2026-08-24",
+      "reuse_basis": "NIH website text; most NIH information is public domain and reusable unless otherwise marked. No images, logos, references, or third-party material are included. Policy: https://www.nih.gov/about-nih/frequently-asked-questions",
+      "source_id": "nhlbi-blood-tests",
+      "source_sha256": "f4d03a21369bd39cdab780c6674cfee69e9d2c9fa102be2fcaaa38092016d4fa",
+      "title": "Blood Tests",
+      "title_path_whitelist": [
+        [
+          "Blood Tests",
+          "Types of blood tests",
+          "Blood chemistry tests/basic metabolic panel"
+        ],
+        [
+          "Blood Tests",
+          "Types of blood tests",
+          "Lipoprotein panel"
+        ]
+      ],
+      "url": "https://www.nhlbi.nih.gov/health/blood-tests",
+      "version": "updated-2022-03-24"
+    },
+    {
+      "language": "en",
+      "publisher": "NHLBI",
+      "retrieved_on": "2026-08-24",
+      "reuse_basis": "NIH website text; most NIH information is public domain and reusable unless otherwise marked. No images, logos, references, or third-party material are included. Policy: https://www.nih.gov/about-nih/frequently-asked-questions",
+      "source_id": "nhlbi-cholesterol-diagnosis",
+      "source_sha256": "8694a4de331e1f9c360b906cb9d88a937dc9eed09158c78c1954e8cc6d2dd46f",
+      "title": "Blood Cholesterol Diagnosis",
+      "title_path_whitelist": [
+        [
+          "Blood Cholesterol Diagnosis",
+          "Medical history and physical exam"
+        ],
+        [
+          "Blood Cholesterol Diagnosis",
+          "Screening for high cholesterol"
+        ],
+        [
+          "Blood Cholesterol Diagnosis",
+          "Lipoprotein (lipid) panel"
+        ],
+        [
+          "Blood Cholesterol Diagnosis",
+          "Lipoprotein-a"
+        ]
+      ],
+      "url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+      "version": "updated-2024-04-18"
+    },
+    {
+      "language": "en",
+      "publisher": "NIDDK",
+      "retrieved_on": "2026-08-24",
+      "reuse_basis": "NIH website text; most NIH information is public domain and reusable unless otherwise marked. No images, logos, references, or third-party material are included. Policy: https://www.nih.gov/about-nih/frequently-asked-questions",
+      "source_id": "niddk-a1c-test",
+      "source_sha256": "c553fd10130a45cd15a35e9fe5c25268297f44f735ee2a27cc2b6f25c49935e7",
+      "title": "The A1C Test & Diabetes",
+      "title_path_whitelist": [
+        [
+          "The A1C Test & Diabetes",
+          "What is the A1C test?"
+        ],
+        [
+          "The A1C Test & Diabetes",
+          "Why should a person get the A1C test?"
+        ],
+        [
+          "The A1C Test & Diabetes",
+          "How is the A1C test used to diagnose type 2 diabetes and prediabetes?"
+        ],
+        [
+          "The A1C Test & Diabetes",
+          "How is the A1C test used to diagnose type 2 diabetes and prediabetes?",
+          "A1C results and what the numbers mean"
+        ],
+        [
+          "The A1C Test & Diabetes",
+          "Can other blood glucose tests be used to diagnose type 2 diabetes and prediabetes?"
+        ],
+        [
+          "The A1C Test & Diabetes",
+          "Can the A1C test result in a different diagnosis than the blood glucose tests?"
+        ],
+        [
+          "The A1C Test & Diabetes",
+          "Why do diabetes blood test results vary?"
+        ],
+        [
+          "The A1C Test & Diabetes",
+          "Why do diabetes blood test results vary?",
+          "Blood glucose levels move up and down"
+        ],
+        [
+          "The A1C Test & Diabetes",
+          "Why do diabetes blood test results vary?",
+          "Blood glucose levels move up and down",
+          "Blood Glucose Measurements Compared with A1C Measurements over 4 Days"
+        ],
+        [
+          "The A1C Test & Diabetes",
+          "Why do diabetes blood test results vary?",
+          "A1C tests can be affected by changes in red blood cells or hemoglobin"
+        ],
+        [
+          "The A1C Test & Diabetes",
+          "Why do diabetes blood test results vary?",
+          "Small changes in temperature, equipment, or sample handling"
+        ],
+        [
+          "The A1C Test & Diabetes",
+          "How precise is the A1C test?"
+        ],
+        [
+          "The A1C Test & Diabetes",
+          "How does A1C relate to estimated average glucose?"
+        ],
+        [
+          "The A1C Test & Diabetes",
+          "Will the A1C test show short-term changes in blood glucose levels?"
+        ]
+      ],
+      "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+      "version": "retrieved-2026-08-24"
+    },
+    {
+      "language": "en",
+      "publisher": "NIDDK",
+      "retrieved_on": "2026-08-24",
+      "reuse_basis": "NIH website text; most NIH information is public domain and reusable unless otherwise marked. No images, logos, references, or third-party material are included. Policy: https://www.nih.gov/about-nih/frequently-asked-questions",
+      "source_id": "niddk-diabetes-prediabetes-tests",
+      "source_sha256": "2598578773dfc8e1090e34a045a346fa64380fa7fe7a913c19be0664a6b25f69",
+      "title": "Diabetes & Prediabetes Tests",
+      "title_path_whitelist": [
+        [
+          "Diabetes & Prediabetes Tests",
+          "Confirming diagnosis of type 2 diabetes and prediabetes"
+        ],
+        [
+          "Diabetes & Prediabetes Tests",
+          "Interpreting laboratory results"
+        ],
+        [
+          "Diabetes & Prediabetes Tests",
+          "Comparing diabetes blood tests",
+          "Fasting plasma glucose (FPG) test"
+        ],
+        [
+          "Diabetes & Prediabetes Tests",
+          "Comparing diabetes blood tests",
+          "A1C test"
+        ],
+        [
+          "Diabetes & Prediabetes Tests",
+          "Comparing diagnoses"
+        ]
+      ],
+      "url": "https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/diabetes-prediabetes",
+      "version": "retrieved-2026-08-24"
+    },
+    {
+      "language": "en",
+      "publisher": "NIDDK",
+      "retrieved_on": "2026-08-24",
+      "reuse_basis": "NIH website text; most NIH information is public domain and reusable unless otherwise marked. No images, logos, references, or third-party material are included. Policy: https://www.nih.gov/about-nih/frequently-asked-questions",
+      "source_id": "niddk-diabetes-tests",
+      "source_sha256": "1df92cfef66dc8718872b4dda1021cb8ac11a4e32ef4a8fa8fcfc6c819051352",
+      "title": "Diabetes Tests & Diagnosis",
+      "title_path_whitelist": [
+        [
+          "Diabetes Tests & Diagnosis",
+          "Who should be tested for diabetes?"
+        ],
+        [
+          "Diabetes Tests & Diagnosis",
+          "Who should be tested for diabetes?",
+          "Type 2 diabetes"
+        ],
+        [
+          "Diabetes Tests & Diagnosis",
+          "What tests are used to diagnose diabetes?"
+        ],
+        [
+          "Diabetes Tests & Diagnosis",
+          "What tests are used to diagnose diabetes?",
+          "Fasting plasma glucose test"
+        ],
+        [
+          "Diabetes Tests & Diagnosis",
+          "What tests are used to diagnose diabetes?",
+          "A1C test"
+        ],
+        [
+          "Diabetes Tests & Diagnosis",
+          "What test results tell me if I have diabetes or prediabetes?"
+        ],
+        [
+          "Diabetes Tests & Diagnosis",
+          "What test results tell me if I have diabetes or prediabetes?",
+          "Test results for diagnosis of prediabetes and diabetes"
+        ]
+      ],
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis",
+      "version": "retrieved-2026-08-24"
+    },
+    {
+      "language": "en",
+      "publisher": "ODPHP",
+      "retrieved_on": "2026-08-24",
+      "reuse_basis": "U.S. federal government website text; public domain under 17 U.S.C. 105 unless otherwise marked. No images, logos, references, or third-party material are included.",
+      "source_id": "odphp-get-screened",
+      "source_sha256": "0487428c26636f3971f1b16848dd2310ae9719fa1571d234f3347849a4e52170",
+      "title": "Get Screened",
+      "title_path_whitelist": [
+        [
+          "Get Screened",
+          "Take Action",
+          "Get Ready",
+          "Make a list of questions to ask your doctor."
+        ],
+        [
+          "Get Screened",
+          "Take Action",
+          "See Your Doctor",
+          "Talk with your doctor about getting screened."
+        ],
+        [
+          "Get Screened",
+          "Take Action",
+          "See Your Doctor",
+          "Make sure you get the results from every screening."
+        ]
+      ],
+      "url": "https://odphp.health.gov/myhealthfinder/doctor-visits/screening-tests/get-screened",
+      "version": "updated-2026-03-31"
+    },
+    {
+      "language": "en",
+      "publisher": "ODPHP",
+      "retrieved_on": "2026-08-24",
+      "reuse_basis": "U.S. federal government website text; public domain under 17 U.S.C. 105 unless otherwise marked. No images, logos, references, or third-party material are included.",
+      "source_id": "odphp-take-charge-health-care",
+      "source_sha256": "cc71b7f4aada19c1776e9802695aa49f7b1e761c25b2aa6913d6de716a68d5e3",
+      "title": "Take Charge of Your Health Care",
+      "title_path_whitelist": [
+        [
+          "Take Charge of Your Health Care",
+          "The Basics",
+          "Overview"
+        ],
+        [
+          "Take Charge of Your Health Care",
+          "Take Action",
+          "Keep a Record",
+          "Keep track of important health information."
+        ],
+        [
+          "Take Charge of Your Health Care",
+          "Take Action",
+          "Be Prepared",
+          "Make the most of doctor visits."
+        ],
+        [
+          "Take Charge of Your Health Care",
+          "Take Action",
+          "Be Prepared",
+          "Follow up after your appointment."
+        ]
+      ],
+      "url": "https://odphp.health.gov/myhealthfinder/doctor-visits/talking-doctor/take-charge-your-health-care",
+      "version": "updated-2026-03-31"
+    }
+  ],
+  "strategies": {
+    "hybrid_v1": {
+      "artifact_sha256": "e833996362be5e42d37b78a916bcd8e5b262485068b4042727cc5fe840da95c9",
+      "chunk_count": 82,
+      "maximum_estimated_tokens": 490,
+      "mean_estimated_tokens": 190.768,
+      "minimum_estimated_tokens": 28,
+      "short_intact_count": 17,
+      "target_range_count": 22
+    },
+    "natural_section": {
+      "artifact_sha256": "367d6ab09ba979493748cf8dfab84323f70a5362d2b902942dec09a914a304f1",
+      "chunk_count": 79,
+      "maximum_estimated_tokens": 825,
+      "mean_estimated_tokens": 196.696,
+      "minimum_estimated_tokens": 28,
+      "short_intact_count": 0,
+      "target_range_count": 17
+    }
+  }
+}

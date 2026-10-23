@@ -1,0 +1,7 @@
+# Synthetic test data only; no real person
+report_id: HV-SYN-2024-001
+report_date: 2024-05-20
+facility: Synthetic Community Clinic
+result|fasting_glucose|5.4|mmol/L|3.9|6.1
+result|hba1c|5.5|%|4.0|6.0
+result|ldl_cholesterol|3.1|mmol/L|0.0|3.4

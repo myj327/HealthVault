@@ -1,0 +1,13 @@
+{
+  "schema_version": "healthvault-task-042-safety-matrix-v1",
+  "scope": "development_acceptance_only",
+  "checks": [
+    {"control": "runtime_context_profile_binding", "expected": "cross_profile_tool_input_rejected"},
+    {"control": "confirmation_boundary", "expected": "unconfirmed_report_has_no_write"},
+    {"control": "repository_idempotency", "expected": "exact_repeat_has_no_write"},
+    {"control": "medical_request_boundary", "expected": "diagnosis_treatment_and_dose_fail_closed"},
+    {"control": "task_terminal_gate", "expected": "ordinary_empty_allows_recovery_but_explicit_safety_issue_stops"},
+    {"control": "structured_final_boundary", "expected": "malformed_structured_final_is_safe_json"},
+    {"control": "citation_boundary", "expected": "submitted_canonical_ids_filtered_deduplicated_minimized_without_autofill"}
+  ]
+}

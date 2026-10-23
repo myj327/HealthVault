@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "healthvault-task-045-candidate-gate-a-patch-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["patches"],
+  "properties": {
+    "patches": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "patch_id",
+          "operation",
+          "source_trace_ids",
+          "verification_source",
+          "verification_strength",
+          "target_anchor_id",
+          "applicability_conditions",
+          "when_not_to_use",
+          "tool_path",
+          "stop_conditions",
+          "content",
+          "rationale"
+        ],
+        "properties": {
+          "patch_id": {"type": "string", "minLength": 1},
+          "operation": {"type": "string", "enum": ["add"]},
+          "source_trace_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "verification_source": {
+            "type": "string",
+            "enum": ["deterministic", "user_confirmed", "semantic_judge"]
+          },
+          "verification_strength": {
+            "type": "string",
+            "enum": ["strong", "medium", "weak"]
+          },
+          "target_anchor_id": {
+            "type": "string",
+            "enum": [
+              "steps.identify_outcome",
+              "steps.run_read_only_tools",
+              "steps.return_tool_status",
+              "failure.report_without_guessing",
+              "verification.check_final_response"
+            ]
+          },
+          "applicability_conditions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "when_not_to_use": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "tool_path": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "enum": [
+                "preview_health_report",
+                "query_health_timeline",
+                "compare_health_indicators",
+                "search_health_knowledge",
+                "search_official_health_web",
+                "generate_visit_brief"
+              ]
+            }
+          },
+          "stop_conditions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "content": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 240,
+            "pattern": "^[^\\r\\n.!?。！？]+[.!?。！？]?$"
+          },
+          "rationale": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

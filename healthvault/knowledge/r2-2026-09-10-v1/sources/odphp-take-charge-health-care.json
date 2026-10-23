@@ -1,0 +1,206 @@
+{
+  "corpus_version": "r2-2026-09-10-v1",
+  "language": "en",
+  "publisher": "ODPHP",
+  "retrieved_on": "2026-08-24",
+  "reuse_basis": "U.S. federal government website text; public domain under 17 U.S.C. 105 unless otherwise marked. No images, logos, references, or third-party material are included.",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Did you know that when you play an active role in your health care, you can improve the quality of the care that you and your family get?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Health care is a team effort, and you're the most important member of the team! Your team also includes doctors, nurses, pharmacists, and insurance providers."
+        },
+        {
+          "kind": "paragraph",
+          "text": "To take charge of your health care:"
+        },
+        {
+          "kind": "list",
+          "text": "Ask your doctor, nurse, or pharmacist questions — and don't be afraid to ask them to repeat or explain information"
+        },
+        {
+          "kind": "list",
+          "text": "Know your family's health history"
+        },
+        {
+          "kind": "list",
+          "text": "Keep track of important health information"
+        },
+        {
+          "kind": "list",
+          "text": "See a doctor regularly for checkups"
+        },
+        {
+          "kind": "list",
+          "text": "Be prepared for medical appointments"
+        },
+        {
+          "kind": "list",
+          "text": "Follow up after your appointment"
+        }
+      ],
+      "title_path": [
+        "Take Charge of Your Health Care",
+        "The Basics",
+        "Overview"
+      ],
+      "topic_tags": [
+        "visit_preparation",
+        "result_communication"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Keeping all your health information in one place will make it easier to manage your health care. Take this information with you to every medical appointment."
+        },
+        {
+          "kind": "paragraph",
+          "text": "To start your own personal health record, write down:"
+        },
+        {
+          "kind": "list",
+          "text": "The name and phone number of a friend or relative to call if there’s an emergency"
+        },
+        {
+          "kind": "list",
+          "text": "Dates and results of checkups and screening tests"
+        },
+        {
+          "kind": "list",
+          "text": "All the vaccines (shots) you’ve had — and the dates that you got them"
+        },
+        {
+          "kind": "list",
+          "text": "Phone numbers and addresses of all the places you go to for care, including your pharmacy"
+        },
+        {
+          "kind": "list",
+          "text": "Your blood type"
+        },
+        {
+          "kind": "list",
+          "text": "Any health conditions you have — including allergies — and any health conditions that run in your family"
+        },
+        {
+          "kind": "paragraph",
+          "text": "If you're not sure about some of this information, check with your doctor’s office."
+        }
+      ],
+      "title_path": [
+        "Take Charge of Your Health Care",
+        "Take Action",
+        "Keep a Record",
+        "Keep track of important health information."
+      ],
+      "topic_tags": [
+        "visit_preparation",
+        "result_communication"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Take your list of questions and personal health record with you to the appointment. You may also want to ask a family member or friend to go with you to help take notes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Be sure to talk about any changes since your last visit, like:"
+        },
+        {
+          "kind": "list",
+          "text": "New herbs, home remedies, and vitamins you're taking"
+        },
+        {
+          "kind": "list",
+          "text": "Recent illnesses or surgeries"
+        },
+        {
+          "kind": "list",
+          "text": "Important changes in your life, like losing your job or a death in the family"
+        },
+        {
+          "kind": "list",
+          "text": "Health concerns or issues"
+        },
+        {
+          "kind": "paragraph",
+          "text": "You can also ask your doctor questions about health information you’ve found online or heard from others."
+        }
+      ],
+      "title_path": [
+        "Take Charge of Your Health Care",
+        "Take Action",
+        "Be Prepared",
+        "Make the most of doctor visits."
+      ],
+      "topic_tags": [
+        "visit_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "It can take time and hard work to make healthy changes you might have talked about with your doctor or nurse. Remember to:"
+        },
+        {
+          "kind": "list",
+          "text": "Schedule follow-up appointments for tests or lab work if you need to"
+        },
+        {
+          "kind": "list",
+          "text": "Contact the doctor to get test results if you need to"
+        }
+      ],
+      "title_path": [
+        "Take Charge of Your Health Care",
+        "Take Action",
+        "Be Prepared",
+        "Follow up after your appointment."
+      ],
+      "topic_tags": [
+        "visit_preparation",
+        "result_communication"
+      ]
+    }
+  ],
+  "source_id": "odphp-take-charge-health-care",
+  "source_sha256": "cc71b7f4aada19c1776e9802695aa49f7b1e761c25b2aa6913d6de716a68d5e3",
+  "title": "Take Charge of Your Health Care",
+  "title_path_whitelist": [
+    [
+      "Take Charge of Your Health Care",
+      "The Basics",
+      "Overview"
+    ],
+    [
+      "Take Charge of Your Health Care",
+      "Take Action",
+      "Keep a Record",
+      "Keep track of important health information."
+    ],
+    [
+      "Take Charge of Your Health Care",
+      "Take Action",
+      "Be Prepared",
+      "Make the most of doctor visits."
+    ],
+    [
+      "Take Charge of Your Health Care",
+      "Take Action",
+      "Be Prepared",
+      "Follow up after your appointment."
+    ]
+  ],
+  "url": "https://odphp.health.gov/myhealthfinder/doctor-visits/talking-doctor/take-charge-your-health-care",
+  "version": "updated-2026-03-31"
+}

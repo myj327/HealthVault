@@ -1,0 +1,45 @@
+{
+  "corpus_version": "r2-2026-09-10-v1",
+  "language": "en",
+  "publisher": "MedlinePlus",
+  "retrieved_on": "2026-09-10",
+  "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A TSH test is a blood test that measures thyroid-stimulating hormone. A TSH level that is too high or too low may be a sign of a thyroid problem."
+        },
+        {
+          "kind": "paragraph",
+          "text": "The pituitary gland makes TSH, which tells the thyroid how much thyroid hormone it needs to make."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Measuring TSH can show whether the thyroid is making the right level of hormones."
+        }
+      ],
+      "title_path": [
+        "TSH (Thyroid-stimulating hormone) Test",
+        "What is a TSH Test?"
+      ],
+      "topic_tags": [
+        "thyroid_tests",
+        "lab_interpretation"
+      ]
+    }
+  ],
+  "source_id": "medlineplus-tsh-test",
+  "source_sha256": "089b948be137c3e946dce06e16aea4b06c064d49afee500bbe962c102bc406af",
+  "title": "TSH (Thyroid-stimulating hormone) Test",
+  "title_path_whitelist": [
+    [
+      "TSH (Thyroid-stimulating hormone) Test",
+      "What is a TSH Test?"
+    ]
+  ],
+  "url": "https://medlineplus.gov/lab-tests/tsh-thyroid-stimulating-hormone-test/",
+  "version": "reviewed-2024"
+}

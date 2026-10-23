@@ -1,0 +1,6 @@
+# Synthetic test data only; no real person
+report_id: HV-SYN-MALFORMED-001
+report_date: 2025-02-30
+facility: Synthetic Community Clinic
+result|fasting_glucose|5.4|mmol/L|3.9
+result|hba1c|5.7|%|4.0|6.0

@@ -1,0 +1,300 @@
+{
+  "corpus_version": "r1-2026-08-24-v1",
+  "language": "en",
+  "publisher": "MedlinePlus",
+  "retrieved_on": "2026-08-24",
+  "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A hemoglobin A1C (HbA1C) test is a blood test that shows your average level of blood glucose, also called blood sugar, over the past two to three months."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Glucose is a type of sugar in your blood that comes from the foods you eat. Your cells use glucose for energy. A hormone called insulin helps glucose get into your cells. If you have diabetes your body doesn't make enough insulin, or your cells don't use it well. As a result, glucose can't get into your cells, so your blood glucose levels increase."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Glucose in your blood sticks to hemoglobin, a protein in your red blood cells. As your blood glucose levels increase, more of your hemoglobin will be coated with glucose. An A1C test measures the percentage of your red blood cells that have glucose-coated hemoglobin."
+        },
+        {
+          "kind": "paragraph",
+          "text": "An A1C test can show your average glucose level for the past three months because:"
+        },
+        {
+          "kind": "list",
+          "text": "Glucose sticks to hemoglobin for as long as the red blood cells are alive."
+        },
+        {
+          "kind": "list",
+          "text": "Red blood cells live about three months."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Other names: HbA1C, A1C, glycohemoglobin, glycated hemoglobin, glycosylated hemoglobin"
+        }
+      ],
+      "title_path": [
+        "Hemoglobin A1C (HbA1c) Test",
+        "What is a hemoglobin A1C (HbA1C) test?"
+      ],
+      "topic_tags": [
+        "hba1c",
+        "blood_glucose"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Your blood glucose level changes all the time. If you're checking it at home, you are measuring what your blood glucose level is at that time. An A1C test gives you an average level of your blood glucose level over the past two to three months."
+        },
+        {
+          "kind": "paragraph",
+          "text": "An A1C test may be used to screen for or diagnose:"
+        },
+        {
+          "kind": "list",
+          "text": "Type 2 diabetes. With type 2 diabetes your blood glucose gets too high because your body doesn't make enough insulin or doesn't use insulin well. The glucose then stays in your blood and not enough goes into your cells."
+        },
+        {
+          "kind": "list",
+          "text": "Prediabetes. Prediabetes means that your blood glucose levels are higher than normal, but not high enough to be diagnosed as diabetes. Lifestyle changes, such as healthy eating and exercise, may help delay or prevent prediabetes from becoming type 2 diabetes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "If you have diabetes or prediabetes, an A1C test can help monitor your condition and check how well you've been able to control your blood glucose levels."
+        },
+        {
+          "kind": "paragraph",
+          "text": "The A1C test isn't used to diagnose type 1 diabetes but may be used for monitoring your blood glucose levels."
+        }
+      ],
+      "title_path": [
+        "Hemoglobin A1C (HbA1c) Test",
+        "What is it used for?"
+      ],
+      "topic_tags": [
+        "hba1c"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "The Centers for Disease Control (CDC) recommends A1C testing for diabetes and prediabetes if:"
+        },
+        {
+          "kind": "list",
+          "text": "If your results are normal, your provider will tell you how often you should be tested based on your age and risk factors."
+        },
+        {
+          "kind": "list",
+          "text": "If your results show you have prediabetes, you will usually need to be tested every 1 to 2 years. Ask your provider how often to get tested and what you can do to reduce your risk of developing diabetes."
+        },
+        {
+          "kind": "list",
+          "text": "You are under 45 and are more likely to develop diabetes because you: Have prediabetes.Are overweight or have obesity.Have a parent or sibling with type 2 diabetes.Have high blood pressure or high cholesterol levels.Have heart disease or have had a stroke.Are physically active less than 3 times a week.Have had gestational diabetes (diabetes during pregnancy) or given birth to a baby over 9 pounds.Are African American, Hispanic or Latino, American Indian, or an Alaska Native person. Some Pacific Islander and Asian American people also have a higher risk of developing diabetes.Have polycystic ovarian syndrome (PCOS)."
+        },
+        {
+          "kind": "list",
+          "text": "Have prediabetes."
+        },
+        {
+          "kind": "list",
+          "text": "Are overweight or have obesity."
+        },
+        {
+          "kind": "list",
+          "text": "Have a parent or sibling with type 2 diabetes."
+        },
+        {
+          "kind": "list",
+          "text": "Have high blood pressure or high cholesterol levels."
+        },
+        {
+          "kind": "list",
+          "text": "Have heart disease or have had a stroke."
+        },
+        {
+          "kind": "list",
+          "text": "Are physically active less than 3 times a week."
+        },
+        {
+          "kind": "list",
+          "text": "Have had gestational diabetes (diabetes during pregnancy) or given birth to a baby over 9 pounds."
+        },
+        {
+          "kind": "list",
+          "text": "Are African American, Hispanic or Latino, American Indian, or an Alaska Native person. Some Pacific Islander and Asian American people also have a higher risk of developing diabetes."
+        },
+        {
+          "kind": "list",
+          "text": "Have polycystic ovarian syndrome (PCOS)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "You may also need an A1C test if you have symptoms of diabetes, such as:"
+        },
+        {
+          "kind": "list",
+          "text": "Feeling very thirsty"
+        },
+        {
+          "kind": "list",
+          "text": "Urinating (peeing) a lot"
+        },
+        {
+          "kind": "list",
+          "text": "Losing weight without trying"
+        },
+        {
+          "kind": "list",
+          "text": "Feeling very hungry"
+        },
+        {
+          "kind": "list",
+          "text": "Blurred vision"
+        },
+        {
+          "kind": "list",
+          "text": "Numb or tingling hands or feet"
+        },
+        {
+          "kind": "list",
+          "text": "Fatigue"
+        },
+        {
+          "kind": "list",
+          "text": "Dry skin"
+        },
+        {
+          "kind": "list",
+          "text": "Sores that heal slowly"
+        },
+        {
+          "kind": "list",
+          "text": "Having more infections than usual"
+        }
+      ],
+      "title_path": [
+        "Hemoglobin A1C (HbA1c) Test",
+        "Why do I need an A1C test?"
+      ],
+      "topic_tags": [
+        "hba1c",
+        "visit_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A health care professional will take a blood sample from a vein in your arm, using a small needle. After the needle is inserted, a small amount of blood will be collected into a test tube or vial. You may feel a little sting when the needle goes in or out. This usually takes less than five minutes."
+        }
+      ],
+      "title_path": [
+        "Hemoglobin A1C (HbA1c) Test",
+        "What happens during an A1C test?"
+      ],
+      "topic_tags": [
+        "hba1c",
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A1C results tell you what percentage of your hemoglobin is coated with glucose. The ranges are just a guide to what is normal. What's normal for you depends on your health, age, and other factors. Ask your provider what A1C percentage is healthy for you."
+        },
+        {
+          "kind": "paragraph",
+          "text": "To diagnose diabetes or prediabetes, the percentages commonly used are:"
+        },
+        {
+          "kind": "list",
+          "text": "Normal: A1C below 5.7%"
+        },
+        {
+          "kind": "list",
+          "text": "Prediabetes: A1C between 5.7% and 6.4%"
+        },
+        {
+          "kind": "list",
+          "text": "Diabetes: A1C of 6.5% or higher"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Providers often use more than one test to diagnose diabetes. So, if your test result was higher than normal, you may have another A1C test or a different type of diabetes test, usually either a fasting blood glucose test or an oral glucose tolerance test (OGTT)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "If your A1C test was done to monitor your diabetes, talk with your provider about what your test results mean."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Learn more about laboratory tests, reference ranges, and understanding results."
+        }
+      ],
+      "title_path": [
+        "Hemoglobin A1C (HbA1c) Test",
+        "What do the results mean?"
+      ],
+      "topic_tags": [
+        "hba1c",
+        "result_communication"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "The A1C test is not used to diagnose gestational diabetes. Also, if you have a condition that affects your red blood cells, such as anemia or another type of blood disorder, an A1C test may not be accurate for diagnosing diabetes. Kidney failure and liver disease can also affect A1C results. In these cases, your provider may recommend different tests to diagnose diabetes and prediabetes."
+        }
+      ],
+      "title_path": [
+        "Hemoglobin A1C (HbA1c) Test",
+        "Is there anything else I need to know about an A1C test?"
+      ],
+      "topic_tags": [
+        "hba1c",
+        "result_communication"
+      ]
+    }
+  ],
+  "source_id": "medlineplus-hba1c-test",
+  "source_sha256": "815f9a909f97f29f0bf5d0434b0ae03575f000d5eb66811f7a44387b4c27e70b",
+  "title": "Hemoglobin A1C (HbA1c) Test",
+  "title_path_whitelist": [
+    [
+      "Hemoglobin A1C (HbA1c) Test",
+      "What is a hemoglobin A1C (HbA1C) test?"
+    ],
+    [
+      "Hemoglobin A1C (HbA1c) Test",
+      "What is it used for?"
+    ],
+    [
+      "Hemoglobin A1C (HbA1c) Test",
+      "Why do I need an A1C test?"
+    ],
+    [
+      "Hemoglobin A1C (HbA1c) Test",
+      "What happens during an A1C test?"
+    ],
+    [
+      "Hemoglobin A1C (HbA1c) Test",
+      "What do the results mean?"
+    ],
+    [
+      "Hemoglobin A1C (HbA1c) Test",
+      "Is there anything else I need to know about an A1C test?"
+    ]
+  ],
+  "url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+  "version": "reviewed-2025"
+}

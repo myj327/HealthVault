@@ -1,0 +1,182 @@
+{
+  "corpus_version": "r2-2026-09-10-v1",
+  "language": "en",
+  "publisher": "MedlinePlus",
+  "retrieved_on": "2026-08-24",
+  "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A laboratory (lab) test is a procedure in which a health care provider takes a sample of your blood, urine, other body fluid, or body tissue to get information about your health. Lab tests may be used to:"
+        },
+        {
+          "kind": "list",
+          "text": "Help diagnose or screen for a specific disease or condition. Screening helps diagnose diseases before you have any symptoms."
+        },
+        {
+          "kind": "list",
+          "text": "Give you more general information about your organs and body systems. Lab tests may be ordered with your annual checkup or preventative testing."
+        },
+        {
+          "kind": "paragraph",
+          "text": "For any type of lab test, you should prepare for it by:"
+        },
+        {
+          "kind": "list",
+          "text": "Following all the instructions given to you by your provider."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Taking these steps can help make sure that your results will be accurate and reliable."
+        }
+      ],
+      "title_path": [
+        "How to Prepare for a Lab Test",
+        "How do I prepare for a lab test?"
+      ],
+      "topic_tags": [
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "For many lab tests, you don't need to do anything other than answer questions from your provider and/or lab professional. But for others, you may need to do some specific preparations before the test."
+        },
+        {
+          "kind": "paragraph",
+          "text": "One of the most common lab test preparations is fasting. Fasting means you should not eat or drink anything except water for up to several hours or overnight before your test. This is done because nutrients and ingredients in food are absorbed in your bloodstream. These nutrients might still be in your bloodstream when you have your test and may change the results of certain blood tests. Fasting can help to improve the accuracy of your test results. The length of time you need to fast can vary. So if you do need to fast, make sure you ask your provider how long you should do it."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Other common test preparations may include:"
+        },
+        {
+          "kind": "list",
+          "text": "Avoiding specific foods and drinks such as cooked meats, herbal tea, or alcohol."
+        },
+        {
+          "kind": "list",
+          "text": "Making sure not to overeat the day before a test."
+        },
+        {
+          "kind": "list",
+          "text": "Not smoking."
+        },
+        {
+          "kind": "list",
+          "text": "Avoiding specific behaviors such as strenuous exercise or sexual activity."
+        },
+        {
+          "kind": "paragraph",
+          "text": "For some blood tests, you may be asked to drink extra water to help keep more fluid in your veins. You may also be asked to drink water 15 to 20 minutes before certain urine tests."
+        }
+      ],
+      "title_path": [
+        "How to Prepare for a Lab Test",
+        "Will I need to take other steps to prepare for my lab test?"
+      ],
+      "topic_tags": [
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Some of the most common lab tests that require fasting include:"
+        },
+        {
+          "kind": "list",
+          "text": "Blood Glucose Test"
+        },
+        {
+          "kind": "list",
+          "text": "Cholesterol Levels Test"
+        },
+        {
+          "kind": "list",
+          "text": "Triglycerides Test"
+        },
+        {
+          "kind": "list",
+          "text": "Calcitonin Test"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Some of the most common lab tests that require other special preparations include:"
+        },
+        {
+          "kind": "list",
+          "text": "Creatinine Test, which may require fasting or avoiding cooked meats."
+        },
+        {
+          "kind": "list",
+          "text": "Cortisol Test. For this test, you may need to rest for a bit before your sample is taken. You may also have to avoid eating, drinking, or brushing your teeth for a certain period of time before your test."
+        },
+        {
+          "kind": "list",
+          "text": "5-HIAA Test. For this test, you may be asked to avoid various foods. These may include avocados, bananas, pineapples, walnuts, and eggplants."
+        },
+        {
+          "kind": "list",
+          "text": "Pap Smear. A woman may be instructed not to douche, use tampons, or have sex for 24 to 48 hours before this test."
+        }
+      ],
+      "title_path": [
+        "How to Prepare for a Lab Test",
+        "What types of lab tests require special preparation?"
+      ],
+      "topic_tags": [
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Talk to your provider if you have questions or concerns about test preparations. They will let you know if there are any special instructions to follow."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Be sure you understand your preparation instructions before the day of your test."
+        }
+      ],
+      "title_path": [
+        "How to Prepare for a Lab Test",
+        "Is there anything else I should know about preparing for a lab test?"
+      ],
+      "topic_tags": [
+        "lab_preparation",
+        "result_communication"
+      ]
+    }
+  ],
+  "source_id": "medlineplus-lab-preparation",
+  "source_sha256": "bdaf9f050ea3edec51bb2455e603bd0e9955c36ba8c0b5d67c130a9a73c34314",
+  "title": "How to Prepare for a Lab Test",
+  "title_path_whitelist": [
+    [
+      "How to Prepare for a Lab Test",
+      "How do I prepare for a lab test?"
+    ],
+    [
+      "How to Prepare for a Lab Test",
+      "Will I need to take other steps to prepare for my lab test?"
+    ],
+    [
+      "How to Prepare for a Lab Test",
+      "What types of lab tests require special preparation?"
+    ],
+    [
+      "How to Prepare for a Lab Test",
+      "Is there anything else I should know about preparing for a lab test?"
+    ]
+  ],
+  "url": "https://medlineplus.gov/lab-tests/how-to-prepare-for-a-lab-test/",
+  "version": "reviewed-2024"
+}

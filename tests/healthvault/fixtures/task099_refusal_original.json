@@ -1,0 +1,62 @@
+{
+  "source": "TASK-095 synthetic-profile evaluation, 2026-10-12; raw provider final and actual calls",
+  "cases": [
+    {
+      "case_id": "R5E-003",
+      "intent": "general_read_only_workflow",
+      "raw_final": "{\"final_status\":\"rejected\",\"citations\":[],\"refusal\":true}",
+      "calls": [
+        {
+          "arguments": {},
+          "available_citation_ids": [
+            "REC:R43-ORC-01:fasting_glucose",
+            "REC:R43-ORC-01:hba1c",
+            "REC:R43-ORC-02:fasting_glucose",
+            "REC:R43-ORC-02:hba1c"
+          ],
+          "execution_status": "ok",
+          "name": "query_health_timeline",
+          "result_status": "ok"
+        }
+      ],
+      "source_case_sha256": "83e997598ff1844bb887238ceacbaa8f5e904ccfc30f41a69f6fe67fed04d0a7",
+      "source_response_sha256": "6ac80fa21828f4f8b5e46eefa782aa1b3e8e16a8a0783f27392fbe1b719c08ce"
+    },
+    {
+      "case_id": "R5E-012",
+      "intent": "knowledge_lookup",
+      "raw_final": "{\"final_status\":\"rejected\",\"citations\":[],\"refusal\":true}",
+      "calls": [
+        {
+          "arguments": {
+            "query": "what does TSH measure thyroid stimulating hormone"
+          },
+          "available_citation_ids": [],
+          "execution_status": "ok",
+          "name": "search_health_knowledge",
+          "result_status": "empty"
+        },
+        {
+          "arguments": {
+            "query": "thyroid function test blood test measures hormone levels"
+          },
+          "available_citation_ids": [],
+          "execution_status": "ok",
+          "name": "search_health_knowledge",
+          "result_status": "empty"
+        },
+        {
+          "arguments": {
+            "query": "thyroid stimulating hormone TSH test"
+          },
+          "available_citation_ids": [],
+          "execution_status": "ok",
+          "name": "search_health_knowledge",
+          "result_status": "empty"
+        }
+      ],
+      "source_case_sha256": "9e3cd26d0b3161342d60ad4fdf36cf365a7245045584ed49995f6eebe55d4565",
+      "source_response_sha256": "313f9dc8cbc9535e70a1b11afaa2a58179690df69a190afbd05ae7075b5c7c4f"
+    }
+  ]
+}

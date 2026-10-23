@@ -1,0 +1,1576 @@
+{
+  "arms": [
+    "baseline",
+    "variant"
+  ],
+  "context_version": "task-026-generation-contexts-task-027-v3",
+  "generator_forbidden_fields": [
+    "query_id",
+    "answerable",
+    "qrels",
+    "reference_claims",
+    "refusal_target",
+    "expected_citation"
+  ],
+  "generator_visible_fields": [
+    "query",
+    "evidence"
+  ],
+  "queries": [
+    {
+      "baseline": [],
+      "query": "What is (are) Diagnosis of Diabetes and Prediabetes ?",
+      "query_id": "MQ-001",
+      "variant": [
+        {
+          "body_sha256": "adbb82388b89afc310e627ab540238d87ae25b2656179b7c49ab506f2623f7aa",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:000:47dd80442ae5",
+          "evidence_text": "Diagnosis of type 2 diabetes is definitively made by blood tests. Diagnosis requires two abnormal test results from the same sample or from two different samples. Repeat the test using one of the following methods\n\n- Repeat the same test or run a different test.1 The second test should be done immediately.1\n\n- If two test results indicate diabetes, consider the diagnosis confirmed.1\n\n- If the two different tests conflict, repeat the test that is above the diagnostic threshold. Diagnosis is made based on the confirmed test.1\n\nIf the patient’s diabetes test results are close to—but not within—the diagnostic range of the test, the patient may have prediabetes. Health care professionals may wish to observe patients with prediabetes whose condition is likely to progress, recommend lifestyle modifications, and retest in 3 to 6 months.1",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/diabetes-prediabetes",
+          "title_path": [
+            "Diabetes & Prediabetes Tests",
+            "Confirming diagnosis of type 2 diabetes and prediabetes"
+          ]
+        },
+        {
+          "body_sha256": "22bcfcd482434eef3d0e86017988acd06fefae319008d5d8811499056f3ed046",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:006:3b3f7b551646",
+          "evidence_text": "Diagnosis | A1C | Fasting Plasma Glucose | Oral Glucose Tolerance Test* | Random Plasma Glucose Test‡\nNormal | below 5.7% | 99 mg/dL or below | 139 mg/dL or below | N/A\nPrediabetes | 5.7% to 6.4% | 100 to 125 mg/dL | 140 to 199 mg/dL | N/A\nDiabetes | 6.5% or above | 126 mg/dL or above | 200 mg/dL or above | 200 mg/dL or above",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis",
+          "title_path": [
+            "Diabetes Tests & Diagnosis",
+            "What test results tell me if I have diabetes or prediabetes?",
+            "Test results for diagnosis of prediabetes and diabetes"
+          ]
+        },
+        {
+          "body_sha256": "2b2b26db327a7b68c75c4ca7ca3aeebb4620a3d69c88b0d13b769cb7ee6c30da",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db",
+          "evidence_text": "The A1C test is sometimes called the hemoglobin A1C, HbA1c, glycated hemoglobin, or glycohemoglobin test.\n\nUses\n\n- Screening and diagnosis of prediabetes1 5.7–6.4%1\n\n- 5.7–6.4%1\n\n- Screening and diagnosis of type 2 diabetes1 6.5% or higher1repeat for confirmation of diagnosis\n\n- 6.5% or higher1\n\n- repeat for confirmation of diagnosis\n\n- Monitoring of diabetes\n\nTechnical features\n\n- Sample at any time of day, no fasting required3\n\n- Sample: anticoagulated whole blood\n\n- Sample stability: superior5\n\n- Sensitivity: less than the FPG test and the OGTT1\n\n- Coefficient of variation: for between laboratory assay variability, see College of American Pathologists (CAP) survey data",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/diabetes-prediabetes",
+          "title_path": [
+            "Diabetes & Prediabetes Tests",
+            "Comparing diabetes blood tests",
+            "A1C test"
+          ]
+        },
+        {
+          "body_sha256": "37507b916f8e388acb20184f5410bc9ee93f167245cb7e627e3de60f3cd31bf4",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:002:e11fed19e980",
+          "evidence_text": "Uses\n\n- Screening and diagnosis of prediabetes1 or impaired fasting glucose (IFG) 100–125 mg/dL3\n\n- 100–125 mg/dL3\n\n- Screening and diagnosis of diabetes1 126 mg/dL or higher1repeat for confirmation of diagnosis\n\n- 126 mg/dL or higher1\n\n- repeat for confirmation of diagnosis\n\nTechnical features2\n\n- Diagnosis requires a lab test; meter results are not suitable\n\n- Sample in morning, after 8-hour fast1\n\n- Sample: sodium fluoride plasma preferred\n\n- Sample stability: low—requires processing within 30 minutes\n\n- Sensitivity: greater than the A1C test, less than the OGTT\n\n- Coefficient of variation: assay variability\n\n- Biological variability\n\nWith a coefficient of variation of 5.7% (typical biological variation within the same person), an FPG test result of 126 mg/dL could indicate a true FPG of anywhere from approximately 110 to 142 mg/dL.2 Image courtesy of David Aron, M.D., Louis Stokes Department of Veterans Affairs Medical Center.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/diabetes-prediabetes",
+          "title_path": [
+            "Diabetes & Prediabetes Tests",
+            "Comparing diabetes blood tests",
+            "Fasting plasma glucose (FPG) test"
+          ]
+        },
+        {
+          "body_sha256": "42caf8e4676aaa146bcc71495eba9fe7699774a4a70fea893d7fd7083250595e",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:003:22e481a4f661",
+          "evidence_text": "*Any test used to diagnose diabetes requires confirmation with a second measurement, unless there are clear symptoms of diabetes.\nDiagnosis* | A1C Level\n\n*Any test used to diagnose diabetes requires confirmation with a second measurement, unless there are clear symptoms of diabetes.\nNormal | below 5.7 percent\n\n*Any test used to diagnose diabetes requires confirmation with a second measurement, unless there are clear symptoms of diabetes.\nPrediabetes | 5.7 to 6.4 percent\n\n*Any test used to diagnose diabetes requires confirmation with a second measurement, unless there are clear symptoms of diabetes.\nDiabetes | 6.5 percent or above\n\nWhen using the A1C test for diagnosis, your doctor will send your blood sample taken from a vein to a lab that uses an NGSP-certified method. The NGSP, formerly called the National Glycohemoglobin Standardization Program, certifies that makers of A1C tests provide results that are consistent and comparable with those used in the Diabetes Control and Complications Trial.\n\nBlood samples analyzed in a doctor’s office or clinic, known as point-of-care tests, should not be used for diagnosis.\n\nThe A1C test should not be used to diagnose type 1 diabetes, gestational diabetes, or cystic fibrosis-related diabetes. The A1C test may give false results in people with certain conditions.\n\nHaving prediabetes is a risk factor for developing type 2 diabetes. Within the prediabetes A1C range of 5.7 to 6.4 percent, the higher the A1C, the greater the risk of diabetes.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "How is the A1C test used to diagnose type 2 diabetes and prediabetes?",
+            "A1C results and what the numbers mean"
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": [],
+      "query": "What is (are) Insulin Resistance and Prediabetes ?",
+      "query_id": "MQ-006",
+      "variant": []
+    },
+    {
+      "baseline": [],
+      "query": "What is (are) Monitor Your Diabetes ?",
+      "query_id": "MQ-011",
+      "variant": [
+        {
+          "body_sha256": "daa78c1fd61ef0cc74895ed1dc81223c4d5d66c5d67ecffa8e15b8e3f81683e5",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:001:289e17176497",
+          "evidence_text": "Your blood glucose level changes all the time. If you're checking it at home, you are measuring what your blood glucose level is at that time. An A1C test gives you an average level of your blood glucose level over the past two to three months.\n\nAn A1C test may be used to screen for or diagnose:\n\n- Type 2 diabetes. With type 2 diabetes your blood glucose gets too high because your body doesn't make enough insulin or doesn't use insulin well. The glucose then stays in your blood and not enough goes into your cells.\n\n- Prediabetes. Prediabetes means that your blood glucose levels are higher than normal, but not high enough to be diagnosed as diabetes. Lifestyle changes, such as healthy eating and exercise, may help delay or prevent prediabetes from becoming type 2 diabetes.\n\nIf you have diabetes or prediabetes, an A1C test can help monitor your condition and check how well you've been able to control your blood glucose levels.\n\nThe A1C test isn't used to diagnose type 1 diabetes but may be used for monitoring your blood glucose levels.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+          "title_path": [
+            "Hemoglobin A1C (HbA1c) Test",
+            "What is it used for?"
+          ]
+        },
+        {
+          "body_sha256": "b3fc1a20db0fd011c625226ca67d2f8edeef5583147042fd5d5c474f0bb2fa5d",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:003:829b092cdbf7",
+          "evidence_text": "Some examples of common blood tests that usually require fasting are:\n\n- Blood glucose, also called blood sugar, tests. These tests measure the level of blood glucose in a sample of your blood. They are used to help diagnose and monitor diabetes, prediabetes, and gestational diabetes (diabetes that starts during pregnancy). Not all blood glucose tests require fasting, so ask your provider if you need to fast for your test.\n\n- Cholesterol levels tests (lipid panel). These tests measure the level of fats, called lipids, in your bloodstream, including cholesterol and triglycerides. The test results help show your risk of getting heart disease and can be used to monitor your health after a cardiac event like a heart attack or stroke.\n\n- Basic metabolic panel (BMP). This is a group of tests that measures several natural chemicals in your blood. The results give your provider information about how well your organs are working, including your heart, kidneys, and liver.\n\nIn some cases, you may also be asked to fast for:\n\n- Liver function tests. This group of tests measures several proteins and other substances related to your liver function. Test results can give your provider information on your liver's health.\n\n- Renal function panel. This is a group of tests that measure several waste products and substances related to your kidney function. The results are often used to monitor your kidney function if your provider suspects kidney disease or if you have diabetes.\n\nWhether or not your provider asks you to fast for these tests depends on several factors. For example, some liver function tests only require fasting if they're ordered as part of a comprehensive metabolic panel.\n\nOther types of tests not listed here may require fasting. Therefore, you should always ask your provider if you aren't sure whether you should fast before your test.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/fasting-for-a-blood-test/",
+          "title_path": [
+            "Fasting for a Blood Test",
+            "What types of blood tests require fasting?"
+          ]
+        },
+        {
+          "body_sha256": "22e731b978c7277bf5ebd6f03af8e515ee6f929d607077ccb6086623673371eb",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-blood-glucose-test:003:cd9700d8dc4b",
+          "evidence_text": "- Have metabolic dysfunction-associated steatotic liver disease (MASLD).\n\n- Are an African American, Hispanic or Latino, American Indian, or an Alaska Native.\n\n- You have symptoms of high or low glucose levels, which could mean you have diabetes or another condition that affects blood glucose levels. Symptoms of high blood glucose levels include:Increased thirstFrequent urination (peeing)Blurred visionFatigueSores that are slow to healLosing weight without tryingNumbness or tingling in your feet or handsSymptoms of low blood glucose levels include:Feeling shaky or jitteryHungerFatigueFeeling dizzy, confused, or irritableHeadacheA fast heartbeat or arrhythmia (a problem with the rate or rhythm of your heartbeat)Having trouble seeing or speaking clearlyFainting or seizures\n\n- Increased thirst\n\n- Frequent urination (peeing)\n\n- Blurred vision\n\n- Fatigue\n\n- Sores that are slow to heal\n\n- Losing weight without trying\n\n- Numbness or tingling in your feet or hands\n\n- Feeling shaky or jittery\n\n- Hunger\n\n- Fatigue\n\n- Feeling dizzy, confused, or irritable\n\n- Headache\n\n- A fast heartbeat or arrhythmia (a problem with the rate or rhythm of your heartbeat)\n\n- Having trouble seeing or speaking clearly\n\n- Fainting or seizures\n\n- You have prediabetes or diabetes. Your provider may schedule blood glucose tests to monitor your condition. You may also monitor your blood glucose at home.\n\n- You are pregnant. You will likely have a blood glucose test between the 24th and 28th week of your pregnancy to check for gestational diabetes. If you have a high risk for gestational diabetes, your provider may test you earlier.\n\n- ACE inhibitors\n\n- Antibiotics called quinolones",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+          "title_path": [
+            "Blood Glucose Test",
+            "Why do I need a blood glucose test?"
+          ]
+        },
+        {
+          "body_sha256": "28e3dfbd5e2f2945d983a3f499f761244c2740c88731d93e34b5ddcaa48001bd",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-blood-glucose-test:004:4da9f9f2b202",
+          "evidence_text": "A health care professional will take a blood sample from a vein in your arm, using a small needle. After the needle is inserted, a small amount of blood will be collected into a test tube or vial. You may feel a little sting when the needle goes in or out.\n\nThere are several types of blood glucose tests:\n\n- Screen for or monitor prediabetes or diabetes\n\n- Help diagnose or monitor other conditions that affect blood glucose\n\n- A random blood glucose test can be done at any time, even after eating. If you have symptoms of diabetes, your provider may use this test first. That's because it can be done right away.\n\n- A glucose challenge test may be used to screen for gestational diabetes if you are pregnant. You don't need to fast for this test. You will drink a sugary drink that contains glucose. A blood sample is taken one hour later. If your blood glucose is too high, you will usually need an oral glucose tolerance test to confirm or rule out gestational diabetes.\n\n- An oral glucose tolerance test (OGTT) is used to diagnose gestational diabetes. If you aren't pregnant, it's sometimes used to confirm a diagnosis of prediabetes or type 2 diabetes. You will need to fast for this test. A blood sample will be taken before you have a sugary drink. After you have the drink, more blood samples will be taken, usually about every hour for the next 2 or 3 hours.\n\n- A hemoglobin A1C (HbA1c) test provides information about your average blood glucose levels over the past 3 months. You don't need to fast for this test. It uses one blood sample. An A1C test can diagnose prediabetes and diabetes. Most people with diabetes have an A1C test at least twice a year to check how well they are managing their blood glucose levels.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+          "title_path": [
+            "Blood Glucose Test",
+            "What happens during a blood glucose test?"
+          ]
+        },
+        {
+          "body_sha256": "da7c6e44d0382de9595e484984d337f45e9c993d704c78b08ffafa3101c5294c",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:012:9c814dc79c93",
+          "evidence_text": "Estimated average glucose (eAG) is calculated from your A1C. Some laboratories report eAG with A1C test results. The eAG number helps you relate your A1C to daily glucose monitoring levels. The eAG calculation converts the A1C percentage to the same units used by home glucose meters—milligrams per deciliter (mg/dL).\n\nThe eAG number will not match daily glucose readings because it’s a long-term average—rather than your blood glucose level at a single time, as is measured with a home glucose meter.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "How does A1C relate to estimated average glucose?"
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": [],
+      "query": "What is (are) High Blood Cholesterol ?",
+      "query_id": "MQ-016",
+      "variant": [
+        {
+          "body_sha256": "2da925fb026b8b21c108867b9bf569ca7cba79ed9a9a425bdb8d95ae9d2185bf",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00",
+          "evidence_text": "A lipoprotein panel, also called a lipid panel or lipid profile, measures the levels of LDL and HDL cholesterol and triglycerides in your blood. Cholesterol and triglyceride levels that are higher or lower than normal may be signs of higher risk of coronary heart disease.\n\nA lipoprotein panel gives information about your:\n\n- Total cholesterol\n\n- LDL (\"bad\") cholesterol, which is the main source of cholesterol buildup and blockages in the arteries\n\n- HDL (\"good\") cholesterol, which helps decrease cholesterol blockages in the arteries\n\n- Triglycerides, which are a type of fat in your blood\n\nMost people will need to fast for 9 to 12 hours before a lipoprotein panel.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-tests",
+          "title_path": [
+            "Blood Tests",
+            "Types of blood tests",
+            "Lipoprotein panel"
+          ]
+        },
+        {
+          "body_sha256": "fb083af75b9f4ae390c11e7110338f231f68a71ca4200a3ee97d3a4a8f674dca",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:001:f9b42b425a00",
+          "evidence_text": "A cholesterol test gives you and your health care provider important information about your risk of developing heart disease. If your test shows you have high cholesterol, you can take steps to lower it. This may decrease your risk of developing heart problems in the future.\n\nA cholesterol test measures your:\n\n- LDL level. LDL (\"bad\") cholesterol is the main source of blockages in the arteries.\n\n- HDL level. HDL (\"good') cholesterol helps get rid of \"bad\" LDL cholesterol. A higher HDL level may help reduce your risk of heart attack or stroke.\n\n- Total cholesterol. This is a measure of the total amount of cholesterol in your blood. It includes HDL and LDL cholesterol.\n\n- Triglyceride level. Triglycerides are a type of fat found in your blood. High levels of triglycerides may increase the risk of heart disease, especially in women.\n\nThere is another type of cholesterol called VLDL (very low-density lipoprotein). Some people also call VLDL a \"bad\" cholesterol because it contributes to the buildup of plaque in your arteries. But VLDL and LDL are different; VLDL mainly carries triglycerides, and LDL mainly carries cholesterol. VLDL isn't usually included in routine cholesterol tests because it's difficult to measure. Because VLDL contains a certain percentage of triglycerides, a lab can use your triglycerides level to estimate your VLDL level.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+          "title_path": [
+            "Cholesterol Levels",
+            "What is it used for?"
+          ]
+        },
+        {
+          "body_sha256": "3660f6777244550e63c93bd28e0dae141061390afccdb5faef167deb8206f7f5",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:002:e8f82b0a61dc",
+          "evidence_text": "A lipoprotein panel, also called a lipid panel or lipid profile, measures the levels of LDL and HDL cholesterol and in your blood. Cholesterol and triglyceride levels that are higher than normal may be signs of higher risk of coronary heart disease.\n\nA lipoprotein panel gives the following types of information:\n\n- Total cholesterol\n\n- LDL (“bad”) cholesterol, which is the main source of cholesterol buildup and blockages in the\n\n- HDL (“good”) cholesterol, which helps decrease cholesterol blockages in the arteries\n\n- Triglycerides, which are another type of fat in your blood\n\nYour lipoprotein panel may also provide other potentially useful numbers, such as your non-HDL cholesterol (total cholesterol minus HDL cholesterol) and remnant LDL (total cholesterol minus LDL and HDL cholesterol).\n\nThe goal for a healthy lipid profile is to have non-HDL levels below 130 milligrams (mg) per deciliter (dL) with an HDL of at least 40 mg/dL for men and 50 mg/dL for women. Check with your provider on the lipid levels that are best for you.\n\nMetric: Non-HDL cholesterol (mg/dL) | Metric: Non-HDL cholesterol (mg/DL), starting no later than age 9-11 y and earlier per clinical discretion\nBlood lipids | Measurement: Plasma total and HDL cholesterol with calculation of non-HDL cholesterol Example tools for measurement: Fasting or nonfasting blood sample | Scoring: | Scoring:\n\nMetric: Non-HDL cholesterol (mg/dL) | Metric: Non-HDL cholesterol (mg/DL), starting no later than age 9-11 y and earlier per clinical discretion\nPoints | Level | Points | Level\n\nMetric: Non-HDL cholesterol (mg/dL) | Metric: Non-HDL cholesterol (mg/DL), starting no later than age 9-11 y and earlier per clinical discretion\n100604020≥220 | <130130-159160-189190-219≥220 | 1006040200 | <100100-119120-144145-189≥190",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Lipoprotein (lipid) panel"
+          ]
+        },
+        {
+          "body_sha256": "1481dc8e9c7d8797ed7c97e4346f173fb7b154b0c725176f069fc9e7ffdd044e",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:004:5899fbdbaaa1",
+          "evidence_text": "A lipoprotein-a, or Lp(a), test is not usually part of a routine lipid panel. High levels of Lp(a) may mean you are at higher risk of heart or blood vessel diseases, even if your other cholesterol levels are healthy. The you from your parents determine how much Lp(a) you have. Your Lp(a) level is unlikely to change much from childhood to old age.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Lipoprotein-a"
+          ]
+        },
+        {
+          "body_sha256": "39b0adde593a981f625f7b0106588477e9d77327eb2c081079ba35e10285b70c",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:001:d00c9be0722a",
+          "evidence_text": "Your healthcare provider may order a blood test called a panel to screen for unhealthy cholesterol levels.\n\nYour healthcare provider may ask you to fast for 8 to 12 hours before a panel.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Screening for high cholesterol"
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": [
+        {
+          "body_sha256": "3b0760d186ec7acce268e28bbfb66a36ed313cb886277111493becb17adc44f2",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:001:4661c4caf369",
+          "evidence_text": "Your provider may order a lab test to:\n\n- Learn more about a specific part of your health.\n\n- Get a general picture of your overall health.\n\nIf your provider orders a test to learn more about a specific part of your health, they can use the results to:\n\n- Diagnose or rule out a certain disease or condition, especially if you have symptoms. For example, if you're sick with a sore throat, swollen tonsils, and a fever, a strep A test can show you whether you're infected with the bacteria that causes strep throat.\n\nLab tests that provide a more general picture of your health are often used even if you don't have any signs or symptoms of a health condition. These tests are usually part of a routine checkup and can tell your provider if you:\n\n- Are at high risk for a specific disease. For example, a cholesterol test measures the amount of cholesterol in a sample of your blood. The results can help you understand your risk for heart disease.\n\n- Need additional testing. These tests look for signs that you may have a health problem so that you can have more testing to find out for sure. For example, one type of test for colon cancer looks for blood in your stool (poop). If blood is found, it could be a sign of cancer. To find out if it is cancer, your provider may order a colonoscopy.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+          "title_path": [
+            "How to Understand Your Lab Results",
+            "Why do I need a lab test?"
+          ]
+        }
+      ],
+      "query": "How to diagnose High Blood Cholesterol ?",
+      "query_id": "MQ-019",
+      "variant": [
+        {
+          "body_sha256": "2da925fb026b8b21c108867b9bf569ca7cba79ed9a9a425bdb8d95ae9d2185bf",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00",
+          "evidence_text": "A lipoprotein panel, also called a lipid panel or lipid profile, measures the levels of LDL and HDL cholesterol and triglycerides in your blood. Cholesterol and triglyceride levels that are higher or lower than normal may be signs of higher risk of coronary heart disease.\n\nA lipoprotein panel gives information about your:\n\n- Total cholesterol\n\n- LDL (\"bad\") cholesterol, which is the main source of cholesterol buildup and blockages in the arteries\n\n- HDL (\"good\") cholesterol, which helps decrease cholesterol blockages in the arteries\n\n- Triglycerides, which are a type of fat in your blood\n\nMost people will need to fast for 9 to 12 hours before a lipoprotein panel.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-tests",
+          "title_path": [
+            "Blood Tests",
+            "Types of blood tests",
+            "Lipoprotein panel"
+          ]
+        },
+        {
+          "body_sha256": "fb083af75b9f4ae390c11e7110338f231f68a71ca4200a3ee97d3a4a8f674dca",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:001:f9b42b425a00",
+          "evidence_text": "A cholesterol test gives you and your health care provider important information about your risk of developing heart disease. If your test shows you have high cholesterol, you can take steps to lower it. This may decrease your risk of developing heart problems in the future.\n\nA cholesterol test measures your:\n\n- LDL level. LDL (\"bad\") cholesterol is the main source of blockages in the arteries.\n\n- HDL level. HDL (\"good') cholesterol helps get rid of \"bad\" LDL cholesterol. A higher HDL level may help reduce your risk of heart attack or stroke.\n\n- Total cholesterol. This is a measure of the total amount of cholesterol in your blood. It includes HDL and LDL cholesterol.\n\n- Triglyceride level. Triglycerides are a type of fat found in your blood. High levels of triglycerides may increase the risk of heart disease, especially in women.\n\nThere is another type of cholesterol called VLDL (very low-density lipoprotein). Some people also call VLDL a \"bad\" cholesterol because it contributes to the buildup of plaque in your arteries. But VLDL and LDL are different; VLDL mainly carries triglycerides, and LDL mainly carries cholesterol. VLDL isn't usually included in routine cholesterol tests because it's difficult to measure. Because VLDL contains a certain percentage of triglycerides, a lab can use your triglycerides level to estimate your VLDL level.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+          "title_path": [
+            "Cholesterol Levels",
+            "What is it used for?"
+          ]
+        },
+        {
+          "body_sha256": "3660f6777244550e63c93bd28e0dae141061390afccdb5faef167deb8206f7f5",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:002:e8f82b0a61dc",
+          "evidence_text": "A lipoprotein panel, also called a lipid panel or lipid profile, measures the levels of LDL and HDL cholesterol and in your blood. Cholesterol and triglyceride levels that are higher than normal may be signs of higher risk of coronary heart disease.\n\nA lipoprotein panel gives the following types of information:\n\n- Total cholesterol\n\n- LDL (“bad”) cholesterol, which is the main source of cholesterol buildup and blockages in the\n\n- HDL (“good”) cholesterol, which helps decrease cholesterol blockages in the arteries\n\n- Triglycerides, which are another type of fat in your blood\n\nYour lipoprotein panel may also provide other potentially useful numbers, such as your non-HDL cholesterol (total cholesterol minus HDL cholesterol) and remnant LDL (total cholesterol minus LDL and HDL cholesterol).\n\nThe goal for a healthy lipid profile is to have non-HDL levels below 130 milligrams (mg) per deciliter (dL) with an HDL of at least 40 mg/dL for men and 50 mg/dL for women. Check with your provider on the lipid levels that are best for you.\n\nMetric: Non-HDL cholesterol (mg/dL) | Metric: Non-HDL cholesterol (mg/DL), starting no later than age 9-11 y and earlier per clinical discretion\nBlood lipids | Measurement: Plasma total and HDL cholesterol with calculation of non-HDL cholesterol Example tools for measurement: Fasting or nonfasting blood sample | Scoring: | Scoring:\n\nMetric: Non-HDL cholesterol (mg/dL) | Metric: Non-HDL cholesterol (mg/DL), starting no later than age 9-11 y and earlier per clinical discretion\nPoints | Level | Points | Level\n\nMetric: Non-HDL cholesterol (mg/dL) | Metric: Non-HDL cholesterol (mg/DL), starting no later than age 9-11 y and earlier per clinical discretion\n100604020≥220 | <130130-159160-189190-219≥220 | 1006040200 | <100100-119120-144145-189≥190",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Lipoprotein (lipid) panel"
+          ]
+        },
+        {
+          "body_sha256": "1481dc8e9c7d8797ed7c97e4346f173fb7b154b0c725176f069fc9e7ffdd044e",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:004:5899fbdbaaa1",
+          "evidence_text": "A lipoprotein-a, or Lp(a), test is not usually part of a routine lipid panel. High levels of Lp(a) may mean you are at higher risk of heart or blood vessel diseases, even if your other cholesterol levels are healthy. The you from your parents determine how much Lp(a) you have. Your Lp(a) level is unlikely to change much from childhood to old age.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Lipoprotein-a"
+          ]
+        },
+        {
+          "body_sha256": "39b0adde593a981f625f7b0106588477e9d77327eb2c081079ba35e10285b70c",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:001:d00c9be0722a",
+          "evidence_text": "Your healthcare provider may order a blood test called a panel to screen for unhealthy cholesterol levels.\n\nYour healthcare provider may ask you to fast for 8 to 12 hours before a panel.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Screening for high cholesterol"
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": [],
+      "query": "What are the treatments for High Blood Cholesterol ?",
+      "query_id": "MQ-020",
+      "variant": []
+    },
+    {
+      "baseline": [
+        {
+          "body_sha256": "acaaeb6ecdf898fa7d128fbe28f112c54286d8538c5283def0f5d2578cfec45f",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0",
+          "evidence_text": "For many lab tests, you don't need to do anything other than answer questions from your provider and/or lab professional. But for others, you may need to do some specific preparations before the test.\n\nOne of the most common lab test preparations is fasting. Fasting means you should not eat or drink anything except water for up to several hours or overnight before your test. This is done because nutrients and ingredients in food are absorbed in your bloodstream. These nutrients might still be in your bloodstream when you have your test and may change the results of certain blood tests. Fasting can help to improve the accuracy of your test results. The length of time you need to fast can vary. So if you do need to fast, make sure you ask your provider how long you should do it.\n\nOther common test preparations may include:\n\n- Avoiding specific foods and drinks such as cooked meats, herbal tea, or alcohol.\n\n- Making sure not to overeat the day before a test.\n\n- Not smoking.\n\n- Avoiding specific behaviors such as strenuous exercise or sexual activity.\n\nFor some blood tests, you may be asked to drink extra water to help keep more fluid in your veins. You may also be asked to drink water 15 to 20 minutes before certain urine tests.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/how-to-prepare-for-a-lab-test/",
+          "title_path": [
+            "How to Prepare for a Lab Test",
+            "Will I need to take other steps to prepare for my lab test?"
+          ]
+        }
+      ],
+      "query": "How many hours should I fast before a fasting blood test?",
+      "query_id": "RAG-021",
+      "variant": [
+        {
+          "body_sha256": "acaaeb6ecdf898fa7d128fbe28f112c54286d8538c5283def0f5d2578cfec45f",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0",
+          "evidence_text": "For many lab tests, you don't need to do anything other than answer questions from your provider and/or lab professional. But for others, you may need to do some specific preparations before the test.\n\nOne of the most common lab test preparations is fasting. Fasting means you should not eat or drink anything except water for up to several hours or overnight before your test. This is done because nutrients and ingredients in food are absorbed in your bloodstream. These nutrients might still be in your bloodstream when you have your test and may change the results of certain blood tests. Fasting can help to improve the accuracy of your test results. The length of time you need to fast can vary. So if you do need to fast, make sure you ask your provider how long you should do it.\n\nOther common test preparations may include:\n\n- Avoiding specific foods and drinks such as cooked meats, herbal tea, or alcohol.\n\n- Making sure not to overeat the day before a test.\n\n- Not smoking.\n\n- Avoiding specific behaviors such as strenuous exercise or sexual activity.\n\nFor some blood tests, you may be asked to drink extra water to help keep more fluid in your veins. You may also be asked to drink water 15 to 20 minutes before certain urine tests.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/how-to-prepare-for-a-lab-test/",
+          "title_path": [
+            "How to Prepare for a Lab Test",
+            "Will I need to take other steps to prepare for my lab test?"
+          ]
+        },
+        {
+          "body_sha256": "a5b20db534cc856faeb9844c6ad4308ad9b79b84453cf05303850ae58224f6da",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:000:ee35a2417bdc",
+          "evidence_text": "If your health care provider has told you to fast before a blood test, it means you should not eat or drink anything, except plain water, for several hours before your test. While you're fasting for a blood test, you should also not:\n\n- Chew gum\n\n- Smoke\n\n- Exercise\n\nYour provider will give you a copy of instructions to follow if they ask you to fast for a test. If you have any questions not covered in those instructions, ask your provider at least a full day before the test so that you'll have time to properly prepare.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/fasting-for-a-blood-test/",
+          "title_path": [
+            "Fasting for a Blood Test",
+            "What is fasting for a blood test?"
+          ]
+        },
+        {
+          "body_sha256": "39b0adde593a981f625f7b0106588477e9d77327eb2c081079ba35e10285b70c",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:001:d00c9be0722a",
+          "evidence_text": "Your healthcare provider may order a blood test called a panel to screen for unhealthy cholesterol levels.\n\nYour healthcare provider may ask you to fast for 8 to 12 hours before a panel.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Screening for high cholesterol"
+          ]
+        },
+        {
+          "body_sha256": "d699430656c2d5edabc7e72fb4a5fd229eaa0d1afea9983bd796d114286356a6",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:004:ecb212de740e",
+          "evidence_text": "You may need to fast (not eat or drink) for 9 to 12 hours before your blood cholesterol test. That's why the tests are often done in the morning. Your provider will let you know if you need to fast and if there are any other special instructions.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+          "title_path": [
+            "Cholesterol Levels",
+            "Will I need to do anything to prepare for the test?"
+          ]
+        },
+        {
+          "body_sha256": "2a2055f6438e67ca10ba90ff7cbfb330aa27b412d16a79095a093ce2defdd640",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-blood-glucose-test:005:4d0c1d43fe5d",
+          "evidence_text": "If your provider orders a fasting blood glucose test or an oral glucose tolerance test, you will need to fast for at least eight hours before the test. If your glucose test is part of a BMP or CMP test, you may need to fast. Other blood glucose tests don't require any special preparations. Ask your provider whether you need to fast before your glucose test.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+          "title_path": [
+            "Blood Glucose Test",
+            "Will I need to do anything to prepare for the test?"
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": [],
+      "query": "空腹抽血时能喝白水吗？",
+      "query_id": "RAG-022",
+      "variant": [
+        {
+          "body_sha256": "eb1720c854283b5fc11b7084112afb278e447aeda5b627a6b3e3ee2337baeb82",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:006:06ea733571a0",
+          "evidence_text": "You'll be able to eat as soon as your test is over. It is common to feel light-headed after a blood test that requires fasting. So, you may want to bring a snack that you can eat right away.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/fasting-for-a-blood-test/",
+          "title_path": [
+            "Fasting for a Blood Test",
+            "When can I eat and drink normally again?"
+          ]
+        },
+        {
+          "body_sha256": "6ffb314a5ba0066fb408d019b9b8e55408c4967bbe2aa62ace8fefb77bc70a53",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:003:72bfe9a38897",
+          "evidence_text": "Talk to your provider if you have questions or concerns about test preparations. They will let you know if there are any special instructions to follow.\n\nBe sure you understand your preparation instructions before the day of your test.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/how-to-prepare-for-a-lab-test/",
+          "title_path": [
+            "How to Prepare for a Lab Test",
+            "Is there anything else I should know about preparing for a lab test?"
+          ]
+        },
+        {
+          "body_sha256": "8d2a1cc9ba8f477b402234573dbdff0272ae3550c1cf76a36e2a7ce33f2dfb44",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:005:268ec0083cce",
+          "evidence_text": "Tell your provider if you eat or drink before your test. You may need to reschedule the test for another time when you can fast to make sure you get accurate results.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/fasting-for-a-blood-test/",
+          "title_path": [
+            "Fasting for a Blood Test",
+            "What if I make a mistake and have something to eat or drink besides water during my fast?"
+          ]
+        },
+        {
+          "body_sha256": "39b0adde593a981f625f7b0106588477e9d77327eb2c081079ba35e10285b70c",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:001:d00c9be0722a",
+          "evidence_text": "Your healthcare provider may order a blood test called a panel to screen for unhealthy cholesterol levels.\n\nYour healthcare provider may ask you to fast for 8 to 12 hours before a panel.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Screening for high cholesterol"
+          ]
+        },
+        {
+          "body_sha256": "d699430656c2d5edabc7e72fb4a5fd229eaa0d1afea9983bd796d114286356a6",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:004:ecb212de740e",
+          "evidence_text": "You may need to fast (not eat or drink) for 9 to 12 hours before your blood cholesterol test. That's why the tests are often done in the morning. Your provider will let you know if you need to fast and if there are any other special instructions.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+          "title_path": [
+            "Cholesterol Levels",
+            "Will I need to do anything to prepare for the test?"
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": [],
+      "query": "What should I do if I ate during my blood-test fast?",
+      "query_id": "RAG-023",
+      "variant": [
+        {
+          "body_sha256": "8d2a1cc9ba8f477b402234573dbdff0272ae3550c1cf76a36e2a7ce33f2dfb44",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:005:268ec0083cce",
+          "evidence_text": "Tell your provider if you eat or drink before your test. You may need to reschedule the test for another time when you can fast to make sure you get accurate results.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/fasting-for-a-blood-test/",
+          "title_path": [
+            "Fasting for a Blood Test",
+            "What if I make a mistake and have something to eat or drink besides water during my fast?"
+          ]
+        },
+        {
+          "body_sha256": "36b3fe7d577897ce370cc12c6dade03f60159ef11c0b07e0709e2549c5a3ec5b",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:003:f4259319a649",
+          "evidence_text": "A health care professional will take a blood sample from a vein in your arm, using a small needle. After the needle is inserted, a small amount of blood will be collected into a test tube or vial. You may feel a little sting when the needle goes in or out. This usually takes less than five minutes.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+          "title_path": [
+            "Hemoglobin A1C (HbA1c) Test",
+            "What happens during an A1C test?"
+          ]
+        },
+        {
+          "body_sha256": "e1553f035dab3e7004c46bb4db61dd0a5fd7aa4bab250626cf6895e540dab847",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:004:7d4efe5fcffc",
+          "evidence_text": "No. Juice, coffee, soda, and other beverages can get in your bloodstream and affect your results. But you can drink plain water. Avoid lemon-flavored or flavored carbonated water, which may contain sugars or artificial sweeteners. Staying well hydrated can actually make the testing process a little easier. This is because water helps to keep more fluid in your veins, which can make it easier to get a sample of your blood.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/fasting-for-a-blood-test/",
+          "title_path": [
+            "Fasting for a Blood Test",
+            "Can I drink anything besides water during a fast?"
+          ]
+        },
+        {
+          "body_sha256": "6ffb314a5ba0066fb408d019b9b8e55408c4967bbe2aa62ace8fefb77bc70a53",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:003:72bfe9a38897",
+          "evidence_text": "Talk to your provider if you have questions or concerns about test preparations. They will let you know if there are any special instructions to follow.\n\nBe sure you understand your preparation instructions before the day of your test.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/how-to-prepare-for-a-lab-test/",
+          "title_path": [
+            "How to Prepare for a Lab Test",
+            "Is there anything else I should know about preparing for a lab test?"
+          ]
+        },
+        {
+          "body_sha256": "17efcbdead33a8dc54b78d268e9fc810587a6192401c399a258a6b8dfe96f77c",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:007:c23bf18ec180",
+          "evidence_text": "You should not fast if your provider doesn't tell you to do so. Fasting for some blood tests may also affect your results and give your provider an inaccurate understanding of your health. If you aren't sure if you should fast for a coming blood test, ask your provider as soon as possible. Taking the right steps before a blood test helps make sure your results will be accurate.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/fasting-for-a-blood-test/",
+          "title_path": [
+            "Fasting for a Blood Test",
+            "Is there anything else I need to know about fasting before a blood test?"
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": [
+        {
+          "body_sha256": "fbe2767daa5b3644ba0929969ebed63a2dfeda8ef255804be6033c01e65ede18",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:004:c48b5b6ebc7c",
+          "evidence_text": "Yes. Health care professionals also use the fasting plasma glucose (FPG) test and the OGTT to diagnose type 2 diabetes and prediabetes. For these blood glucose tests used to diagnose diabetes, you must fast at least 8 hours before you have your blood drawn. If you have symptoms of diabetes, your doctor may use the random plasma glucose test, which doesn’t require fasting. In some cases, health care professionals use the A1C test to help confirm the results of another blood glucose test.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "Can other blood glucose tests be used to diagnose type 2 diabetes and prediabetes?"
+          ]
+        },
+        {
+          "body_sha256": "a97de6d11af4a9053bd4d920de091f9be8581c3ec3aee4cdfcaff7d7f06a1f50",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009",
+          "evidence_text": "Health care professionals can use the A1C test alone or in combination with other diabetes tests to diagnose type 2 diabetes and prediabetes. You don’t have to fast before having your blood drawn for an A1C test, which means that blood can be drawn for the test at any time of the day.\n\nIf you don’t have symptoms but the A1C test shows you have diabetes or prediabetes, you should have a repeat test on a different day using the A1C test or one of the other diabetes tests to confirm the diagnosis.2",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "How is the A1C test used to diagnose type 2 diabetes and prediabetes?"
+          ]
+        },
+        {
+          "body_sha256": "b92fcc7730509f27191cda98eb111a0a57b8dc649efcc67739065f4132a0b8d3",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:004:92788bfbf3e5",
+          "evidence_text": "The A1C test is a blood test that provides your average levels of blood glucose over the last 3 months. Other names for the A1C test are hemoglobin A1C, HbA1C, glycated hemoglobin, and glycosylated hemoglobin test. You can eat and drink before this test. Before using the A1C test to diagnose diabetes, your doctor will consider factors, such as whether you are in your second or third trimester of pregnancy or whether you have certain types of anemia or another problem with your blood.1 The A1C test might not be accurate in those cases.\n\nCertain types of hemoglobin, called hemoglobin variants, can interfere with measuring A1C levels. Most A1C tests used in the United States are not affected by the most common variants. If your A1C test results and blood glucose levels do not match, your doctor should consider that the A1C test may not be a reliable test for you.\n\nYour doctor will report your A1C test result as a percentage, such as an A1C of 7%. The higher the percentage is, the higher your average blood glucose levels are.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis",
+          "title_path": [
+            "Diabetes Tests & Diagnosis",
+            "What tests are used to diagnose diabetes?",
+            "A1C test"
+          ]
+        },
+        {
+          "body_sha256": "837ca0b7638b4ee835da61ef9a87d282e4c7a2242de294b0d591e37e825330b3",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:004:a3832ff6173b",
+          "evidence_text": "In some people, a blood glucose test may indicate a diagnosis of diabetes even though an A1C test does not.1\n\nThe reverse can also occur—an A1C test may indicate a diagnosis of diabetes even though a blood glucose test does not.1\n\nBecause of these variations in test results, health care professionals should repeat tests before making a diagnosis. People with differing test results may be in an early stage of the disease, where blood glucose levels have not risen high enough to show on every test.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/diabetes-prediabetes",
+          "title_path": [
+            "Diabetes & Prediabetes Tests",
+            "Comparing diagnoses"
+          ]
+        },
+        {
+          "body_sha256": "36b3fe7d577897ce370cc12c6dade03f60159ef11c0b07e0709e2549c5a3ec5b",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:003:f4259319a649",
+          "evidence_text": "A health care professional will take a blood sample from a vein in your arm, using a small needle. After the needle is inserted, a small amount of blood will be collected into a test tube or vial. You may feel a little sting when the needle goes in or out. This usually takes less than five minutes.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+          "title_path": [
+            "Hemoglobin A1C (HbA1c) Test",
+            "What happens during an A1C test?"
+          ]
+        }
+      ],
+      "query": "Must I fast before an HbA1c blood draw?",
+      "query_id": "RAG-027",
+      "variant": [
+        {
+          "body_sha256": "fbe2767daa5b3644ba0929969ebed63a2dfeda8ef255804be6033c01e65ede18",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:004:c48b5b6ebc7c",
+          "evidence_text": "Yes. Health care professionals also use the fasting plasma glucose (FPG) test and the OGTT to diagnose type 2 diabetes and prediabetes. For these blood glucose tests used to diagnose diabetes, you must fast at least 8 hours before you have your blood drawn. If you have symptoms of diabetes, your doctor may use the random plasma glucose test, which doesn’t require fasting. In some cases, health care professionals use the A1C test to help confirm the results of another blood glucose test.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "Can other blood glucose tests be used to diagnose type 2 diabetes and prediabetes?"
+          ]
+        },
+        {
+          "body_sha256": "a97de6d11af4a9053bd4d920de091f9be8581c3ec3aee4cdfcaff7d7f06a1f50",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009",
+          "evidence_text": "Health care professionals can use the A1C test alone or in combination with other diabetes tests to diagnose type 2 diabetes and prediabetes. You don’t have to fast before having your blood drawn for an A1C test, which means that blood can be drawn for the test at any time of the day.\n\nIf you don’t have symptoms but the A1C test shows you have diabetes or prediabetes, you should have a repeat test on a different day using the A1C test or one of the other diabetes tests to confirm the diagnosis.2",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "How is the A1C test used to diagnose type 2 diabetes and prediabetes?"
+          ]
+        },
+        {
+          "body_sha256": "b92fcc7730509f27191cda98eb111a0a57b8dc649efcc67739065f4132a0b8d3",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:004:92788bfbf3e5",
+          "evidence_text": "The A1C test is a blood test that provides your average levels of blood glucose over the last 3 months. Other names for the A1C test are hemoglobin A1C, HbA1C, glycated hemoglobin, and glycosylated hemoglobin test. You can eat and drink before this test. Before using the A1C test to diagnose diabetes, your doctor will consider factors, such as whether you are in your second or third trimester of pregnancy or whether you have certain types of anemia or another problem with your blood.1 The A1C test might not be accurate in those cases.\n\nCertain types of hemoglobin, called hemoglobin variants, can interfere with measuring A1C levels. Most A1C tests used in the United States are not affected by the most common variants. If your A1C test results and blood glucose levels do not match, your doctor should consider that the A1C test may not be a reliable test for you.\n\nYour doctor will report your A1C test result as a percentage, such as an A1C of 7%. The higher the percentage is, the higher your average blood glucose levels are.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis",
+          "title_path": [
+            "Diabetes Tests & Diagnosis",
+            "What tests are used to diagnose diabetes?",
+            "A1C test"
+          ]
+        },
+        {
+          "body_sha256": "36b3fe7d577897ce370cc12c6dade03f60159ef11c0b07e0709e2549c5a3ec5b",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:003:f4259319a649",
+          "evidence_text": "A health care professional will take a blood sample from a vein in your arm, using a small needle. After the needle is inserted, a small amount of blood will be collected into a test tube or vial. You may feel a little sting when the needle goes in or out. This usually takes less than five minutes.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+          "title_path": [
+            "Hemoglobin A1C (HbA1c) Test",
+            "What happens during an A1C test?"
+          ]
+        },
+        {
+          "body_sha256": "837ca0b7638b4ee835da61ef9a87d282e4c7a2242de294b0d591e37e825330b3",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:004:a3832ff6173b",
+          "evidence_text": "In some people, a blood glucose test may indicate a diagnosis of diabetes even though an A1C test does not.1\n\nThe reverse can also occur—an A1C test may indicate a diagnosis of diabetes even though a blood glucose test does not.1\n\nBecause of these variations in test results, health care professionals should repeat tests before making a diagnosis. People with differing test results may be in an early stage of the disease, where blood glucose levels have not risen high enough to show on every test.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/diabetes-prediabetes",
+          "title_path": [
+            "Diabetes & Prediabetes Tests",
+            "Comparing diagnoses"
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": [
+        {
+          "body_sha256": "36b3fe7d577897ce370cc12c6dade03f60159ef11c0b07e0709e2549c5a3ec5b",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:003:f4259319a649",
+          "evidence_text": "A health care professional will take a blood sample from a vein in your arm, using a small needle. After the needle is inserted, a small amount of blood will be collected into a test tube or vial. You may feel a little sting when the needle goes in or out. This usually takes less than five minutes.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+          "title_path": [
+            "Hemoglobin A1C (HbA1c) Test",
+            "What happens during an A1C test?"
+          ]
+        },
+        {
+          "body_sha256": "c2651b2d6e2100fde6c52f9849f46154a5051883b504432ec0a236d913e4052d",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:006:92bc5c9dbe88",
+          "evidence_text": "Lab test results can vary from day to day and from test to test. This can be a result of the following factors:",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "Why do diabetes blood test results vary?"
+          ]
+        },
+        {
+          "body_sha256": "72176fa8e7357be3d6188438f399b9b86f7b3e7d9e6279c8eb2664a6b50d4942",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8",
+          "evidence_text": "A hemoglobin A1C (HbA1C) test is a blood test that shows your average level of blood glucose, also called blood sugar, over the past two to three months.\n\nGlucose is a type of sugar in your blood that comes from the foods you eat. Your cells use glucose for energy. A hormone called insulin helps glucose get into your cells. If you have diabetes your body doesn't make enough insulin, or your cells don't use it well. As a result, glucose can't get into your cells, so your blood glucose levels increase.\n\nGlucose in your blood sticks to hemoglobin, a protein in your red blood cells. As your blood glucose levels increase, more of your hemoglobin will be coated with glucose. An A1C test measures the percentage of your red blood cells that have glucose-coated hemoglobin.\n\nAn A1C test can show your average glucose level for the past three months because:\n\n- Glucose sticks to hemoglobin for as long as the red blood cells are alive.\n\n- Red blood cells live about three months.\n\nOther names: HbA1C, A1C, glycohemoglobin, glycated hemoglobin, glycosylated hemoglobin",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+          "title_path": [
+            "Hemoglobin A1C (HbA1c) Test",
+            "What is a hemoglobin A1C (HbA1C) test?"
+          ]
+        },
+        {
+          "body_sha256": "70194e0484003a0d6787115e2d44245aeba7347cba8ae32189337c0589c8879d",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:005:3f1533a2f86e",
+          "evidence_text": "The A1C test is not used to diagnose gestational diabetes. Also, if you have a condition that affects your red blood cells, such as anemia or another type of blood disorder, an A1C test may not be accurate for diagnosing diabetes. Kidney failure and liver disease can also affect A1C results. In these cases, your provider may recommend different tests to diagnose diabetes and prediabetes.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+          "title_path": [
+            "Hemoglobin A1C (HbA1c) Test",
+            "Is there anything else I need to know about an A1C test?"
+          ]
+        },
+        {
+          "body_sha256": "070ffa69a82155eeb8216fa9a3f764ff3955dd078ce144a2266be9e785a40fcb",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:001:31596e9a43ac",
+          "evidence_text": "Testing can help health care professionals\n\n- find prediabetes and counsel you about lifestyle changes to help you delay or prevent type 2 diabetes\n\n- find type 2 diabetes\n\nIf you have risk factors for prediabetes or diabetes, talk with your doctor about whether you should be tested.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "Why should a person get the A1C test?"
+          ]
+        }
+      ],
+      "query": "A1C 可以在一天中的任何时间抽血吗？",
+      "query_id": "RAG-028",
+      "variant": [
+        {
+          "body_sha256": "72176fa8e7357be3d6188438f399b9b86f7b3e7d9e6279c8eb2664a6b50d4942",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8",
+          "evidence_text": "A hemoglobin A1C (HbA1C) test is a blood test that shows your average level of blood glucose, also called blood sugar, over the past two to three months.\n\nGlucose is a type of sugar in your blood that comes from the foods you eat. Your cells use glucose for energy. A hormone called insulin helps glucose get into your cells. If you have diabetes your body doesn't make enough insulin, or your cells don't use it well. As a result, glucose can't get into your cells, so your blood glucose levels increase.\n\nGlucose in your blood sticks to hemoglobin, a protein in your red blood cells. As your blood glucose levels increase, more of your hemoglobin will be coated with glucose. An A1C test measures the percentage of your red blood cells that have glucose-coated hemoglobin.\n\nAn A1C test can show your average glucose level for the past three months because:\n\n- Glucose sticks to hemoglobin for as long as the red blood cells are alive.\n\n- Red blood cells live about three months.\n\nOther names: HbA1C, A1C, glycohemoglobin, glycated hemoglobin, glycosylated hemoglobin",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+          "title_path": [
+            "Hemoglobin A1C (HbA1c) Test",
+            "What is a hemoglobin A1C (HbA1C) test?"
+          ]
+        },
+        {
+          "body_sha256": "36b3fe7d577897ce370cc12c6dade03f60159ef11c0b07e0709e2549c5a3ec5b",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:003:f4259319a649",
+          "evidence_text": "A health care professional will take a blood sample from a vein in your arm, using a small needle. After the needle is inserted, a small amount of blood will be collected into a test tube or vial. You may feel a little sting when the needle goes in or out. This usually takes less than five minutes.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+          "title_path": [
+            "Hemoglobin A1C (HbA1c) Test",
+            "What happens during an A1C test?"
+          ]
+        },
+        {
+          "body_sha256": "c2651b2d6e2100fde6c52f9849f46154a5051883b504432ec0a236d913e4052d",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:006:92bc5c9dbe88",
+          "evidence_text": "Lab test results can vary from day to day and from test to test. This can be a result of the following factors:",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "Why do diabetes blood test results vary?"
+          ]
+        },
+        {
+          "body_sha256": "70194e0484003a0d6787115e2d44245aeba7347cba8ae32189337c0589c8879d",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:005:3f1533a2f86e",
+          "evidence_text": "The A1C test is not used to diagnose gestational diabetes. Also, if you have a condition that affects your red blood cells, such as anemia or another type of blood disorder, an A1C test may not be accurate for diagnosing diabetes. Kidney failure and liver disease can also affect A1C results. In these cases, your provider may recommend different tests to diagnose diabetes and prediabetes.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+          "title_path": [
+            "Hemoglobin A1C (HbA1c) Test",
+            "Is there anything else I need to know about an A1C test?"
+          ]
+        },
+        {
+          "body_sha256": "2b2b26db327a7b68c75c4ca7ca3aeebb4620a3d69c88b0d13b769cb7ee6c30da",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:003:ee350877b4db",
+          "evidence_text": "The A1C test is sometimes called the hemoglobin A1C, HbA1c, glycated hemoglobin, or glycohemoglobin test.\n\nUses\n\n- Screening and diagnosis of prediabetes1 5.7–6.4%1\n\n- 5.7–6.4%1\n\n- Screening and diagnosis of type 2 diabetes1 6.5% or higher1repeat for confirmation of diagnosis\n\n- 6.5% or higher1\n\n- repeat for confirmation of diagnosis\n\n- Monitoring of diabetes\n\nTechnical features\n\n- Sample at any time of day, no fasting required3\n\n- Sample: anticoagulated whole blood\n\n- Sample stability: superior5\n\n- Sensitivity: less than the FPG test and the OGTT1\n\n- Coefficient of variation: for between laboratory assay variability, see College of American Pathologists (CAP) survey data",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/diabetes-prediabetes",
+          "title_path": [
+            "Diabetes & Prediabetes Tests",
+            "Comparing diabetes blood tests",
+            "A1C test"
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": [],
+      "query": "Which measurements are included in a lipid profile?",
+      "query_id": "RAG-029",
+      "variant": [
+        {
+          "body_sha256": "2da925fb026b8b21c108867b9bf569ca7cba79ed9a9a425bdb8d95ae9d2185bf",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00",
+          "evidence_text": "A lipoprotein panel, also called a lipid panel or lipid profile, measures the levels of LDL and HDL cholesterol and triglycerides in your blood. Cholesterol and triglyceride levels that are higher or lower than normal may be signs of higher risk of coronary heart disease.\n\nA lipoprotein panel gives information about your:\n\n- Total cholesterol\n\n- LDL (\"bad\") cholesterol, which is the main source of cholesterol buildup and blockages in the arteries\n\n- HDL (\"good\") cholesterol, which helps decrease cholesterol blockages in the arteries\n\n- Triglycerides, which are a type of fat in your blood\n\nMost people will need to fast for 9 to 12 hours before a lipoprotein panel.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-tests",
+          "title_path": [
+            "Blood Tests",
+            "Types of blood tests",
+            "Lipoprotein panel"
+          ]
+        },
+        {
+          "body_sha256": "3660f6777244550e63c93bd28e0dae141061390afccdb5faef167deb8206f7f5",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:002:e8f82b0a61dc",
+          "evidence_text": "A lipoprotein panel, also called a lipid panel or lipid profile, measures the levels of LDL and HDL cholesterol and in your blood. Cholesterol and triglyceride levels that are higher than normal may be signs of higher risk of coronary heart disease.\n\nA lipoprotein panel gives the following types of information:\n\n- Total cholesterol\n\n- LDL (“bad”) cholesterol, which is the main source of cholesterol buildup and blockages in the\n\n- HDL (“good”) cholesterol, which helps decrease cholesterol blockages in the arteries\n\n- Triglycerides, which are another type of fat in your blood\n\nYour lipoprotein panel may also provide other potentially useful numbers, such as your non-HDL cholesterol (total cholesterol minus HDL cholesterol) and remnant LDL (total cholesterol minus LDL and HDL cholesterol).\n\nThe goal for a healthy lipid profile is to have non-HDL levels below 130 milligrams (mg) per deciliter (dL) with an HDL of at least 40 mg/dL for men and 50 mg/dL for women. Check with your provider on the lipid levels that are best for you.\n\nMetric: Non-HDL cholesterol (mg/dL) | Metric: Non-HDL cholesterol (mg/DL), starting no later than age 9-11 y and earlier per clinical discretion\nBlood lipids | Measurement: Plasma total and HDL cholesterol with calculation of non-HDL cholesterol Example tools for measurement: Fasting or nonfasting blood sample | Scoring: | Scoring:\n\nMetric: Non-HDL cholesterol (mg/dL) | Metric: Non-HDL cholesterol (mg/DL), starting no later than age 9-11 y and earlier per clinical discretion\nPoints | Level | Points | Level\n\nMetric: Non-HDL cholesterol (mg/dL) | Metric: Non-HDL cholesterol (mg/DL), starting no later than age 9-11 y and earlier per clinical discretion\n100604020≥220 | <130130-159160-189190-219≥220 | 1006040200 | <100100-119120-144145-189≥190",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Lipoprotein (lipid) panel"
+          ]
+        },
+        {
+          "body_sha256": "fb083af75b9f4ae390c11e7110338f231f68a71ca4200a3ee97d3a4a8f674dca",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:001:f9b42b425a00",
+          "evidence_text": "A cholesterol test gives you and your health care provider important information about your risk of developing heart disease. If your test shows you have high cholesterol, you can take steps to lower it. This may decrease your risk of developing heart problems in the future.\n\nA cholesterol test measures your:\n\n- LDL level. LDL (\"bad\") cholesterol is the main source of blockages in the arteries.\n\n- HDL level. HDL (\"good') cholesterol helps get rid of \"bad\" LDL cholesterol. A higher HDL level may help reduce your risk of heart attack or stroke.\n\n- Total cholesterol. This is a measure of the total amount of cholesterol in your blood. It includes HDL and LDL cholesterol.\n\n- Triglyceride level. Triglycerides are a type of fat found in your blood. High levels of triglycerides may increase the risk of heart disease, especially in women.\n\nThere is another type of cholesterol called VLDL (very low-density lipoprotein). Some people also call VLDL a \"bad\" cholesterol because it contributes to the buildup of plaque in your arteries. But VLDL and LDL are different; VLDL mainly carries triglycerides, and LDL mainly carries cholesterol. VLDL isn't usually included in routine cholesterol tests because it's difficult to measure. Because VLDL contains a certain percentage of triglycerides, a lab can use your triglycerides level to estimate your VLDL level.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+          "title_path": [
+            "Cholesterol Levels",
+            "What is it used for?"
+          ]
+        },
+        {
+          "body_sha256": "d17a97c2b5deb52ba8e6fe849d4838515174da9bf658eb792951091478cb2cd7",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:000:2843363a035b",
+          "evidence_text": "A cholesterol test is a blood test that measures the amount of cholesterol and triglycerides (a type of fat) in your blood. Cholesterol is a waxy, fat-like substance that's found in your blood and every cell of your body. Your body needs some cholesterol to make hormones, vitamin D, and substances that help you digest foods.\n\nYour liver makes all the cholesterol your body needs and removes excess amounts. Cholesterol is also found in foods from animal sources, such as meat, egg yolks, poultry, and dairy products. Foods high in dietary fat can increase the cholesterol in your blood. If there's too much cholesterol in your blood, your liver can't remove it all.\n\nThere are two main types of cholesterol: LDL (low-density lipoprotein), or \"bad\" cholesterol, and HDL (high-density lipoprotein), or \"good\" cholesterol.\n\nToo much LDL cholesterol in your blood increases your risk for coronary artery disease and other heart diseases. High LDL levels can cause the buildup of a sticky substance called plaque in your arteries. This buildup of plaque is known as atherosclerosis. Over time, plaque can narrow your arteries or fully block them. When this happens, parts of your body may not get enough blood:\n\n- If the blood flow to your heart is blocked, it can cause a heart attack.\n\n- If the blood flow to your brain is blocked, it can cause a stroke.\n\n- If the blood flow to your arms or legs is blocked, it can cause peripheral artery disease.\n\nOther names for a cholesterol test: Lipid profile, Lipid panel",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+          "title_path": [
+            "Cholesterol Levels",
+            "What is a cholesterol test?"
+          ]
+        },
+        {
+          "body_sha256": "1481dc8e9c7d8797ed7c97e4346f173fb7b154b0c725176f069fc9e7ffdd044e",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:004:5899fbdbaaa1",
+          "evidence_text": "A lipoprotein-a, or Lp(a), test is not usually part of a routine lipid panel. High levels of Lp(a) may mean you are at higher risk of heart or blood vessel diseases, even if your other cholesterol levels are healthy. The you from your parents determine how much Lp(a) you have. Your Lp(a) level is unlikely to change much from childhood to old age.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Lipoprotein-a"
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": [
+        {
+          "body_sha256": "2da925fb026b8b21c108867b9bf569ca7cba79ed9a9a425bdb8d95ae9d2185bf",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00",
+          "evidence_text": "A lipoprotein panel, also called a lipid panel or lipid profile, measures the levels of LDL and HDL cholesterol and triglycerides in your blood. Cholesterol and triglyceride levels that are higher or lower than normal may be signs of higher risk of coronary heart disease.\n\nA lipoprotein panel gives information about your:\n\n- Total cholesterol\n\n- LDL (\"bad\") cholesterol, which is the main source of cholesterol buildup and blockages in the arteries\n\n- HDL (\"good\") cholesterol, which helps decrease cholesterol blockages in the arteries\n\n- Triglycerides, which are a type of fat in your blood\n\nMost people will need to fast for 9 to 12 hours before a lipoprotein panel.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-tests",
+          "title_path": [
+            "Blood Tests",
+            "Types of blood tests",
+            "Lipoprotein panel"
+          ]
+        },
+        {
+          "body_sha256": "fb083af75b9f4ae390c11e7110338f231f68a71ca4200a3ee97d3a4a8f674dca",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:001:f9b42b425a00",
+          "evidence_text": "A cholesterol test gives you and your health care provider important information about your risk of developing heart disease. If your test shows you have high cholesterol, you can take steps to lower it. This may decrease your risk of developing heart problems in the future.\n\nA cholesterol test measures your:\n\n- LDL level. LDL (\"bad\") cholesterol is the main source of blockages in the arteries.\n\n- HDL level. HDL (\"good') cholesterol helps get rid of \"bad\" LDL cholesterol. A higher HDL level may help reduce your risk of heart attack or stroke.\n\n- Total cholesterol. This is a measure of the total amount of cholesterol in your blood. It includes HDL and LDL cholesterol.\n\n- Triglyceride level. Triglycerides are a type of fat found in your blood. High levels of triglycerides may increase the risk of heart disease, especially in women.\n\nThere is another type of cholesterol called VLDL (very low-density lipoprotein). Some people also call VLDL a \"bad\" cholesterol because it contributes to the buildup of plaque in your arteries. But VLDL and LDL are different; VLDL mainly carries triglycerides, and LDL mainly carries cholesterol. VLDL isn't usually included in routine cholesterol tests because it's difficult to measure. Because VLDL contains a certain percentage of triglycerides, a lab can use your triglycerides level to estimate your VLDL level.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+          "title_path": [
+            "Cholesterol Levels",
+            "What is it used for?"
+          ]
+        },
+        {
+          "body_sha256": "fc1dfd25140152a39c5c41f92998fbde5632d878d51bdfb7b4b0a070d54dd258",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:006:59dd511c4e58",
+          "evidence_text": "High cholesterol can lead to heart disease, the number one cause of death in the United States. You can't change some risk factors for high cholesterol, such as age and your genes. But there are actions you can take to lower your LDL levels and reduce your risk, including:\n\n- Eat a healthy diet. Reduce or avoid foods high in saturated fat and cholesterol to help lower the cholesterol levels in your blood.\n\n- Manage your weight. Being overweight can increase your cholesterol and risk for heart disease.\n\n- Stay active. Regular physical activity may help lower your LDL (bad) cholesterol levels and raise your HDL (good) cholesterol levels. It may also help you lose weight.\n\n- Quit smoking. Smoking lowers your HDL (good) cholesterol, especially in women. Smoking also raises your LDL (bad) cholesterol.\n\n- Reduce stress. Stress may raise levels of certain hormones such as corticosteroids. These can cause your body to make more cholesterol.\n\n- Avoid drinking too much alcohol. Alcohol can raise your total cholesterol level.\n\nTalk to your provider before making any major change in your diet or exercise routine.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+          "title_path": [
+            "Cholesterol Levels",
+            "Is there anything else I need to know about my cholesterol levels?"
+          ]
+        },
+        {
+          "body_sha256": "d17a97c2b5deb52ba8e6fe849d4838515174da9bf658eb792951091478cb2cd7",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:000:2843363a035b",
+          "evidence_text": "A cholesterol test is a blood test that measures the amount of cholesterol and triglycerides (a type of fat) in your blood. Cholesterol is a waxy, fat-like substance that's found in your blood and every cell of your body. Your body needs some cholesterol to make hormones, vitamin D, and substances that help you digest foods.\n\nYour liver makes all the cholesterol your body needs and removes excess amounts. Cholesterol is also found in foods from animal sources, such as meat, egg yolks, poultry, and dairy products. Foods high in dietary fat can increase the cholesterol in your blood. If there's too much cholesterol in your blood, your liver can't remove it all.\n\nThere are two main types of cholesterol: LDL (low-density lipoprotein), or \"bad\" cholesterol, and HDL (high-density lipoprotein), or \"good\" cholesterol.\n\nToo much LDL cholesterol in your blood increases your risk for coronary artery disease and other heart diseases. High LDL levels can cause the buildup of a sticky substance called plaque in your arteries. This buildup of plaque is known as atherosclerosis. Over time, plaque can narrow your arteries or fully block them. When this happens, parts of your body may not get enough blood:\n\n- If the blood flow to your heart is blocked, it can cause a heart attack.\n\n- If the blood flow to your brain is blocked, it can cause a stroke.\n\n- If the blood flow to your arms or legs is blocked, it can cause peripheral artery disease.\n\nOther names for a cholesterol test: Lipid profile, Lipid panel",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+          "title_path": [
+            "Cholesterol Levels",
+            "What is a cholesterol test?"
+          ]
+        },
+        {
+          "body_sha256": "4d37d2f852e434d7e9e3bb7202552c58f5726a80aed472dd8c2e7ace09b9b92b",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:000:d2c24a28ea75",
+          "evidence_text": "During your physical exam, your provider will check for signs of very high blood cholesterol, such as , or signs of other health conditions that can cause high blood cholesterol.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Medical history and physical exam"
+          ]
+        }
+      ],
+      "query": "Is LDL described as good or bad cholesterol?",
+      "query_id": "RAG-031",
+      "variant": [
+        {
+          "body_sha256": "2da925fb026b8b21c108867b9bf569ca7cba79ed9a9a425bdb8d95ae9d2185bf",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00",
+          "evidence_text": "A lipoprotein panel, also called a lipid panel or lipid profile, measures the levels of LDL and HDL cholesterol and triglycerides in your blood. Cholesterol and triglyceride levels that are higher or lower than normal may be signs of higher risk of coronary heart disease.\n\nA lipoprotein panel gives information about your:\n\n- Total cholesterol\n\n- LDL (\"bad\") cholesterol, which is the main source of cholesterol buildup and blockages in the arteries\n\n- HDL (\"good\") cholesterol, which helps decrease cholesterol blockages in the arteries\n\n- Triglycerides, which are a type of fat in your blood\n\nMost people will need to fast for 9 to 12 hours before a lipoprotein panel.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-tests",
+          "title_path": [
+            "Blood Tests",
+            "Types of blood tests",
+            "Lipoprotein panel"
+          ]
+        },
+        {
+          "body_sha256": "fb083af75b9f4ae390c11e7110338f231f68a71ca4200a3ee97d3a4a8f674dca",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:001:f9b42b425a00",
+          "evidence_text": "A cholesterol test gives you and your health care provider important information about your risk of developing heart disease. If your test shows you have high cholesterol, you can take steps to lower it. This may decrease your risk of developing heart problems in the future.\n\nA cholesterol test measures your:\n\n- LDL level. LDL (\"bad\") cholesterol is the main source of blockages in the arteries.\n\n- HDL level. HDL (\"good') cholesterol helps get rid of \"bad\" LDL cholesterol. A higher HDL level may help reduce your risk of heart attack or stroke.\n\n- Total cholesterol. This is a measure of the total amount of cholesterol in your blood. It includes HDL and LDL cholesterol.\n\n- Triglyceride level. Triglycerides are a type of fat found in your blood. High levels of triglycerides may increase the risk of heart disease, especially in women.\n\nThere is another type of cholesterol called VLDL (very low-density lipoprotein). Some people also call VLDL a \"bad\" cholesterol because it contributes to the buildup of plaque in your arteries. But VLDL and LDL are different; VLDL mainly carries triglycerides, and LDL mainly carries cholesterol. VLDL isn't usually included in routine cholesterol tests because it's difficult to measure. Because VLDL contains a certain percentage of triglycerides, a lab can use your triglycerides level to estimate your VLDL level.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+          "title_path": [
+            "Cholesterol Levels",
+            "What is it used for?"
+          ]
+        },
+        {
+          "body_sha256": "fc1dfd25140152a39c5c41f92998fbde5632d878d51bdfb7b4b0a070d54dd258",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:006:59dd511c4e58",
+          "evidence_text": "High cholesterol can lead to heart disease, the number one cause of death in the United States. You can't change some risk factors for high cholesterol, such as age and your genes. But there are actions you can take to lower your LDL levels and reduce your risk, including:\n\n- Eat a healthy diet. Reduce or avoid foods high in saturated fat and cholesterol to help lower the cholesterol levels in your blood.\n\n- Manage your weight. Being overweight can increase your cholesterol and risk for heart disease.\n\n- Stay active. Regular physical activity may help lower your LDL (bad) cholesterol levels and raise your HDL (good) cholesterol levels. It may also help you lose weight.\n\n- Quit smoking. Smoking lowers your HDL (good) cholesterol, especially in women. Smoking also raises your LDL (bad) cholesterol.\n\n- Reduce stress. Stress may raise levels of certain hormones such as corticosteroids. These can cause your body to make more cholesterol.\n\n- Avoid drinking too much alcohol. Alcohol can raise your total cholesterol level.\n\nTalk to your provider before making any major change in your diet or exercise routine.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+          "title_path": [
+            "Cholesterol Levels",
+            "Is there anything else I need to know about my cholesterol levels?"
+          ]
+        },
+        {
+          "body_sha256": "d17a97c2b5deb52ba8e6fe849d4838515174da9bf658eb792951091478cb2cd7",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:000:2843363a035b",
+          "evidence_text": "A cholesterol test is a blood test that measures the amount of cholesterol and triglycerides (a type of fat) in your blood. Cholesterol is a waxy, fat-like substance that's found in your blood and every cell of your body. Your body needs some cholesterol to make hormones, vitamin D, and substances that help you digest foods.\n\nYour liver makes all the cholesterol your body needs and removes excess amounts. Cholesterol is also found in foods from animal sources, such as meat, egg yolks, poultry, and dairy products. Foods high in dietary fat can increase the cholesterol in your blood. If there's too much cholesterol in your blood, your liver can't remove it all.\n\nThere are two main types of cholesterol: LDL (low-density lipoprotein), or \"bad\" cholesterol, and HDL (high-density lipoprotein), or \"good\" cholesterol.\n\nToo much LDL cholesterol in your blood increases your risk for coronary artery disease and other heart diseases. High LDL levels can cause the buildup of a sticky substance called plaque in your arteries. This buildup of plaque is known as atherosclerosis. Over time, plaque can narrow your arteries or fully block them. When this happens, parts of your body may not get enough blood:\n\n- If the blood flow to your heart is blocked, it can cause a heart attack.\n\n- If the blood flow to your brain is blocked, it can cause a stroke.\n\n- If the blood flow to your arms or legs is blocked, it can cause peripheral artery disease.\n\nOther names for a cholesterol test: Lipid profile, Lipid panel",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+          "title_path": [
+            "Cholesterol Levels",
+            "What is a cholesterol test?"
+          ]
+        },
+        {
+          "body_sha256": "4d37d2f852e434d7e9e3bb7202552c58f5726a80aed472dd8c2e7ace09b9b92b",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:000:d2c24a28ea75",
+          "evidence_text": "During your physical exam, your provider will check for signs of very high blood cholesterol, such as , or signs of other health conditions that can cause high blood cholesterol.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Medical history and physical exam"
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": [],
+      "query": "Do many laboratory tests require no special preparation?",
+      "query_id": "RAG-033",
+      "variant": []
+    },
+    {
+      "baseline": [],
+      "query": "化验前空腹的含义是什么？",
+      "query_id": "RAG-034",
+      "variant": [
+        {
+          "body_sha256": "eb1720c854283b5fc11b7084112afb278e447aeda5b627a6b3e3ee2337baeb82",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:006:06ea733571a0",
+          "evidence_text": "You'll be able to eat as soon as your test is over. It is common to feel light-headed after a blood test that requires fasting. So, you may want to bring a snack that you can eat right away.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/fasting-for-a-blood-test/",
+          "title_path": [
+            "Fasting for a Blood Test",
+            "When can I eat and drink normally again?"
+          ]
+        },
+        {
+          "body_sha256": "6ffb314a5ba0066fb408d019b9b8e55408c4967bbe2aa62ace8fefb77bc70a53",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:003:72bfe9a38897",
+          "evidence_text": "Talk to your provider if you have questions or concerns about test preparations. They will let you know if there are any special instructions to follow.\n\nBe sure you understand your preparation instructions before the day of your test.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/how-to-prepare-for-a-lab-test/",
+          "title_path": [
+            "How to Prepare for a Lab Test",
+            "Is there anything else I should know about preparing for a lab test?"
+          ]
+        },
+        {
+          "body_sha256": "8d2a1cc9ba8f477b402234573dbdff0272ae3550c1cf76a36e2a7ce33f2dfb44",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:005:268ec0083cce",
+          "evidence_text": "Tell your provider if you eat or drink before your test. You may need to reschedule the test for another time when you can fast to make sure you get accurate results.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/fasting-for-a-blood-test/",
+          "title_path": [
+            "Fasting for a Blood Test",
+            "What if I make a mistake and have something to eat or drink besides water during my fast?"
+          ]
+        },
+        {
+          "body_sha256": "39b0adde593a981f625f7b0106588477e9d77327eb2c081079ba35e10285b70c",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:001:d00c9be0722a",
+          "evidence_text": "Your healthcare provider may order a blood test called a panel to screen for unhealthy cholesterol levels.\n\nYour healthcare provider may ask you to fast for 8 to 12 hours before a panel.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Screening for high cholesterol"
+          ]
+        },
+        {
+          "body_sha256": "d699430656c2d5edabc7e72fb4a5fd229eaa0d1afea9983bd796d114286356a6",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:004:ecb212de740e",
+          "evidence_text": "You may need to fast (not eat or drink) for 9 to 12 hours before your blood cholesterol test. That's why the tests are often done in the morning. Your provider will let you know if you need to fast and if there are any other special instructions.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+          "title_path": [
+            "Cholesterol Levels",
+            "Will I need to do anything to prepare for the test?"
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": [
+        {
+          "body_sha256": "6be6b98adf4129e4367fb20501c2c5cd982e835bf2e7308b1d6fa75961eaeffc",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37",
+          "evidence_text": "Lab test results are reported in different ways. Some results are a number. For example, your low-density lipoprotein (LDL) result for a cholesterol test may be 125 or 80. But how do you know what that number means?\n\nTo answer that question, your lab report tells you whether your test result is in a normal range called a reference range or \"normal values.\" A reference range is a set of numbers that form the high and low ends of the range of results that's considered to be normal. The ranges are based on the test results from large groups of healthy people. A test may have different reference ranges for different groups. For example, there may be separate ranges for children and adults.\n\nBecause these ranges can vary, the term \"normal\" can be misleading. Reference ranges show the average results in a healthy test group. So:\n\n- A test result that is higher or lower than the range that applies to you may or may not be a sign of a health problem. It's common for healthy people to sometimes have results outside the reference range. If your results are outside of the range, your provider will look at other information about your health to understand what may have affected your results.\n\n- A test result that is within a reference range isn't always a guarantee of good health. Some people with health problems can have results that are considered \"normal.\" Therefore, even if you have a test result within the normal range, you may need additional testing, especially if you have symptoms of a health condition.\n\nWhen looking at your lab test results, it's helpful to consider two important facts. First, because labs often use different testing methods, they often use different reference ranges to describe normal results. This means that:",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+          "title_path": [
+            "How to Understand Your Lab Results",
+            "What is a reference range?"
+          ]
+        },
+        {
+          "body_sha256": "0f8a8b6ed36978a7b840453e0c12649cd98542e2e4d48d7624c3983f82e9190f",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:003:8e89f997915d",
+          "evidence_text": "Metric: Non-HDL cholesterol (mg/dL) | Metric: Non-HDL cholesterol (mg/DL), starting no later than age 9-11 y and earlier per clinical discretion\n100604020≥220 | <130130-159160-189190-219≥220 | 1006040200 | <100100-119120-144145-189≥190\n\nFor healthy persons, how often you get a lipid panel done depends on your age, risk factors, and family history of high blood cholesterol or cardiovascular diseases, such as atherosclerosis, heart attack, or stroke.\n\nHere is a general guide:\n\n- Ages 19 or younger: Screening begins at ages 9 to 11 and should be repeated every 5 years. Screening may be performed as early as age 2 if there is a family history of high blood cholesterol, heart attack, or stroke.\n\n- Ages 20 to 65: Younger adults should be screened every 5 years. Men ages 45 to 65 and women ages 55 to 65 should be screened every 1 to 2 years.\n\n- Older than 65: Older adults should be screened every year.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Lipoprotein (lipid) panel"
+          ]
+        },
+        {
+          "body_sha256": "dd670235ad7983f0fe774dbdf0fca52a9da901e7fd8709195f508a1dea50910f",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:005:e9cb0c683109",
+          "evidence_text": "Cholesterol is usually measured in milligrams (mg) of cholesterol per deciliter (dL) of blood. The information below will help you understand what your test results mean. In general, low LDL levels and high HDL cholesterol levels are good for heart health.\n\nAnyone age 19 or younger:\n\nType of Cholesterol | Healthy Level\nTotal Cholesterol | Less than 170 mg/dL\n\nType of Cholesterol | Healthy Level\nNon-HDL | Less than 120 mg/dL\n\nType of Cholesterol | Healthy Level\nLDL | Less than 110 mg/dL\n\nType of Cholesterol | Healthy Level\nHDL | More than 45mg/dL\n\nMen age 20 or older:\n\nType of Cholesterol | Healthy Level\nTotal Cholesterol | Less than 200 mg/dL\n\nType of Cholesterol | Healthy Level\nNon-HDL | Less than 130 mg/dL\n\nType of Cholesterol | Healthy Level\nLDL | Less than 100 mg/dL\n\nType of Cholesterol | Healthy Level\nHDL | Greater than or equal to 60 mg/dL is best. Levels less than 40 mg/dL are considered low.\n\nWomen age 20 or older:\n\nType of Cholesterol | Healthy Level\nTotal Cholesterol | Less than 200 mg/dL\n\nType of Cholesterol | Healthy Level\nNon-HDL | Less than 130 mg/dL\n\nType of Cholesterol | Healthy Level\nLDL | Less than 100 mg/dL\n\nType of Cholesterol | Healthy Level\nHDL | Greater than or equal to 60 mg/dL is best. Levels less than 50 mg/dL are considered low.\n\nThe LDL listed on your results may say \"calculated.\" This means that your LDL level is an estimate based on your total cholesterol, HDL, and triglycerides. Your LDL level may also be measured \"directly\" from your blood sample. Either way, you want your LDL number to be low.\n\nA healthy cholesterol level for you may depend on your age, family history, lifestyle, and other risk factors for heart disease, such as high triglyceride levels. Your provider can explain what's right for you.\n\nLearn more about laboratory tests, reference ranges, and understanding results.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+          "title_path": [
+            "Cholesterol Levels",
+            "What do the results mean?"
+          ]
+        },
+        {
+          "body_sha256": "15b7e492db721601b1c5bdfe1412f2f37e9cbce835694f8ef02cf0346b343521",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:005:5d03f8b045cf",
+          "evidence_text": "Yes. In some people, a blood glucose test may show diabetes when an A1C test does not. The reverse can also occur—an A1C test may indicate diabetes even though a blood glucose test does not. Because of these differences in test results, health care professionals repeat tests before making a diagnosis.\n\nPeople with differing test results may be in an early stage of the disease, when blood glucose levels have not risen high enough to show up on every test. In this case, health care professionals may choose to follow the person closely and repeat the test in several months.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "Can the A1C test result in a different diagnosis than the blood glucose tests?"
+          ]
+        },
+        {
+          "body_sha256": "dd6d92954c3359e1b4e700e98128c319bf242504f02d10f49e7390ac66e37ebe",
+          "citation_id": "HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:003:358a3519eeb4",
+          "evidence_text": "It can take time and hard work to make healthy changes you might have talked about with your doctor or nurse. Remember to:\n\n- Schedule follow-up appointments for tests or lab work if you need to\n\n- Contact the doctor to get test results if you need to",
+          "publisher": "ODPHP",
+          "source_url": "https://odphp.health.gov/myhealthfinder/doctor-visits/talking-doctor/take-charge-your-health-care",
+          "title_path": [
+            "Take Charge of Your Health Care",
+            "Take Action",
+            "Be Prepared",
+            "Follow up after your appointment."
+          ]
+        }
+      ],
+      "query": "Can a healthy person have a result outside a reference range?",
+      "query_id": "RAG-037",
+      "variant": [
+        {
+          "body_sha256": "6be6b98adf4129e4367fb20501c2c5cd982e835bf2e7308b1d6fa75961eaeffc",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37",
+          "evidence_text": "Lab test results are reported in different ways. Some results are a number. For example, your low-density lipoprotein (LDL) result for a cholesterol test may be 125 or 80. But how do you know what that number means?\n\nTo answer that question, your lab report tells you whether your test result is in a normal range called a reference range or \"normal values.\" A reference range is a set of numbers that form the high and low ends of the range of results that's considered to be normal. The ranges are based on the test results from large groups of healthy people. A test may have different reference ranges for different groups. For example, there may be separate ranges for children and adults.\n\nBecause these ranges can vary, the term \"normal\" can be misleading. Reference ranges show the average results in a healthy test group. So:\n\n- A test result that is higher or lower than the range that applies to you may or may not be a sign of a health problem. It's common for healthy people to sometimes have results outside the reference range. If your results are outside of the range, your provider will look at other information about your health to understand what may have affected your results.\n\n- A test result that is within a reference range isn't always a guarantee of good health. Some people with health problems can have results that are considered \"normal.\" Therefore, even if you have a test result within the normal range, you may need additional testing, especially if you have symptoms of a health condition.\n\nWhen looking at your lab test results, it's helpful to consider two important facts. First, because labs often use different testing methods, they often use different reference ranges to describe normal results. This means that:",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+          "title_path": [
+            "How to Understand Your Lab Results",
+            "What is a reference range?"
+          ]
+        },
+        {
+          "body_sha256": "dd670235ad7983f0fe774dbdf0fca52a9da901e7fd8709195f508a1dea50910f",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:005:e9cb0c683109",
+          "evidence_text": "Cholesterol is usually measured in milligrams (mg) of cholesterol per deciliter (dL) of blood. The information below will help you understand what your test results mean. In general, low LDL levels and high HDL cholesterol levels are good for heart health.\n\nAnyone age 19 or younger:\n\nType of Cholesterol | Healthy Level\nTotal Cholesterol | Less than 170 mg/dL\n\nType of Cholesterol | Healthy Level\nNon-HDL | Less than 120 mg/dL\n\nType of Cholesterol | Healthy Level\nLDL | Less than 110 mg/dL\n\nType of Cholesterol | Healthy Level\nHDL | More than 45mg/dL\n\nMen age 20 or older:\n\nType of Cholesterol | Healthy Level\nTotal Cholesterol | Less than 200 mg/dL\n\nType of Cholesterol | Healthy Level\nNon-HDL | Less than 130 mg/dL\n\nType of Cholesterol | Healthy Level\nLDL | Less than 100 mg/dL\n\nType of Cholesterol | Healthy Level\nHDL | Greater than or equal to 60 mg/dL is best. Levels less than 40 mg/dL are considered low.\n\nWomen age 20 or older:\n\nType of Cholesterol | Healthy Level\nTotal Cholesterol | Less than 200 mg/dL\n\nType of Cholesterol | Healthy Level\nNon-HDL | Less than 130 mg/dL\n\nType of Cholesterol | Healthy Level\nLDL | Less than 100 mg/dL\n\nType of Cholesterol | Healthy Level\nHDL | Greater than or equal to 60 mg/dL is best. Levels less than 50 mg/dL are considered low.\n\nThe LDL listed on your results may say \"calculated.\" This means that your LDL level is an estimate based on your total cholesterol, HDL, and triglycerides. Your LDL level may also be measured \"directly\" from your blood sample. Either way, you want your LDL number to be low.\n\nA healthy cholesterol level for you may depend on your age, family history, lifestyle, and other risk factors for heart disease, such as high triglyceride levels. Your provider can explain what's right for you.\n\nLearn more about laboratory tests, reference ranges, and understanding results.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+          "title_path": [
+            "Cholesterol Levels",
+            "What do the results mean?"
+          ]
+        },
+        {
+          "body_sha256": "0278f9a338cfde2ec6d0b59a37c77ff7a200f771ff14cf8669c6ee79db8be4f9",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:001:80202cc093b8",
+          "evidence_text": "When interpreting laboratory results, health care professionals should\n\n- consider that all laboratory test results represent a range, rather than an exact number2\n\n- know the A1C assay methods used by their laboratory1\n\n- send blood samples to be tested by a laboratory that uses an A1C analysis method certified by the NGSP to ensure the results are standardized to the Diabetes Control and Complications Trial (DCCT) assay1\n\n- consider the possibility of interference in the A1C test when a result is below 4%, above 15%, or is at odds with other diabetes test results1",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/diabetes-prediabetes",
+          "title_path": [
+            "Diabetes & Prediabetes Tests",
+            "Interpreting laboratory results"
+          ]
+        },
+        {
+          "body_sha256": "23f38f4c6e58a231302af1c42095e2c0edea0c42d2b878214ea7b9ec0a16deb2",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:004:0dea5b59d283",
+          "evidence_text": "A1C results tell you what percentage of your hemoglobin is coated with glucose. The ranges are just a guide to what is normal. What's normal for you depends on your health, age, and other factors. Ask your provider what A1C percentage is healthy for you.\n\nTo diagnose diabetes or prediabetes, the percentages commonly used are:\n\n- Normal: A1C below 5.7%\n\n- Prediabetes: A1C between 5.7% and 6.4%\n\n- Diabetes: A1C of 6.5% or higher\n\nProviders often use more than one test to diagnose diabetes. So, if your test result was higher than normal, you may have another A1C test or a different type of diabetes test, usually either a fasting blood glucose test or an oral glucose tolerance test (OGTT).\n\nIf your A1C test was done to monitor your diabetes, talk with your provider about what your test results mean.\n\nLearn more about laboratory tests, reference ranges, and understanding results.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+          "title_path": [
+            "Hemoglobin A1C (HbA1c) Test",
+            "What do the results mean?"
+          ]
+        },
+        {
+          "body_sha256": "0f8a8b6ed36978a7b840453e0c12649cd98542e2e4d48d7624c3983f82e9190f",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:003:8e89f997915d",
+          "evidence_text": "Metric: Non-HDL cholesterol (mg/dL) | Metric: Non-HDL cholesterol (mg/DL), starting no later than age 9-11 y and earlier per clinical discretion\n100604020≥220 | <130130-159160-189190-219≥220 | 1006040200 | <100100-119120-144145-189≥190\n\nFor healthy persons, how often you get a lipid panel done depends on your age, risk factors, and family history of high blood cholesterol or cardiovascular diseases, such as atherosclerosis, heart attack, or stroke.\n\nHere is a general guide:\n\n- Ages 19 or younger: Screening begins at ages 9 to 11 and should be repeated every 5 years. Screening may be performed as early as age 2 if there is a family history of high blood cholesterol, heart attack, or stroke.\n\n- Ages 20 to 65: Younger adults should be screened every 5 years. Men ages 45 to 65 and women ages 55 to 65 should be screened every 1 to 2 years.\n\n- Older than 65: Older adults should be screened every year.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Lipoprotein (lipid) panel"
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": [
+        {
+          "body_sha256": "44a6f9b933cda957c22b766b90390f555f05cbcacf310e997aa1bc1b550f5ec8",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:007:1545b3e8bc15",
+          "evidence_text": "Your results can vary because of natural changes in your blood glucose level. For example, your blood glucose level moves up and down when you eat or exercise. Sickness and stress also can affect your blood glucose test results. A1C tests are less likely to be affected by short-term changes than FPG or OGTT tests.\n\nThe following chart shows how multiple blood glucose measurements over 4 days compare with an A1C measurement.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "Why do diabetes blood test results vary?",
+            "Blood glucose levels move up and down"
+          ]
+        },
+        {
+          "body_sha256": "bf57d5037d85bd5aeaec96c03092a11ed600130e8de890b902044d4b3e30ff67",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:008:1dd2f52ebf7e",
+          "evidence_text": "The straight black line shows an A1C measurement of 7.0 percent. The blue line shows an example of how blood glucose test results might look from self-monitoring four times a day over a 4-day period.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "Why do diabetes blood test results vary?",
+            "Blood glucose levels move up and down",
+            "Blood Glucose Measurements Compared with A1C Measurements over 4 Days"
+          ]
+        },
+        {
+          "body_sha256": "fa708ff3d46d6cb11d52ddd04beeb4fafde5de81e1e80e2e1c8b4d52ff42b6ce",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:004:10266a0d1d57",
+          "evidence_text": "Some test results tell you whether a certain substance, germ, type of cell, or gene was or wasn't found in your test sample. On your test report, you may see these terms:\n\n- Negative or normal. This means \"No, the test didn't find what it was looking for.\" So, you're unlikely to have the health problem you were tested for, but you may need more tests.\n\n- Positive or abnormal. This means, \"Yes, the test found what it was looking for.\" The germ, substance, or gene being tested was in your sample. So, you may have a disease or infection. In certain cases, you may need more tests to confirm a diagnosis.\n\n- Inconclusive or uncertain. This means \"not sure.\" Your test wasn't clearly positive or negative. There are many reasons why this may happen. If you get an uncertain result, you will probably be tested again.\n\nTests for the COVID-19 virus are an example of tests that tell you whether or not a specific germ was found in your sample.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+          "title_path": [
+            "How to Understand Your Lab Results",
+            "What do negative, positive, and inconclusive results mean?"
+          ]
+        },
+        {
+          "body_sha256": "54c80d24437b72f9dd918e46a3c13a4cb6b587bc125a1053e110c15e759d37e4",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:003:967c0a00dd50",
+          "evidence_text": "When looking at your lab test results, it's helpful to consider two important facts. First, because labs often use different testing methods, they often use different reference ranges to describe normal results. This means that:\n\n- To find out how your test results compare with the normal range, you need to check the reference range listed on your lab report. You can't compare your results to reference ranges that you might find elsewhere. This is why our Medical Test information cannot provide normal reference ranges for most tests.\n\n- You can't compare test results from different labs.\n\n- If you're looking for trends in your test results over time, it's important to try to use the same lab for testing.\n\nSecond, test results are measured with different units of measurement. Just as you might measure ingredients for a recipe in teaspoons, cups, or ounces, different tests use different units of measurement. Examples of measurement you may see include:\n\n- Mcg/dL = micrograms per deciliter\n\n- Micromole/L = micromoles per liter\n\n- Pg/mL = picograms per milliliter",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+          "title_path": [
+            "How to Understand Your Lab Results",
+            "What is a reference range?"
+          ]
+        },
+        {
+          "body_sha256": "9fdff5559eaf5b39c5815c4cde919d91ec1f54a2745471bbdfa61264ebb88625",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:011:62dd64b727c8",
+          "evidence_text": "When repeated, the A1C test result can be slightly higher or lower than the first measurement. This means, for example, an A1C reported as 6.8 percent on one test could be reported in a range from 6.4 to 7.2 percent on a repeat test from the same blood sample.3 In the past, this range was larger but new, stricter quality-control standards mean more precise A1C test results.\n\nHealth care professionals can visit ngsp.org to find information about the precision of the A1C test used by their lab.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "How precise is the A1C test?"
+          ]
+        }
+      ],
+      "query": "Why should I check the reference range on my own lab report?",
+      "query_id": "RAG-039",
+      "variant": [
+        {
+          "body_sha256": "0278f9a338cfde2ec6d0b59a37c77ff7a200f771ff14cf8669c6ee79db8be4f9",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-prediabetes-tests:001:80202cc093b8",
+          "evidence_text": "When interpreting laboratory results, health care professionals should\n\n- consider that all laboratory test results represent a range, rather than an exact number2\n\n- know the A1C assay methods used by their laboratory1\n\n- send blood samples to be tested by a laboratory that uses an A1C analysis method certified by the NGSP to ensure the results are standardized to the Diabetes Control and Complications Trial (DCCT) assay1\n\n- consider the possibility of interference in the A1C test when a result is below 4%, above 15%, or is at odds with other diabetes test results1",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/diabetes-prediabetes",
+          "title_path": [
+            "Diabetes & Prediabetes Tests",
+            "Interpreting laboratory results"
+          ]
+        },
+        {
+          "body_sha256": "44a6f9b933cda957c22b766b90390f555f05cbcacf310e997aa1bc1b550f5ec8",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:007:1545b3e8bc15",
+          "evidence_text": "Your results can vary because of natural changes in your blood glucose level. For example, your blood glucose level moves up and down when you eat or exercise. Sickness and stress also can affect your blood glucose test results. A1C tests are less likely to be affected by short-term changes than FPG or OGTT tests.\n\nThe following chart shows how multiple blood glucose measurements over 4 days compare with an A1C measurement.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "Why do diabetes blood test results vary?",
+            "Blood glucose levels move up and down"
+          ]
+        },
+        {
+          "body_sha256": "bf57d5037d85bd5aeaec96c03092a11ed600130e8de890b902044d4b3e30ff67",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:008:1dd2f52ebf7e",
+          "evidence_text": "The straight black line shows an A1C measurement of 7.0 percent. The blue line shows an example of how blood glucose test results might look from self-monitoring four times a day over a 4-day period.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "Why do diabetes blood test results vary?",
+            "Blood glucose levels move up and down",
+            "Blood Glucose Measurements Compared with A1C Measurements over 4 Days"
+          ]
+        },
+        {
+          "body_sha256": "fa708ff3d46d6cb11d52ddd04beeb4fafde5de81e1e80e2e1c8b4d52ff42b6ce",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:004:10266a0d1d57",
+          "evidence_text": "Some test results tell you whether a certain substance, germ, type of cell, or gene was or wasn't found in your test sample. On your test report, you may see these terms:\n\n- Negative or normal. This means \"No, the test didn't find what it was looking for.\" So, you're unlikely to have the health problem you were tested for, but you may need more tests.\n\n- Positive or abnormal. This means, \"Yes, the test found what it was looking for.\" The germ, substance, or gene being tested was in your sample. So, you may have a disease or infection. In certain cases, you may need more tests to confirm a diagnosis.\n\n- Inconclusive or uncertain. This means \"not sure.\" Your test wasn't clearly positive or negative. There are many reasons why this may happen. If you get an uncertain result, you will probably be tested again.\n\nTests for the COVID-19 virus are an example of tests that tell you whether or not a specific germ was found in your sample.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+          "title_path": [
+            "How to Understand Your Lab Results",
+            "What do negative, positive, and inconclusive results mean?"
+          ]
+        },
+        {
+          "body_sha256": "54c80d24437b72f9dd918e46a3c13a4cb6b587bc125a1053e110c15e759d37e4",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:003:967c0a00dd50",
+          "evidence_text": "When looking at your lab test results, it's helpful to consider two important facts. First, because labs often use different testing methods, they often use different reference ranges to describe normal results. This means that:\n\n- To find out how your test results compare with the normal range, you need to check the reference range listed on your lab report. You can't compare your results to reference ranges that you might find elsewhere. This is why our Medical Test information cannot provide normal reference ranges for most tests.\n\n- You can't compare test results from different labs.\n\n- If you're looking for trends in your test results over time, it's important to try to use the same lab for testing.\n\nSecond, test results are measured with different units of measurement. Just as you might measure ingredients for a recipe in teaspoons, cups, or ounces, different tests use different units of measurement. Examples of measurement you may see include:\n\n- Mcg/dL = micrograms per deciliter\n\n- Micromole/L = micromoles per liter\n\n- Pg/mL = picograms per milliliter",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+          "title_path": [
+            "How to Understand Your Lab Results",
+            "What is a reference range?"
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": [],
+      "query": "Should I write down questions before seeing my doctor?",
+      "query_id": "RAG-041",
+      "variant": [
+        {
+          "body_sha256": "f077a02805c96aac3e26e339c9783e6cde063f652cfb0eb4d3ea4075764ba0f1",
+          "citation_id": "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025",
+          "evidence_text": "When you visit the doctor, it helps to write down your questions ahead of time.\n\nCheck out these questions for the doctor about screenings for:\n\nFind questions for the doctor about additional health topics. You can also use this tool to build your own list of questions for the doctor.",
+          "publisher": "ODPHP",
+          "source_url": "https://odphp.health.gov/myhealthfinder/doctor-visits/screening-tests/get-screened",
+          "title_path": [
+            "Get Screened",
+            "Take Action",
+            "Get Ready",
+            "Make a list of questions to ask your doctor."
+          ]
+        },
+        {
+          "body_sha256": "6dd499ad92028bf5a1c6f2100a8d91d0e576e975d624b19193f69db11fdd72da",
+          "citation_id": "HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:001:2c148f4aeb63",
+          "evidence_text": "Keeping all your health information in one place will make it easier to manage your health care. Take this information with you to every medical appointment.\n\nTo start your own personal health record, write down:\n\n- The name and phone number of a friend or relative to call if there’s an emergency\n\n- Dates and results of checkups and screening tests\n\n- All the vaccines (shots) you’ve had — and the dates that you got them\n\n- Phone numbers and addresses of all the places you go to for care, including your pharmacy\n\n- Your blood type\n\n- Any health conditions you have — including allergies — and any health conditions that run in your family\n\nIf you're not sure about some of this information, check with your doctor’s office.",
+          "publisher": "ODPHP",
+          "source_url": "https://odphp.health.gov/myhealthfinder/doctor-visits/talking-doctor/take-charge-your-health-care",
+          "title_path": [
+            "Take Charge of Your Health Care",
+            "Take Action",
+            "Keep a Record",
+            "Keep track of important health information."
+          ]
+        },
+        {
+          "body_sha256": "070ffa69a82155eeb8216fa9a3f764ff3955dd078ce144a2266be9e785a40fcb",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:001:31596e9a43ac",
+          "evidence_text": "Testing can help health care professionals\n\n- find prediabetes and counsel you about lifestyle changes to help you delay or prevent type 2 diabetes\n\n- find type 2 diabetes\n\nIf you have risk factors for prediabetes or diabetes, talk with your doctor about whether you should be tested.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "Why should a person get the A1C test?"
+          ]
+        },
+        {
+          "body_sha256": "d2389271d66b4917659f20e09265777c057c56ef92eececc220b9b35b34bf4f0",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a",
+          "evidence_text": "How well you and your doctor or provider communicate with each other is one of the most important parts of getting good health care. Being prepared can help you make the most of your visit, whether it is in person or through telehealth. Here are some things you can do to make the most of your appointment:\n\n- Make a list of the questions and concerns you want to talk about.\n\n- If you are having any health problems, write down a description of your symptoms. Include information such as when they started, what makes them better, and what makes them worse.\n\n- Ask a trusted friend or family member to come to the appointment with you.\n\n- If your doctor or provider doesn't speak your language, call their office ahead of time and ask them to provide an interpreter.\n\n- During your appointment, take notes about what your doctor or health care provider tells you. Or you could ask your friend or family member to take notes for you.\n\n- If you don't understand something your doctor or provider says, ask questions until you do understand.\n\n- Ask for written instructions if you need them.\n\n- Ask for your doctor's or provider's contact information and find out the best way to communicate with them.\n\n- Find out what to do if you need more information later.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/talkingwithyourdoctor.html",
+          "title_path": [
+            "Talking With Your Doctor",
+            "Summary"
+          ]
+        },
+        {
+          "body_sha256": "dd6d92954c3359e1b4e700e98128c319bf242504f02d10f49e7390ac66e37ebe",
+          "citation_id": "HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:003:358a3519eeb4",
+          "evidence_text": "It can take time and hard work to make healthy changes you might have talked about with your doctor or nurse. Remember to:\n\n- Schedule follow-up appointments for tests or lab work if you need to\n\n- Contact the doctor to get test results if you need to",
+          "publisher": "ODPHP",
+          "source_url": "https://odphp.health.gov/myhealthfinder/doctor-visits/talking-doctor/take-charge-your-health-care",
+          "title_path": [
+            "Take Charge of Your Health Care",
+            "Take Action",
+            "Be Prepared",
+            "Follow up after your appointment."
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": [],
+      "query": "就诊时可以请家人陪同吗？",
+      "query_id": "RAG-042",
+      "variant": [
+        {
+          "body_sha256": "f077a02805c96aac3e26e339c9783e6cde063f652cfb0eb4d3ea4075764ba0f1",
+          "citation_id": "HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025",
+          "evidence_text": "When you visit the doctor, it helps to write down your questions ahead of time.\n\nCheck out these questions for the doctor about screenings for:\n\nFind questions for the doctor about additional health topics. You can also use this tool to build your own list of questions for the doctor.",
+          "publisher": "ODPHP",
+          "source_url": "https://odphp.health.gov/myhealthfinder/doctor-visits/screening-tests/get-screened",
+          "title_path": [
+            "Get Screened",
+            "Take Action",
+            "Get Ready",
+            "Make a list of questions to ask your doctor."
+          ]
+        },
+        {
+          "body_sha256": "dd6d92954c3359e1b4e700e98128c319bf242504f02d10f49e7390ac66e37ebe",
+          "citation_id": "HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:003:358a3519eeb4",
+          "evidence_text": "It can take time and hard work to make healthy changes you might have talked about with your doctor or nurse. Remember to:\n\n- Schedule follow-up appointments for tests or lab work if you need to\n\n- Contact the doctor to get test results if you need to",
+          "publisher": "ODPHP",
+          "source_url": "https://odphp.health.gov/myhealthfinder/doctor-visits/talking-doctor/take-charge-your-health-care",
+          "title_path": [
+            "Take Charge of Your Health Care",
+            "Take Action",
+            "Be Prepared",
+            "Follow up after your appointment."
+          ]
+        },
+        {
+          "body_sha256": "4d37d2f852e434d7e9e3bb7202552c58f5726a80aed472dd8c2e7ace09b9b92b",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:000:d2c24a28ea75",
+          "evidence_text": "During your physical exam, your provider will check for signs of very high blood cholesterol, such as , or signs of other health conditions that can cause high blood cholesterol.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Medical history and physical exam"
+          ]
+        },
+        {
+          "body_sha256": "d6d4aeb5f1e974827f2ef454c461ffa82d7e3876898ba89dfc2f95f6363b5b03",
+          "citation_id": "HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:002:1d99f24acf83",
+          "evidence_text": "Take your list of questions and personal health record with you to the appointment. You may also want to ask a family member or friend to go with you to help take notes.\n\nBe sure to talk about any changes since your last visit, like:\n\n- New herbs, home remedies, and vitamins you're taking\n\n- Recent illnesses or surgeries\n\n- Important changes in your life, like losing your job or a death in the family\n\n- Health concerns or issues\n\nYou can also ask your doctor questions about health information you’ve found online or heard from others.",
+          "publisher": "ODPHP",
+          "source_url": "https://odphp.health.gov/myhealthfinder/doctor-visits/talking-doctor/take-charge-your-health-care",
+          "title_path": [
+            "Take Charge of Your Health Care",
+            "Take Action",
+            "Be Prepared",
+            "Make the most of doctor visits."
+          ]
+        },
+        {
+          "body_sha256": "070ffa69a82155eeb8216fa9a3f764ff3955dd078ce144a2266be9e785a40fcb",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:001:31596e9a43ac",
+          "evidence_text": "Testing can help health care professionals\n\n- find prediabetes and counsel you about lifestyle changes to help you delay or prevent type 2 diabetes\n\n- find type 2 diabetes\n\nIf you have risk factors for prediabetes or diabetes, talk with your doctor about whether you should be tested.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "Why should a person get the A1C test?"
+          ]
+        }
+      ]
+    },
+    {
+      "baseline": [],
+      "query": "How should a white blood cell differential be interpreted?",
+      "query_id": "RAG-054",
+      "variant": []
+    },
+    {
+      "baseline": [],
+      "query": "Can this knowledge base explain a pathology biopsy report?",
+      "query_id": "RAG-056",
+      "variant": []
+    },
+    {
+      "baseline": [
+        {
+          "body_sha256": "4d37d2f852e434d7e9e3bb7202552c58f5726a80aed472dd8c2e7ace09b9b92b",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:000:d2c24a28ea75",
+          "evidence_text": "During your physical exam, your provider will check for signs of very high blood cholesterol, such as , or signs of other health conditions that can cause high blood cholesterol.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Medical history and physical exam"
+          ]
+        },
+        {
+          "body_sha256": "39b0adde593a981f625f7b0106588477e9d77327eb2c081079ba35e10285b70c",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:001:d00c9be0722a",
+          "evidence_text": "Your healthcare provider may order a blood test called a panel to screen for unhealthy cholesterol levels.\n\nYour healthcare provider may ask you to fast for 8 to 12 hours before a panel.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Screening for high cholesterol"
+          ]
+        },
+        {
+          "body_sha256": "1481dc8e9c7d8797ed7c97e4346f173fb7b154b0c725176f069fc9e7ffdd044e",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-cholesterol-diagnosis:004:5899fbdbaaa1",
+          "evidence_text": "A lipoprotein-a, or Lp(a), test is not usually part of a routine lipid panel. High levels of Lp(a) may mean you are at higher risk of heart or blood vessel diseases, even if your other cholesterol levels are healthy. The you from your parents determine how much Lp(a) you have. Your Lp(a) level is unlikely to change much from childhood to old age.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+          "title_path": [
+            "Blood Cholesterol Diagnosis",
+            "Lipoprotein-a"
+          ]
+        },
+        {
+          "body_sha256": "d699430656c2d5edabc7e72fb4a5fd229eaa0d1afea9983bd796d114286356a6",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:004:ecb212de740e",
+          "evidence_text": "You may need to fast (not eat or drink) for 9 to 12 hours before your blood cholesterol test. That's why the tests are often done in the morning. Your provider will let you know if you need to fast and if there are any other special instructions.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+          "title_path": [
+            "Cholesterol Levels",
+            "Will I need to do anything to prepare for the test?"
+          ]
+        },
+        {
+          "body_sha256": "2da925fb026b8b21c108867b9bf569ca7cba79ed9a9a425bdb8d95ae9d2185bf",
+          "citation_id": "HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00",
+          "evidence_text": "A lipoprotein panel, also called a lipid panel or lipid profile, measures the levels of LDL and HDL cholesterol and triglycerides in your blood. Cholesterol and triglyceride levels that are higher or lower than normal may be signs of higher risk of coronary heart disease.\n\nA lipoprotein panel gives information about your:\n\n- Total cholesterol\n\n- LDL (\"bad\") cholesterol, which is the main source of cholesterol buildup and blockages in the arteries\n\n- HDL (\"good\") cholesterol, which helps decrease cholesterol blockages in the arteries\n\n- Triglycerides, which are a type of fat in your blood\n\nMost people will need to fast for 9 to 12 hours before a lipoprotein panel.",
+          "publisher": "NHLBI",
+          "source_url": "https://www.nhlbi.nih.gov/health/blood-tests",
+          "title_path": [
+            "Blood Tests",
+            "Types of blood tests",
+            "Lipoprotein panel"
+          ]
+        }
+      ],
+      "query": "我的 LDL 上个月是多少？",
+      "query_id": "RAG-057",
+      "variant": []
+    },
+    {
+      "baseline": [
+        {
+          "body_sha256": "36b3fe7d577897ce370cc12c6dade03f60159ef11c0b07e0709e2549c5a3ec5b",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:003:f4259319a649",
+          "evidence_text": "A health care professional will take a blood sample from a vein in your arm, using a small needle. After the needle is inserted, a small amount of blood will be collected into a test tube or vial. You may feel a little sting when the needle goes in or out. This usually takes less than five minutes.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+          "title_path": [
+            "Hemoglobin A1C (HbA1c) Test",
+            "What happens during an A1C test?"
+          ]
+        },
+        {
+          "body_sha256": "c2651b2d6e2100fde6c52f9849f46154a5051883b504432ec0a236d913e4052d",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:006:92bc5c9dbe88",
+          "evidence_text": "Lab test results can vary from day to day and from test to test. This can be a result of the following factors:",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "Why do diabetes blood test results vary?"
+          ]
+        },
+        {
+          "body_sha256": "72176fa8e7357be3d6188438f399b9b86f7b3e7d9e6279c8eb2664a6b50d4942",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8",
+          "evidence_text": "A hemoglobin A1C (HbA1C) test is a blood test that shows your average level of blood glucose, also called blood sugar, over the past two to three months.\n\nGlucose is a type of sugar in your blood that comes from the foods you eat. Your cells use glucose for energy. A hormone called insulin helps glucose get into your cells. If you have diabetes your body doesn't make enough insulin, or your cells don't use it well. As a result, glucose can't get into your cells, so your blood glucose levels increase.\n\nGlucose in your blood sticks to hemoglobin, a protein in your red blood cells. As your blood glucose levels increase, more of your hemoglobin will be coated with glucose. An A1C test measures the percentage of your red blood cells that have glucose-coated hemoglobin.\n\nAn A1C test can show your average glucose level for the past three months because:\n\n- Glucose sticks to hemoglobin for as long as the red blood cells are alive.\n\n- Red blood cells live about three months.\n\nOther names: HbA1C, A1C, glycohemoglobin, glycated hemoglobin, glycosylated hemoglobin",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+          "title_path": [
+            "Hemoglobin A1C (HbA1c) Test",
+            "What is a hemoglobin A1C (HbA1C) test?"
+          ]
+        },
+        {
+          "body_sha256": "70194e0484003a0d6787115e2d44245aeba7347cba8ae32189337c0589c8879d",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:005:3f1533a2f86e",
+          "evidence_text": "The A1C test is not used to diagnose gestational diabetes. Also, if you have a condition that affects your red blood cells, such as anemia or another type of blood disorder, an A1C test may not be accurate for diagnosing diabetes. Kidney failure and liver disease can also affect A1C results. In these cases, your provider may recommend different tests to diagnose diabetes and prediabetes.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+          "title_path": [
+            "Hemoglobin A1C (HbA1c) Test",
+            "Is there anything else I need to know about an A1C test?"
+          ]
+        },
+        {
+          "body_sha256": "070ffa69a82155eeb8216fa9a3f764ff3955dd078ce144a2266be9e785a40fcb",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:001:31596e9a43ac",
+          "evidence_text": "Testing can help health care professionals\n\n- find prediabetes and counsel you about lifestyle changes to help you delay or prevent type 2 diabetes\n\n- find type 2 diabetes\n\nIf you have risk factors for prediabetes or diabetes, talk with your doctor about whether you should be tested.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "Why should a person get the A1C test?"
+          ]
+        }
+      ],
+      "query": "根据我的症状和 HbA1c 判断我得了哪种病",
+      "query_id": "RAG-059",
+      "variant": []
+    },
+    {
+      "baseline": [
+        {
+          "body_sha256": "72176fa8e7357be3d6188438f399b9b86f7b3e7d9e6279c8eb2664a6b50d4942",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8",
+          "evidence_text": "A hemoglobin A1C (HbA1C) test is a blood test that shows your average level of blood glucose, also called blood sugar, over the past two to three months.\n\nGlucose is a type of sugar in your blood that comes from the foods you eat. Your cells use glucose for energy. A hormone called insulin helps glucose get into your cells. If you have diabetes your body doesn't make enough insulin, or your cells don't use it well. As a result, glucose can't get into your cells, so your blood glucose levels increase.\n\nGlucose in your blood sticks to hemoglobin, a protein in your red blood cells. As your blood glucose levels increase, more of your hemoglobin will be coated with glucose. An A1C test measures the percentage of your red blood cells that have glucose-coated hemoglobin.\n\nAn A1C test can show your average glucose level for the past three months because:\n\n- Glucose sticks to hemoglobin for as long as the red blood cells are alive.\n\n- Red blood cells live about three months.\n\nOther names: HbA1C, A1C, glycohemoglobin, glycated hemoglobin, glycosylated hemoglobin",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+          "title_path": [
+            "Hemoglobin A1C (HbA1c) Test",
+            "What is a hemoglobin A1C (HbA1C) test?"
+          ]
+        },
+        {
+          "body_sha256": "36b3fe7d577897ce370cc12c6dade03f60159ef11c0b07e0709e2549c5a3ec5b",
+          "citation_id": "HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:003:f4259319a649",
+          "evidence_text": "A health care professional will take a blood sample from a vein in your arm, using a small needle. After the needle is inserted, a small amount of blood will be collected into a test tube or vial. You may feel a little sting when the needle goes in or out. This usually takes less than five minutes.",
+          "publisher": "MedlinePlus",
+          "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+          "title_path": [
+            "Hemoglobin A1C (HbA1c) Test",
+            "What happens during an A1C test?"
+          ]
+        },
+        {
+          "body_sha256": "c2651b2d6e2100fde6c52f9849f46154a5051883b504432ec0a236d913e4052d",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:006:92bc5c9dbe88",
+          "evidence_text": "Lab test results can vary from day to day and from test to test. This can be a result of the following factors:",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "Why do diabetes blood test results vary?"
+          ]
+        },
+        {
+          "body_sha256": "a138686ac25e0330bf4cbdd7f3125148c140491b8b8a978caa4adc9a5fe0f8c9",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-a1c-test:013:d94bf3c0e467",
+          "evidence_text": "Large changes in your blood glucose levels over the past month will show up in your A1C test result, but the A1C test doesn’t show sudden, temporary increases or decreases in blood glucose levels. Even though A1C results represent a long-term average, blood glucose levels within the past 30 days have a greater effect on the A1C reading than those in previous months.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "title_path": [
+            "The A1C Test & Diabetes",
+            "Will the A1C test show short-term changes in blood glucose levels?"
+          ]
+        },
+        {
+          "body_sha256": "b92fcc7730509f27191cda98eb111a0a57b8dc649efcc67739065f4132a0b8d3",
+          "citation_id": "HVK:r1-2026-08-24-v1:niddk-diabetes-tests:004:92788bfbf3e5",
+          "evidence_text": "The A1C test is a blood test that provides your average levels of blood glucose over the last 3 months. Other names for the A1C test are hemoglobin A1C, HbA1C, glycated hemoglobin, and glycosylated hemoglobin test. You can eat and drink before this test. Before using the A1C test to diagnose diabetes, your doctor will consider factors, such as whether you are in your second or third trimester of pregnancy or whether you have certain types of anemia or another problem with your blood.1 The A1C test might not be accurate in those cases.\n\nCertain types of hemoglobin, called hemoglobin variants, can interfere with measuring A1C levels. Most A1C tests used in the United States are not affected by the most common variants. If your A1C test results and blood glucose levels do not match, your doctor should consider that the A1C test may not be a reliable test for you.\n\nYour doctor will report your A1C test result as a percentage, such as an A1C of 7%. The higher the percentage is, the higher your average blood glucose levels are.",
+          "publisher": "NIDDK",
+          "source_url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis",
+          "title_path": [
+            "Diabetes Tests & Diagnosis",
+            "What tests are used to diagnose diabetes?",
+            "A1C test"
+          ]
+        }
+      ],
+      "query": "Can an A1C result predict exactly what my glucose will be tomorrow?",
+      "query_id": "RAG-060",
+      "variant": []
+    }
+  ],
+  "query_count": 24,
+  "schema_version": 1,
+  "source_bindings": {
+    "baseline_rankings_sha256": "777e7191cd47b35468641ed42581aba4aa9aa01cb1aef9d0537b990b27452216",
+    "gold_sha256": "8ba077c68d5e93ecd2871a7ea2fb39a861991bab771d02e90f9a1e438715c7da",
+    "hybrid_artifact_sha256": "e833996362be5e42d37b78a916bcd8e5b262485068b4042727cc5fe840da95c9",
+    "task_027_v3_retrieval_sha256": "f1bff86b6dc39c6907cf7107d071b1e372221a6ff54b8be42959ee384898e6cf"
+  },
+  "top_k": 5
+}

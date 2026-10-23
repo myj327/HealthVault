@@ -1,0 +1,164 @@
+{
+  "corpus_version": "r1-2026-08-24-v1",
+  "language": "en",
+  "publisher": "NHLBI",
+  "retrieved_on": "2026-08-24",
+  "reuse_basis": "NIH website text; most NIH information is public domain and reusable unless otherwise marked. No images, logos, references, or third-party material are included. Policy: https://www.nih.gov/about-nih/frequently-asked-questions",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "During your physical exam, your provider will check for signs of very high blood cholesterol, such as , or signs of other health conditions that can cause high blood cholesterol."
+        }
+      ],
+      "title_path": [
+        "Blood Cholesterol Diagnosis",
+        "Medical history and physical exam"
+      ],
+      "topic_tags": [
+        "ldl_cholesterol",
+        "visit_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Your healthcare provider may order a blood test called a panel to screen for unhealthy cholesterol levels."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Your healthcare provider may ask you to fast for 8 to 12 hours before a panel."
+        }
+      ],
+      "title_path": [
+        "Blood Cholesterol Diagnosis",
+        "Screening for high cholesterol"
+      ],
+      "topic_tags": [
+        "ldl_cholesterol",
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A lipoprotein panel, also called a lipid panel or lipid profile, measures the levels of LDL and HDL cholesterol and in your blood. Cholesterol and triglyceride levels that are higher than normal may be signs of higher risk of coronary heart disease."
+        },
+        {
+          "kind": "paragraph",
+          "text": "A lipoprotein panel gives the following types of information:"
+        },
+        {
+          "kind": "list",
+          "text": "Total cholesterol"
+        },
+        {
+          "kind": "list",
+          "text": "LDL (“bad”) cholesterol, which is the main source of cholesterol buildup and blockages in the"
+        },
+        {
+          "kind": "list",
+          "text": "HDL (“good”) cholesterol, which helps decrease cholesterol blockages in the arteries"
+        },
+        {
+          "kind": "list",
+          "text": "Triglycerides, which are another type of fat in your blood"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Your lipoprotein panel may also provide other potentially useful numbers, such as your non-HDL cholesterol (total cholesterol minus HDL cholesterol) and remnant LDL (total cholesterol minus LDL and HDL cholesterol)."
+        },
+        {
+          "kind": "paragraph",
+          "text": "The goal for a healthy lipid profile is to have non-HDL levels below 130 milligrams (mg) per deciliter (dL) with an HDL of at least 40 mg/dL for men and 50 mg/dL for women. Check with your provider on the lipid levels that are best for you."
+        },
+        {
+          "kind": "table",
+          "table_header": "Metric: Non-HDL cholesterol (mg/dL) | Metric: Non-HDL cholesterol (mg/DL), starting no later than age 9-11 y and earlier per clinical discretion",
+          "text": "Blood lipids | Measurement: Plasma total and HDL cholesterol with calculation of non-HDL cholesterol Example tools for measurement: Fasting or nonfasting blood sample | Scoring: | Scoring:"
+        },
+        {
+          "kind": "table",
+          "table_header": "Metric: Non-HDL cholesterol (mg/dL) | Metric: Non-HDL cholesterol (mg/DL), starting no later than age 9-11 y and earlier per clinical discretion",
+          "text": "Points | Level | Points | Level"
+        },
+        {
+          "kind": "table",
+          "table_header": "Metric: Non-HDL cholesterol (mg/dL) | Metric: Non-HDL cholesterol (mg/DL), starting no later than age 9-11 y and earlier per clinical discretion",
+          "text": "100604020≥220 | <130130-159160-189190-219≥220 | 1006040200 | <100100-119120-144145-189≥190"
+        },
+        {
+          "kind": "paragraph",
+          "text": "For healthy persons, how often you get a lipid panel done depends on your age, risk factors, and family history of high blood cholesterol or cardiovascular diseases, such as atherosclerosis, heart attack, or stroke."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Here is a general guide:"
+        },
+        {
+          "kind": "list",
+          "text": "Ages 19 or younger: Screening begins at ages 9 to 11 and should be repeated every 5 years. Screening may be performed as early as age 2 if there is a family history of high blood cholesterol, heart attack, or stroke."
+        },
+        {
+          "kind": "list",
+          "text": "Ages 20 to 65: Younger adults should be screened every 5 years. Men ages 45 to 65 and women ages 55 to 65 should be screened every 1 to 2 years."
+        },
+        {
+          "kind": "list",
+          "text": "Older than 65: Older adults should be screened every year."
+        }
+      ],
+      "title_path": [
+        "Blood Cholesterol Diagnosis",
+        "Lipoprotein (lipid) panel"
+      ],
+      "topic_tags": [
+        "ldl_cholesterol",
+        "result_communication"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A lipoprotein-a, or Lp(a), test is not usually part of a routine lipid panel. High levels of Lp(a) may mean you are at higher risk of heart or blood vessel diseases, even if your other cholesterol levels are healthy. The you from your parents determine how much Lp(a) you have. Your Lp(a) level is unlikely to change much from childhood to old age."
+        }
+      ],
+      "title_path": [
+        "Blood Cholesterol Diagnosis",
+        "Lipoprotein-a"
+      ],
+      "topic_tags": [
+        "ldl_cholesterol",
+        "result_communication"
+      ]
+    }
+  ],
+  "source_id": "nhlbi-cholesterol-diagnosis",
+  "source_sha256": "8694a4de331e1f9c360b906cb9d88a937dc9eed09158c78c1954e8cc6d2dd46f",
+  "title": "Blood Cholesterol Diagnosis",
+  "title_path_whitelist": [
+    [
+      "Blood Cholesterol Diagnosis",
+      "Medical history and physical exam"
+    ],
+    [
+      "Blood Cholesterol Diagnosis",
+      "Screening for high cholesterol"
+    ],
+    [
+      "Blood Cholesterol Diagnosis",
+      "Lipoprotein (lipid) panel"
+    ],
+    [
+      "Blood Cholesterol Diagnosis",
+      "Lipoprotein-a"
+    ]
+  ],
+  "url": "https://www.nhlbi.nih.gov/health/blood-cholesterol/diagnosis",
+  "version": "updated-2024-04-18"
+}

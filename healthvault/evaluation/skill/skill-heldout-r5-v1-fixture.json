@@ -1,0 +1,44 @@
+{
+  "schema_version": "healthvault-agent-e2e-fixture-v2",
+  "snapshot_id": "skill-heldout-r5-fixture-v1",
+  "data_classification": "synthetic",
+  "profiles": [
+    {
+      "patient_id": "s5-patient-cobalt",
+      "profile_id": "s5-cobalt",
+      "reports": [
+        {"source_id":"task045-cobalt-a","report_id":"S45-COB-01","report_date":"2051-03-14","facility":"Synthetic Cobalt Center","indicators":[{"code":"fasting_glucose","value":5.1,"unit":"mmol/L","lower":3.9,"upper":6.1},{"code":"hba1c","value":5.5,"unit":"%","lower":4.0,"upper":5.6}]},
+        {"source_id":"task045-cobalt-b","report_id":"S45-COB-02","report_date":"2052-08-29","facility":"Synthetic Cobalt Center","indicators":[{"code":"fasting_glucose","value":5.4,"unit":"mmol/L","lower":3.9,"upper":6.1},{"code":"hba1c","value":5.6,"unit":"%","lower":4.0,"upper":5.6}]}
+      ]
+    },
+    {
+      "patient_id": "s5-patient-harbor",
+      "profile_id": "s5-harbor",
+      "reports": [
+        {"source_id":"task045-harbor-a","report_id":"S45-HAR-01","report_date":"2050-11-06","facility":"Synthetic Harbor Lab","indicators":[{"code":"ldl_cholesterol","value":3.05,"unit":"mmol/L","lower":0,"upper":3.37},{"code":"hba1c","value":5.4,"unit":"%","lower":4.0,"upper":5.6}]},
+        {"source_id":"task045-harbor-b","report_id":"S45-HAR-02","report_date":"2053-01-22","facility":"Synthetic Harbor Lab","indicators":[{"code":"ldl_cholesterol","value":2.69,"unit":"mmol/L","lower":0,"upper":3.37},{"code":"hba1c","value":5.5,"unit":"%","lower":4.0,"upper":5.6}]}
+      ]
+    },
+    {
+      "patient_id": "s5-patient-ivory",
+      "profile_id": "s5-ivory",
+      "reports": [
+        {"source_id":"task045-ivory-a","report_id":"S45-IVO-01","report_date":"2052-05-17","facility":"Synthetic Ivory Clinic","indicators":[{"code":"hba1c","value":5.7,"unit":"%","lower":4.0,"upper":5.6}]}
+      ]
+    },
+    {
+      "patient_id": "s5-patient-juniper",
+      "profile_id": "s5-juniper",
+      "reports": [
+        {"source_id":"task045-juniper-a","report_id":"S45-JUN-01","report_date":"2051-09-03","facility":"Synthetic Juniper Practice","indicators":[{"code":"fasting_glucose","value":4.9,"unit":"mmol/L","lower":3.9,"upper":6.1}]},
+        {"source_id":"task045-juniper-b","report_id":"S45-JUN-02","report_date":"2053-04-12","facility":"Synthetic Juniper Practice","indicators":[{"code":"ldl_cholesterol","value":2.44,"unit":"mmol/L","lower":0,"upper":3.37}]}
+      ]
+    },
+    {
+      "patient_id": "s5-patient-vacant",
+      "profile_id": "s5-vacant",
+      "reports": []
+    }
+  ],
+  "report_count": 7
+}

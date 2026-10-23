@@ -1,0 +1,304 @@
+{
+  "corpus_version": "r2-2026-09-10-v1",
+  "language": "en",
+  "publisher": "MedlinePlus",
+  "retrieved_on": "2026-08-24",
+  "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A laboratory (lab) test checks a sample of your blood, urine (pee), or other body fluid or tissue to learn about your health. The sample is sent to a lab where health care professionals test it to see if it contains certain substances and, if so, how much."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Some lab tests can clearly show whether you do or don't have a specific health condition. For example, a pregnancy test can show whether or not you are pregnant."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Other lab tests provide more general information about your health and possible problems. A comprehensive metabolic panel (CMP), for example, can give your health care provider a good idea of your overall physical health. Any abnormal results in these kinds of general lab tests can give your provider clues about the type of health problems you may have."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Though lab tests are an important part of your health care, they don't provide a complete picture of your health. To get a full picture, your provider will use your results along with:"
+        },
+        {
+          "kind": "list",
+          "text": "Information from your physical exam."
+        },
+        {
+          "kind": "list",
+          "text": "Your health history."
+        },
+        {
+          "kind": "list",
+          "text": "Your family health history."
+        },
+        {
+          "kind": "list",
+          "text": "Any imaging tests you may have had, such as x-rays."
+        },
+        {
+          "kind": "paragraph",
+          "text": "In most cases, combining that information leads to a more accurate diagnosis than the results from any one lab test. So, even if you get your test results in your electronic health record (EHR) and can review them, it's still important to talk with your provider to find out what your results really mean for you."
+        }
+      ],
+      "title_path": [
+        "How to Understand Your Lab Results",
+        "What is a laboratory test?"
+      ],
+      "topic_tags": [
+        "result_communication"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Your provider may order a lab test to:"
+        },
+        {
+          "kind": "list",
+          "text": "Learn more about a specific part of your health."
+        },
+        {
+          "kind": "list",
+          "text": "Get a general picture of your overall health."
+        },
+        {
+          "kind": "paragraph",
+          "text": "If your provider orders a test to learn more about a specific part of your health, they can use the results to:"
+        },
+        {
+          "kind": "list",
+          "text": "Diagnose or rule out a certain disease or condition, especially if you have symptoms. For example, if you're sick with a sore throat, swollen tonsils, and a fever, a strep A test can show you whether you're infected with the bacteria that causes strep throat."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Lab tests that provide a more general picture of your health are often used even if you don't have any signs or symptoms of a health condition. These tests are usually part of a routine checkup and can tell your provider if you:"
+        },
+        {
+          "kind": "list",
+          "text": "Are at high risk for a specific disease. For example, a cholesterol test measures the amount of cholesterol in a sample of your blood. The results can help you understand your risk for heart disease."
+        },
+        {
+          "kind": "list",
+          "text": "Need additional testing. These tests look for signs that you may have a health problem so that you can have more testing to find out for sure. For example, one type of test for colon cancer looks for blood in your stool (poop). If blood is found, it could be a sign of cancer. To find out if it is cancer, your provider may order a colonoscopy."
+        }
+      ],
+      "title_path": [
+        "How to Understand Your Lab Results",
+        "Why do I need a lab test?"
+      ],
+      "topic_tags": [
+        "result_communication",
+        "visit_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Lab test results are reported in different ways. Some results are a number. For example, your low-density lipoprotein (LDL) result for a cholesterol test may be 125 or 80. But how do you know what that number means?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "To answer that question, your lab report tells you whether your test result is in a normal range called a reference range or \"normal values.\" A reference range is a set of numbers that form the high and low ends of the range of results that's considered to be normal. The ranges are based on the test results from large groups of healthy people. A test may have different reference ranges for different groups. For example, there may be separate ranges for children and adults."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Because these ranges can vary, the term \"normal\" can be misleading. Reference ranges show the average results in a healthy test group. So:"
+        },
+        {
+          "kind": "list",
+          "text": "A test result that is higher or lower than the range that applies to you may or may not be a sign of a health problem. It's common for healthy people to sometimes have results outside the reference range. If your results are outside of the range, your provider will look at other information about your health to understand what may have affected your results."
+        },
+        {
+          "kind": "list",
+          "text": "A test result that is within a reference range isn't always a guarantee of good health. Some people with health problems can have results that are considered \"normal.\" Therefore, even if you have a test result within the normal range, you may need additional testing, especially if you have symptoms of a health condition."
+        },
+        {
+          "kind": "paragraph",
+          "text": "When looking at your lab test results, it's helpful to consider two important facts. First, because labs often use different testing methods, they often use different reference ranges to describe normal results. This means that:"
+        },
+        {
+          "kind": "list",
+          "text": "To find out how your test results compare with the normal range, you need to check the reference range listed on your lab report. You can't compare your results to reference ranges that you might find elsewhere. This is why our Medical Test information cannot provide normal reference ranges for most tests."
+        },
+        {
+          "kind": "list",
+          "text": "You can't compare test results from different labs."
+        },
+        {
+          "kind": "list",
+          "text": "If you're looking for trends in your test results over time, it's important to try to use the same lab for testing."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Second, test results are measured with different units of measurement. Just as you might measure ingredients for a recipe in teaspoons, cups, or ounces, different tests use different units of measurement. Examples of measurement you may see include:"
+        },
+        {
+          "kind": "list",
+          "text": "Mcg/dL = micrograms per deciliter"
+        },
+        {
+          "kind": "list",
+          "text": "Micromole/L = micromoles per liter"
+        },
+        {
+          "kind": "list",
+          "text": "Pg/mL = picograms per milliliter"
+        }
+      ],
+      "title_path": [
+        "How to Understand Your Lab Results",
+        "What is a reference range?"
+      ],
+      "topic_tags": [
+        "result_communication"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Some test results tell you whether a certain substance, germ, type of cell, or gene was or wasn't found in your test sample. On your test report, you may see these terms:"
+        },
+        {
+          "kind": "list",
+          "text": "Negative or normal. This means \"No, the test didn't find what it was looking for.\" So, you're unlikely to have the health problem you were tested for, but you may need more tests."
+        },
+        {
+          "kind": "list",
+          "text": "Positive or abnormal. This means, \"Yes, the test found what it was looking for.\" The germ, substance, or gene being tested was in your sample. So, you may have a disease or infection. In certain cases, you may need more tests to confirm a diagnosis."
+        },
+        {
+          "kind": "list",
+          "text": "Inconclusive or uncertain. This means \"not sure.\" Your test wasn't clearly positive or negative. There are many reasons why this may happen. If you get an uncertain result, you will probably be tested again."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tests for the COVID-19 virus are an example of tests that tell you whether or not a specific germ was found in your sample."
+        }
+      ],
+      "title_path": [
+        "How to Understand Your Lab Results",
+        "What do negative, positive, and inconclusive results mean?"
+      ],
+      "topic_tags": [
+        "result_communication"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Tests results are usually accurate, but no test is perfect."
+        },
+        {
+          "kind": "list",
+          "text": "A false positive result means your test shows you have a disease or condition, but you don't really have it."
+        },
+        {
+          "kind": "list",
+          "text": "A false negative result means your test shows you don't have a disease or condition, but you really do."
+        },
+        {
+          "kind": "paragraph",
+          "text": "These incorrect results don't happen often, but they are more likely with certain types of tests, or if testing wasn't done right. If your provider thinks your test result may be inaccurate, you may need to have another test."
+        }
+      ],
+      "title_path": [
+        "How to Understand Your Lab Results",
+        "What are false positive and false negative results?"
+      ],
+      "topic_tags": [
+        "result_communication"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "The accuracy of certain test results may be affected by various common factors. These can include:"
+        },
+        {
+          "kind": "list",
+          "text": "Eating and drinking certain foods and drinks."
+        },
+        {
+          "kind": "list",
+          "text": "Exercising hard before your test."
+        },
+        {
+          "kind": "list",
+          "text": "Having a menstrual period at the time of your test."
+        },
+        {
+          "kind": "list",
+          "text": "Whether or not you followed preparation instructions, including fasting."
+        }
+      ],
+      "title_path": [
+        "How to Understand Your Lab Results",
+        "What can affect my results?"
+      ],
+      "topic_tags": [
+        "result_communication",
+        "lab_preparation"
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "At-home test kits are available for many types of lab tests. The kits provide everything you need to collect a sample of body fluid or cells to send to a lab. At-home tests should never replace testing that your provider orders. Ask your provider or pharmacist to recommend a test you can trust. And talk with your provider about your results, even if they're normal."
+        }
+      ],
+      "title_path": [
+        "How to Understand Your Lab Results",
+        "What if I do a home test?"
+      ],
+      "topic_tags": [
+        "result_communication"
+      ]
+    }
+  ],
+  "source_id": "medlineplus-understand-lab-results",
+  "source_sha256": "e8e7d1aed29e229e3355faa14225723ef0115ace336f4906209f46c2c303954e",
+  "title": "How to Understand Your Lab Results",
+  "title_path_whitelist": [
+    [
+      "How to Understand Your Lab Results",
+      "What is a laboratory test?"
+    ],
+    [
+      "How to Understand Your Lab Results",
+      "Why do I need a lab test?"
+    ],
+    [
+      "How to Understand Your Lab Results",
+      "What is a reference range?"
+    ],
+    [
+      "How to Understand Your Lab Results",
+      "What do negative, positive, and inconclusive results mean?"
+    ],
+    [
+      "How to Understand Your Lab Results",
+      "What are false positive and false negative results?"
+    ],
+    [
+      "How to Understand Your Lab Results",
+      "What can affect my results?"
+    ],
+    [
+      "How to Understand Your Lab Results",
+      "What if I do a home test?"
+    ]
+  ],
+  "url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+  "version": "reviewed-2025"
+}

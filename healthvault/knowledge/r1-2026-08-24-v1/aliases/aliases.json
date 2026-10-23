@@ -1,0 +1,86 @@
+{
+  "corpus_version": "r1-2026-08-24-v1",
+  "groups": [
+    {
+      "aliases": [
+        "A1C",
+        "HbA1c",
+        "hemoglobin A1C",
+        "glycated hemoglobin",
+        "glycosylated hemoglobin",
+        "糖化血红蛋白"
+      ],
+      "topic": "hba1c"
+    },
+    {
+      "aliases": [
+        "FPG",
+        "fasting plasma glucose",
+        "fasting blood glucose",
+        "fasting glucose",
+        "空腹血糖"
+      ],
+      "topic": "fasting_glucose"
+    },
+    {
+      "aliases": [
+        "blood glucose",
+        "blood sugar",
+        "glucose test",
+        "血糖",
+        "血糖检查"
+      ],
+      "topic": "blood_glucose"
+    },
+    {
+      "aliases": [
+        "LDL",
+        "LDL cholesterol",
+        "low-density lipoprotein",
+        "lipid panel",
+        "lipoprotein panel",
+        "低密度脂蛋白",
+        "低密度脂蛋白胆固醇",
+        "血脂"
+      ],
+      "topic": "ldl_cholesterol"
+    },
+    {
+      "aliases": [
+        "fasting instructions",
+        "lab preparation",
+        "prepare for a lab test",
+        "test preparation",
+        "化验准备",
+        "检查准备",
+        "空腹准备"
+      ],
+      "topic": "lab_preparation"
+    },
+    {
+      "aliases": [
+        "lab results",
+        "reference range",
+        "understand results",
+        "test results",
+        "结果沟通",
+        "化验结果",
+        "参考范围"
+      ],
+      "topic": "result_communication"
+    },
+    {
+      "aliases": [
+        "doctor visit",
+        "visit preparation",
+        "appointment preparation",
+        "questions for doctor",
+        "就诊准备",
+        "看医生",
+        "问医生"
+      ],
+      "topic": "visit_preparation"
+    }
+  ],
+  "schema_version": 1
+}

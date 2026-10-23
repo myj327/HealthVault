@@ -1,0 +1,16 @@
+{
+  "schema_version": "healthvault-task-045-run-artifact-template-v1",
+  "run_once": true,
+  "expected_attempts": 40,
+  "paths": {
+    "attempts": "attempts/S5-XX-{active|candidate}.json",
+    "transport_ledger": "transport-ledger.jsonl",
+    "summary": "summary.json",
+    "candidate_disposition": "candidate-disposition.json"
+  },
+  "attempt_required_fields": ["arm_id", "case_id", "category", "passed", "hard_failure", "oracle", "attempt"],
+  "summary_required_fields": ["formal_metrics_valid", "run_status", "arms", "paired", "badcases", "publish_eligible", "candidate_disposition"],
+  "paired_required_fields": ["task_success_delta", "regression_rate", "gained_cases", "regressed_cases", "unchanged_cases", "per_case"],
+  "environment_incident_policy": "invalidate_formal_metrics_and_keep_candidate_unpublished",
+  "selective_rerun_policy": "forbidden"
+}

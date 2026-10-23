@@ -1,0 +1,16 @@
+{
+  "active_v1": {
+    "content_path": ".bear/skills/HealthVault-Task-Execution/SKILL.md",
+    "skill_sha256": "8a76f832a8aee03e6fa26b7382bfd4b83b6cb981f4fe395a515a6e5c86c6de57"
+  },
+  "candidate_v2": {
+    "content": "---\nname: HealthVault-Task-Execution\ndescription: Execute read-only HealthVault tasks with intent-based routing, explicit evidence, bounded retry, and validation.\n---\n\n## When to Use\nUse for HealthVault timeline, indicator comparison, knowledge search, and visit-brief tasks, and for comprehensive summary requests that require the full read-only chain.\n\n## When Not to Use\nDo not use for write operations, medical advice, patient fact inference, or any task requiring file, shell, MCP, or non-HealthVault tools.\n\n## Prerequisites\nUse only the tools exposed by the HealthVault runtime and the injected profile context.\n\n## Steps\n1. Identify the requested HealthVault outcome before selecting a tool, then route by intent:\n1. Timeline: call `query_health_timeline` only.\n2. Comparison: call `compare_health_indicators` only.\n3. Knowledge: call `search_health_knowledge` only.\n4. Visit brief: call `generate_visit_brief` only.\n5. Comprehensive summary: only for comprehensive summary, call `query_health_timeline`, `compare_health_indicators`, then `generate_visit_brief` in this order.\n2. Run only approved read-only domain tools and preserve returned citations.\n3. For a comprehensive summary, execute the chain in the declared order and expect status=ok at each step before proceeding.\n4. After an explicit correction, keep the requested read-only scope unchanged and re-validate the final citations.\n5. Return the tool status accurately; never present a rejection as success.\n\n## Failure Handling\nIf evidence is insufficient or a tool rejects input, report that result without guessing. Retry a deterministic tool failure only when its status explicitly permits retry (retry once only when retryable=true); otherwise stop and report. Treat `insufficient_evidence` and `rejected` as terminal stop statuses.\n\n## Verification\nCheck the final status, requested fields, and every citation before answering. For comprehensive summaries, confirm the chain steps completed in order with status=ok before presenting results.\n\n## Safety Boundaries\nNever infer patient facts or medical advice, expose secrets, or invoke file, shell, MCP, or write tools.\n",
+    "published": false,
+    "skill_sha256": "b1c7f20ef81c6fc857ae05f395668f969ea6e1cc20a415792a838d9aa5de26ae",
+    "source_artifact_sha256": "4a1df079a297d12b1f65f3fea5a2ef97164ab44279dd180081860d3411d87c04",
+    "source_candidate_id": "6f4d50c0f7ace72f3e44",
+    "source_task": "TASK-024",
+    "status": "frozen_verified_not_published"
+  },
+  "schema_version": "healthvault-task-025-frozen-arms-v1"
+}

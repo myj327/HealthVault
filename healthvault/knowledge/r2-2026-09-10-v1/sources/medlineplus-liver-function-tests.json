@@ -1,0 +1,45 @@
+{
+  "corpus_version": "r2-2026-09-10-v1",
+  "language": "en",
+  "publisher": "MedlinePlus",
+  "retrieved_on": "2026-09-10",
+  "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Liver function tests, also called a liver panel, use a blood sample to measure several substances made by the liver."
+        },
+        {
+          "kind": "list",
+          "text": "Common measurements include albumin, total protein, ALP, ALT, AST, GGT, bilirubin, LDH, and prothrombin time."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Liver function tests alone usually cannot diagnose a specific disease. Abnormal results usually need other tests to find the exact cause."
+        }
+      ],
+      "title_path": [
+        "Liver Function Tests",
+        "What are liver function tests?"
+      ],
+      "topic_tags": [
+        "liver_panel",
+        "lab_interpretation"
+      ]
+    }
+  ],
+  "source_id": "medlineplus-liver-function-tests",
+  "source_sha256": "6c1d896ec090ced53a6e4f164de599b5e7dca6bf2de095d66cc7d22903736737",
+  "title": "Liver Function Tests",
+  "title_path_whitelist": [
+    [
+      "Liver Function Tests",
+      "What are liver function tests?"
+    ]
+  ],
+  "url": "https://medlineplus.gov/lab-tests/liver-function-tests/",
+  "version": "reviewed-2023"
+}

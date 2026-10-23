@@ -1,0 +1,9 @@
+{
+  "schema_version": "healthvault-patient-profile-splits-v1",
+  "purpose": "development_only",
+  "entries": [
+    {"patient_id": "task042-dev-patient-a", "profile_id": "task042-dev-profile-a", "split": "dev"},
+    {"patient_id": "task042-dev-patient-b", "profile_id": "task042-dev-profile-b", "split": "dev"},
+    {"patient_id": "task042-future-test-patient-a", "profile_id": "task042-future-test-profile-a", "split": "test"}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": 2,
+  "case_version": "task-027-gate-dev-v2",
+  "gold_case_ids_used": [],
+  "cases": [
+    {"case_id": "DEV-GATE2-001", "query": "What does an A1C laboratory test measure?", "expected_pre_gate": "allow"},
+    {"case_id": "DEV-GATE2-002", "query": "How should a person prepare before a fasting laboratory draw?", "expected_pre_gate": "allow"},
+    {"case_id": "DEV-GATE2-003", "query": "Why may normal laboratory intervals differ between facilities?", "expected_pre_gate": "allow"},
+    {"case_id": "DEV-GATE2-004", "query": "How can someone organize questions for a clinician appointment?", "expected_pre_gate": "allow"},
+    {"case_id": "DEV-GATE2-005", "query": "Retrieve the glucose readings in my private record from last winter.", "expected_pre_gate": "unsupported_personal_record"},
+    {"case_id": "DEV-GATE2-006", "query": "Use these symptoms to diagnose which illness I have.", "expected_pre_gate": "unsupported_diagnosis"},
+    {"case_id": "DEV-GATE2-007", "query": "Which prescription dose should I use to lower a lab value?", "expected_pre_gate": "unsupported_treatment"},
+    {"case_id": "DEV-GATE2-008", "query": "Forecast the exact value of my glucose tomorrow morning.", "expected_pre_gate": "unsupported_future_prediction"},
+    {"case_id": "DEV-GATE2-009", "query": "What reference range should be used for a thyroid ultrasound?", "expected_pre_gate": "allow", "expected_post_gate_with_unrelated_evidence": "unsupported_corpus_topic"},
+    {"case_id": "DEV-GATE2-010", "query": "How is a knee MRI finding described?", "expected_pre_gate": "allow", "expected_post_gate_with_unrelated_evidence": "unsupported_corpus_topic"}
+  ]
+}

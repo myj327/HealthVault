@@ -1,0 +1,45 @@
+{
+  "corpus_version": "r2-2026-09-10-v1",
+  "language": "en",
+  "publisher": "MedlinePlus",
+  "retrieved_on": "2026-09-10",
+  "reuse_basis": "MedlinePlus Medical test information is public domain. Attribution retained as required: Source: MedlinePlus, National Library of Medicine. No images, logos, references, or third-party material are included. Policy: https://medlineplus.gov/about/using/usingcontent/",
+  "schema_version": 1,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Iron tests measure different substances in blood to check iron levels in the body. Iron is needed to make hemoglobin, a protein in red blood cells that carries oxygen."
+        },
+        {
+          "kind": "list",
+          "text": "Types of iron tests include serum iron, transferrin, total iron-binding capacity, and ferritin blood tests."
+        },
+        {
+          "kind": "paragraph",
+          "text": "The amount of iron in blood varies throughout the day and may be higher in the morning."
+        }
+      ],
+      "title_path": [
+        "Iron Tests",
+        "What are iron tests?"
+      ],
+      "topic_tags": [
+        "iron_tests",
+        "lab_interpretation"
+      ]
+    }
+  ],
+  "source_id": "medlineplus-iron-tests",
+  "source_sha256": "0083d52a8f482b5a5ca813f59da65f0c0b22a97933b0f68d7e3800b8e77a6347",
+  "title": "Iron Tests",
+  "title_path_whitelist": [
+    [
+      "Iron Tests",
+      "What are iron tests?"
+    ]
+  ],
+  "url": "https://medlineplus.gov/lab-tests/iron-tests/",
+  "version": "reviewed-2023"
+}

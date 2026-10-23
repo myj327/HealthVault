@@ -1,0 +1,11 @@
+{
+  "schema_version": "healthvault-patient-profile-splits-v1",
+  "purpose": "skill-heldout-r5-formal-test",
+  "entries": [
+    {"patient_id":"s5-patient-cobalt","profile_id":"s5-cobalt","split":"held_out"},
+    {"patient_id":"s5-patient-harbor","profile_id":"s5-harbor","split":"held_out"},
+    {"patient_id":"s5-patient-ivory","profile_id":"s5-ivory","split":"held_out"},
+    {"patient_id":"s5-patient-juniper","profile_id":"s5-juniper","split":"held_out"},
+    {"patient_id":"s5-patient-vacant","profile_id":"s5-vacant","split":"held_out"}
+  ]
+}

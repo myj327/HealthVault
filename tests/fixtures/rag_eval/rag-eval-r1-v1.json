@@ -1,0 +1,305 @@
+{
+  "schema_version": 1,
+  "eval_version": "rag-eval-r1-v1",
+  "frozen_on": "2026-08-25T00:00:00+08:00",
+  "corpus_version": "r1-2026-08-24-v1",
+  "corpus_sha256": "3311de358d466531bf235bab5d13f8c8c86a3a9ccad0bb76b32fa3b611c07a36",
+  "aliases_sha256": "0de19fae2cede0e93215745359a5563028e9592bb38f5968504d69e16e7ccd1a",
+  "artifact_sha256": {
+    "natural_section": "367d6ab09ba979493748cf8dfab84323f70a5362d2b902942dec09a914a304f1",
+    "hybrid_v1": "e833996362be5e42d37b78a916bcd8e5b262485068b4042727cc5fe840da95c9"
+  },
+  "frozen_test_sha256": "199363f1baa2ee650ec16ee0aa3f079f3d3b2a4977d4b97dc043b03df9bd8197",
+  "queries": [
+    {
+      "query_id": "RAG-001", "query": "What does a fasting plasma glucose test measure?", "language": "en", "category": "fasting_glucose", "answerable": true, "split": "dev", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"]}},
+      "reference_claims": ["measures your blood glucose level at a single point in time"]
+    },
+    {
+      "query_id": "RAG-002", "query": "空腹血糖检查通常要空腹多久？", "language": "zh", "category": "fasting_glucose", "answerable": true, "split": "dev", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:001:123cc8fea845"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:001:123cc8fea845"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:001:123cc8fea845"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:001:123cc8fea845"]}},
+      "reference_claims": ["fast for 8 to 12 hours before a test"]
+    },
+    {
+      "query_id": "RAG-003", "query": "Can I have water before an FPG blood test?", "language": "en", "category": "fasting_glucose", "answerable": true, "split": "dev", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"]}},
+      "reference_claims": ["nothing to eat or drink except sips of water"]
+    },
+    {
+      "query_id": "RAG-004", "query": "What period does an A1C test summarize?", "language": "en", "category": "hba1c", "answerable": true, "split": "dev", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"]}},
+      "reference_claims": ["over the past two to three months"]
+    },
+    {
+      "query_id": "RAG-005", "query": "A1C 检查前需要空腹吗？", "language": "zh", "category": "hba1c", "answerable": true, "split": "dev", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"]}},
+      "reference_claims": ["You don’t have to fast before having your blood drawn for an A1C test"]
+    },
+    {
+      "query_id": "RAG-006", "query": "What is another name for an HbA1c test?", "language": "en", "category": "hba1c", "answerable": true, "split": "dev", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"]}},
+      "reference_claims": ["Other names: HbA1C"]
+    },
+    {
+      "query_id": "RAG-007", "query": "What does a lipoprotein panel measure?", "language": "en", "category": "ldl_cholesterol", "answerable": true, "split": "dev", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"], "citation_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"], "citation_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"]}},
+      "reference_claims": ["measures the levels of LDL and HDL cholesterol and triglycerides"]
+    },
+    {
+      "query_id": "RAG-008", "query": "低密度脂蛋白在血脂检查中通常叫什么？", "language": "zh", "category": "ldl_cholesterol", "answerable": true, "split": "dev", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"], "citation_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"], "citation_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"]}},
+      "reference_claims": ["LDL (\"bad\") cholesterol"]
+    },
+    {
+      "query_id": "RAG-009", "query": "How long do most people fast before a lipid panel?", "language": "en", "category": "ldl_cholesterol", "answerable": true, "split": "dev", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"], "citation_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"], "citation_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"]}},
+      "reference_claims": ["fast for 9 to 12 hours before a lipoprotein panel"]
+    },
+    {
+      "query_id": "RAG-010", "query": "What is the basic preparation rule for a lab test?", "language": "en", "category": "lab_preparation", "answerable": true, "split": "dev", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:000:f7d9e935f7d7"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:000:f7d9e935f7d7"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:000:f7d9e935f7d7"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:000:f7d9e935f7d7"]}},
+      "reference_claims": ["Following all the instructions given to you by your provider"]
+    },
+    {
+      "query_id": "RAG-011", "query": "所有化验都需要特别准备吗？", "language": "zh", "category": "lab_preparation", "answerable": true, "split": "dev", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"]}},
+      "reference_claims": ["For many lab tests, you don't need to do anything"]
+    },
+    {
+      "query_id": "RAG-012", "query": "What does fasting mean when preparing for laboratory work?", "language": "en", "category": "lab_preparation", "answerable": true, "split": "dev", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"]}},
+      "reference_claims": ["Fasting means you should not eat or drink anything except water"]
+    },
+    {
+      "query_id": "RAG-013", "query": "What is a laboratory reference range?", "language": "en", "category": "result_communication", "answerable": true, "split": "dev", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"]}},
+      "reference_claims": ["A reference range is a set of numbers"]
+    },
+    {
+      "query_id": "RAG-014", "query": "结果超出参考范围一定表示有健康问题吗？", "language": "zh", "category": "result_communication", "answerable": true, "split": "dev", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"]}},
+      "reference_claims": ["may or may not be a sign of a health problem"]
+    },
+    {
+      "query_id": "RAG-015", "query": "Can I compare a result with a reference range found elsewhere?", "language": "en", "category": "result_communication", "answerable": true, "split": "dev", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:003:967c0a00dd50"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:003:967c0a00dd50"]}},
+      "reference_claims": ["You can't compare your results to reference ranges that you might find elsewhere"]
+    },
+    {
+      "query_id": "RAG-016", "query": "What should I bring to make the most of a doctor visit?", "language": "en", "category": "visit_preparation", "answerable": true, "split": "dev", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:002:1d99f24acf83"], "citation_ids": ["HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:002:1d99f24acf83"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:002:1d99f24acf83"], "citation_ids": ["HVK:r1-2026-08-24-v1:odphp-take-charge-health-care:002:1d99f24acf83"]}},
+      "reference_claims": ["Take your list of questions and personal health record with you"]
+    },
+    {
+      "query_id": "RAG-017", "query": "看医生前怎样备忘自己要问的事？", "language": "zh", "category": "visit_preparation", "answerable": true, "split": "dev", "rewrite_category": "synonym",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"]}},
+      "reference_claims": ["Make a list of the questions and concerns you want to talk about"]
+    },
+    {
+      "query_id": "RAG-018", "query": "appointment 前可以请家人一起做 notes 吗？", "language": "mixed", "category": "visit_preparation", "answerable": true, "split": "dev", "rewrite_category": "mixed_language",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"]}},
+      "reference_claims": ["ask your friend or family member to take notes for you"]
+    },
+    {
+      "query_id": "RAG-019", "query": "根据我今天空腹血糖 7.2 能否确诊糖尿病？", "language": "zh", "category": "diagnosis", "answerable": false, "split": "dev", "rewrite_category": "unanswerable",
+      "relevance": {"natural_section": {"chunk_ids": [], "citation_ids": []}, "hybrid_v1": {"chunk_ids": [], "citation_ids": []}}, "reference_claims": []
+    },
+    {
+      "query_id": "RAG-020", "query": "Which statin and dose should I start for my LDL result?", "language": "en", "category": "medication", "answerable": false, "split": "dev", "rewrite_category": "unanswerable",
+      "relevance": {"natural_section": {"chunk_ids": [], "citation_ids": []}, "hybrid_v1": {"chunk_ids": [], "citation_ids": []}}, "reference_claims": []
+    },
+    {
+      "query_id": "RAG-021", "query": "How many hours should I fast before a fasting blood test?", "language": "en", "category": "fasting_glucose", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:001:123cc8fea845"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:001:123cc8fea845"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:001:123cc8fea845"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:001:123cc8fea845"]}},
+      "reference_claims": ["fast for 8 to 12 hours before a test"]
+    },
+    {
+      "query_id": "RAG-022", "query": "空腹抽血时能喝白水吗？", "language": "zh", "category": "fasting_glucose", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:004:7d4efe5fcffc"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:004:7d4efe5fcffc"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:004:7d4efe5fcffc"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:004:7d4efe5fcffc"]}},
+      "reference_claims": ["you can drink plain water"]
+    },
+    {
+      "query_id": "RAG-023", "query": "What should I do if I ate during my blood-test fast?", "language": "en", "category": "fasting_glucose", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:005:268ec0083cce"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:005:268ec0083cce"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:005:268ec0083cce"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:005:268ec0083cce"]}},
+      "reference_claims": ["Tell your provider if you eat or drink before your test"]
+    },
+    {
+      "query_id": "RAG-024", "query": "空腹血糖本身测量的是什么？", "language": "zh", "category": "fasting_glucose", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"]}},
+      "reference_claims": ["measures your blood glucose level at a single point in time"]
+    },
+    {
+      "query_id": "RAG-025", "query": "What does hemoglobin A1C show?", "language": "en", "category": "hba1c", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"]}},
+      "reference_claims": ["average level of blood glucose"]
+    },
+    {
+      "query_id": "RAG-026", "query": "糖化血红蛋白反映多长时间的平均血糖？", "language": "zh", "category": "hba1c", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-hba1c-test:000:e385740d52e8"]}},
+      "reference_claims": ["over the past two to three months"]
+    },
+    {
+      "query_id": "RAG-027", "query": "Must I fast before an HbA1c blood draw?", "language": "en", "category": "hba1c", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"]}},
+      "reference_claims": ["You don’t have to fast before having your blood drawn for an A1C test"]
+    },
+    {
+      "query_id": "RAG-028", "query": "A1C 可以在一天中的任何时间抽血吗？", "language": "zh", "category": "hba1c", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"]}},
+      "reference_claims": ["at any time of the day"]
+    },
+    {
+      "query_id": "RAG-029", "query": "Which measurements are included in a lipid profile?", "language": "en", "category": "ldl_cholesterol", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"], "citation_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"], "citation_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"]}},
+      "reference_claims": ["LDL and HDL cholesterol and triglycerides"]
+    },
+    {
+      "query_id": "RAG-030", "query": "做胆固醇检查可能需要空腹几小时？", "language": "zh", "category": "ldl_cholesterol", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:004:ecb212de740e"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:004:ecb212de740e"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:004:ecb212de740e"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:004:ecb212de740e"]}},
+      "reference_claims": ["fast (not eat or drink) for 9 to 12 hours"]
+    },
+    {
+      "query_id": "RAG-031", "query": "Is LDL described as good or bad cholesterol?", "language": "en", "category": "ldl_cholesterol", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"], "citation_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"], "citation_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"]}},
+      "reference_claims": ["LDL (\"bad\") cholesterol"]
+    },
+    {
+      "query_id": "RAG-032", "query": "一般希望 LDL 高还是低？", "language": "zh", "category": "ldl_cholesterol", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:005:e9cb0c683109"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:005:e9cb0c683109"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:005:e9cb0c683109"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-cholesterol-levels:005:e9cb0c683109"]}},
+      "reference_claims": ["you want your LDL number to be low"]
+    },
+    {
+      "query_id": "RAG-033", "query": "Do many laboratory tests require no special preparation?", "language": "en", "category": "lab_preparation", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"]}},
+      "reference_claims": ["For many lab tests, you don't need to do anything"]
+    },
+    {
+      "query_id": "RAG-034", "query": "化验前空腹的含义是什么？", "language": "zh", "category": "lab_preparation", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"]}},
+      "reference_claims": ["should not eat or drink anything except water"]
+    },
+    {
+      "query_id": "RAG-035", "query": "Who should tell me exactly how long to fast?", "language": "en", "category": "lab_preparation", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"]}},
+      "reference_claims": ["ask your provider how long you should do it"]
+    },
+    {
+      "query_id": "RAG-036", "query": "有些血液检查前会要求多喝水吗？", "language": "zh", "category": "lab_preparation", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:001:46d6705b79b0"]}},
+      "reference_claims": ["you may be asked to drink extra water"]
+    },
+    {
+      "query_id": "RAG-037", "query": "Can a healthy person have a result outside a reference range?", "language": "en", "category": "result_communication", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"]}},
+      "reference_claims": ["It's common for healthy people to sometimes have results outside the reference range"]
+    },
+    {
+      "query_id": "RAG-038", "query": "不同实验室的检查结果能直接比较吗？", "language": "zh", "category": "result_communication", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:003:967c0a00dd50"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:003:967c0a00dd50"]}},
+      "reference_claims": ["You can't compare test results from different labs"]
+    },
+    {
+      "query_id": "RAG-039", "query": "Why should I check the reference range on my own lab report?", "language": "en", "category": "result_communication", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:003:967c0a00dd50"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:003:967c0a00dd50"]}},
+      "reference_claims": ["check the reference range listed on your lab report"]
+    },
+    {
+      "query_id": "RAG-040", "query": "医生没联系我告知筛查结果时怎么办？", "language": "zh", "category": "result_communication", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:odphp-get-screened:002:0ae130909e58"], "citation_ids": ["HVK:r1-2026-08-24-v1:odphp-get-screened:002:0ae130909e58"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:odphp-get-screened:002:0ae130909e58"], "citation_ids": ["HVK:r1-2026-08-24-v1:odphp-get-screened:002:0ae130909e58"]}},
+      "reference_claims": ["If the doctor doesn’t contact you with the results, call the office"]
+    },
+    {
+      "query_id": "RAG-041", "query": "Should I write down questions before seeing my doctor?", "language": "en", "category": "visit_preparation", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025"], "citation_ids": ["HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025"], "citation_ids": ["HVK:r1-2026-08-24-v1:odphp-get-screened:000:e8e5eeb18025"]}},
+      "reference_claims": ["write down your questions ahead of time"]
+    },
+    {
+      "query_id": "RAG-042", "query": "就诊时可以请家人陪同吗？", "language": "zh", "category": "visit_preparation", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"]}},
+      "reference_claims": ["Ask a trusted friend or family member to come to the appointment"]
+    },
+    {
+      "query_id": "RAG-043", "query": "What details should I record about symptoms before an appointment?", "language": "en", "category": "visit_preparation", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"]}},
+      "reference_claims": ["when they started, what makes them better, and what makes them worse"]
+    },
+    {
+      "query_id": "RAG-044", "query": "看医生时听不懂应该怎么办？", "language": "zh", "category": "visit_preparation", "answerable": true, "split": "test", "rewrite_category": "direct",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"]}},
+      "reference_claims": ["ask questions until you do understand"]
+    },
+    {
+      "query_id": "RAG-045", "query": "FPG 抽血前能不能只喝 water？", "language": "mixed", "category": "fasting_glucose", "answerable": true, "split": "test", "rewrite_category": "mixed_language",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-diabetes-tests:003:9a52fd667ccc"]}},
+      "reference_claims": ["nothing to eat or drink except sips of water"]
+    },
+    {
+      "query_id": "RAG-046", "query": "Does the three-month sugar marker require fasting?", "language": "en", "category": "hba1c", "answerable": true, "split": "test", "rewrite_category": "synonym",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"]}},
+      "reference_claims": ["You don’t have to fast before having your blood drawn for an A1C test"]
+    },
+    {
+      "query_id": "RAG-047", "query": "血脂 profile 会列出 LDL、HDL 和 triglycerides 吗？", "language": "mixed", "category": "ldl_cholesterol", "answerable": true, "split": "test", "rewrite_category": "mixed_language",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"], "citation_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"], "citation_ids": ["HVK:r1-2026-08-24-v1:nhlbi-blood-tests:001:e9bf4a96bd00"]}},
+      "reference_claims": ["LDL and HDL cholesterol and triglycerides"]
+    },
+    {
+      "query_id": "RAG-048", "query": "抽 lab 前的 prep 只是遵医嘱吗？", "language": "mixed", "category": "lab_preparation", "answerable": true, "split": "test", "rewrite_category": "mixed_language",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:000:f7d9e935f7d7"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:000:f7d9e935f7d7"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:000:f7d9e935f7d7"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-lab-preparation:000:f7d9e935f7d7"]}},
+      "reference_claims": ["Following all the instructions given to you by your provider"]
+    },
+    {
+      "query_id": "RAG-049", "query": "Why are normal values not interchangeable between labs?", "language": "en", "category": "result_communication", "answerable": true, "split": "test", "rewrite_category": "synonym",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:002:4a356f113e37"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:003:967c0a00dd50"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-understand-lab-results:003:967c0a00dd50"]}},
+      "reference_claims": ["labs often use different testing methods"]
+    },
+    {
+      "query_id": "RAG-050", "query": "去门诊前怎样列一个 question checklist？", "language": "mixed", "category": "visit_preparation", "answerable": true, "split": "test", "rewrite_category": "mixed_language",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-talking-with-doctor:000:7f2bb9d2992a"]}},
+      "reference_claims": ["Make a list of the questions and concerns you want to talk about"]
+    },
+    {
+      "query_id": "RAG-051", "query": "HbA1c 这个长期 glucose average 要禁食吗？", "language": "mixed", "category": "hba1c", "answerable": true, "split": "test", "rewrite_category": "mixed_language",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"], "citation_ids": ["HVK:r1-2026-08-24-v1:niddk-a1c-test:002:458398560009"]}},
+      "reference_claims": ["You don’t have to fast before having your blood drawn for an A1C test"]
+    },
+    {
+      "query_id": "RAG-052", "query": "If I broke the no-food window, whom should I notify?", "language": "en", "category": "fasting_glucose", "answerable": true, "split": "test", "rewrite_category": "synonym",
+      "relevance": {"natural_section": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:005:268ec0083cce"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:005:268ec0083cce"]}, "hybrid_v1": {"chunk_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:005:268ec0083cce"], "citation_ids": ["HVK:r1-2026-08-24-v1:medlineplus-fasting-blood-test:005:268ec0083cce"]}},
+      "reference_claims": ["Tell your provider if you eat or drink before your test"]
+    },
+    {
+      "query_id": "RAG-053", "query": "blood clotting tests", "language": "en", "category": "out_of_scope", "answerable": false, "split": "test", "rewrite_category": "unanswerable",
+      "relevance": {"natural_section": {"chunk_ids": [], "citation_ids": []}, "hybrid_v1": {"chunk_ids": [], "citation_ids": []}}, "reference_claims": []
+    },
+    {
+      "query_id": "RAG-054", "query": "complete blood count", "language": "en", "category": "out_of_scope", "answerable": false, "split": "test", "rewrite_category": "unanswerable",
+      "relevance": {"natural_section": {"chunk_ids": [], "citation_ids": []}, "hybrid_v1": {"chunk_ids": [], "citation_ids": []}}, "reference_claims": []
+    },
+    {
+      "query_id": "RAG-055", "query": "autoantibody test", "language": "en", "category": "out_of_scope", "answerable": false, "split": "test", "rewrite_category": "unanswerable",
+      "relevance": {"natural_section": {"chunk_ids": [], "citation_ids": []}, "hybrid_v1": {"chunk_ids": [], "citation_ids": []}}, "reference_claims": []
+    },
+    {
+      "query_id": "RAG-056", "query": "Book traversal links Previous Next", "language": "en", "category": "out_of_scope", "answerable": false, "split": "test", "rewrite_category": "unanswerable",
+      "relevance": {"natural_section": {"chunk_ids": [], "citation_ids": []}, "hybrid_v1": {"chunk_ids": [], "citation_ids": []}}, "reference_claims": []
+    },
+    {
+      "query_id": "RAG-057", "query": "我的 LDL 上个月是多少？", "language": "zh", "category": "patient_fact", "answerable": false, "split": "test", "rewrite_category": "unanswerable",
+      "relevance": {"natural_section": {"chunk_ids": [], "citation_ids": []}, "hybrid_v1": {"chunk_ids": [], "citation_ids": []}}, "reference_claims": []
+    },
+    {
+      "query_id": "RAG-058", "query": "How should I treat an elevated A1C at home?", "language": "en", "category": "treatment", "answerable": false, "split": "test", "rewrite_category": "unanswerable",
+      "relevance": {"natural_section": {"chunk_ids": [], "citation_ids": []}, "hybrid_v1": {"chunk_ids": [], "citation_ids": []}}, "reference_claims": []
+    },
+    {
+      "query_id": "RAG-059", "query": "根据我的症状和 HbA1c 判断我得了哪种病", "language": "mixed", "category": "diagnosis", "answerable": false, "split": "test", "rewrite_category": "unanswerable",
+      "relevance": {"natural_section": {"chunk_ids": [], "citation_ids": []}, "hybrid_v1": {"chunk_ids": [], "citation_ids": []}}, "reference_claims": []
+    },
+    {
+      "query_id": "RAG-060", "query": "Can an A1C result predict exactly what my glucose will be tomorrow?", "language": "en", "category": "missing_evidence", "answerable": false, "split": "test", "rewrite_category": "unanswerable",
+      "relevance": {"natural_section": {"chunk_ids": [], "citation_ids": []}, "hybrid_v1": {"chunk_ids": [], "citation_ids": []}}, "reference_claims": []
+    }
+  ]
+}

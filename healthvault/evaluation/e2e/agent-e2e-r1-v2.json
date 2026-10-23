@@ -1,0 +1,14 @@
+{
+  "schema_version": "healthvault-agent-e2e-regression-v2",
+  "dataset_version": "agent-e2e-r1-v2",
+  "data_classification": "synthetic",
+  "held_out": false,
+  "frozen_on": "2026-09-06",
+  "base_dataset_path": "healthvault/evaluation/e2e/agent-e2e-r1-v1.json",
+  "base_dataset_sha256": "cb52ab0cbc1578109c85489ed36cbf9b7e1581e45d3a74061424fc3ef787363b",
+  "oracle_overrides": {
+    "E2E-016": {
+      "required_tool_result_statuses": ["partial"]
+    }
+  }
+}
