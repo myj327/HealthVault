@@ -49,7 +49,6 @@ class ToolDirectoryConsistencyTests(unittest.TestCase):
             )
             adapter = BearCodeToolAdapter(
                 native_registry,
-                include_native_tools=False,
                 allowed_domain_tools=HARNESS_READ_ONLY_TOOL_NAMES,
                 runtime_context=RuntimeContext("profile-a", "request-a"),
             )

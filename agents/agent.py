@@ -8,7 +8,6 @@ import os
 import re
 import time
 import uuid
-from pathlib import Path
 from typing import Callable, Awaitable, Any
 
 import anthropic
@@ -28,10 +27,9 @@ from agents.session_memory import (
     parse_folded_memory,
 )
 from agents.session import save_folded_session_memory, save_session
-from agents.subagent import get_sub_agent_config
 from agents.tools import ToolDef, tool_definitions, execute_tool, CONCURRENCY_SAFE_TOOLS, check_permission, \
     get_active_tool_definitions
-from agents.ui import print_info, print_divider, print_assistant_text, print_sub_agent_start, print_sub_agent_end, \
+from agents.ui import print_info, print_divider, print_assistant_text, \
     start_spinner, stop_spinner, print_cost, print_tool_call, print_tool_result, print_confirmation, print_retry, \
     print_error
 
@@ -103,11 +101,9 @@ def _get_context_windows(model:str)->int:
 SNIP_THRESHOLD = 0.60
 AUTO_COMPACT_THRESHOLD = 0.70
 SNIP_PLACEHOLDER = "[Content snipped - re-read if needed]"
-SNIPPABLE_TOOLS = {"read_file", "grep_search", "list_files", "run_shell"}
 MICROCOMPACT_IDLE_S = 5 * 60  # 5 minutes
 
 KEEP_RECENT_RESULTS = 3
-
 
 
 def _get_max_output_tokens(model: str) -> int:
@@ -187,20 +183,16 @@ class Agent:
         self._confirmed_paths: set[str] = set()
 
 
-        # 计划模式”（Plan Mode）状态的变量
-        self._pre_plan_mode: str | None=None
-        self._plan_file_path: str | None=None
-        self._plan_approval_fn : Callable[[str], Awaitable[bool]] | None=None
         self._context_cleared : bool=False
 
         #思考模式
         self._thinking_mode = self._resolve_thinking_mode()
 
-        #子agent的输出缓存
+        #单次执行的输出缓存
         self._output_buffer: list[str] | None=None
         self._turn_output_buffer: list[str] | None = None
 
-        # 编辑前读取
+        # Optional state shared with application-injected tool executors.
         self._read_file_state: dict[str, float] ={}
 
         #MCP集成
@@ -230,11 +222,7 @@ class Agent:
         #构建系统提示词
         self._base_system_prompt = custom_system_prompt or build_system_prompt()
 
-        if self.permission_mode == "plan":
-            self._plan_file_path = self._generate_plan_file_path()
-            self._system_prompt = self._base_system_prompt + self._build_plan_mode_prompt()
-        else:
-            self._system_prompt = self._base_system_prompt
+        self._system_prompt = self._base_system_prompt
 
         #初始化大模型客户端
         if self.use_openai:
@@ -274,32 +262,6 @@ class Agent:
         m = self.model.lower()
         return "opus-4-6" in m or "sonnet-4-6" in m
 
-    #生成一个用于保存 AI 计划（Plan）的 Markdown 文件的绝对路径。
-    def _generate_plan_file_path(self) -> str:
-        d = Path.home() / ".bear" / "plans"
-        d.mkdir(parents=True, exist_ok=True)
-        return str(d / f"plan-{self.session_id}.md")
-
-    def _build_plan_mode_prompt(self) -> str:
-        return f"""
-
-    # Plan Mode Active
-
-    Plan mode is active. You MUST NOT make any edits (except the plan file below), run non-readonly tools, or make any changes to the system.
-
-    ## Plan File: {self._plan_file_path}
-    Write your plan incrementally to this file using write_file or edit_file. This is the ONLY file you are allowed to edit.
-
-    ## Workflow
-    1. **Explore**: Read code to understand the task. Use read_file, list_files, grep_search.
-    2. **Design**: Design your implementation approach. Use the agent tool with type="plan" if the task is complex.
-    3. **Write Plan**: Write a structured plan to the plan file including:
-       - **Context**: Why this change is needed
-       - **Steps**: Implementation steps with critical file paths
-       - **Verification**: How to test the changes
-    4. **Exit**: Call exit_plan_mode when your plan is ready for user review.
-
-    IMPORTANT: When your plan is complete, you MUST call exit_plan_mode. Do NOT ask the user to approve — exit_plan_mode handles that."""
 
     #判断当前的任务所有的任务是否完成
     @property
@@ -365,44 +327,6 @@ class Agent:
     def set_confirm_fn(self, fn:Callable[[str], Awaitable[bool]]) -> None:
         self.confirm_fn = fn
 
-    def set_plan_approval_fn(self, fn:Callable[[str], Awaitable[bool]]) -> None:
-        self._plan_approval_fn = fn
-
-
-    #计划模式开关（“状态切换与现场保护”机制）
-    def toggle_plan_mode(self) -> str:
-        """
-               1. 退出计划模式（从 plan 切回原模式）
-               当当前模式已经是 plan 时，执行 if 分支：
-               恢复之前的状态：self.permission_mode = self._pre_plan_mode or "default"。
-                   在进入计划模式时，程序会把原本的模式保存在 _pre_plan_mode 里。退出时，就把它重新拿出来赋值回去，恢复到切换前的状态。
-               清理计划模式的痕迹：把 _pre_plan_mode 和 _plan_file_path（计划文件路径）清空，并将系统提示词 _system_prompt 恢复为最基础的 _base_system_prompt。
-               同步 OpenAI 消息：如果底层使用的是 OpenAI 接口，它还会同步更新消息列表里的第一条系统提示词，确保 AI 的上下文也跟着切换回来。
-               反馈返回：打印退出提示，并返回恢复后的模式名称。
-
-               2. 进入计划模式（从其他模式切入 plan）
-       当当前模式不是 plan 时，执行 else 分支：
-       保护当前现场：self._pre_plan_mode = self.permission_mode。先把当前正在使用的模式（比如正常模式或自动接受模式）暂存起来，方便以后能原路返回。
-       切换并初始化：将当前模式设为 "plan"，生成一个专属的计划文件路径，并扩展系统提示词。通过拼接 _build_plan_mode_prompt()，给 AI 注入“只动脑不动手、输出结构化计划”的专属指令。
-       同步 OpenAI 消息：同样地，如果使用 OpenAI，也会实时更新上下文里的系统提示词。
-       反馈与返回：打印进入提示（包含计划文件的路径），并返回 "plan"。
-        """
-        if self.permission_mode == "plan":
-            self.permission_mode = self._pre_plan_mode or "default"
-            self._pre_plan_mode = None
-            self._plan_file_path = None
-            self._system_prompt = self._base_system_prompt
-            if self.use_openai and self._openai_messages:
-                self._openai_messages[0]["content"] =self._system_prompt
-            print_info(f"Exited plan mode -> {self.permission_mode} mode")
-            return self.permission_mode
-        else:
-            self._pre_plan_mode = self.permission_mode
-            self.permission_mode = "plan"
-            self._plan_file_path = self._generate_plan_file_path()
-            self._system_prompt = self._base_system_prompt + self._build_plan_mode_prompt()
-            print_info(f"Entered plan mode. Plan file: {self._plan_file_path}")
-            return "plan"
 
     def get_token_usage(self) -> dict:
         return {"input":self.total_input_tokens, "output":self.total_output_tokens}
@@ -467,7 +391,6 @@ class Agent:
                 self._auto_save()
 
 
-
    #执行一次对话，收集本轮模型输出文本，并返回本轮消耗的 token 数
     async def run_once(self, prompt:str)->None:
         self._output_buffer = []
@@ -516,10 +439,7 @@ class Agent:
         if self._custom_system_prompt is not None:
             return
         self._base_system_prompt = build_system_prompt()
-        if self.permission_mode == "plan":
-            self._system_prompt = self._base_system_prompt + self._build_plan_mode_prompt()
-        else:
-            self._system_prompt = self._base_system_prompt
+        self._system_prompt = self._base_system_prompt
         self._system_prompt += self._build_fold_guidance_section()
         if self.use_openai and self._openai_messages:
             self._openai_messages[0]["content"] = self._system_prompt
@@ -796,7 +716,6 @@ class Agent:
         print_info(f"Session restored ({self._get_message_count()} messages).")
 
 
-
 #整理 Anthropic 的历史消息，修正部分角色错误，并丢弃不合法的工具调用消息。
     def _normalize_anthropic_messages(self, messages: list[dict]) -> list[dict]:
         role_normalized = []
@@ -1000,41 +919,13 @@ class Agent:
         utilization = self.last_input_token_count / self.effective_window if self.effective_window else 0
         if utilization < SNIP_THRESHOLD:
             return
-        results = []
-        for mindex,  msg in enumerate(self._anthropic_messages):
-            if msg.get("role") != "user" or not isinstance(msg.get("content"), list):
-                continue
-
-            for bindex, block in enumerate(msg["content"]):
-                if isinstance(block, dict) and block.get("type") == "tool_result" and isinstance(block.get("content"), str) and block["content"] != SNIP_PLACEHOLDER:
-                    tool_use_id = block.get("tool_use_id")
-                    # 对每个 tool_result，通过 tool_use_id 反查它来自哪个工具
-                    tool_info = self._find_tool_use_by_id(tool_use_id)
-                    if tool_info and tool_info["name"] in SNIPPABLE_TOOLS:
-                        results.append({"mindex": mindex, "bindex": bindex, "name": tool_info["name"], "file_path": tool_info.get("input", {}).get("file_path")})
-
-        if len(results) <= KEEP_RECENT_RESULTS:
-            return
-
-        to_snip =  set()
-        seen_files: dict[str, list[int]] = {}
-
-        for i, r in enumerate(results):
-            if r["name"] == "read_file" and r.get("file_path"):
-                seen_files.setdefault(r["file_path"], []).append(i)
-        #如果一个文件被读取了多次，只保留最后一次读取的结果，把前面几次读取的内容全部标记为“修剪”（Snip）。
-        for indices in seen_files.values():
-            if len (indices) >1 :
-                for j in indices[:-1]:
-                    to_snip.add (j)
-
-        snip_before = len(results) - KEEP_RECENT_RESULTS
-        for i in range (snip_before):
-            to_snip.add(i)
-
-        for idx in to_snip:
-            r = results[idx]
-            self._anthropic_messages[r["mindex"]]["content"][r["bindex"]]["content"] = SNIP_PLACEHOLDER
+        results = [block for message in self._anthropic_messages
+                   if message.get("role") == "user" and isinstance(message.get("content"), list)
+                   for block in message["content"]
+                   if isinstance(block, dict) and block.get("type") == "tool_result"
+                   and isinstance(block.get("content"), str) and block["content"] != SNIP_PLACEHOLDER]
+        for block in results[:-KEEP_RECENT_RESULTS]:
+            block["content"] = SNIP_PLACEHOLDER
 
     def _snip_stale_results_openai(self) -> None:
         utilization = self.last_input_token_count / self.effective_window if self.effective_window else 0
@@ -1083,41 +974,8 @@ class Agent:
         for i in range(max(0, clear_count)):
             self._openai_messages[tool_msgs[i]]["content"] = "[Old result cleared]"
 
-    def _find_tool_use_by_id(self, tool_use_id: int) -> dict | None:
-        for msg in self._anthropic_messages:
-            if msg.get("role") != "assistant" or not isinstance(msg.get("content"), list):
-                continue
 
-            for block in msg["content"]:
-                if isinstance(block, dict) and block.get("type") == "tool_use" and block.get("id") == tool_use_id:
-                    return {"name": block["name"], "input": block.get("input", {})}
 
-    #大结果持久化
-    #如果工具返回的结果太大（超过 30KB），不要硬塞进上下文里，而是把它存成一个临时文件。
-    # 然后在对话里只留一个‘文件路径’和‘内容预览’。如果模型后面还需要看完整内容，它可以再次调用工具去读取这个文件
-
-    def _persist_large_result(self, tool_name: str, result: str) -> str:
-        THRESHOLD = 30 * 1024  # 30 KB
-        #转换成字节
-        if (len (result.encode())) <= THRESHOLD:
-            return result
-
-        d = Path.home() / ".bear-code" / "tool-results"
-        d.mkdir(parents=True, exist_ok=True)
-        filename = f"{int(time.time() * 1000)}-{tool_name}.txt"
-        filepath = d / filename
-        filepath.write_text(result, encoding="utf-8")
-
-        lines = result.split("\n")
-        preview = "\n".join(lines[:200])
-        size_kb = len(result.encode()) / 1024
-
-        return (
-            f"[Result too large ({size_kb:.1f} KB, {len(lines)} lines). "
-            f"Full output saved to {filepath}. "
-            f"You can use read_file to see the full result.]\n\n"
-            f"Preview (first 200 lines):\n{preview}"
-        )
 
     #执行工具入口
 
@@ -1127,27 +985,15 @@ class Agent:
             return f"Tool unavailable under Agent runtime policy: {name}"
         if name == "compact_context":
             return await self._execute_compact_context_tool(inp)
-        if name in ("enter_plan_mode", "exit_plan_mode"):
-            return await self._execute_plan_mode_tool(name)
-        if name == "agent":
-            return await self._execute_agent_tool(inp)
-        if name == "skill" and self.runtime_policy.global_skills_enabled:
-            return await self._execute_skill_tool(inp)
-            # Route MCP tool calls to the MCP manager
         if (
             self.runtime_policy.mcp_enabled
             and self._mcp_manager.is_mcp_tool(name)
         ):
             return await self._mcp_manager.call_tool(name, inp)
-        result = await self._tool_executor(name, inp, self._read_file_state)
-        if name in {"skill_create", "skill_evolve"}:
-            try:
-                parsed = json.loads(result)
-                if isinstance(parsed, dict) and parsed.get("ok"):
-                    self._refresh_runtime_system_prompt()
-            except Exception:
-                pass
-        return result
+        if name not in {tool["name"] for tool in self.tools}:
+            return f"Tool unavailable: {name}"
+        return await self._tool_executor(name, inp, self._read_file_state)
+
 
     async def _execute_compact_context_tool(self, inp: dict) -> str:
         reason = str(inp.get("reason") or "").strip()
@@ -1164,161 +1010,6 @@ class Agent:
             f"{suffix}"
         )
 
-
-    async def _execute_skill_tool(self, inp: dict) -> str:
-        from .skills import execute_skill
-        result = execute_skill(inp.get("skill_name", ""), inp.get("args", ""))
-
-        if not result:
-            return f"Unknown skill: {inp.get('skill_name', '')}"
-
-        #fork 表示这个 skill 不直接把 prompt 塞回当前对话，而是要启动一个子 Agent 单独完成任务。
-        if result["context"] == "fork":
-            # result["allowed_tools"] - 直接访问
-            tools = (
-                [t for t in self.tools if t["name"] in  result["allowed_tools"] ]
-                #result.get("allowed_tools") - 安全访问
-                # 存在key：返回对应的值（可能是 None、[]、["tool1"] 等）
-                # 不存在key：返回 None（不会抛异常）
-                if result.get("allowed_tools")
-                else  [t for t in self.tools if t["name"] != "agent"]
-            )
-
-            print_sub_agent_start("skill-fork", inp.get("skill_name", ""))
-            sub_agent = Agent(
-                model=self.model,
-                api_base=str(self._openai_client.base_url) if self.use_openai and self._openai_client else None,
-                custom_system_prompt=result["prompt"],
-                custom_tools=tools,
-                is_sub_agent=True,
-                permission_mode="plan" if self.permission_mode == "plan" else "bypassPermissions",
-            )
-            try:
-                sub_result = await sub_agent.run_once(inp.get("args") or "Execute this skill task.")
-                self.total_input_tokens += sub_result["tokens"]["input"]
-                self.total_output_tokens += sub_result["tokens"]["output"]
-                print_sub_agent_end("skill-fork", inp.get("skill_name", ""))
-                return sub_result["text"] or "(Skill produced no output)"
-            except Exception as e:
-                print_sub_agent_end("skill-fork", inp.get("skill_name", ""))
-                return f"Skill fork error: {e}"
-
-        return f'[Skill "{inp.get("skill_name", "")}" activated]\n\n{result["prompt"]}'
-
-    async def _execute_plan_mode_tool(self, name):
-        if name == "enter_plan_mode":
-            if self.permission_mode == "plan":
-                return "Already in plan mode."
-            self._pre_plan_mode = self.permission_mode
-            self.permission_mode = "plan"
-            self._plan_file_path =  self._generate_plan_file_path()
-            self._system_prompt = self._base_system_prompt + self._build_plan_mode_prompt()
-            if self.use_openai and self._openai_messages:
-                self._openai_messages[0]["content"] = self._system_prompt
-            print_info("Entered plan mode (read-only). Plan file: " + self._plan_file_path)
-            return f"Entered plan mode. You are now in read-only mode.\n\nYour plan file: {self._plan_file_path}\nWrite your plan to this file. This is the only file you can edit.\n\nWhen your plan is complete, call exit_plan_mode."
-        if name == "exit_plan_mode":
-            if self.permission_mode != "plan":
-                return "Not in plan mode."
-            plan_content = "(No plan file found)"
-            if self._plan_file_path and Path(self._plan_file_path).exists():
-                plan_content = self._plan_file_path
-            # 交互式审批流程（如果有审批函数）
-            if self._plan_approval_fn:
-                result = self._plan_approval_fn(plan_content)
-                choice = result.get("choice", "manual-execute")
-
-                if choice =="keep-planning":
-                    feedback = result.get("feedback") or "Please revise the plan."
-                    return (
-                        f"User rejected the plan and wants to keep planning.\n\n"
-                        f"User feedback: {feedback}\n\n"
-                        f"Please revise your plan based on this feedback. When done, call exit_plan_mode again."
-                    )
-
-                if choice == "clear-and-execute":
-                    target_mode = "acceptEdits"
-                elif choice == "execute":
-                    target_mode = "acceptEdits"
-                else:  # manual-execute
-                    target_mode = self._pre_plan_mode or "default"
-
-                #离开计划模式
-                self._pre_plan_mode = target_mode
-                self._pre_plan_mode = None
-                saved_plan_path = self._plan_file_path
-                self._plan_file_path = None
-                self._system_prompt = self._base_system_prompt
-                if self.use_openai and self._openai_messages:
-                    self._openai_messages[0]["content"] = self._system_prompt
-
-                if choice == "clear-and-execute":
-                    self._clear_history_keep_system()
-                    self._context_cleared = True
-                    print_info(f"Plan approved. Context cleared, executing in {target_mode} mode.")
-                    return (
-                        f"User approved the plan. Context was cleared. Permission mode: {target_mode}\n\n"
-                        f"Plan file: {saved_plan_path}\n\n"
-                        f"## Approved Plan:\n{plan_content}\n\n"
-                        f"Proceed with implementation."
-                    )
-                print_info(f"Plan approved. Executing in {target_mode} mode.")
-                return (
-                    f"User approved the plan. Permission mode: {target_mode}\n\n"
-                    f"## Approved Plan:\n{plan_content}\n\n"
-                    f"Proceed with implementation."
-                )
-            # 没有审批函数时的回退（例如子代理）
-            self.permission_mode = self._pre_plan_mode or "default"
-            self._pre_plan_mode = None
-            self._plan_file_path = None
-            self._system_prompt = self._base_system_prompt
-            if self.use_openai and self._openai_messages:
-                self._openai_messages[0]["content"] = self._system_prompt
-
-            print_info("Exited plan mode. Restored to " + self.permission_mode + " mode.")
-            return f"Exited plan mode. Permission mode restored to: {self.permission_mode}\n\n## Your Plan:\n{plan_content}"
-
-        return f"Unknown plan mode tool: {name}"
-
-    def _clear_history_keep_system(self) -> None:
-        """清空历史信息，但是保留系统prompt."""
-        self._anthropic_messages = []
-        self._openai_messages = []
-        if self.use_openai:
-            self._openai_messages.append({"role": "system", "content": self._system_prompt})
-        self.last_input_token_count = 0
-        self._fold_last_time = 0.0
-        self._fold_count = 0
-        self._tool_error_streak = 0
-        self._same_tool_repeat_count = 0
-        self._last_tool_name = ""
-
-    async def _execute_agent_tool(self, inp:dict) -> str:
-        agent_type = inp.get("type", "general")
-        description = inp.get("description", "sub-agent task")
-        prompt = inp.get("prompt", "")
-        print_sub_agent_start(agent_type, description)
-
-        config = get_sub_agent_config(agent_type)
-
-        sub_agent = Agent(
-            model=self.model,
-            api_base=str(self._openai_client.base_url) if self.use_openai and self._openai_client else None,
-            custom_system_prompt=config["system_prompt"],
-            custom_tools=config["tools"],
-            is_sub_agent=True,
-            permission_mode="plan" if self.permission_mode == "plan" else "bypassPermissions",
-        )
-        try:
-            result = await sub_agent.run_once(prompt)
-            self.total_input_tokens += result["tokens"]["input"]
-            self.total_output_tokens += result["tokens"]["output"]
-            print_sub_agent_end(agent_type, description)
-            return result["text"] or "(Sub-agent produced no output)"
-        except Exception as e:
-            print_sub_agent_end(agent_type, description)
-            return f"Sub-agent error: {e}"
 
 #--------------Anthropic 后端---------------
     async def _buffer_checked_response(self, call):
@@ -1414,7 +1105,7 @@ class Agent:
                 # 流式响应中一旦完整收到 tool_use block，如果工具是并发安全且权限允许，
                 # 就可以提前开始执行，减少等待完整模型响应后的空档时间。
                 if block["name"] in CONCURRENCY_SAFE_TOOLS:
-                    perm = check_permission(block["name"], block["input"], self.permission_mode, self._plan_file_path)
+                    perm = check_permission(block["name"], block["input"], self.permission_mode)
                     if perm["action"]=="allow":
                         task =asyncio.create_task(self._execute_tool_call(block["name"], block["input"]))
                         early_executions[block["id"]] = task
@@ -1492,7 +1183,7 @@ class Agent:
                     except Exception as e:
                         raw = f"Error executing tool: {e}"
                     raw = _safe_utf8_text(raw)
-                    res = self._persist_large_result(tu.name, raw)
+                    res = raw
                     print_tool_result(tu.name, res)
                     self._record_tool_outcome(tu.name, not self._looks_like_tool_failure(tu.name, raw, res))
                     tool_results.append({"type": "tool_result", "tool_use_id": tu.id, "content": res})
@@ -1500,7 +1191,7 @@ class Agent:
 
                 # 如果不是提前执行的工具，就在真正执行前做权限检查。
 
-                perm = check_permission(tu.name, inp, self.permission_mode, self._plan_file_path)
+                perm = check_permission(tu.name, inp, self.permission_mode)
                 if perm["action"] == "deny":
                     # 权限拒绝时，也要返回一个 tool_result，让模型知道该工具调用失败的原因。
                     print_info(f"Denied: {perm.get('message', '')}")
@@ -1519,13 +1210,13 @@ class Agent:
                         continue
                     self._confirmed_paths.add(perm["message"])
 
-                # 权限通过后执行工具，并把大输出持久化为可回传的摘要或引用。
+                # 权限通过后执行工具；结果留在会话中，由现有压缩流程控制长度。
                 try:
                     raw = await self._execute_tool_call(tu.name, inp)
                 except Exception as e:
                     raw = f"Error executing tool: {e}"
                 raw = _safe_utf8_text(raw)
-                res = self._persist_large_result(tu.name, raw)
+                res = raw
                 print_tool_result(tu.name, res)
                 self._record_tool_outcome(tu.name, not self._looks_like_tool_failure(tu.name, raw, res))
 
@@ -1752,8 +1443,8 @@ class Agent:
         async def run_tool(ct: dict) -> None:
             if not ct["allowed"] or self._aborted or self._context_cleared:
                 return
-            if ct["permission_state"] != (self.permission_mode, self._plan_file_path):
-                perm = check_permission(ct["fn"], ct["inp"], self.permission_mode, self._plan_file_path)
+            if ct["permission_state"] != self.permission_mode:
+                perm = check_permission(ct["fn"], ct["inp"], self.permission_mode)
                 if perm["action"] == "deny" or (
                     perm["action"] == "confirm" and perm.get("message") not in self._confirmed_paths
                 ):
@@ -1762,7 +1453,7 @@ class Agent:
                     return
             try:
                 raw = _safe_utf8_text(await self._execute_tool_call(ct["fn"], ct["inp"]))
-                result = self._persist_large_result(ct["fn"], raw)
+                result = raw
             except asyncio.CancelledError:
                 results[ct["tc"]["id"]] = "Tool execution interrupted before a result was available."
                 self._record_tool_outcome(ct["fn"], False)
@@ -1784,7 +1475,7 @@ class Agent:
                 except Exception:
                     inp = {}
                 print_tool_call(fn_name, inp)
-                perm = check_permission(fn_name, inp, self.permission_mode, self._plan_file_path)
+                perm = check_permission(fn_name, inp, self.permission_mode)
                 denied_result = None
                 if perm["action"] == "deny":
                     print_info(f"Denied: {perm.get('message', '')}")
@@ -1798,7 +1489,7 @@ class Agent:
                     results[tc["id"]] = denied_result
                     self._record_tool_outcome(fn_name, False)
                 checked.append({"tc": tc, "fn": fn_name, "inp": inp, "allowed": denied_result is None,
-                                "permission_state": (self.permission_mode, self._plan_file_path)})
+                                "permission_state": self.permission_mode})
 
             batches: list[dict] = []
             for ct in checked:

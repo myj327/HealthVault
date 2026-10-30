@@ -146,7 +146,7 @@ class Task027KnowledgeSupportGateTests(unittest.TestCase):
                 self.assertEqual("ok", result["status"])
                 self.assertGreater(result["result_count"], 0)
 
-    def test_core_topic_coverage_uses_top_five_text_metadata_and_matched_terms(self):
+    def test_query_matched_terms_cannot_prove_missing_source_topic(self):
         query = "What does an A1C laboratory test measure?"
         evidence = _hit(
             title="Laboratory overview",
@@ -158,8 +158,8 @@ class Task027KnowledgeSupportGateTests(unittest.TestCase):
         repository = RecordingRepository((evidence,))
         decision, hits = search_with_health_knowledge_gate(query, repository, 5)
 
-        self.assertTrue(decision.allowed)
-        self.assertEqual((evidence,), hits)
+        self.assertFalse(decision.allowed)
+        self.assertEqual((), hits)
         self.assertEqual([(query, 5)], repository.calls)
 
     def test_supported_rewritten_query_preserves_repository_query_hits_and_schema(self):

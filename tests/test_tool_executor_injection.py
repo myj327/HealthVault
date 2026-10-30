@@ -1,6 +1,4 @@
-import tempfile
 import unittest
-from pathlib import Path
 from unittest.mock import AsyncMock, MagicMock, patch
 
 from agents import agent as agent_module
@@ -31,20 +29,11 @@ def make_agent(**kwargs):
 
 
 class ToolExecutorInjectionTests(unittest.IsolatedAsyncioTestCase):
-    async def test_default_executor_keeps_builtin_tool_behavior(self):
+    async def test_default_agent_has_no_filesystem_executor(self):
         agent = make_agent()
-        self.assertIs(agent._tool_executor, agent_module.execute_tool)
-
-        with tempfile.TemporaryDirectory() as temp_dir:
-            file_path = Path(temp_dir) / "synthetic.txt"
-            file_path.write_text("TASK003_DEFAULT_EXECUTOR_OK", encoding="utf-8")
-
-            result = await agent._execute_tool_call(
-                "read_file",
-                {"file_path": str(file_path)},
-            )
-
-        self.assertIn("TASK003_DEFAULT_EXECUTOR_OK", result)
+        self.assertEqual([], agent.tools)
+        for name in ("read_file", "write_file", "run_shell", "agent", "skill"):
+            self.assertIn("unavailable", await agent._execute_tool_call(name, {}))
 
     async def test_injected_executor_handles_custom_tool_call(self):
         injected_executor = AsyncMock(return_value="TASK003_INJECTED_EXECUTOR_OK")

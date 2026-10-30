@@ -177,12 +177,14 @@ class HealthVaultAgentRuntimeTests(unittest.IsolatedAsyncioTestCase):
                 self.assertEqual(1, len(tool_messages))
                 self.assertIn("source-profile-a", tool_messages[0]["content"])
                 self.assertNotIn("source-profile-b", tool_messages[0]["content"])
-                runtime.agent._emit_text("SYNTHETIC_FINAL_TEXT")
+                source_id = json.loads(tool_messages[0]["content"])["available_citation_ids"][0]
+                final_text = f"SYNTHETIC_FINAL_TEXT [{source_id}]"
+                runtime.agent._emit_text(final_text)
                 return {
                     "choices": [{
                         "message": {
                             "role": "assistant",
-                            "content": "SYNTHETIC_FINAL_TEXT",
+                            "content": final_text,
                             "tool_calls": None,
                         }
                     }],
@@ -223,7 +225,7 @@ class HealthVaultAgentRuntimeTests(unittest.IsolatedAsyncioTestCase):
 
         self.assertFalse(runtime.agent.is_sub_agent)
         self.assertEqual(2, calls)
-        self.assertEqual("SYNTHETIC_FINAL_TEXT", result.text)
+        self.assertTrue(result.text.startswith("SYNTHETIC_FINAL_TEXT [REC:"))
         self.assertEqual({"input": 17, "output": 5}, result.tokens)
         self.assertEqual(
             list(HARNESS_LOCAL_READ_ONLY_TOOL_NAMES),
@@ -261,7 +263,7 @@ class HealthVaultAgentRuntimeTests(unittest.IsolatedAsyncioTestCase):
                 return_value="unexpected MCP result"
             )
             with patch(
-                "healthvault.adapters.bearcode.tools.execute_tool",
+                "agents.agent.execute_tool",
                 new=AsyncMock(return_value="unexpected native result"),
             ) as native_executor, patch(
                 "agents.skills.execute_skill",
@@ -322,10 +324,6 @@ class HealthVaultAgentRuntimeTests(unittest.IsolatedAsyncioTestCase):
 
             with patch.object(
                 agent_module,
-                "get_sub_agent_config",
-                side_effect=AssertionError("sub-agent config must not be read"),
-            ) as sub_agent_config, patch.object(
-                agent_module,
                 "Agent",
                 side_effect=AssertionError("sub-agent must not be constructed"),
             ) as sub_agent_constructor, patch.object(
@@ -333,7 +331,7 @@ class HealthVaultAgentRuntimeTests(unittest.IsolatedAsyncioTestCase):
                 "write_text",
                 side_effect=AssertionError("special tool gate must not write files"),
             ) as write_text, patch(
-                "healthvault.adapters.bearcode.tools.execute_tool",
+                "agents.agent.execute_tool",
                 new=AsyncMock(return_value="UNEXPECTED_NATIVE_EXECUTOR"),
             ) as native_executor:
                 blocked = {
@@ -366,7 +364,6 @@ class HealthVaultAgentRuntimeTests(unittest.IsolatedAsyncioTestCase):
         runtime.agent._execute_agent_tool.assert_not_awaited()
         runtime.agent._execute_compact_context_tool.assert_not_awaited()
         runtime.agent._execute_plan_mode_tool.assert_not_awaited()
-        sub_agent_config.assert_not_called()
         sub_agent_constructor.assert_not_called()
         runtime.agent._mcp_manager.is_mcp_tool.assert_not_called()
         runtime.agent._mcp_manager.call_tool.assert_not_awaited()
@@ -456,10 +453,6 @@ class HealthVaultAgentRuntimeTests(unittest.IsolatedAsyncioTestCase):
             runtime.agent._call_openai_stream = fake_model_call
             with patch.object(
                 agent_module,
-                "get_sub_agent_config",
-                side_effect=AssertionError("sub-agent config must not be read"),
-            ) as sub_agent_config, patch.object(
-                agent_module,
                 "Agent",
                 side_effect=AssertionError("sub-agent must not be constructed"),
             ) as sub_agent_constructor, patch.object(
@@ -467,7 +460,7 @@ class HealthVaultAgentRuntimeTests(unittest.IsolatedAsyncioTestCase):
                 "write_text",
                 side_effect=AssertionError("special tool gate must not write files"),
             ) as write_text, patch(
-                "healthvault.adapters.bearcode.tools.execute_tool",
+                "agents.agent.execute_tool",
                 new=AsyncMock(return_value="UNEXPECTED_NATIVE_EXECUTOR"),
             ) as native_executor, patch.object(
                 agent_module,
@@ -485,14 +478,14 @@ class HealthVaultAgentRuntimeTests(unittest.IsolatedAsyncioTestCase):
                 agent_module,
                 "print_cost",
             ):
-                result = await runtime.run("synthetic special route probe")
+                with self.assertRaisesRegex(RuntimeError, "completion conditions remain unsatisfied"):
+                    await runtime.run("synthetic special route probe")
 
-        self.assertEqual("SPECIAL_GATE_OK", result.text)
-        self.assertEqual(2, calls)
+        # An unavailable tool plus an ungrounded final is not a completed task.
+        self.assertEqual(3, calls)
         runtime.agent._execute_agent_tool.assert_not_awaited()
         runtime.agent._execute_compact_context_tool.assert_not_awaited()
         runtime.agent._execute_plan_mode_tool.assert_not_awaited()
-        sub_agent_config.assert_not_called()
         sub_agent_constructor.assert_not_called()
         model_client.assert_not_called()
         runtime.agent._mcp_manager.is_mcp_tool.assert_not_called()

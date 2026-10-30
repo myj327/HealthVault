@@ -75,20 +75,13 @@ class SQLiteFTSHealthKnowledgeRepository:
                 "CREATE VIRTUAL TABLE chunk_fts USING fts5("
                 "chunk_id UNINDEXED, index_text, tokenize=trigram)"
             )
-            alias_by_topic = dict(self._alias_groups)
             rows = []
             self._normalized_index_text = {}
             for chunk in artifact.chunks:
-                aliases_for_chunk = tuple(
-                    alias
-                    for topic in chunk.topic_tags
-                    for alias in alias_by_topic.get(_normalize(topic), ())
-                )
+                # Aliases expand the query; only source text belongs in the index.
                 index_text = "\n".join(
                     (
                         " / ".join(chunk.title_path),
-                        " ".join(chunk.topic_tags),
-                        " ".join(aliases_for_chunk),
                         chunk.body,
                     )
                 )
@@ -168,10 +161,16 @@ class SQLiteFTSHealthKnowledgeRepository:
         normalized = _normalize(query)
         if not normalized or _UNSAFE_QUERY_RE.search(normalized):
             return (), (), (), ()
+        # Normalize these names to terms present in the English source bodies.
+        normalized = re.sub(r"低密度脂蛋白(?:胆固醇)?|(?<![a-z0-9])ldl-c(?![a-z0-9])", "ldl cholesterol", normalized)
+        normalized = re.sub(r"高密度脂蛋白(?:胆固醇)?|(?<![a-z0-9])hdl-c(?![a-z0-9])", "hdl cholesterol", normalized)
         group_matches = []
-        for topic, aliases in self._alias_groups:
+        for topic, aliases in (*self._alias_groups, ("hdl_cholesterol", ("hdl", "hdl cholesterol", "high-density lipoprotein"))):
             found = tuple(alias for alias in aliases if alias in normalized)
             if found:
+                if topic == "ldl_cholesterol" and re.search(r"(?<![a-z0-9])ldl(?![a-z0-9])", normalized):
+                    # A whole lipid panel is broader than the requested LDL name.
+                    aliases = tuple(alias for alias in aliases if "panel" not in alias and alias != "血脂")
                 group_matches.append((topic, aliases, found))
         exact_matches = [
             item for item in group_matches if normalized in item[2]

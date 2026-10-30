@@ -36,7 +36,7 @@ class PersonalSkillTests(unittest.IsolatedAsyncioTestCase):
                         'tool_name': 'search_health_knowledge', 'arguments': {'query': 'A1C'}}
                 if payload.get('phase') == 'execution_final':
                     citations = payload['tool_result'].get('available_citation_ids', [])
-                    return {'final_status': 'ok', 'citations': citations if payload['case_id'] == 'exec-compare' else citations[:1], 'refusal': False}
+                    return {'final_status': 'ok', 'citations': citations[:2] if payload['case_id'] == 'exec-compare' else citations[:1], 'refusal': False}
                 return {'plans':[{'case_id':case[0],'tool_path':[case[3]] if case[3] else [],'refuse':case[4]} for case in CASES]}
             return await evaluate_workflow_probes(active,candidate,model)
         self.manager = PersonalSkillManager(self.project, self.root / 'evolution', self.fake_patch,evaluator=evaluate)

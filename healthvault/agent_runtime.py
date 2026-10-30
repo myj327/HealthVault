@@ -38,7 +38,7 @@ from healthvault.task_memory import TaskMemoryConflict, TaskMemoryStore
 from healthvault.application.citation_policy import recommended_record_citation_ids
 from healthvault.application.tool_evidence import merge_tool_evidence, tool_evidence
 from healthvault.application.workflow_contract import (
-    WORKFLOW_PROTOCOL, MAX_KNOWLEDGE_QUERIES, REQUIRED_TOOLS, completion_feedback,
+    WORKFLOW_PROTOCOL, MAX_KNOWLEDGE_QUERIES, REQUIRED_TOOLS, FINAL_OUTPUT_GUIDANCE, completion_feedback,
     knowledge_query, knowledge_search_issue, workflow_intent,
 )
 from healthvault.adapters.bearcode.final_response_normalizer import (
@@ -116,6 +116,7 @@ class HealthVaultChatResult:
     task_memory_status: str = "disabled"
     verification: dict | None = None
     measurement: dict | None = None
+    sources: tuple[dict[str, Any], ...] = ()
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -127,6 +128,7 @@ class HealthVaultChatResult:
             "task_memory_status": self.task_memory_status,
             **({'verification': self.verification} if self.verification is not None else {}),
             **({'measurement': self.measurement} if self.measurement is not None else {}),
+            **({'sources': list(self.sources)} if self.sources else {}),
         }
 
 
@@ -299,6 +301,7 @@ class HealthVaultAgentRuntime:
                 payload = {}
             observed = {
                 "name": name,
+                "indicator_code": payload.get('indicator_code') if isinstance(payload, dict) else None,
                 "result_status": payload.get("status", "rejected") if isinstance(payload, dict) else "rejected",
                 "available_citation_ids": payload.get("available_citation_ids", []) if isinstance(payload, dict) else [],
                 "recommended_citation_ids": payload.get("recommended_citation_ids", []) if isinstance(payload, dict) else [],
@@ -386,16 +389,20 @@ class HealthVaultAgentRuntime:
                         verification = await verify_current(repaired)
                         if verification.get('passed') is True:
                             raw = repaired
-                            result = {**result, 'text': raw}
-                            # Persist only the accepted answer in the dialogue snapshot.
-                            if not self.agent.use_openai:
-                                self.agent._anthropic_messages[-1]['content'] = [{'type': 'text', 'text': raw}]
-                            else:
-                                self.agent._openai_messages[-1]['content'] = raw
                 verification['answer_repairs'] = answer_repairs
                 if verification.get('passed') is not True:
                     workflow_failure = 'answer_verification_failed'
                     raise HealthVaultAgentRuntimeError('回答未通过证据或要点覆盖复核，请重试。')
+                accepted = verification.get('answer') or raw
+                if accepted != raw and verification.get('kind') == 'whole_answer_knowledge_check':
+                    answer_repairs.append({'attempt': 1, 'reason': 'knowledge_source_check_correction'})
+                raw = accepted
+                result = {**result, 'text': raw}
+                # Persist the same accepted answer that the user sees.
+                if not self.agent.use_openai:
+                    self.agent._anthropic_messages[-1]['content'] = [{'type': 'text', 'text': raw}]
+                else:
+                    self.agent._openai_messages[-1]['content'] = raw
         except Exception as exc:
             failure = workflow_failure or ('workflow_completion_failed' if isinstance(exc, RuntimeError)
                 and str(exc).startswith(('Agent completion conditions', 'Agent completion budget')) else type(exc).__name__)
@@ -450,8 +457,7 @@ class HealthVaultAgentRuntime:
             )
             required_tool = REQUIRED_TOOLS.get(intent)
             tools_valid = tools_valid and (
-                intent is None or required_tool is not None
-                and any(call["name"] == required_tool for call in observed_calls)
+                required_tool is None or any(call["name"] == required_tool for call in observed_calls)
             )
             statuses_valid = tools_valid and all(
                 call["result_status"] in successful_statuses for call in observed_calls
@@ -523,6 +529,13 @@ class HealthVaultAgentRuntime:
                         checkpoint = latest
                         completed = list(dict.fromkeys((checkpoint.completed_steps if checkpoint else ()) + tuple(completed)))
             self.manifest["task_memory_last_write_status"] = memory_status
+        if normalized.final_status == 'insufficient_evidence' and observed_calls:
+            from healthvault.domain.reports import INDICATOR_CATALOG
+            last = observed_calls[-1]
+            code = last.get('indicator_code')
+            if (last['name'] == 'query_health_timeline' and last['result_status'] == 'empty'
+                    and code in INDICATOR_CATALOG):
+                final_text = f'当前已确认档案没有{INDICATOR_CATALOG[code].display_name}记录，暂时无法提供该指标的数值。'
         return HealthVaultChatResult(
             text=final_text,
             tokens=tokens,
@@ -541,6 +554,7 @@ class HealthVaultAgentRuntime:
                          'tool_attempts': len(observed_calls), 'cache_hits': self.manifest['read_only_cache_hits'],
                          'usage_scope': 'agent_generation_only; outer ledger required for planning, repair and verifier'},
             verification=verification,
+            sources=tuple(source for source in evidence_sources if f"[{source['citation_id']}]" in final_text),
         )
 
 
@@ -574,7 +588,7 @@ def build_healthvault_agent_runtime(
         raise HealthVaultAgentRuntimeError(str(exc)) from exc
 
     skill_prompt = format_project_skill_resources(resources)
-    system_prompt = components.system_prompt
+    system_prompt = components.system_prompt + '\n' + FINAL_OUTPUT_GUIDANCE
     if config.task_memory_path is not None and not config.task_id:
         raise HealthVaultAgentRuntimeError("task_id is required for task memory.")
     task_memory = (

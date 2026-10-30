@@ -124,7 +124,6 @@ def build_healthvault_components(
     )
     adapter = BearCodeToolAdapter(
         registry,
-        include_native_tools=False,
         allowed_domain_tools=allowed_tools,
         runtime_context=config.runtime_context,
     )

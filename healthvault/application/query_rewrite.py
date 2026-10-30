@@ -12,6 +12,8 @@ from healthvault.domain.reports import INDICATOR_ALIASES, INDICATOR_CATALOG
 from healthvault.rag.corpus import DEFAULT_CORPUS_ROOT
 
 _REFERENCE = re.compile(r"(?:这个|那个|该|这项|那项|上述|前面说的)\s*(?:指标|检测|检查|项目|结果)|它(?!们)|(?<!\w)it(?!\w)", re.I)
+_WORKFLOW_OBJECT = re.compile(r"\b(?:report|preview|draft|document|file|record|account|profile)\b|报告|预览|草稿|文件|档案|账户", re.I)
+_WORKFLOW_ACTION = re.compile(r"\b(?:save|saved|saving|write|writing|import|upload|approve|approved|approval|confirm|merge|delete)\b|保存|写入|导入|上传|批准|确认|合并|删除", re.I)
 _MARKERS = (
     r"(?:去年|last year)", r"(?:今年|this year)", r"(?:上次|previous|last result)",
     r"(?:本次|current result)", r"(?:左|\bleft\b)", r"(?:右|\bright\b)",
@@ -71,6 +73,10 @@ def prepare_query(question: str, *, context_question: str = "", model_query: Cal
         return PreparedQuery(original, original, original, "unsupported")
     resolved, method = original, "original"
     reference = _REFERENCE.search(original)
+    if (reference and not knowledge_only and not _subjects(original)
+            and _WORKFLOW_OBJECT.search(original) and _WORKFLOW_ACTION.search(original)):
+        # The report/file action owns this reference, not a health indicator.
+        reference = None
     if reference:
         current = _subjects(original[:reference.start()])
         subjects = current if current else _subjects(context_question)

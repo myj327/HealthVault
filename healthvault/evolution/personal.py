@@ -75,7 +75,10 @@ class PersonalSkillManager:
         summary = json.loads(state_path.read_text(encoding="utf-8")) if state_path.is_file() else {"evaluations": [], "last_action": None}
         active = service.store.active_path
         digest = hashlib.sha256(active.read_bytes()).hexdigest() if active.is_file() else None
-        return {**summary, 'explanation_zh': usage_explanation(summary), "active_sha256": digest, "injectable": bool(digest and self.lifecycle(profile_id).is_injectable(digest)),
+        project = self.project_root / TARGET_SKILL / 'SKILL.md'
+        has_update = bool(digest and project.is_file() and digest != hashlib.sha256(project.read_bytes()).hexdigest())
+        return {**summary, 'explanation_zh': usage_explanation(summary), "active_sha256": digest,
+                "has_personal_update": has_update, "injectable": bool(digest and self.lifecycle(profile_id).is_injectable(digest)),
                 "window_size": 10, "metric_scope": "workflow_contract", "independent_tasks_only": True}
 
     def disable(self, profile_id: str) -> dict[str, Any]:

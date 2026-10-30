@@ -33,7 +33,8 @@ from healthvault.ocr.pipeline import OCRPipeline
 from healthvault.rag.releases import active_corpus_root, configured_release_root
 
 
-DEFAULT_DATABASE_PATH = Path(".task_outputs") / "healthvault-ui" / "healthvault.sqlite3"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_DATABASE_PATH = PROJECT_ROOT / ".task_outputs" / "healthvault-ui" / "healthvault.sqlite3"
 DATABASE_ENVIRONMENT_VARIABLE = "HEALTHVAULT_UI_DB_PATH"
 KNOWLEDGE_MODE_ENVIRONMENT_VARIABLE = "HEALTHVAULT_KNOWLEDGE_MODE"
 HYBRID_INDEX_ENVIRONMENT_VARIABLE = "HEALTHVAULT_HYBRID_INDEX_PATH"
@@ -42,7 +43,8 @@ HYBRID_MODEL_ENVIRONMENT_VARIABLE = "HEALTHVAULT_HYBRID_MODEL_PATH"
 
 def configured_database_path() -> Path:
     configured = os.environ.get(DATABASE_ENVIRONMENT_VARIABLE)
-    return Path(configured) if configured else DEFAULT_DATABASE_PATH
+    path = Path(configured).expanduser() if configured else DEFAULT_DATABASE_PATH
+    return path if path.is_absolute() else PROJECT_ROOT / path
 
 
 def _sha256(text: str) -> str:
@@ -242,9 +244,11 @@ class HealthVaultUIController:
             {"profile_id": profile_id}, self.record_repository
         ).to_dict()
 
-    def comparisons(self, profile_id: str) -> dict[str, Any]:
+    def comparisons(self, profile_id: str, *, start_year: int | None = None, end_year: int | None = None,
+                    indicator_code: str | None = None) -> dict[str, Any]:
         return compare_health_indicators(
-            {"profile_id": profile_id}, self.record_repository
+            {"profile_id": profile_id, 'start_year': start_year, 'end_year': end_year,
+             'indicator_code': indicator_code}, self.record_repository
         ).to_dict()
 
     def search_knowledge(self, query: str, limit: int = 3) -> dict[str, Any]:

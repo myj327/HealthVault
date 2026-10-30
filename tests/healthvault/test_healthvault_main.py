@@ -87,13 +87,10 @@ class HealthVaultMainTests(unittest.TestCase):
             "healthvault.tools.registry.ToolRegistry.execute",
             new=AsyncMock(return_value="unexpected tool result"),
         ) as registry_execute, patch(
-            "healthvault.adapters.bearcode.tools.execute_tool",
-            new=AsyncMock(return_value="unexpected native result"),
-        ) as native_execute, patch(
             "agents.agent.Agent",
             side_effect=AssertionError("Agent must not be constructed"),
         ) as agent_constructor, patch(
-            "agents.main.load_dotenv",
+            "healthvault.main.load_healthvault_model_config",
             new=MagicMock(),
         ) as env_loader, patch(
             "agents.mcp_client.McpManager.load_and_connect",
@@ -123,7 +120,6 @@ class HealthVaultMainTests(unittest.TestCase):
             self.assertFalse(output["agent_constructed"])
             self.assertFalse(output["api_config_loaded"])
         registry_execute.assert_not_awaited()
-        native_execute.assert_not_awaited()
         agent_constructor.assert_not_called()
         env_loader.assert_not_called()
         mcp_connect.assert_not_awaited()

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import hashlib
+import re
 import sqlite3
 from contextlib import closing
 from datetime import datetime, timezone
@@ -46,8 +47,8 @@ CREATE TABLE IF NOT EXISTS health_records (
     display_name TEXT NOT NULL,
     value REAL NOT NULL,
     unit TEXT NOT NULL,
-    reference_lower REAL NOT NULL,
-    reference_upper REAL NOT NULL,
+    reference_lower REAL,
+    reference_upper REAL,
     flag TEXT NOT NULL,
     evidence_source_id TEXT NOT NULL,
     evidence_line_start INTEGER NOT NULL,
@@ -125,8 +126,28 @@ class SQLiteHealthRecordRepository:
                 if "evidence_locator_json" not in {row["name"] for row in connection.execute(f"PRAGMA table_info({table})")}:
                     connection.execute(f"ALTER TABLE {table} ADD COLUMN evidence_locator_json TEXT")
             connection.commit()
+            self._allow_single_bound_ranges(connection)
         finally:
             connection.close()
+
+    @staticmethod
+    def _allow_single_bound_ranges(connection: sqlite3.Connection) -> None:
+        columns = connection.execute("PRAGMA table_info(health_records)").fetchall()
+        if not any(row["name"] in {"reference_lower", "reference_upper"} and row["notnull"] for row in columns):
+            return
+        # SQLite requires a table rebuild to relax NOT NULL; keep all rows and locators.
+        with connection:
+            connection.execute("BEGIN IMMEDIATE")
+            definition = connection.execute("SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'health_records'").fetchone()[0]
+            indexes = connection.execute("SELECT sql FROM sqlite_master WHERE tbl_name = 'health_records' AND type IN ('index', 'trigger') AND sql IS NOT NULL").fetchall()
+            definition = re.sub(r"\b(reference_(?:lower|upper)\s+REAL)\s+NOT NULL\b", r"\1", definition, flags=re.I)
+            connection.execute(definition.replace("health_records", "health_records_nullable", 1))
+            names = ', '.join('"' + row["name"].replace('"', '""') + '"' for row in columns)
+            connection.execute(f"INSERT INTO health_records_nullable ({names}) SELECT {names} FROM health_records")
+            connection.execute("DROP TABLE health_records")
+            connection.execute("ALTER TABLE health_records_nullable RENAME TO health_records")
+            for row in indexes:
+                connection.execute(row[0])
 
     def _connect(self) -> sqlite3.Connection:
         connection = sqlite3.connect(str(self.database_path))

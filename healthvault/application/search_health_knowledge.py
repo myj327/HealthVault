@@ -10,7 +10,7 @@ from healthvault.domain.knowledge import (
 )
 from healthvault.repositories.health_knowledge import HealthKnowledgeRepository
 from healthvault.application.knowledge_support_gate import (
-    search_with_health_knowledge_gate,
+    assess_health_knowledge_support,
 )
 
 
@@ -62,7 +62,10 @@ def search_health_knowledge(
     prepared = prepare_query(query)
     if prepared.status == "needs_clarification":
         return _invalid("ambiguous_query", "Specify the indicator or supply explicit conversation context.", query=query, limit=limit)
-    decision, hits = search_with_health_knowledge_gate(prepared.search_query, repository, limit)
+    decision = assess_health_knowledge_support(prepared.search_query)
+    # Search returns candidate sources. Whole-answer checking determines support;
+    # conversational query words need not appear literally in English source text.
+    hits = repository.search(prepared.search_query, limit) if decision.allowed else ()
     if not decision.allowed:
         return KnowledgeSearchResult(
             status="empty",

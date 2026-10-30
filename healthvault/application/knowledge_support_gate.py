@@ -89,6 +89,8 @@ _GENERIC_QUERY_TERMS = frozenset(
         "draw", "during", "eat", "good", "high", "many", "must", "normal",
         "own", "preparation", "report", "require", "required", "requires", "seeing",
         "special", "write",
+        "definition", "definitions", "difference", "differences", "between",
+        "stand", "stands", "abbreviation", "abbreviations", "respectively",
     }
 )
 
@@ -100,6 +102,8 @@ _GENERIC_CJK_TERMS = (
     "时候", "期间", "中的", "之前", "之后", "进行", "相关", "哪些", "哪种",
     "自己", "报告", "数值", "正常", "异常", "多少", "以及", "还是", "或者",
     "请问", "告诉", "了解", "知道", "看看", "查看", "准备",
+    "分别", "区别", "给出", "提供", "官方", "权威", "资料", "来源", "引用", "出处",
+    "定义", "概念", "全称", "项目",
 )
 
 _CONCEPT_EQUIVALENTS: dict[str, tuple[str, ...]] = {
@@ -111,14 +115,21 @@ _CONCEPT_EQUIVALENTS: dict[str, tuple[str, ...]] = {
     "fasting": ("fasting", "fast", "nothing to eat or drink"),
     "glucose": ("glucose", "blood sugar"),
     "laboratory": ("laboratory", "lab"),
+    "ldl": ("ldl", "low-density lipoprotein", "low density lipoprotein", "低密度脂蛋白"),
+    "hdl": ("hdl", "high-density lipoprotein", "high density lipoprotein", "高密度脂蛋白"),
 }
 
 _CJK_CONCEPTS: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("低密度脂蛋白胆固醇", _CONCEPT_EQUIVALENTS["ldl"]),
+    ("高密度脂蛋白胆固醇", _CONCEPT_EQUIVALENTS["hdl"]),
+    ("低密度脂蛋白", _CONCEPT_EQUIVALENTS["ldl"]),
+    ("高密度脂蛋白", _CONCEPT_EQUIVALENTS["hdl"]),
     ("糖化血红蛋白", _CONCEPT_EQUIVALENTS["a1c"]),
     ("空腹", _CONCEPT_EQUIVALENTS["fasting"]),
     ("血糖", _CONCEPT_EQUIVALENTS["glucose"]),
     ("胆固醇", _CONCEPT_EQUIVALENTS["cholesterol"]),
     ("血脂", _CONCEPT_EQUIVALENTS["cholesterol"]),
+    ("脂蛋白", _CONCEPT_EQUIVALENTS["cholesterol"]),
     ("就诊", (*_CONCEPT_EQUIVALENTS["appointment"], "visit preparation")),
     ("医生", _CONCEPT_EQUIVALENTS["doctor"]),
     ("家人", _CONCEPT_EQUIVALENTS["family"]),
@@ -187,10 +198,8 @@ def _evidence_text(hits: tuple[KnowledgeHit, ...]) -> str:
         values.extend(
             (
                 document.title,
-                document.topic,
-                " ".join(document.topic_tags),
+                " ".join(document.title_path),
                 document.summary,
-                " ".join(hit.matched_terms),
             )
         )
     return _normalized(" ".join(values).replace("_", " "))

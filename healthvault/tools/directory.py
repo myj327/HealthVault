@@ -88,11 +88,13 @@ TOOL_SPECS: tuple[ToolSpec, ...] = (
         name="query_health_timeline",
         description=(
             "Return the chronological timeline of confirmed health reports and "
-            "source evidence for one synthetic profile."
+            "source evidence. When the user asks for a specific indicator, pass indicator_code "
+            "(for example fasting_glucose, hba1c, uric_acid, or its Chinese name). "
+            "The filtered result is empty if that indicator has no confirmed records."
         ),
         input_schema={
             "type": "object",
-            "properties": {"profile_id": {"type": "string"}},
+            "properties": {"profile_id": {"type": "string"}, "indicator_code": {"type": "string"}},
             "required": ["profile_id"],
         },
         read_only=True,
@@ -104,12 +106,17 @@ TOOL_SPECS: tuple[ToolSpec, ...] = (
     ToolSpec(
         name="compare_health_indicators",
         description=(
-            "Compare the earliest and latest confirmed values for every health "
-            "indicator in one synthetic profile."
+            "Compare confirmed indicators and annual trends. For two requested years, pass "
+            "start_year and end_year; use each year's latest record, never substitute a missing year. "
+            "Without years, compare earliest and latest. Optionally filter by indicator_code. "
+            "Trend uses the latest observation per year and a descriptive slope, not a health forecast."
         ),
         input_schema={
             "type": "object",
-            "properties": {"profile_id": {"type": "string"}},
+            "properties": {"profile_id": {"type": "string"},
+                           "start_year": {"type": "integer", "minimum": 1, "maximum": 9999},
+                           "end_year": {"type": "integer", "minimum": 1, "maximum": 9999},
+                           "indicator_code": {"type": "string"}},
             "required": ["profile_id"],
         },
         read_only=True,

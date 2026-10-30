@@ -6,7 +6,7 @@ import copy
 from collections.abc import Collection
 from typing import Any
 
-from agents.tools import ToolDef, execute_tool, tool_definitions
+from agents.tools import ToolDef
 from healthvault.runtime_context import RuntimeContext
 from healthvault.tools.directory import PROFILE_BOUND_TOOL_NAMES
 from healthvault.tools.registry import ToolRegistry
@@ -16,17 +16,15 @@ CONTEXT_PROFILE_TOOLS = frozenset(PROFILE_BOUND_TOOL_NAMES)
 
 
 class BearCodeToolAdapter:
-    """Combine tool definitions and route calls to the correct executor."""
+    """Expose only registered HealthVault tools, bound to the current profile."""
 
     def __init__(
         self,
         registry: ToolRegistry,
         *,
-        include_native_tools: bool = True,
         allowed_domain_tools: Collection[str] | None = None,
         runtime_context: RuntimeContext | None = None,
     ) -> None:
-        native_names = {definition["name"] for definition in tool_definitions}
         domain_definitions = registry.definitions
         registered_domain_names = {
             definition["name"] for definition in domain_definitions
@@ -62,22 +60,10 @@ class BearCodeToolAdapter:
                         if name != "profile_id"
                     ]
 
-        conflicts = native_names & exposed_domain_names
-        if conflicts:
-            conflict_names = ", ".join(sorted(conflicts))
-            raise ValueError(
-                "HealthVault tool name conflicts with BearCode tool: "
-                f"{conflict_names}"
-            )
-
         self._registry = registry
-        self._include_native_tools = include_native_tools
         self._exposed_domain_names = exposed_domain_names
         self._runtime_context = runtime_context
-        self.combined_definitions: list[ToolDef] = (
-            (list(tool_definitions) if include_native_tools else [])
-            + domain_definitions
-        )
+        self.combined_definitions: list[ToolDef] = domain_definitions
 
     async def execute(
         self,
@@ -85,7 +71,7 @@ class BearCodeToolAdapter:
         tool_input: dict[str, Any],
         read_file_state: dict[str, float] | None = None,
     ) -> str:
-        """Route domain calls to the registry and all others to BearCode."""
+        """Reject calls outside the exposed registry; never fall back to native tools."""
         if name in self._exposed_domain_names:
             prepared_input = dict(tool_input)
             if (
@@ -99,6 +85,4 @@ class BearCodeToolAdapter:
                     )
                 prepared_input["profile_id"] = self._runtime_context.profile_id
             return await self._registry.execute(name, prepared_input)
-        if not self._include_native_tools:
-            return f"Tool unavailable in isolated HealthVault adapter: {name}"
-        return await execute_tool(name, tool_input, read_file_state)
+        return f"Tool unavailable in isolated HealthVault adapter: {name}"

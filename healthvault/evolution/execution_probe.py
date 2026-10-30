@@ -13,7 +13,7 @@ from healthvault.bootstrap import HealthVaultBootstrapConfig, build_healthvault_
 from healthvault.infrastructure.sqlite_health_records import SQLiteHealthRecordRepository
 from healthvault.runtime_context import RuntimeContext
 
-EXECUTION_PROTOCOL = 'skill-native-execution-v1'
+EXECUTION_PROTOCOL = 'skill-native-execution-v2'
 EXECUTION_CASES = (
     ('exec-compare', '比较已确认档案中空腹血糖的两次记录，保留两个端点引用。', 'compare_health_indicators'),
     ('exec-knowledge', '检索糖化血红蛋白A1C检查的官方资料，只保留一个实际返回的引用。', 'search_health_knowledge'),
@@ -72,20 +72,24 @@ async def evaluate_execution(active: str, candidate: str, query) -> dict:
                     row['database_unchanged'] = hashlib.sha256(database.read_bytes()).hexdigest() == before
                     row['empty_search'] = expected_tool == 'search_health_knowledge' and result.get('status') == 'empty'
                     arguments = action['arguments']
+                    row['arguments'] = arguments
                     row['arguments_passed'] = ('profile_id' not in arguments and result.get('status') == 'ok'
-                        and (not arguments if expected_tool == 'compare_health_indicators' else
+                        and ((not arguments or arguments == {'indicator_code': 'fasting_glucose'})
+                             if expected_tool == 'compare_health_indicators' else
                              isinstance(arguments.get('query'), str) and any(term in arguments['query'].casefold()
                                  for term in ('a1c', '糖化血红蛋白'))))
                     final = await _query(query, '根据实际工具结果完成请求。只输出完整JSON，严格含final_status、citations、refusal。'
                         '引用只用实际返回编号，比较保留两个端点；知识只保留一个。无证据才拒答，不写说明或Markdown。',
                         {'phase': 'execution_final', 'case_id': case_id, 'question': question, 'skill': content, 'tool_result': result})
                     allowed = set(result.get('available_citation_ids', []))
+                    endpoints = {f"REC:{item[end]['report_id']}:{item['code']}"
+                                 for item in result.get('comparisons', []) for end in ('earliest', 'latest')}
                     valid = (isinstance(final, dict) and set(final) == {'final_status', 'citations', 'refusal'}
                              and isinstance(final['citations'], list) and all(isinstance(c, str) for c in final['citations']))
                     citations = final['citations'] if valid else []
                     row['final_passed'] = bool(valid and final['final_status'] == 'ok' and final['refusal'] is False
                         and citations and len(set(citations)) == len(citations) and set(citations) <= allowed
-                        and (set(citations) == allowed if expected_tool == 'compare_health_indicators' else len(citations) == 1))
+                        and (set(citations) == endpoints if expected_tool == 'compare_health_indicators' else len(citations) == 1))
                     row['passed'] = row['arguments_passed'] and row['final_passed'] and row['database_unchanged']
                 except (ValueError, KeyError, TypeError) as exc:
                     row['failure_code'] = type(exc).__name__

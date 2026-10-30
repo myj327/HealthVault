@@ -27,11 +27,9 @@ class AgentRuntimePolicyTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(agent.runtime_policy.session_persistence_enabled)
         self.assertIsNone(agent.runtime_policy.allowed_tool_names)
 
-    async def test_default_policy_keeps_special_tool_routing_unrestricted(self):
+    async def test_default_policy_keeps_compaction_but_removes_coding_tools(self):
         agent = make_agent()
-        agent._execute_agent_tool = AsyncMock(return_value="agent-routed")
         agent._execute_compact_context_tool = AsyncMock(return_value="compact-routed")
-        agent._execute_plan_mode_tool = AsyncMock(return_value="plan-routed")
 
         results = {
             name: await agent._execute_tool_call(name, {})
@@ -43,13 +41,11 @@ class AgentRuntimePolicyTests(unittest.IsolatedAsyncioTestCase):
             )
         }
 
-        self.assertEqual("agent-routed", results["agent"])
+        self.assertIn("unavailable", results["agent"])
         self.assertEqual("compact-routed", results["compact_context"])
-        self.assertEqual("plan-routed", results["enter_plan_mode"])
-        self.assertEqual("plan-routed", results["exit_plan_mode"])
-        agent._execute_agent_tool.assert_awaited_once_with({})
+        self.assertIn("unavailable", results["enter_plan_mode"])
+        self.assertIn("unavailable", results["exit_plan_mode"])
         agent._execute_compact_context_tool.assert_awaited_once_with({})
-        self.assertEqual(2, agent._execute_plan_mode_tool.await_count)
 
     async def test_disabled_policy_skips_mcp_global_skills_and_session_save(self):
         policy = AgentRuntimePolicy(

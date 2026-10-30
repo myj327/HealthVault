@@ -46,7 +46,7 @@ def layout_blocks(blocks: list[dict[str, Any]]) -> tuple[str, list[dict[str, Any
 
 
 def bind_preview_evidence(preview: dict[str, Any], text: str, blocks: list[dict[str, Any]], original_text: str | None = None) -> dict[str, Any]:
-    from healthvault.web.extraction import _indicator_label, SIZE_PATTERN, DATE_PATTERN
+    from healthvault.web.extraction import _indicator_label, SIZE_PATTERN, DATE_PATTERN, SINGLE_BOUND_PATTERN
     from datetime import date
     original = original_text or text
     opcodes = difflib.SequenceMatcher(None, original, text).get_opcodes() if original != text else [('equal', 0, len(text), 0, len(text))]
@@ -79,7 +79,7 @@ def bind_preview_evidence(preview: dict[str, Any], text: str, blocks: list[dict[
         except ValueError: pass
     date_field = None
     if date_matches:
-        dated = next((match for match in date_matches if re.search(r'报告|检查|采样|report[_ ]date',text[max(0,match.start()-30):match.start()],re.I)),date_matches[0])
+        dated = next((match for match in date_matches if re.search(r'(?:报告日期|检查日期|检测日期|采样日期|report[_ ]date|examination date)\s*[:：]\s*$',text[max(0,match.start()-30):match.start()],re.I)),date_matches[0])
         date_field = {'span_start':dated.start(),'span_end':dated.end(),'text':dated.group(),'regions':regions(dated.start(),dated.end())}
         preview['report'].setdefault('evidence',{})['report_date'] = date_field
     for item in [*preview.get('indicators', []), *preview.get('imaging_findings', []), *preview.get('clinical_items', []), *preview.get('other_findings', [])]:
@@ -129,6 +129,13 @@ def bind_preview_evidence(preview: dict[str, Any], text: str, blocks: list[dict[
                 if range_match:
                     for number, name in ((1, 'reference_lower'), (2, 'reference_upper')):
                         field(name, label[1]+range_match.start(number), label[1]+range_match.end(number))
+                if item.get('reference_range', {}).get('operator'):
+                    single = SINGLE_BOUND_PATTERN.search(quote[label[1]:])
+                    if single:
+                        field('reference_range', label[1]+single.start(), label[1]+single.end())
+                        fields['reference_range']['operator'] = single['operator']
+                        name = 'reference_upper' if item['reference_range']['lower'] is None else 'reference_lower'
+                        field(name, label[1]+single.start('bound'), label[1]+single.end('bound'))
                 unit = re.search(re.escape(item['unit']), quote[label[1]:], re.I)
                 if unit:
                     field('unit', label[1]+unit.start(), label[1]+unit.end())

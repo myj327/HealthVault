@@ -353,10 +353,13 @@ def run_case(case: dict, arm: str, plan: dict, calls: EntryCalls, root: Path, co
                tool_metrics=tool_execution_metrics(tools))
     if runtime and runtime.trace_recorder and runtime.trace_recorder.trace_path:
         row['trace'] = json.loads(runtime.trace_recorder.trace_path.read_text(encoding='utf-8'))
-    if not row['injection_contract_passed'] or not row['database_unchanged']:
+    row['model_calls'] = copy.deepcopy([item for item in calls.rows if (item['case_id'], item['arm_id']) == (case['case_id'], arm)])
+    if (not runtime and row['http_status'] != 200 and not row['model_calls'] and not tools
+            and row['database_unchanged']):
+        row['injection_contract_passed'] = None
+    if row['injection_contract_passed'] is False or not row['database_unchanged']:
         calls.failed = True
         row.update(status='condition_failure', task_success=False, complete_and_supported=False)
-    row['model_calls'] = copy.deepcopy([item for item in calls.rows if (item['case_id'], item['arm_id']) == (case['case_id'], arm)])
     row['usage'] = usage(row['model_calls'])
     return row
 

@@ -23,7 +23,7 @@ def make_hit():
             citation_id="HVK-SYNTHETIC-001",
             topic="synthetic_topic",
             title="Synthetic knowledge card",
-            summary="A short synthetic educational excerpt.",
+            summary="A short educational excerpt explaining the synthetic term.",
             search_terms=("synthetic term",),
             source=KnowledgeSource(
                 publisher="Synthetic Publisher",
@@ -94,7 +94,7 @@ class SearchHealthKnowledgeTests(unittest.TestCase):
         self.assertEqual([], empty["results"])
         self.assertEqual("unsupported_corpus_topic", empty["issues"][0]["code"])
         self.assertEqual(NOTICE, empty["notice"])
-        self.assertEqual([("  exact Query  ", 3)], empty_repository.queries)
+        self.assertEqual([("exact Query", 3)], empty_repository.queries)
 
         hit = make_hit()
         repository = RecordingKnowledgeRepository(hits=(hit,))
@@ -111,7 +111,7 @@ class SearchHealthKnowledgeTests(unittest.TestCase):
         self.assertEqual("synthetic_topic", result["topic"])
         self.assertEqual("Synthetic knowledge card", result["title"])
         self.assertEqual(
-            "A short synthetic educational excerpt.", result["excerpt"]
+            "A short educational excerpt explaining the synthetic term.", result["excerpt"]
         )
         self.assertEqual(["synthetic term"], result["matched_terms"])
         self.assertEqual("Synthetic Publisher", result["source"]["publisher"])

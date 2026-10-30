@@ -20,11 +20,33 @@ def good_model(_prompt, data):
             'tool_name': 'search_health_knowledge', 'arguments': {'query': 'A1C'}}
     if data.get('phase') == 'execution_final':
         citations = data['tool_result'].get('available_citation_ids', [])
-        return {'final_status': 'ok', 'citations': citations if data['case_id'] == 'exec-compare' else citations[:1], 'refusal': False}
+        return {'final_status': 'ok', 'citations': citations[:2] if data['case_id'] == 'exec-compare' else citations[:1], 'refusal': False}
     return {'plans': [{'case_id': case[0], 'tool_path': [case[3]] if case[3] else [], 'refuse': case[4]} for case in CASES]}
 
 
 class SkillExecutionTests(unittest.IsolatedAsyncioTestCase):
+    async def test_indicator_filter_is_valid_but_unrequested_year_filter_is_not(self):
+        for arguments, expected in (({'indicator_code': 'fasting_glucose'}, True),
+                                    ({'start_year': 2024, 'end_year': 2025}, False)):
+            def model(prompt, data):
+                result = good_model(prompt, data)
+                if data.get('phase') == 'execution_tool' and data['case_id'] == 'exec-compare':
+                    result['arguments'] = arguments
+                return result
+            result = await evaluate_execution('baseline', 'candidate', model)
+            self.assertEqual(result['passed'], expected)
+
+    async def test_derived_reference_does_not_replace_requested_original_endpoints(self):
+        active = personal_fixtures.ACTIVE_SKILL
+        valid = await evaluate_execution(active, active, good_model)
+        self.assertTrue(valid['passed'])
+        def extra(prompt, data):
+            result = good_model(prompt, data)
+            if data.get('phase') == 'execution_final' and data['case_id'] == 'exec-compare':
+                result['citations'] = data['tool_result']['available_citation_ids']
+            return result
+        self.assertFalse((await evaluate_execution(active, active, extra))['passed'])
+
     async def test_all_tool_plan_and_duplicate_tool_are_not_valid_routes(self):
         plan = good_model('', {})
         all_tools = [c[3] for c in CASES if c[3]]

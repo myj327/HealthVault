@@ -25,10 +25,7 @@ class ComparisonPoint:
                 "sha256": self.source_sha256,
             },
             "value": self.indicator.value,
-            "reference_range": {
-                "lower": self.indicator.reference_lower,
-                "upper": self.indicator.reference_upper,
-            },
+            "reference_range": self.indicator.reference_range_dict(),
             "flag": self.indicator.flag,
             "evidence": {
                 "source_id": self.indicator.evidence_source_id,
@@ -49,6 +46,8 @@ class IndicatorComparison:
     latest: ComparisonPoint
     absolute_change: float
     direction: str
+    selected_years: tuple[int, int] | None = None
+    trend: dict[str, Any] | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -60,6 +59,10 @@ class IndicatorComparison:
             "latest": self.latest.to_dict(),
             "absolute_change": self.absolute_change,
             "direction": self.direction,
+            "relative_change_percent": round(self.absolute_change / self.earliest.indicator.value * 100, 6) if self.earliest.indicator.value else None,
+            "comparison_citation_id": (f"REC:derived:{self.earliest.report_id}:{self.latest.report_id}:{self.code}"
+                                       if self.selected_years else f"REC:derived:{self.latest.report_id}:{self.code}"),
+            "trend": self.trend,
             "flag_transition": {
                 "from": self.earliest.indicator.flag,
                 "to": self.latest.indicator.flag,
@@ -88,6 +91,7 @@ class IndicatorComparisonResult:
     comparisons: tuple[IndicatorComparison, ...]
     issues: tuple[ComparisonIssue, ...]
     profile_id: str | None = None
+    selected_years: tuple[int, int] | None = None
 
     def to_dict(self) -> dict[str, Any]:
         available_citation_ids = list(
@@ -101,17 +105,25 @@ class IndicatorComparisonResult:
             )
         )
         result = {"status": self.status}
+        if self.selected_years:
+            result['year_selection'] = {'start_year': self.selected_years[0], 'end_year': self.selected_years[1],
+                                        'method': 'latest_in_each_year'}
         if self.profile_id is not None:
             result["profile_id"] = self.profile_id
+        items = [comparison.to_dict() for comparison in self.comparisons]
+        citation_ids = list(available_citation_ids)
+        for comparison, item in zip(self.comparisons, items):
+            citation_ids.append(item.get('comparison_citation_id', f"REC:derived:{comparison.latest.report_id}:{comparison.code}"))
+            trend = item.get('trend')
+            if trend:
+                citation_ids.append(trend['citation_id'])
+                citation_ids.extend(f"REC:{point['report_id']}:{comparison.code}" for point in trend['annual_points'])
         result.update(
             {
                 "report_count": self.report_count,
                 "comparison_count": len(self.comparisons),
-                "comparisons": [
-                    comparison.to_dict()
-                    for comparison in self.comparisons
-                ],
-                "available_citation_ids": available_citation_ids,
+                "comparisons": items,
+                "available_citation_ids": list(dict.fromkeys(citation_ids)),
                 "recommended_citation_ids": available_citation_ids[:2],
                 "issues": [issue.to_dict() for issue in self.issues],
             }

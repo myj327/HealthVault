@@ -15,6 +15,7 @@ from healthvault.web.model_runtime import ModelServiceError, run_model_task
 
 DATE_PATTERN = re.compile(r"(?<!\d)(20\d{2})[年./-](\d{1,2})[月./-](\d{1,2})日?(?!\d)")
 NUMBER_PATTERN = re.compile(r"(?<![\d.])\d+(?:\.\d+)?(?![\d.])")
+SINGLE_BOUND_PATTERN = re.compile(r"(?P<operator><=|>=|[<>≤≥])\s*(?P<bound>\d+(?:\.\d+)?)")
 SIZE_PATTERN = re.compile(
     r"(?P<dimensions>\d+(?:\.\d+)?(?:\s*[×xX*]\s*\d+(?:\.\d+)?){0,2})"
     r"\s*(?P<unit>mm|cm|毫米|厘米)",
@@ -40,7 +41,7 @@ def extract_with_model(report_text: str, *, profile_id: str = "web") -> dict[str
         "facility(原文出现的机构或null), report_id(原文出现的编号或null), "
         "indicators数组和 imaging_findings数组。"
         "indicators每项含 code,value,unit,reference_lower,reference_upper,quote。"
-        "code只能来自提供的目录；value和上下限用原文数值，不做单位换算；缺参考范围则上下限都为null。"
+        "code只能来自提供的目录；value和上下限用原文数值，不做单位换算；单边参考值缺少的一侧为null，不补零；缺参考范围则上下限都为null。"
         "quote必须是报告中的连续原文片段，包含项目及其结果。"
         "imaging_findings每项含 finding_type(nodule或fibroid),body_site,laterality(left/right/unspecified),"
         "location,dimensions(最多三个原文数值),unit(mm或cm),quote。"
@@ -107,7 +108,30 @@ def _indicator_label(quote: str) -> tuple[str, int] | None:
     return longest[0][0], max(item[2] for item in longest)
 
 
-def _row_values(quote: str, unit: str) -> tuple[str, float, float, float] | None:
+def _single_bound_row(quote: str, unit: str):
+    if not unit:
+        return None
+    unit_match = re.search(re.escape(unit), quote, re.I)
+    if unit_match is None:
+        return None
+    fragment = quote[:unit_match.end()]
+    label = _indicator_label(fragment)
+    if label is None:
+        return None
+    values = re.fullmatch(
+        r"[\s|:：=]*(\d+(?:\.\d+)?)[\s↑↓*|]*(?:(?:适宜|参考(?:范围|值)?)\s*[:：]?\s*)?"
+        + SINGLE_BOUND_PATTERN.pattern + r"\s*", fragment[label[1]:unit_match.start()])
+    if values is None:
+        return None
+    operator, bound = values['operator'], float(values['bound'])
+    lower, upper = (None, bound) if operator.startswith('<') or operator == '≤' else (bound, None)
+    return label[0], float(values[1]), lower, upper, operator, fragment
+
+
+def _row_values(quote: str, unit: str) -> tuple[str, float, float | None, float | None] | None:
+    single = _single_bound_row(quote, unit)
+    if single:
+        return single[:4]
     label = _indicator_label(quote)
     if label is None or not unit:
         return None
@@ -126,6 +150,14 @@ def _rule_based_indicators(report_text: str) -> list[dict[str, Any]]:
     candidates = []
     lines = report_text.splitlines()
     for index, line in enumerate(lines):
+        # Read only the result and its reference cell, not a neighbouring advice panel.
+        single = next(((unit, row) for unit in sorted({spec.unit for spec in INDICATOR_CATALOG.values()} | set(UNIT_ALIASES), key=len, reverse=True)
+                       if (row := _single_bound_row(line, unit))), None)
+        if single:
+            unit, (code, value, lower, upper, _, quote) = single
+            candidates.append(dict(code=code, value=value, unit=unit,
+                                   reference_lower=lower, reference_upper=upper, quote=quote))
+            continue
         label = _indicator_label(line)
         if label is None:
             continue
@@ -185,17 +217,25 @@ def _normalize_indicator(candidate: Any, report_text: str, source_id: str) -> tu
     unit = UNIT_ALIASES.get(raw_unit, raw_unit)
     if value is None or not _number_in_quote(value, quote) or unit != spec.unit or not _unit_in_quote(raw_unit, quote):
         return None, _warning("unverified_indicator", f"{spec.display_name} 的数值或单位无法与原文核对。", quote)
-    if lower is None or upper is None:
+    if lower is None and upper is None:
         return None, _warning("missing_reference_range", f"{spec.display_name} 缺少报告参考范围，暂不进入趋势。", quote)
-    if lower > upper or not _number_in_quote(lower, quote) or not _number_in_quote(upper, quote):
+    if (lower is not None and upper is not None and lower > upper
+            or any(not _number_in_quote(bound, quote) for bound in (lower, upper) if bound is not None)):
         return None, _warning("unverified_reference_range", f"{spec.display_name} 的参考范围无法与原文核对。", quote)
     row = _row_values(quote, raw_unit)
-    if row is None or row[0] != code or any(abs(a - b) > 1e-6 for a, b in zip(row[1:], (value, lower, upper))):
+    if row is None or row[0] != code or any(a != b if a is None or b is None else abs(a - b) > 1e-6 for a, b in zip(row[1:], (value, lower, upper))):
         return None, _warning("ambiguous_indicator_columns", f"{spec.display_name} 的项目名称、结果列或参考范围存在冲突，请人工核对。", quote)
-    flag = "low" if value < lower else "high" if value > upper else "normal"
+    single = _single_bound_row(quote, raw_unit)
+    reference = {"lower": lower, "upper": upper}
+    if single:
+        quote = single[5]
+        match = SINGLE_BOUND_PATTERN.search(quote)
+        reference.update(text=match.group(), operator=single[4])
+    flag = ("low" if lower is not None and (value < lower or value == lower and reference.get('operator') == '>')
+            else "high" if upper is not None and (value > upper or value == upper and reference.get('operator') == '<') else "normal")
     return {
         "code": code, "display_name": spec.display_name, "value": value, "unit": unit,
-        "reference_range": {"lower": lower, "upper": upper}, "flag": flag,
+        "reference_range": reference, "flag": flag,
         "evidence": {"source_id": source_id, "line_start": line_number, "line_end": line_number + quote.count("\n"), "quote": quote},
     }, None
 
@@ -315,7 +355,7 @@ def _indicator_scope(item: dict[str, Any], report_text: str, report_date: str | 
             if heading:
                 scope = "current" if re.fullmatch(r"本次|此次|当前|current", heading[1], re.I) else "historical"
                 break
-            if re.match(r"\s*(?:报告日期|检查日期|采样日期)\s*[:：]", previous):
+            if re.match(r"\s*(?:报告日期|检查日期|检测日期|采样日期)\s*[:：]", previous):
                 break
     source_date = _date_in_text(lines[index])
     if source_date and report_date and source_date != report_date:
@@ -333,8 +373,8 @@ def build_natural_preview(source_id: str, report_text: str, model_payload: dict[
     report_date = _date_in_text(date_quote[1]) if date_quote else None
     requested_date = str(model_payload.get("report_date") or "")
     if not model_payload.get("date_quote") and not requested_date:
-        dated_lines = [line for line in report_text.splitlines() if re.match(r"\s*(报告日期|检查日期|采样日期|report[_ ]date|examination date)\s*[:：]", line, re.I) and _date_in_text(line)]
-        explicit_dates = {_date_in_text(line) for line in dated_lines}
+        dated = re.finditer(r"(?:报告日期|检查日期|检测日期|采样日期|report[_ ]date|examination date)\s*[:：]\s*(20\d{2}[年./-]\d{1,2}[月./-]\d{1,2}日?)(?!\d)", report_text, re.I)
+        explicit_dates = {_date_in_text(match[1]) for match in dated} - {None}
         if len(explicit_dates) == 1:
             report_date = requested_date = explicit_dates.pop()
     if not report_date or requested_date != report_date:
@@ -363,7 +403,7 @@ def build_natural_preview(source_id: str, report_text: str, model_payload: dict[
             else:
                 indicator_groups.setdefault(item["code"], []).append(item)
     for code, group in indicator_groups.items():
-        values = {(item["value"], item["unit"], item["reference_range"]["lower"], item["reference_range"]["upper"]) for item in group}
+        values = {(item["value"], item["unit"], item["reference_range"]["lower"], item["reference_range"]["upper"], item["reference_range"].get('operator')) for item in group}
         if len(values) != 1:
             issues.append({"code": "conflicting_indicator_results", "message": f"{group[0]['display_name']} 有多个不同结果或参考范围，请区分本次与既往后重新核对。"})
             continue

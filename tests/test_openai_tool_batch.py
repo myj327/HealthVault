@@ -89,9 +89,9 @@ class OpenAIToolBatchTests(unittest.IsolatedAsyncioTestCase):
             await asyncio.wait_for(all_started.wait(), timeout=1)
             return name + " completed"
 
-        names = ["read_file", "list_files", "grep_search"]
+        names = ["safe_one", "safe_two", "safe_three"]
         agent, requests = make_agent(names, execute, permission_mode="bypassPermissions")
-        with quiet_agent_ui():
+        with quiet_agent_ui(), patch.object(agent_module, "CONCURRENCY_SAFE_TOOLS", set(names)):
             await agent.run_once("Synthetic parallel question.")
         self.assertCountEqual(names, started)
         self.assertEqual(3, len(self.assert_paired(requests[1]["messages"])))
@@ -116,7 +116,7 @@ class OpenAIToolBatchTests(unittest.IsolatedAsyncioTestCase):
                 confirm.assert_awaited_once()
 
     async def test_serial_and_concurrent_failure_do_not_drop_sibling_results(self):
-        for names in (["synthetic_probe"] * 3, ["read_file", "list_files", "grep_search"]):
+        for names in (["synthetic_probe"] * 3, ["safe_one", "safe_two", "safe_three"]):
             with self.subTest(names=names):
                 started = []
 
@@ -127,7 +127,7 @@ class OpenAIToolBatchTests(unittest.IsolatedAsyncioTestCase):
                     return f"result-{inp['marker']}"
 
                 agent, requests = make_agent(names, execute, permission_mode="bypassPermissions")
-                with quiet_agent_ui():
+                with quiet_agent_ui(), patch.object(agent_module, "CONCURRENCY_SAFE_TOOLS", {"safe_one", "safe_two", "safe_three"}):
                     await agent.run_once("Synthetic failure question.")
                 self.assertCountEqual([0, 1, 2], started)
                 replies = self.assert_paired(requests[1]["messages"])
@@ -137,7 +137,7 @@ class OpenAIToolBatchTests(unittest.IsolatedAsyncioTestCase):
                 self.assertEqual("result-2", replies["call-2"])
 
     async def test_abort_during_serial_and_parallel_execution_keeps_completed_results(self):
-        for names in (["synthetic_probe"] * 3, ["read_file", "list_files", "grep_search"]):
+        for names in (["synthetic_probe"] * 3, ["safe_one", "safe_two", "safe_three"]):
             with self.subTest(names=names):
                 blocked = asyncio.Event()
                 started = []
@@ -156,7 +156,7 @@ class OpenAIToolBatchTests(unittest.IsolatedAsyncioTestCase):
                         raise
 
                 agent, requests = make_agent(names, execute, permission_mode="bypassPermissions")
-                with quiet_agent_ui():
+                with quiet_agent_ui(), patch.object(agent_module, "CONCURRENCY_SAFE_TOOLS", {"safe_one", "safe_two", "safe_three"}):
                     running = asyncio.create_task(agent.run_once("Synthetic interrupted question."))
                     await asyncio.wait_for(blocked.wait(), timeout=1)
                     agent.abort()
@@ -190,23 +190,19 @@ class OpenAIToolBatchTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(3, len(self.assert_paired(agent._openai_messages)))
 
     async def test_context_clear_stops_old_batch_without_orphan_replies(self):
-        executor = AsyncMock(return_value="must not execute in plan mode")
-        agent, requests = make_agent(["enter_plan_mode", "write_file"], executor,
-                                     permission_mode="bypassPermissions")
-        with quiet_agent_ui():
-            await agent.run_once("Synthetic plan mode change.")
-        executor.assert_not_awaited()
-        self.assertIn("permissions changed", self.assert_paired(requests[1]["messages"])["call-1"])
-
         executor = AsyncMock(return_value="earlier result")
-        agent, requests = make_agent(["synthetic_probe", "exit_plan_mode", "synthetic_probe"], executor,
-                                     permission_mode="plan")
-        agent._plan_approval_fn = lambda _: {"choice": "clear-and-execute"}
+        agent, requests = make_agent(["synthetic_probe", "compact_context", "synthetic_probe"], executor)
+
+        async def compact(**_):
+            agent._openai_messages = [{"role": "system", "content": "Synthetic folded memory."}]
+            return True
+
+        agent._compact_conversation = AsyncMock(side_effect=compact)
         with quiet_agent_ui():
-            await agent.run_once("Synthetic approved plan.")
+            await agent.run_once("Synthetic context compaction.")
         self.assertEqual([0], [call.args[1]["marker"] for call in executor.await_args_list])
         self.assertEqual({}, self.assert_paired(requests[1]["messages"]))
-        self.assertTrue(any("Context was cleared" in (message.get("content") or "")
+        self.assertTrue(any("Context compacted" in (message.get("content") or "")
                             for message in requests[1]["messages"]))
         self.assertFalse(agent._context_cleared)
 

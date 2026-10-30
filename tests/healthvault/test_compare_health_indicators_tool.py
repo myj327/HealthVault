@@ -72,14 +72,14 @@ class CompareHealthIndicatorsToolTests(unittest.IsolatedAsyncioTestCase):
     def tearDown(self):
         self.temp_dir.cleanup()
 
-    def test_tool_definition_only_accepts_profile_id(self):
+    def test_tool_definition_accepts_year_pair_and_indicator_filter(self):
         self.assertEqual(
             "compare_health_indicators",
             COMPARE_HEALTH_INDICATORS_TOOL["name"],
         )
         schema = COMPARE_HEALTH_INDICATORS_TOOL["input_schema"]
         self.assertEqual("object", schema["type"])
-        self.assertEqual({"profile_id"}, set(schema["properties"]))
+        self.assertEqual({"profile_id", "start_year", "end_year", "indicator_code"}, set(schema["properties"]))
         self.assertEqual(["profile_id"], schema["required"])
         self.assertEqual("string", schema["properties"]["profile_id"]["type"])
         for forbidden in (
@@ -145,7 +145,7 @@ class CompareHealthIndicatorsToolTests(unittest.IsolatedAsyncioTestCase):
         agent = make_agent(adapter)
 
         with patch(
-            "healthvault.adapters.bearcode.tools.execute_tool",
+            "agents.agent.execute_tool",
             new=AsyncMock(return_value="unexpected native result"),
         ) as native_executor:
             result_text = await agent._execute_tool_call(
@@ -155,7 +155,7 @@ class CompareHealthIndicatorsToolTests(unittest.IsolatedAsyncioTestCase):
 
         result = json.loads(result_text)
         tool_names = [definition["name"] for definition in agent.tools]
-        self.assertIn("read_file", tool_names)
+        self.assertNotIn("read_file", tool_names)
         self.assertIn("preview_health_report", tool_names)
         self.assertIn("confirm_health_records", tool_names)
         self.assertIn("query_health_timeline", tool_names)

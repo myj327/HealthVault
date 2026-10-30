@@ -107,7 +107,7 @@ class PreviewHealthReportToolTests(unittest.IsolatedAsyncioTestCase):
         agent = make_agent(adapter)
 
         with patch(
-            "healthvault.adapters.bearcode.tools.execute_tool",
+            "agents.agent.execute_tool",
             new=AsyncMock(return_value="unexpected native result"),
         ) as native_executor:
             result_text = await agent._execute_tool_call(
@@ -116,7 +116,7 @@ class PreviewHealthReportToolTests(unittest.IsolatedAsyncioTestCase):
             )
 
         tool_names = {definition["name"] for definition in agent.tools}
-        self.assertIn("read_file", tool_names)
+        self.assertNotIn("read_file", tool_names)
         self.assertIn("preview_health_report", tool_names)
         self.assertEqual(
             build_report_preview(

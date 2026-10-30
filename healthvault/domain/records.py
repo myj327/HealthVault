@@ -13,14 +13,21 @@ class ConfirmedIndicator:
     display_name: str
     value: float
     unit: str
-    reference_lower: float
-    reference_upper: float
+    reference_lower: float | None
+    reference_upper: float | None
     flag: str
     evidence_source_id: str
     evidence_line_start: int
     evidence_line_end: int
     evidence_quote: str
     evidence_locator: dict[str, Any] | None = None
+
+    def reference_range_dict(self) -> dict[str, Any]:
+        result = {"lower": self.reference_lower, "upper": self.reference_upper}
+        if self.reference_lower is None or self.reference_upper is None:
+            field = (self.evidence_locator or {}).get("fields", {}).get("reference_range", {})
+            result.update({key: field[key] for key in ("text", "operator") if key in field})
+        return result
 
 
 @dataclass(frozen=True)
@@ -177,10 +184,7 @@ class TimelineReport:
                     "display_name": indicator.display_name,
                     "value": indicator.value,
                     "unit": indicator.unit,
-                    "reference_range": {
-                        "lower": indicator.reference_lower,
-                        "upper": indicator.reference_upper,
-                    },
+                    "reference_range": indicator.reference_range_dict(),
                     "flag": indicator.flag,
                     "evidence": {
                         "source_id": indicator.evidence_source_id,
@@ -252,6 +256,7 @@ class TimelineQueryResult:
     profile_id: str | None = None
     clinical_item_count: int = 0
     system_inference_count: int = 0
+    indicator_code: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         available_citation_ids = [
@@ -272,6 +277,8 @@ class TimelineQueryResult:
         }
         if self.profile_id is not None:
             result["profile_id"] = self.profile_id
+        if self.indicator_code is not None:
+            result['indicator_code'] = self.indicator_code
         return result
 
 

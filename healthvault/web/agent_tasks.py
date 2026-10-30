@@ -10,12 +10,29 @@ from contextlib import closing
 from pathlib import Path
 from typing import Any
 
+from healthvault.adapters.bearcode.final_response_normalizer import parse_final_response
+
 TASK_ID_PATTERN = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}\Z")
 MAX_SESSION_BYTES = 750_000
 
 
 class AgentTaskConflict(RuntimeError):
     pass
+
+
+def present_agent_reply(text: str) -> tuple[str, dict[str, Any] | None]:
+    """Render internal terminal metadata without changing the runtime transcript."""
+    final = parse_final_response(text)
+    messages = {
+        "insufficient_evidence": "本次检索没有取得足够资料，暂时无法给出有依据的回答。可以补充相关资料后继续。",
+        "rejected": "这次请求未能完成。你可以让我查询已确认的档案、解释有来源支持的健康知识，或整理就诊准备。",
+        "ok": "本次没有生成可阅读的完整回答，请重新尝试。",
+    }
+    if (isinstance(final, dict) and set(final) == {"final_status", "citations", "refusal"}
+            and isinstance(final["final_status"], str) and final["final_status"] in messages
+            and isinstance(final["citations"], list) and type(final["refusal"]) is bool):
+        return messages[final["final_status"]], final
+    return text, None
 
 
 def conversation_title(dialogue: list[dict[str, str]]) -> str:
@@ -99,7 +116,7 @@ class WebAgentTaskStore:
         expected_version: int,
         messages: list[dict[str, Any]],
         folded: list[dict[str, Any]],
-        dialogue: list[dict[str, str]],
+        dialogue: list[dict[str, Any]],
     ) -> dict[str, Any]:
         self._check_task_id(task_id)
         if type(expected_version) is not int or expected_version < 0:
@@ -143,7 +160,8 @@ def public_task(saved: dict[str, Any] | None, task_id: str, checkpoint: Any = No
     return {
         "task_id": task_id,
         "version": saved["version"] if saved else 0,
-        "dialogue": saved["dialogue"] if saved else [],
+        "dialogue": [{**item, "text": present_agent_reply(item["text"])[0]} if item["role"] == "assistant" else item
+                     for item in saved["dialogue"]] if saved else [],
         "title": conversation_title(saved["dialogue"]) if saved else "新对话",
         "fold_count": len(saved["folded"]) if saved else 0,
         "updated_at": saved["updated_at"] if saved else None,

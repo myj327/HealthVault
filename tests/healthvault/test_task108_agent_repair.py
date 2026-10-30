@@ -160,8 +160,8 @@ class AgentRepairTests(unittest.IsolatedAsyncioTestCase):
         runtime = build_healthvault_agent_runtime(HealthVaultAgentRuntimeConfig(
             context=RuntimeContext('alice', 'req'), database_path=self.root / 'records.sqlite3',
             model_config=self.model, answer_verifier=verifier, answer_repairer=repairer))
-        self.script(runtime, [{'role': 'assistant', 'content': SHORT}])
-        with self.assertRaises(HealthVaultAgentRuntimeError):
+        self.script(runtime, [{'role': 'assistant', 'content': SHORT}] * 2)
+        with self.assertRaisesRegex(RuntimeError, 'completion conditions'):
             await runtime.run('你好')
         verifier.assert_not_awaited()
         repairer.assert_not_awaited()

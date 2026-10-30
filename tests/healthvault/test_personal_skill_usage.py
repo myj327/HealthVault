@@ -42,6 +42,10 @@ class PersonalSkillUsageTests(unittest.IsolatedAsyncioTestCase):
     def tearDown(self):
         self.temp.cleanup()
 
+    async def test_default_template_is_not_a_personal_update(self):
+        self.assertFalse(self.manager.usage('new-owner')['has_personal_update'])
+        self.assertTrue(self.manager.usage('alice')['has_personal_update'])
+
     async def trace(self, task, *, passed=True, failure=None, result_status="succeeded", digest=None):
         async def tool(*args):
             return json.dumps({"status": "ok", "failure_code": failure})

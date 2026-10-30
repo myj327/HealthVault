@@ -172,7 +172,9 @@ class PatchGenerator:
                 + ", ".join(ALLOWED_TOOL_PATH_VALUES)
                 + ". Never put result-status suffixes, natural-language steps, or nonexistent "
                 "tool names in tool_path; use observed_transitions only as evidence when writing "
-                "applicability or stop conditions."
+                "applicability or stop conditions. For an add at the end of a section, "
+                "target_paragraph must be exactly __section_end__. Otherwise copy the exact "
+                "existing paragraph from that section of active_skill; never invent an anchor."
             ),
         }, ensure_ascii=False, sort_keys=True)
         self.call_count += 1

@@ -397,6 +397,19 @@ def test_cli_rejects_output_alias_of_active_before_any_write(tmp_path: Path) -> 
 
 
 class SkillPatchTests(unittest.TestCase):
+    def test_generator_can_append_using_documented_section_anchor(self) -> None:
+        def generate(prompt, schema):
+            self.assertIn(SECTION_END, json.loads(prompt)['rules'])
+            self.assertIn(SECTION_END, schema['properties']['patches']['items']['properties']['target_paragraph']['description'])
+            return {'patches': [_patch(target_paragraph=SECTION_END)]}
+
+        result = asyncio.run(build_patch_preview(
+            [_card()], active_content=ACTIVE, generator=PatchGenerator(generate),
+            verifier=VERIFIER, regression_check=lambda _: (True, ()),
+        ))
+        self.assertEqual(result.status, 'pending_manual_review')
+        self.assertIn('1a. For a timeline workflow', result.candidate_content)
+
     def test_schema_and_deterministic_merge_support_add_replace_delete(self) -> None:
         test_schema_and_deterministic_merge_support_add_replace_delete()
 

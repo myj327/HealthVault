@@ -133,7 +133,8 @@ class VisitBriefResult:
                 "knowledge_citations": [
                     item.to_dict() for item in self.knowledge_citations
                 ],
-                "available_citation_ids": available_citation_ids,
+                "available_citation_ids": available_citation_ids + [
+                    f"REC:derived:{item.latest['report_id']}:{item.code}" for item in self.indicators if item.comparison],
                 "recommended_citation_ids": available_citation_ids[:1],
                 "brief_markdown": self.brief_markdown,
                 "issues": [item.to_dict() for item in self.issues],

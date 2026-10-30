@@ -8,6 +8,14 @@ from healthvault.adapters.bearcode.final_response_normalizer import FinalRespons
 
 WORKFLOW_PROTOCOL = 'healthvault-workflow-v2'
 MAX_KNOWLEDGE_QUERIES = 3
+FINAL_OUTPUT_GUIDANCE = (
+    '有据事实用自然语言逐项回答，每个事实后写 [实际 citation_id]，例如 [REC:report:indicator]；'
+    'ID 必须来自本次工具，保留完整 ID 和方括号，裸 ID 或反引号不算引用，示例 ID 不能直接使用。'
+    '工具返回空或资料不足时，终答只输出 {"final_status":"insufficient_evidence","citations":[],"refusal":true}。'
+    '越权、未批准写入或其他不支持请求被拒绝时，终答只输出 {"final_status":"rejected","citations":[],"refusal":true}。'
+    '这两种终态必须是原始 JSON，不加代码围栏、解释或其他字段；不得编造来源。'
+    '可回答的问题仍须先执行必要工具，不能用拒答代替查证。'
+)
 REQUIRED_TOOLS = {
     'record_timeline': 'query_health_timeline',
     'indicator_comparison': 'compare_health_indicators',
@@ -27,8 +35,8 @@ def knowledge_search_issue(query: object, previous_queries: Collection[str], pre
         return 'workflow_search_duplicate_query'
     if len(previous_queries) >= MAX_KNOWLEDGE_QUERIES:
         return 'workflow_search_budget_exceeded'
-    if previous_queries and previous_status != 'empty':
-        return 'workflow_search_after_nonempty_result'
+    if previous_queries and previous_status not in {'empty', 'ok', 'partial'}:
+        return 'workflow_search_after_failed_result'
     return None
 
 
@@ -61,14 +69,17 @@ def completion_feedback(text: str, calls: list[dict], intent: str, *, terminal: 
         if text.lstrip().startswith(('{', '[')):
             return '原始终答必须是完整合法 JSON，不能追加说明或省略字段。'
         if not calls:
-            return None
-        citations = re.findall(r'\[((?:HVK|HVW|REC):[^\s\[\]]+)\]', text)
-        if not citations or not set(citations).issubset(available):
-            return '回答必须引用本次工具提供且与问题相关的实际来源。'
+            return ('尚无本次工具证据；可回答的请求先调用必要工具。若请求越权或不支持，终答只输出 '
+                    '{"final_status":"rejected","citations":[],"refusal":true}，不要附加说明。')
         actual = FinalResponseNormalizer().normalize(
             {'final_status': 'ok', 'citations': sorted(available), 'refusal': False}, calls)
         if actual.final_status != 'ok':
-            return '工具没有有效证据，请使用证据不足终态，不能输出肯定答案。'
+            return ('工具结果不能支持肯定答案；终答只输出原始 JSON，不附加说明：'
+                    + json.dumps({'final_status': actual.final_status, 'citations': [], 'refusal': True}))
+        citations = re.findall(r'\[((?:HVK|HVW|REC):[^\s\[\]]+)\]', text)
+        if not citations or not set(citations).issubset(available):
+            return ('每个事实必须使用本次工具的实际来源，格式为 [完整 citation_id]；'
+                    '裸 ID 或反引号不算引用，不得使用不存在的 ID。')
         return None
     if not isinstance(final, dict):
         return '原始终答必须是 JSON 对象。'

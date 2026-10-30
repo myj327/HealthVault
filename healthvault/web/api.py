@@ -45,6 +45,7 @@ from healthvault.web.agent_tasks import (
     AgentTaskConflict,
     WebAgentTaskStore,
     public_task,
+    present_agent_reply,
 )
 from healthvault.web.auth import AuthSession, AuthStore, DuplicateUsername, SESSION_SECONDS
 from healthvault.web.answer_history import WebAnswerHistory
@@ -263,7 +264,7 @@ def create_app(
     model_answer_verifier: Callable[..., Any] | None = None,
     model_query_rewriter: Callable[..., Any] | None = None,
     model_question_planner: Callable[..., Any] | None = None,
-    auto_plan_suggestions: bool = True,
+    auto_plan_suggestions: bool = False,
     answer_repair_enabled: bool = True,
 ) -> FastAPI:
     """Profile-owned durable report intake; local development server."""
@@ -454,15 +455,13 @@ def create_app(
         personal_service = app.state.personal_skills.service(profile_id)
 
         async def verify_agent_answer(text: str, sources: list[dict]) -> dict:
-            from healthvault.web.answer_validation import verify_answer
+            from healthvault.web.answer_validation import verify_grounded_answer
             cited = re.findall(r'\[((?:HVK|HVW|REC):[^\]]+)\]', text)
             available = {source['citation_id'] for source in sources}
             if not cited or not set(cited).issubset(available):
                 return {'passed': False, 'kind': 'missing_current_tool_evidence'}
-            return await asyncio.to_thread(verify_answer, question_plan['original_question'], text, sources,
-                                           query=app.state.model_answer_verifier, profile_id=profile_id,
-                                           resolved_question=question_plan['resolved_question'], audit_coverage=True,
-                                           required_points=question_plan['points'])
+            return await asyncio.to_thread(verify_grounded_answer, question_plan['resolved_question'], text, sources,
+                                           query=app.state.model_answer_verifier, profile_id=profile_id)
 
         async def repair_agent_answer(_text: str, sources: list[dict], feedback: dict) -> str:
             evidence = {'sources': sources, 'question_plan': question_plan, 'answer_repair': feedback}
@@ -975,10 +974,11 @@ def create_app(
                     502, f"Agent 调用未完成：{type(exc).__name__}。请稍后重试。"
                 ) from exc
             messages, folded = snapshot_web_agent(runtime)
+            display_answer, final_result = present_agent_reply(reply.text)
             dialogue = list(saved["dialogue"] if saved else [])
             dialogue.extend([
                 {"role": "user", "text": body.prompt.strip()},
-                {"role": "assistant", "text": reply.text},
+                {"role": "assistant", "text": display_answer, "sources": list(getattr(reply, 'sources', ()))},
             ])
             try:
                 updated = app.state.agent_tasks.save(
@@ -1006,7 +1006,8 @@ def create_app(
                     )
             return {
                 **public_task(updated, task_id, task_checkpoint(profile_id, task_id)),
-                "answer": reply.text,
+                "answer": display_answer,
+                "final_result": final_result,
                 "memory_status": reply.task_memory_status,
                 "tool_names": tool_names,
                 "project_skills": reply.project_skills,
@@ -1313,8 +1314,13 @@ def create_app(
             return Response(image.tobytes('png'), media_type='image/png', headers={'Cache-Control': 'no-store'})
 
     @app.get("/api/profiles/{profile_id}/comparisons")
-    def comparisons(profile_id: str) -> dict[str, Any]:
-        return app.state.controller.comparisons(_valid_profile(profile_id))
+    def comparisons(profile_id: str, start_year: int | None = None, end_year: int | None = None,
+                    indicator_code: str | None = None) -> dict[str, Any]:
+        result = app.state.controller.comparisons(_valid_profile(profile_id), start_year=start_year,
+                                                  end_year=end_year, indicator_code=indicator_code)
+        if result['status'] == 'invalid_request':
+            raise HTTPException(422, '请选择两个不同的年份，起始年份应早于结束年份。')
+        return result
 
     @app.get("/api/knowledge")
     def knowledge(query: str) -> dict[str, Any]:
@@ -1413,11 +1419,10 @@ def create_app(
             used_sources = [source for source in sources if source["citation_id"] in cited]
             verification = None
             if app.state.model_answerer is None or app.state.model_answer_verifier is not None:
-                from healthvault.web.answer_validation import verify_answer
+                from healthvault.web.answer_validation import verify_grounded_answer
                 try:
-                    verification = verify_answer(question, generated, sources, query=app.state.model_answer_verifier,
-                                                 profile_id=profile_id, resolved_question=plan['resolved_question'],
-                                                 audit_coverage=True, required_points=plan['points'])
+                    verification = verify_grounded_answer(plan['resolved_question'], generated, sources,
+                                                          query=app.state.model_answer_verifier, profile_id=profile_id)
                     if (not verification['passed'] and mode == 'knowledge' and state['model_attempts'] < 2
                             and not state['recovery_used']
                             and verification.get('missing_evidence_points')):
@@ -1453,6 +1458,8 @@ def create_app(
                         raise HTTPException(502, '回答包含未能核验的结论，请重试。')
                     return {'status':'insufficient_evidence','question':question,'answer':'现有证据无法支持对这个具体问题的回答，请补充相关报告或咨询医生。','sources':[], 'verification': verification, 'question_plan': plan, 'measurement': measurement}
                 generated = verification['answer']
+                cited = re.findall(r"\[((?:HVK|HVW|REC):[^\]]+)\]", generated)
+                used_sources = [source for source in sources if source['citation_id'] in cited]
             break
         app.state.answer_history.save(profile_id, mode, question, generated, used_sources,
                                       resolved_question=evidence.get('question_context', {}).get('resolved_question', question))
@@ -1530,7 +1537,17 @@ def create_app(
                                  profile_id=profile_id, knowledge_only=False)
         if prepared.status == 'needs_clarification':
             return {'status':'insufficient_evidence','question':question,'answer':'请明确你说的是哪个指标或检查，再根据本人的已确认记录回答。','sources':[]}
-        evidence, sources = visit_evidence(visit_brief_tool(profile_id))
+        brief = visit_brief_tool(profile_id)
+        evidence, sources = visit_evidence(brief)
+        from healthvault.application.query_rewrite import _subjects
+        from healthvault.domain.reports import INDICATOR_CATALOG
+        requested = {code for code, _ in _subjects(prepared.resolved_question)}
+        present = {item['code'] for item in brief.get('indicators', [])}
+        if (brief.get('status') in {'ok', 'ready', 'empty'} and len(requested) == 1
+                and requested <= INDICATOR_CATALOG.keys() and not requested & present):
+            name = INDICATOR_CATALOG[next(iter(requested))].display_name
+            return {'status': 'insufficient_evidence', 'question': question,
+                    'answer': f'当前已确认档案没有{name}记录，无法给出该指标的数值或变化。', 'sources': []}
         if prepared.resolved_question != question:
             evidence['question_context'] = {'original_question':question,'resolved_question':prepared.resolved_question}
         if not any(source["kind"] == "record" for source in sources):
