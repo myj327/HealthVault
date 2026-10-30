@@ -1,4 +1,4 @@
-# Optional local-only dense retrieval dependencies for TASK-040.
-# Install/download only after the explicit network Gate is approved.
-FlagEmbedding>=1.3.0
+# Optional local-only BGE-M3 dense encoder and FAISS retrieval.
+torch>=2.6.0
+transformers>=4.44.2
 faiss-cpu>=1.8.0

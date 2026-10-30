@@ -4,9 +4,11 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
+from threading import RLock
 from typing import Any, Mapping, Sequence
 
 from healthvault.domain.knowledge import KnowledgeHit
@@ -22,6 +24,7 @@ from healthvault.repositories.dense_retrieval import (
 
 RRF_K = 60
 INDEX_VERSION = "hybrid-r1"
+_MODEL_LOAD_LOCK = RLock()
 
 
 @dataclass(frozen=True)
@@ -67,6 +70,38 @@ def _chunk_ids_sha256(chunk_ids: Sequence[str]) -> str:
 def _local_embedder(model_path: str, model_name: str, model_sha256: str):
     from healthvault.infrastructure.bge_faiss import BGEM3Embedder
     return BGEM3Embedder(model_path, model_name=model_name)
+
+
+class _LazyLocalEmbedder:
+    """Load shared model weights only when a search actually needs a vector."""
+
+    def __init__(self, path: Path, manifest: VectorIndexManifest) -> None:
+        self._path = path.resolve()
+        self._manifest = manifest
+        self._loaded: Embedder | None = None
+
+    @property
+    def model_name(self) -> str:
+        return self._manifest.model_name
+
+    @property
+    def dimension(self) -> int:
+        return self._manifest.dimension
+
+    def embed(self, texts: Sequence[str]) -> tuple[tuple[float, ...], ...]:
+        if self._loaded is None:
+            # lru_cache alone may initialize twice on concurrent first requests.
+            with _MODEL_LOAD_LOCK:
+                if self._loaded is None:
+                    from healthvault.rag.vector_cache import model_fingerprint
+                    fingerprint = model_fingerprint(self._path)
+                    if self._manifest.model_sha256 and fingerprint != self._manifest.model_sha256:
+                        raise DenseRetrievalError("dense_model_checksum_mismatch")
+                    loaded = _local_embedder(str(self._path), self.model_name, fingerprint)
+                    if loaded.dimension != self.dimension:
+                        raise DenseRetrievalError("dense_index_dimension_mismatch")
+                    self._loaded = loaded
+        return self._loaded.embed(texts)
 
 
 def rrf_fuse(
@@ -130,19 +165,12 @@ class HybridHealthKnowledgeRepository:
             ids = tuple(json.loads((directory / "chunk_ids.json").read_text(encoding="utf-8")))
             if (manifest.index_version != INDEX_VERSION or manifest.corpus_sha256 != _sha256_file(Path(artifact_path)) or manifest.corpus_version != lexical.index_metadata["corpus_version"] or manifest.model_name != model_name or manifest.chunk_ids_sha256 != _chunk_ids_sha256(ids)):
                 return cls(lexical, fallback_reason="dense_index_manifest_mismatch")
-            if model_path is None:
+            if model_path is None or not Path(model_path).is_dir():
                 return cls(lexical, fallback_reason="dense_model_missing")
             if manifest.index_sha256 and manifest.index_sha256 != _sha256_file(directory / "index.faiss"):
                 return cls(lexical, fallback_reason="dense_index_checksum_mismatch")
-            if manifest.model_sha256:
-                from healthvault.rag.vector_cache import model_fingerprint
-                if manifest.model_sha256 != model_fingerprint(Path(model_path)):
-                    return cls(lexical, fallback_reason="dense_model_checksum_mismatch")
-            from healthvault.infrastructure.bge_faiss import BGEM3Embedder, FaissVectorIndex
-            embedder = (_local_embedder(str(Path(model_path).resolve()), model_name, manifest.model_sha256)
-                        if manifest.model_sha256 else BGEM3Embedder(model_path, model_name=model_name))
-            if embedder.dimension != manifest.dimension:
-                return cls(lexical, fallback_reason="dense_index_dimension_mismatch")
+            from healthvault.infrastructure.bge_faiss import FaissVectorIndex
+            embedder = _LazyLocalEmbedder(Path(model_path), manifest)
             index = FaissVectorIndex.load(directory / "index.faiss", directory / "chunk_ids.json", manifest.dimension)
             return cls(lexical, embedder=embedder, vector_index=index)
         except (OSError, UnicodeError, ValueError, json.JSONDecodeError, DenseRetrievalError) as exc:
@@ -150,6 +178,16 @@ class HybridHealthKnowledgeRepository:
 
     def close(self) -> None:
         self._lexical.close()
+
+    def warm_up(self) -> None:
+        """Prepare model weights without a query or any change to evidence."""
+        if not self._usable or self._embedder is None:
+            return
+        try:
+            self._embedder.embed(())
+        except (DenseRetrievalError, OSError, ValueError, RuntimeError):
+            # A real search retains the existing, explicit lexical fallback.
+            logging.getLogger(__name__).warning("Local dense retrieval warm-up unavailable; searches will report fallback reasons.")
 
     def search(self, query: str, limit: int) -> tuple[KnowledgeHit, ...]:
         lexical_hits = self._lexical.search(query, limit)
@@ -163,8 +201,12 @@ class HybridHealthKnowledgeRepository:
         try:
             vector = self._embedder.embed((query,))[0]
             dense = self._vector_index.search(vector, limit)
-        except (DenseRetrievalError, IndexError, ValueError):
-            self._fallback_reason = "dense_query_failed"
+        except (DenseRetrievalError, OSError, IndexError, ValueError, RuntimeError) as exc:
+            reason = str(exc).split(":", 1)[0]
+            self._fallback_reason = reason if reason in {
+                "dense_model_checksum_mismatch", "dense_index_dimension_mismatch",
+                "dense_dependency_missing", "dense_model_missing",
+            } else "dense_query_failed"
             self.index_metadata["dense_fallback_reason"] = self._fallback_reason
             self.last_search_metadata["dense_fallback_reason"] = self._fallback_reason
             return lexical_hits

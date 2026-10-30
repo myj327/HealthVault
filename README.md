@@ -129,6 +129,8 @@ $env:HEALTHVAULT_UI_DB_PATH = ".task_outputs/healthvault-demo/healthvault.sqlite
 
 数据库及对应账户、草稿、会话文件会自动初始化。上述路径将演示档案与默认开发数据库分开；再次使用同一路径启动，会保留此前的演示账户和数据。
 
+配置本地混合检索后，后端启动会在后台校验并预热 BGE-M3，登录、上传和档案查询无需等待模型加载。同一进程的知识问答和 Agent 共用模型；若启动后立即发起首次知识检索，仍需等待预热完成。保持后端进程运行可避免每次提问重新冷启动。
+
 另开终端检查 API 是否启动：
 
 ~~~powershell
@@ -162,7 +164,7 @@ npm run preview -- --port 5173 --strictPort
 
 构建产物位于 `web-ui/dist/`。启动预览前，先在开发服务器终端按 `Ctrl+C` 释放 5173 端口；后端继续运行。预览沿用已有 API 代理，固定 5173 也与当前允许的前端来源一致。
 
-这是本机展示部署。当前仓库的 Dockerfile 是 harness CLI 入口，Web 按以上步骤启动；公网托管还需配置 HTTPS、静态文件服务及同源 `/api` 反向代理。Vite preview 用于检查构建产物。
+这是本机展示部署，Web 按以上步骤启动；公网托管还需配置 HTTPS、静态文件服务及同源 `/api` 反向代理。Vite preview 用于检查构建产物。
 
 ### 6. 可选：启用本地混合检索
 

@@ -18,14 +18,21 @@ class BGEM3Embedder:
                 "dense_model_missing: configure a pre-downloaded local BGE-M3 directory"
             )
         try:
-            from FlagEmbedding import BGEM3FlagModel
+            import torch
+            from transformers import AutoModel, AutoTokenizer
         except ImportError as exc:
             raise DenseRetrievalError(
-                "dense_dependency_missing: install optional FlagEmbedding before enabling hybrid"
+                "dense_dependency_missing: install optional hybrid retrieval dependencies"
             ) from exc
-        self._model = BGEM3FlagModel(str(path), use_fp16=False)
+        # BGE-M3 dense retrieval uses the normalized CLS vector. Loading only
+        # that encoder avoids FlagEmbedding's training/reranking imports and its
+        # extra trial forward pass on every encode call.
+        self._tokenizer = AutoTokenizer.from_pretrained(str(path), local_files_only=True)
+        self._model = AutoModel.from_pretrained(str(path), local_files_only=True)
+        self._device = "cuda" if torch.cuda.is_available() else "cpu"
+        self._model.to(device=self._device, dtype=torch.float32).eval()
         self._model_name = model_name
-        self._dimension: int | None = None
+        self._dimension = int(self._model.config.hidden_size)
 
     @property
     def model_name(self) -> str:
@@ -33,17 +40,19 @@ class BGEM3Embedder:
 
     @property
     def dimension(self) -> int:
-        if self._dimension is None:
-            self._dimension = len(self.embed(("dimension probe",))[0])
         return self._dimension
 
     def embed(self, texts: Sequence[str]) -> tuple[tuple[float, ...], ...]:
         if not texts:
             return ()
-        encoded = self._model.encode(list(texts), return_dense=True)
-        vectors = encoded.get("dense_vecs") if isinstance(encoded, dict) else None
-        if vectors is None:
-            raise DenseRetrievalError("BGE-M3 did not return dense vectors")
+        import torch
+        vectors = []
+        with torch.inference_mode():
+            for start in range(0, len(texts), 32):
+                inputs = self._tokenizer(list(texts[start:start + 32]), padding=True,
+                                         truncation=True, max_length=512, return_tensors="pt")
+                output = self._model(**inputs.to(self._device)).last_hidden_state[:, 0]
+                vectors.extend(torch.nn.functional.normalize(output, p=2, dim=1).cpu().tolist())
         result = tuple(tuple(float(value) for value in vector) for vector in vectors)
         if not result or any(len(vector) != len(result[0]) for vector in result):
             raise DenseRetrievalError("BGE-M3 returned inconsistent vector dimensions")

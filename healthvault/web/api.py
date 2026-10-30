@@ -271,6 +271,10 @@ def create_app(
     @asynccontextmanager
     async def lifespan(application: FastAPI):
         application.state.source_watcher.start()
+        warm_up = getattr(getattr(application.state.controller, "knowledge_repository", None), "warm_up", None)
+        if warm_up is not None:
+            # Login, uploads and record queries must not wait for model weights.
+            threading.Thread(target=warm_up, name="healthvault-knowledge-warmup", daemon=True).start()
         try:
             yield
         finally:
