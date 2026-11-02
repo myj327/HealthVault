@@ -6,9 +6,10 @@ import hashlib
 import json
 import logging
 from dataclasses import dataclass
+from concurrent.futures import Future
 from functools import lru_cache
 from pathlib import Path
-from threading import RLock
+from threading import RLock, Thread
 from typing import Any, Mapping, Sequence
 
 from healthvault.domain.knowledge import KnowledgeHit
@@ -72,13 +73,36 @@ def _local_embedder(model_path: str, model_name: str, model_sha256: str):
     return BGEM3Embedder(model_path, model_name=model_name)
 
 
+@lru_cache(maxsize=2)
+def _model_load(model_path: str, model_name: str, expected_sha: str | None,
+                dimension: int, file_signature: tuple) -> Future:
+    """One shared background load per unchanged model, including failures."""
+    future = Future()
+
+    def load() -> None:
+        try:
+            from healthvault.rag.vector_cache import model_fingerprint
+            fingerprint = model_fingerprint(Path(model_path))
+            if expected_sha and fingerprint != expected_sha:
+                raise DenseRetrievalError("dense_model_checksum_mismatch")
+            loaded = _local_embedder(model_path, model_name, fingerprint)
+            if loaded.dimension != dimension:
+                raise DenseRetrievalError("dense_index_dimension_mismatch")
+            future.set_result(loaded)
+        except Exception as exc:
+            future.set_exception(exc)
+
+    Thread(target=load, name="healthvault-embedding-load", daemon=True).start()
+    return future
+
+
 class _LazyLocalEmbedder:
     """Load shared model weights only when a search actually needs a vector."""
 
     def __init__(self, path: Path, manifest: VectorIndexManifest) -> None:
         self._path = path.resolve()
         self._manifest = manifest
-        self._loaded: Embedder | None = None
+        self._future: Future | None = None
 
     @property
     def model_name(self) -> str:
@@ -88,20 +112,22 @@ class _LazyLocalEmbedder:
     def dimension(self) -> int:
         return self._manifest.dimension
 
-    def embed(self, texts: Sequence[str]) -> tuple[tuple[float, ...], ...]:
-        if self._loaded is None:
+    def start(self) -> Future:
+        if self._future is None:
             # lru_cache alone may initialize twice on concurrent first requests.
             with _MODEL_LOAD_LOCK:
-                if self._loaded is None:
-                    from healthvault.rag.vector_cache import model_fingerprint
-                    fingerprint = model_fingerprint(self._path)
-                    if self._manifest.model_sha256 and fingerprint != self._manifest.model_sha256:
-                        raise DenseRetrievalError("dense_model_checksum_mismatch")
-                    loaded = _local_embedder(str(self._path), self.model_name, fingerprint)
-                    if loaded.dimension != self.dimension:
-                        raise DenseRetrievalError("dense_index_dimension_mismatch")
-                    self._loaded = loaded
-        return self._loaded.embed(texts)
+                if self._future is None:
+                    from healthvault.rag.vector_cache import model_file_signature
+                    self._future = _model_load(str(self._path), self.model_name,
+                                               self._manifest.model_sha256, self.dimension,
+                                               model_file_signature(self._path))
+        return self._future
+
+    def embed(self, texts: Sequence[str]) -> tuple[tuple[float, ...], ...]:
+        future = self.start()
+        if not future.done():
+            raise DenseRetrievalError("dense_model_loading")
+        return future.result().embed(texts)
 
 
 def rrf_fuse(
@@ -184,7 +210,10 @@ class HybridHealthKnowledgeRepository:
         if not self._usable or self._embedder is None:
             return
         try:
-            self._embedder.embed(())
+            if isinstance(self._embedder, _LazyLocalEmbedder):
+                self._embedder.start().result()
+            else:
+                self._embedder.embed(())
         except (DenseRetrievalError, OSError, ValueError, RuntimeError):
             # A real search retains the existing, explicit lexical fallback.
             logging.getLogger(__name__).warning("Local dense retrieval warm-up unavailable; searches will report fallback reasons.")
@@ -206,6 +235,7 @@ class HybridHealthKnowledgeRepository:
             self._fallback_reason = reason if reason in {
                 "dense_model_checksum_mismatch", "dense_index_dimension_mismatch",
                 "dense_dependency_missing", "dense_model_missing",
+                "dense_model_loading",
             } else "dense_query_failed"
             self.index_metadata["dense_fallback_reason"] = self._fallback_reason
             self.last_search_metadata["dense_fallback_reason"] = self._fallback_reason

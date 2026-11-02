@@ -14,6 +14,7 @@ from healthvault.domain.comparisons import (
     IndicatorComparisonResult,
 )
 from healthvault.domain.records import ConfirmedIndicator, TimelineReport
+from healthvault.domain.reports import INDICATOR_CATALOG, normalize_indicator_code
 from healthvault.repositories.health_records import HealthRecordRepository
 
 
@@ -89,16 +90,33 @@ def compare_health_indicators(
     selected_years = None
     if start_year is not None or end_year is not None:
         if (type(start_year) is not int or type(end_year) is not int
-                or not 1 <= start_year < end_year <= 9999):
-            return _invalid('invalid_year_range', 'Provide both start_year and end_year, with start_year < end_year.')
+                or not 1 <= start_year <= end_year <= 9999):
+            return _invalid('invalid_year_range', 'Provide both start_year and end_year, with start_year <= end_year.')
         selected_years = (start_year, end_year)
+    start_date, end_date = tool_input.get('start_date'), tool_input.get('end_date')
+    selected_dates = None
+    if start_date is not None or end_date is not None:
+        try:
+            if (selected_years or not isinstance(start_date, str) or not isinstance(end_date, str)
+                    or date.fromisoformat(start_date).isoformat() != start_date
+                    or date.fromisoformat(end_date).isoformat() != end_date or start_date >= end_date):
+                raise ValueError
+        except (ValueError, TypeError):
+            return _invalid('invalid_date_range', 'Use two exact YYYY-MM-DD dates, start_date < end_date, without year filters.')
+        selected_dates = (start_date, end_date)
     indicator_code = tool_input.get('indicator_code')
     if indicator_code is not None and (not isinstance(indicator_code, str) or not indicator_code.strip()):
         return _invalid('invalid_indicator_code', 'indicator_code must be a non-empty string.')
+    if indicator_code is not None:
+        indicator_code = normalize_indicator_code(indicator_code)
+        if indicator_code not in INDICATOR_CATALOG:
+            return _invalid('invalid_indicator_code', 'Use a supported indicator code or name.')
 
     timeline = tuple(sorted(repository.list_timeline(profile_id), key=lambda report: (report.report_date, report.report_id)))
     if selected_years:
         timeline = tuple(report for report in timeline if start_year <= int(report.report_date[:4]) <= end_year)
+    if selected_dates:
+        timeline = tuple(report for report in timeline if start_date <= report.report_date <= end_date)
     if not timeline:
         return IndicatorComparisonResult(
             status="empty",
@@ -107,6 +125,7 @@ def compare_health_indicators(
             comparisons=(),
             issues=(),
             selected_years=selected_years,
+            selected_dates=selected_dates,
         )
 
     observations: dict[str, list[ComparisonPoint]] = defaultdict(list)
@@ -126,6 +145,13 @@ def compare_health_indicators(
             if not first_year or not last_year:
                 missing = [str(year) for year, found in ((start_year, first_year), (end_year, last_year)) if not found]
                 issues.append(ComparisonIssue('missing_year', '缺少 ' + '、'.join(missing) + ' 年的已确认记录；未用其他年份替代。', indicator_code))
+                continue
+        if selected_dates:
+            first_date = [point for point in points if point.report_date == start_date]
+            last_date = [point for point in points if point.report_date == end_date]
+            if not first_date or not last_date:
+                missing = [day for day, found in ((start_date, first_date), (end_date, last_date)) if not found]
+                issues.append(ComparisonIssue('missing_date', '缺少 ' + '、'.join(missing) + ' 的已确认记录；未用其他日期替代。', indicator_code))
                 continue
         if len(points) < 2:
             issues.append(
@@ -154,8 +180,8 @@ def compare_health_indicators(
             )
             continue
 
-        earliest = first_year[-1] if selected_years else points[0]
-        latest = last_year[-1] if selected_years else points[-1]
+        earliest = first_date[-1] if selected_dates else first_year[-1] if selected_years and start_year != end_year else points[0]
+        latest = last_date[-1] if selected_dates else last_year[-1] if selected_years else points[-1]
         change = _rounded_change(
             earliest.indicator.value,
             latest.indicator.value,
@@ -177,6 +203,7 @@ def compare_health_indicators(
                 absolute_change=change,
                 direction=direction,
                 selected_years=selected_years,
+                selected_dates=selected_dates,
                 trend=_annual_trend(points, indicator_code),
             )
         )
@@ -204,4 +231,5 @@ def compare_health_indicators(
         comparisons=tuple(comparisons),
         issues=tuple(issues),
         selected_years=selected_years,
+        selected_dates=selected_dates,
     )

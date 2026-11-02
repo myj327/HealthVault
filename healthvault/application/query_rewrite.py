@@ -79,12 +79,14 @@ def prepare_query(question: str, *, context_question: str = "", model_query: Cal
         reference = None
     if reference:
         current = _subjects(original[:reference.start()])
-        subjects = current if current else _subjects(context_question)
-        if len(subjects) != 1:
-            return PreparedQuery(original, original, original, "needs_clarification")
-        # A previous question supplies a topic only, never patient values or facts.
-        resolved = _REFERENCE.sub(lambda _match: subjects[0][1], original)
-        method = "question_rule" if current else "context_rule"
+        # Keep self-contained questions intact: a partial term dictionary must
+        # not turn "Lp(a) ... it" into a different, broader subject.
+        if not current:
+            subjects = _subjects(context_question)
+            if len(subjects) != 1:
+                return PreparedQuery(original, original, original, "needs_clarification")
+            resolved = _REFERENCE.sub(lambda _match: subjects[0][1], original)
+            method = "context_rule"
     result = PreparedQuery(original, resolved, resolved, method=method)
     if model_query is None or not _subjects(resolved):
         return result
@@ -103,7 +105,9 @@ def prepare_query(question: str, *, context_question: str = "", model_query: Cal
                 or not isinstance(query, str) or not 1 <= len(query.strip()) <= 1000):
             return result
         if proposal["needs_clarification"]:
-            return PreparedQuery(original, resolved, resolved, "needs_clarification", method)
+            # Rewriting has no authority to demand values the user is asking
+            # us to retrieve. Unresolved references were checked above.
+            return result
         if (_constraints(query) != _constraints(resolved) or {code for code, _ in _subjects(query)} != {code for code, _ in _subjects(resolved)}
                 or not assess_health_knowledge_support(query).allowed):
             return result

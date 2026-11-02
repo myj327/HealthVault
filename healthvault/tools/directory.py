@@ -108,6 +108,8 @@ TOOL_SPECS: tuple[ToolSpec, ...] = (
         description=(
             "Compare confirmed indicators and annual trends. For two requested years, pass "
             "start_year and end_year; use each year's latest record, never substitute a missing year. "
+            "Equal years compare that year's earliest and latest observations. For two specific dates, "
+            "pass start_date and end_date (YYYY-MM-DD) instead of years; query the timeline first if dates are unknown. "
             "Without years, compare earliest and latest. Optionally filter by indicator_code. "
             "Trend uses the latest observation per year and a descriptive slope, not a health forecast."
         ),
@@ -116,6 +118,8 @@ TOOL_SPECS: tuple[ToolSpec, ...] = (
             "properties": {"profile_id": {"type": "string"},
                            "start_year": {"type": "integer", "minimum": 1, "maximum": 9999},
                            "end_year": {"type": "integer", "minimum": 1, "maximum": 9999},
+                           "start_date": {"type": "string", "format": "date"},
+                           "end_date": {"type": "string", "format": "date"},
                            "indicator_code": {"type": "string"}},
             "required": ["profile_id"],
         },

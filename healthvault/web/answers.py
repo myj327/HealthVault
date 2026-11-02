@@ -153,6 +153,11 @@ def answer_with_model(question: str, mode: str, evidence: dict[str, Any], *, pro
 
 def answer_repair_feedback(generated: str, verification: dict) -> dict | None:
     """Only correct an answer/report, never repair malformed model JSON."""
+    if (verification.get('kind') in {'whole_answer_record_check', 'whole_answer_knowledge_check'}
+            and verification.get('suggested_answer') and not verification.get('passed')):
+        return {'reason': 'whole_answer_correction', 'previous_answer': generated,
+                'suggested_answer': verification['suggested_answer'],
+                'instruction': '这是待核验修正稿，按原问题及已有来源补齐、改正；保留已有正确内容。新答案仍须完整复核。'}
     if verification.get('kind') == 'invalid_cited_answer':
         return {'reason': 'unbound_answer_content', 'previous_answer': generated,
                 'instruction': '保留原问题要求及已有证据支持的内容，将每个事实分别绑定实际来源；'

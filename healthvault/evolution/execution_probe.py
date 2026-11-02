@@ -12,6 +12,7 @@ from healthvault.application.confirm_health_records import confirm_health_record
 from healthvault.bootstrap import HealthVaultBootstrapConfig, build_healthvault_components
 from healthvault.infrastructure.sqlite_health_records import SQLiteHealthRecordRepository
 from healthvault.runtime_context import RuntimeContext
+from healthvault.domain.reports import normalize_indicator_code
 
 EXECUTION_PROTOCOL = 'skill-native-execution-v2'
 EXECUTION_CASES = (
@@ -74,7 +75,9 @@ async def evaluate_execution(active: str, candidate: str, query) -> dict:
                     arguments = action['arguments']
                     row['arguments'] = arguments
                     row['arguments_passed'] = ('profile_id' not in arguments and result.get('status') == 'ok'
-                        and ((not arguments or arguments == {'indicator_code': 'fasting_glucose'})
+                        and ((not arguments or (set(arguments) == {'indicator_code'}
+                             and isinstance(arguments['indicator_code'], str)
+                             and normalize_indicator_code(arguments['indicator_code']) == 'fasting_glucose'))
                              if expected_tool == 'compare_health_indicators' else
                              isinstance(arguments.get('query'), str) and any(term in arguments['query'].casefold()
                                  for term in ('a1c', '糖化血红蛋白'))))

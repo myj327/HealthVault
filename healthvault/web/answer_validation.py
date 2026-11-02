@@ -278,6 +278,7 @@ def verify_grounded_answer(question: str, generated: str, sources: list[dict[str
         '只回答原问题必要内容，每条医学事实保留正确的 [完整citation_id]，不要照搬无关扩展。'
         '只输出 JSON，包含 supported、complete 两个 boolean，以及 answer 字符串。'
         'answer 无需修改时填空字符串，否则填修正后的完整正文；两个 boolean 均针对最终正文。'
+        '先完成修改，再判断最终正文；删除无据附加句后已有充分支持时，supported 应为 true，不能沿用草稿的 false。'
         '资料确实无法回答核心问题时 complete=false，不编造知识或引用。')
     raw = (query or run_model_task)(prompt, {'question': question, 'answer': generated, 'sources': sources},
                                    profile_id=profile_id, failure_message='回答证据核对暂不可用，请稍后重试。')
@@ -293,6 +294,7 @@ def verify_grounded_answer(question: str, generated: str, sources: list[dict[str
             raise ValueError('Invalid corrected knowledge citations.')
         passed = result['supported'] and result['complete']
         return {'passed': passed, 'answer': accepted if passed else None,
+                'suggested_answer': accepted if not passed and accepted != generated else None,
                 'support_passed': result['supported'], 'completeness_passed': result['complete'],
                 'bound_citation_ids': sorted(cited),
                 'kind': 'whole_answer_record_check' if has_records else 'whole_answer_knowledge_check'}

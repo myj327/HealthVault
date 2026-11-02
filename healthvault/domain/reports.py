@@ -77,8 +77,13 @@ INDICATOR_CATALOG = {
 
 INDICATOR_ALIASES = {
     "ldl": "ldl_cholesterol",
+    "ldl-c": "ldl_cholesterol",
+    "低密度脂蛋白": "ldl_cholesterol",
     "tc": "total_cholesterol",
     "hdl": "hdl_cholesterol",
+    "hdl-c": "hdl_cholesterol",
+    "高密度脂蛋白": "hdl_cholesterol",
+    "a1c": "hba1c",
     "tg": "triglycerides",
     "wbc": "white_blood_cells",
     "hb": "hemoglobin",
@@ -99,6 +104,13 @@ INDICATOR_ALIASES = {
     "tp": "total_protein",
     "cr": "creatinine",
 }
+
+
+def normalize_indicator_code(value: str) -> str:
+    name = value.strip().lower()
+    names = {spec.display_name.lower(): code for code, spec in INDICATOR_CATALOG.items()}
+    return names.get(name, INDICATOR_ALIASES.get(name, name))
+
 
 UNIT_ALIASES = {
     "μmol/L": "umol/L",

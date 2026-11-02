@@ -3,6 +3,7 @@ import json
 import os
 import tempfile
 import unittest
+import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from threading import Event
@@ -33,6 +34,8 @@ class ColdStartTests(unittest.TestCase):
         (self.root / 'manifest.json').write_text(json.dumps(self.manifest.to_dict()), encoding='utf-8')
         hybrid._local_embedder.cache_clear()
         self.addCleanup(hybrid._local_embedder.cache_clear)
+        hybrid._model_load.cache_clear()
+        self.addCleanup(hybrid._model_load.cache_clear)
         self.loader = patch('healthvault.infrastructure.bge_faiss.FaissVectorIndex.load', return_value=FakeIndex())
         self.loader.start()
         self.addCleanup(self.loader.stop)
@@ -47,6 +50,7 @@ class ColdStartTests(unittest.TestCase):
             repository = self.repository()
             fingerprint.assert_not_called()
             load.assert_not_called()
+            repository.warm_up()
             hits = repository.search('test', 3)
             self.assertEqual(['b', 'a', 'c'], [hit.document.chunk_id for hit in hits])
             fingerprint.assert_called_once()
@@ -57,7 +61,8 @@ class ColdStartTests(unittest.TestCase):
         with patch('healthvault.infrastructure.bge_faiss.BGEM3Embedder', return_value=FakeEmbedder()) as load:
             repositories = [self.repository() for _ in range(4)]
             with ThreadPoolExecutor(max_workers=4) as pool:
-                results = list(pool.map(lambda repository: repository.search('test', 3), repositories))
+                list(pool.map(lambda repository: repository.warm_up(), repositories))
+            results = [repository.search('test', 3) for repository in repositories]
             load.assert_called_once()
             self.assertTrue(all(len(result) == 3 for result in results))
 
@@ -66,14 +71,15 @@ class ColdStartTests(unittest.TestCase):
             repository = self.repository()
             repository.warm_up()
             self.assertIsNone(repository.last_search_metadata)
-            self.repository().search('test', 3)
+            self.repository().warm_up()
             load.assert_called_once()
 
     def test_changed_model_is_rejected_before_using_cached_weights(self):
         with patch('healthvault.infrastructure.bge_faiss.BGEM3Embedder', return_value=FakeEmbedder()) as load:
-            self.repository().search('test', 3)
+            self.repository().warm_up()
             (self.model / 'config.json').write_text('{"version":2}', encoding='utf-8')
             repository = self.repository()
+            repository.warm_up()
             self.assertEqual(['a', 'b'], [hit.document.chunk_id for hit in repository.search('test', 3)])
             self.assertEqual('dense_model_checksum_mismatch', repository.last_search_metadata['dense_fallback_reason'])
             self.assertFalse(repository.last_search_metadata['dense_participated'])
@@ -84,6 +90,7 @@ class ColdStartTests(unittest.TestCase):
         embedder.dimension = 3
         with patch('healthvault.infrastructure.bge_faiss.BGEM3Embedder', return_value=embedder):
             repository = self.repository()
+            repository.warm_up()
             repository.search('test', 3)
             self.assertEqual('dense_index_dimension_mismatch', repository.last_search_metadata['dense_fallback_reason'])
             self.assertFalse(repository.last_search_metadata['dense_participated'])
@@ -99,9 +106,51 @@ class ColdStartTests(unittest.TestCase):
     def test_initialization_error_returns_honest_lexical_fallback(self):
         with patch('healthvault.infrastructure.bge_faiss.BGEM3Embedder', side_effect=RuntimeError('synthetic unavailable runtime')):
             repository = self.repository()
+            repository.warm_up()
             self.assertEqual(['a', 'b'], [hit.document.chunk_id for hit in repository.search('test', 3)])
             self.assertEqual('dense_query_failed', repository.last_search_metadata['dense_fallback_reason'])
             self.assertFalse(repository.last_search_metadata['dense_participated'])
+
+    def test_loading_never_blocks_search_and_recovers_to_hybrid(self):
+        entered, release = Event(), Event()
+
+        def delayed_model(*args, **kwargs):
+            entered.set()
+            release.wait(4)
+            return FakeEmbedder()
+
+        with patch('healthvault.infrastructure.bge_faiss.BGEM3Embedder', side_effect=delayed_model) as load:
+            try:
+                repository = self.repository()
+                started = time.perf_counter()
+                self.assertEqual(['a', 'b'], [hit.document.chunk_id for hit in repository.search('test', 3)])
+                self.assertLess(time.perf_counter() - started, 1)
+                self.assertTrue(entered.wait(1))
+                self.assertEqual('dense_model_loading', repository.last_search_metadata['dense_fallback_reason'])
+                self.assertFalse(repository.last_search_metadata['dense_participated'])
+                other = self.repository()
+                self.assertEqual(2, len(other.search('test', 3)))
+                load.assert_called_once()
+            finally:
+                release.set()
+            repository.warm_up()
+            self.assertEqual(['b', 'a', 'c'], [hit.document.chunk_id for hit in other.search('test', 3)])
+            self.assertTrue(other.last_search_metadata['dense_participated'])
+            self.assertIsNone(other.last_search_metadata['dense_fallback_reason'])
+
+    def test_empty_cold_search_reports_initialization_not_missing_knowledge(self):
+        from healthvault.application.search_health_knowledge import search_health_knowledge
+        release = Event()
+        with patch('healthvault.infrastructure.bge_faiss.BGEM3Embedder', side_effect=lambda *a, **kw: (release.wait(4), FakeEmbedder())[1]):
+            repository = self.repository()
+            repository._lexical.search = lambda query, limit: ()
+            try:
+                result = search_health_knowledge({'query': 'A1C'}, repository).to_dict()
+                self.assertEqual('empty', result['status'])
+                self.assertEqual('retrieval_initializing', result['issues'][0]['code'])
+            finally:
+                release.set()
+                repository.warm_up()
 
     def test_web_login_and_records_work_while_model_is_warming(self):
         # Use a held warm-up to prove startup never joins the loading thread.

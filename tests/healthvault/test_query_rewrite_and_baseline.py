@@ -21,7 +21,7 @@ class QueryRewriteTests(unittest.TestCase):
         self.assertEqual('context_rule', result.method)
         explicit = prepare_query('HbA1c 是什么？what does it measure?')
         self.assertEqual('ready', explicit.status)
-        self.assertEqual('question_rule', explicit.method)
+        self.assertEqual('HbA1c 是什么？what does it measure?', explicit.resolved_question)
         compared = prepare_query('这个指标和空腹血糖有什么区别？', context_question='解释 HbA1c')
         self.assertEqual('HbA1c和空腹血糖有什么区别？',compared.resolved_question)
 

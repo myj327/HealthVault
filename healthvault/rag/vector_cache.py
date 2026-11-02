@@ -20,13 +20,18 @@ def configured_model_path(release_root: Path) -> Path | None:
     return Path(configured) if configured else None
 
 
-def model_fingerprint(root: Path) -> str:
+def model_file_signature(root: Path) -> tuple:
+    """Cheap invalidation key; content hashes are still checked before loading."""
     root = root.resolve()
     files = tuple((str(path.relative_to(root)), path.stat().st_size, path.stat().st_mtime_ns)
                   for path in sorted(root.rglob('*')) if path.is_file() and path.suffix in {'.json','.bin','.safetensors','.model'})
     if not files:
         raise ValueError('No local embedding model files found.')
-    return _fingerprint(str(root), files)
+    return files
+
+
+def model_fingerprint(root: Path) -> str:
+    return _fingerprint(str(root.resolve()), model_file_signature(root))
 
 
 @lru_cache(maxsize=4)

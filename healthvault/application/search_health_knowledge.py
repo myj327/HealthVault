@@ -79,10 +79,11 @@ def search_health_knowledge(
                 ),
             ),
         )
+    loading = not hits and (getattr(repository, 'last_search_metadata', None) or {}).get('dense_fallback_reason') == 'dense_model_loading'
     return KnowledgeSearchResult(
         status="ok" if hits else "empty",
         query=query,
         limit=limit,
         hits=hits,
-        issues=(),
+        issues=(KnowledgeSearchIssue('retrieval_initializing', '知识库正在准备，当前关键词未命中，请稍后再试；这不表示资料不存在。'),) if loading else (),
     )

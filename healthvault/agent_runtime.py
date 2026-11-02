@@ -533,6 +533,8 @@ class HealthVaultAgentRuntime:
             from healthvault.domain.reports import INDICATOR_CATALOG
             last = observed_calls[-1]
             code = last.get('indicator_code')
+            if 'retrieval_initializing' in last.get('issue_codes', []):
+                final_text = '知识库正在准备，当前关键词暂未找到相关资料，请稍后再试。'
             if (last['name'] == 'query_health_timeline' and last['result_status'] == 'empty'
                     and code in INDICATOR_CATALOG):
                 final_text = f'当前已确认档案没有{INDICATOR_CATALOG[code].display_name}记录，暂时无法提供该指标的数值。'

@@ -10,7 +10,7 @@ from healthvault.domain.records import (
     TimelineQueryResult,
 )
 from healthvault.repositories.health_records import HealthRecordRepository
-from healthvault.domain.reports import INDICATOR_ALIASES, INDICATOR_CATALOG
+from healthvault.domain.reports import INDICATOR_CATALOG, normalize_indicator_code
 
 
 def _invalid(code: str, message: str) -> TimelineQueryResult:
@@ -46,8 +46,7 @@ def query_health_timeline(
     if code is not None:
         if not isinstance(code, str) or not code.strip():
             return _invalid('invalid_indicator_code', 'indicator_code must be a non-empty string.')
-        names = {spec.display_name: key for key, spec in INDICATOR_CATALOG.items()}
-        code = names.get(code.strip(), INDICATOR_ALIASES.get(code.strip().lower(), code.strip().lower()))
+        code = normalize_indicator_code(code)
         if code not in INDICATOR_CATALOG:
             return _invalid('invalid_indicator_code', 'Use a supported indicator code or name.')
     timeline = repository.list_timeline(profile_id)

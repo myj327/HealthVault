@@ -245,10 +245,10 @@ class HealthVaultUIController:
         ).to_dict()
 
     def comparisons(self, profile_id: str, *, start_year: int | None = None, end_year: int | None = None,
-                    indicator_code: str | None = None) -> dict[str, Any]:
+                    indicator_code: str | None = None, start_date: str | None = None, end_date: str | None = None) -> dict[str, Any]:
         return compare_health_indicators(
             {"profile_id": profile_id, 'start_year': start_year, 'end_year': end_year,
-             'indicator_code': indicator_code}, self.record_repository
+             'indicator_code': indicator_code, 'start_date': start_date, 'end_date': end_date}, self.record_repository
         ).to_dict()
 
     def search_knowledge(self, query: str, limit: int = 3) -> dict[str, Any]:

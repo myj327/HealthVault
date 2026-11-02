@@ -1319,11 +1319,12 @@ def create_app(
 
     @app.get("/api/profiles/{profile_id}/comparisons")
     def comparisons(profile_id: str, start_year: int | None = None, end_year: int | None = None,
-                    indicator_code: str | None = None) -> dict[str, Any]:
+                    indicator_code: str | None = None, start_date: str | None = None, end_date: str | None = None) -> dict[str, Any]:
         result = app.state.controller.comparisons(_valid_profile(profile_id), start_year=start_year,
-                                                  end_year=end_year, indicator_code=indicator_code)
+                                                  end_year=end_year, indicator_code=indicator_code,
+                                                  start_date=start_date, end_date=end_date)
         if result['status'] == 'invalid_request':
-            raise HTTPException(422, '请选择两个不同的年份，起始年份应早于结束年份。')
+            raise HTTPException(422, '请核对指标和时间条件：年份应按先后顺序成对填写，具体日期不能与年份条件混用。')
         return result
 
     @app.get("/api/knowledge")
@@ -1409,7 +1410,7 @@ def create_app(
                 raise HTTPException(exc.status_code,str(exc)) from exc
             if generated.strip() == INSUFFICIENT_EVIDENCE_MARKER:
                 return {"status": "insufficient_evidence", "question": question,
-                        "answer": "当前证据不足以回答这个具体问题。", "sources": [], 'question_plan': plan, 'measurement': measurement}
+                        "answer": f"现有资料没有提供回答“{question}”所需的证据，暂时无法回答。", "sources": [], 'question_plan': plan, 'measurement': measurement}
             allowed = {source["citation_id"] for source in sources}
             cited = re.findall(r"\[((?:HVK|HVW|REC):[^\]]+)\]", generated)
             if not cited or any(citation_id not in allowed for citation_id in cited):
@@ -1494,7 +1495,11 @@ def create_app(
                                  profile_id=request.state.auth.user.profile_id)
         if prepared.status == 'needs_clarification':
             return {'status':'insufficient_evidence','question':question,'answer':'请明确你说的是哪个指标或检查；上一问题包含多个指标时，我不会替你选择。','sources':[]}
-        evidence, sources = knowledge_evidence(retrieve_question_knowledge(search_knowledge_tool, prepared.resolved_question, search_query=prepared.search_query))
+        knowledge_result = retrieve_question_knowledge(search_knowledge_tool, prepared.resolved_question, search_query=prepared.search_query)
+        if not knowledge_result.get('results') and any(issue.get('code') == 'retrieval_initializing' for issue in knowledge_result.get('issues', [])):
+            return {'status': 'temporarily_unavailable', 'question': question,
+                    'answer': '知识库正在准备，当前关键词暂未找到相关资料，请稍后再试。', 'sources': []}
+        evidence, sources = knowledge_evidence(knowledge_result)
         if prepared.resolved_question != question:
             evidence['question_context'] = {'original_question':question,'resolved_question':prepared.resolved_question}
         had_local_sources = bool(sources)
@@ -1512,7 +1517,7 @@ def create_app(
         if prepared.resolved_question != question:
             evidence['question_context'] = {'original_question':question,'resolved_question':prepared.resolved_question}
         if not sources:
-            return {"status": "insufficient_evidence", "question": question, "answer": "当前可信资料中没有足够依据回答这个问题，请换一种问法或咨询医生。", "sources": []}
+            return {"status": "insufficient_evidence", "question": question, "answer": f"当前知识库没有提供回答“{question}”所需的具体资料，无法据此作答。", "sources": []}
         return answer(request.state.auth.user.profile_id, question, "knowledge", evidence, sources,
                       answer_state=answer_state)
 
@@ -1547,7 +1552,7 @@ def create_app(
         from healthvault.domain.reports import INDICATOR_CATALOG
         requested = {code for code, _ in _subjects(prepared.resolved_question)}
         present = {item['code'] for item in brief.get('indicators', [])}
-        if (brief.get('status') in {'ok', 'ready', 'empty'} and len(requested) == 1
+        if (brief.get('status') in {'ok', 'ready', 'partial', 'empty'} and len(requested) == 1
                 and requested <= INDICATOR_CATALOG.keys() and not requested & present):
             name = INDICATOR_CATALOG[next(iter(requested))].display_name
             return {'status': 'insufficient_evidence', 'question': question,
