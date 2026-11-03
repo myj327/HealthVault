@@ -48,6 +48,29 @@ class PersonalScopeTests(unittest.IsolatedAsyncioTestCase):
                         self.block.replace('citation:v1', 'citation:v2')):
             self.assertEqual(('', 'scope_marker_invalid'), select_personal_citation_guidance(content, 'Use one source.'))
 
+    def test_saved_record_descriptions_are_read_requests_but_actions_remain_excluded(self):
+        for question in ('最早保存的空腹血糖是多少？请用一个原始来源支持。',
+                         '查询已保存记录，只引用一个来源。', '查看保存过的记录，保留两端引用。'):
+            with self.subTest(question=question):
+                self.assertTrue(select_personal_citation_guidance(self.block, question)[0])
+        for question in ('请保存这份报告，只引用一个来源。',
+                         '先查已保存的记录再删除它，引用一个来源。',
+                         '请清空已保存的记录，只引用一个来源。',
+                         '请清除保存过的记录，只引用一个来源。',
+                         '请移除已保存的记录，只引用一个来源。',
+                         '重新保存已保存的记录，并提供一个来源。'):
+            with self.subTest(question=question):
+                self.assertEqual('excluded_write_request', select_personal_citation_guidance(self.block, question)[1])
+
+    def test_saved_record_question_reaches_the_personal_runtime_prompt(self):
+        runtime, prompt, sha = self.runtime('最早保存的空腹血糖是哪一天？只引用一个原始来源。')
+        try:
+            self.assertTrue(runtime.manifest['personal_skill_injected'])
+            self.assertIn(proposal.CONTENT, prompt)
+            self.assertEqual(sha, runtime.trace_recorder._skill['sha256'])
+        finally:
+            runtime.components.knowledge_repository.close()
+
     def runtime(self, question, personal_text=None):
         project = self.root / 'project' / '.bear' / 'skills'
         personal = self.root / 'personal' / '.bear' / 'skills'

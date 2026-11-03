@@ -48,7 +48,9 @@ def query_health_timeline(
             return _invalid('invalid_indicator_code', 'indicator_code must be a non-empty string.')
         code = normalize_indicator_code(code)
         if code not in INDICATOR_CATALOG:
-            return _invalid('invalid_indicator_code', 'Use a supported indicator code or name.')
+            return _invalid('invalid_indicator_code', 'Use a code from the tool schema. '
+                            'Call query_health_timeline without indicator_code to see available records; '
+                            'do not guess the glucose type.')
     timeline = repository.list_timeline(profile_id)
     if code is not None:
         timeline = tuple(replace(report, indicators=tuple(i for i in report.indicators if i.code == code),

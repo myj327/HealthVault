@@ -18,12 +18,12 @@ from healthvault.domain.reports import INDICATOR_CATALOG, normalize_indicator_co
 from healthvault.repositories.health_records import HealthRecordRepository
 
 
-def _invalid(code: str, message: str) -> IndicatorComparisonResult:
+def _invalid(code: str, message: str, indicator_code: str = "profile_id") -> IndicatorComparisonResult:
     return IndicatorComparisonResult(
         status="invalid_request",
         report_count=0,
         comparisons=(),
-        issues=(ComparisonIssue(code, message, "profile_id"),),
+        issues=(ComparisonIssue(code, message, indicator_code),),
     )
 
 
@@ -106,11 +106,13 @@ def compare_health_indicators(
         selected_dates = (start_date, end_date)
     indicator_code = tool_input.get('indicator_code')
     if indicator_code is not None and (not isinstance(indicator_code, str) or not indicator_code.strip()):
-        return _invalid('invalid_indicator_code', 'indicator_code must be a non-empty string.')
+        return _invalid('invalid_indicator_code', 'indicator_code must be a non-empty string.', 'indicator_code')
     if indicator_code is not None:
         indicator_code = normalize_indicator_code(indicator_code)
         if indicator_code not in INDICATOR_CATALOG:
-            return _invalid('invalid_indicator_code', 'Use a supported indicator code or name.')
+            return _invalid('invalid_indicator_code', 'Use a code from the tool schema. '
+                            'Call query_health_timeline without indicator_code to see available records; '
+                            'do not guess the glucose type.', indicator_code)
 
     timeline = tuple(sorted(repository.list_timeline(profile_id), key=lambda report: (report.report_date, report.report_id)))
     if selected_years:

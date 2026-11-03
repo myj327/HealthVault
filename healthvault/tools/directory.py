@@ -6,6 +6,19 @@ from copy import deepcopy
 from dataclasses import dataclass
 from typing import Any, Literal
 
+from healthvault.domain.reports import INDICATOR_CATALOG
+
+
+_INDICATOR_CODE_SCHEMA = {
+    "type": "string",
+    "enum": list(INDICATOR_CATALOG),
+    "description": (
+        "Choose an exact supported code. If the indicator or glucose type is unclear, "
+        "omit this filter and inspect query_health_timeline first; do not invent a code "
+        "or assume unspecified glucose is fasting_glucose."
+    ),
+}
+
 
 ToolDependency = Literal["records", "knowledge"]
 
@@ -89,12 +102,12 @@ TOOL_SPECS: tuple[ToolSpec, ...] = (
         description=(
             "Return the chronological timeline of confirmed health reports and "
             "source evidence. When the user asks for a specific indicator, pass indicator_code "
-            "(for example fasting_glucose, hba1c, uric_acid, or its Chinese name). "
+            "using an exact supported code (for example fasting_glucose, hba1c, or uric_acid). "
             "The filtered result is empty if that indicator has no confirmed records."
         ),
         input_schema={
             "type": "object",
-            "properties": {"profile_id": {"type": "string"}, "indicator_code": {"type": "string"}},
+            "properties": {"profile_id": {"type": "string"}, "indicator_code": _INDICATOR_CODE_SCHEMA},
             "required": ["profile_id"],
         },
         read_only=True,
@@ -120,7 +133,7 @@ TOOL_SPECS: tuple[ToolSpec, ...] = (
                            "end_year": {"type": "integer", "minimum": 1, "maximum": 9999},
                            "start_date": {"type": "string", "format": "date"},
                            "end_date": {"type": "string", "format": "date"},
-                           "indicator_code": {"type": "string"}},
+                           "indicator_code": _INDICATOR_CODE_SCHEMA},
             "required": ["profile_id"],
         },
         read_only=True,

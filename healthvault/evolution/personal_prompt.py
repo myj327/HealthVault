@@ -15,7 +15,7 @@ _EXCLUSIONS = (
      r'跨(?:用户|账户|账号)|他人|别人|其他用户|另一个.{0,8}(?:用户|账户|账号)'),
     ('write_request', r'\b(?:save|persist|persistence|insert|update|delete|overwrite|state-changing)\b|'
      r'\bwrite\b.{0,35}\b(?:record|report|database|profile|account|file)\b|'
-     r'写入|保存|删除|确认导入|(?:更新|修改|改写).{0,12}(?:档案|记录|报告|数据库|账户|账号)'),
+     r'写入|(?<!已)保存(?!的|过的)|删除|移除|清空|清除|确认导入|(?:更新|修改|改写).{0,12}(?:档案|记录|报告|数据库|账户|账号)'),
     ('clinical_request', r'\b(?:diagnose|prescribe|treat|treatment|dosage|medical advice)\b|'
      r'\b(?:what|which|adjust)\b.{0,30}\b(?:medication|medicine|drug|dose)\b|'
      r'\bpredict\b.{0,70}\b(?:disease|develop)\b|'
